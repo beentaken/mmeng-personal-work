@@ -1,0 +1,14 @@
+env = Environment()
+
+dweight = env.Program(target="dweight", source="dweight.c")
+c2_1 = env.Program(target="2-1", source="2-1.c")
+c2_2 = env.Program(target="2-2", source="2-2.c")
+c2_3 = env.Program(target="2-3", source="2-3.c")
+c2_4 = env.Program(target="2-4", source="2-4.c")
+c2_5 = env.Program(target="2-5", source="2-5.c")
+c2_6 = env.Program(target="2-6", source="2-6.c")
+c2_7 = env.Program(target="2-7", source="2-7.c")
+c2_8 = env.Program(target="2-8", source="2-8.c")
+
+Default(dweight)
+

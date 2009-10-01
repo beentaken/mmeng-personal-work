@@ -1,0 +1,6 @@
+env = Environment()
+
+env.Append(CCFLAGS = ['-Wall','-Wextra','-ansi','-pedantic'])
+
+marathon = env.Program(target="marathon", source="marathon.c")
+

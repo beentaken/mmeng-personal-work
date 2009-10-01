@@ -1,0 +1,11 @@
+Import('env')
+
+env.Append(CCFLAGS = ['-Wall','-Wextra','-ansi','-pedantic'])
+
+c3_1 = env.Program(target="3-1", source="3-1.c")
+c3_2 = env.Program(target="3-2", source="3-2.c")
+c3_3 = env.Program(target="3-3", source="3-3.c")
+c3_4 = env.Program(target="3-4", source="3-4.c")
+c3_5 = env.Program(target="3-5", source="3-5.c")
+c3_6 = env.Program(target="3-6", source="3-6.c")
+

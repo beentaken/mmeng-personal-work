@@ -2,5 +2,5 @@ env = Environment()
 
 env.Append(CCFLAGS = ['-Wall','-Wextra','-ansi','-pedantic'])
 
-numbers = env.Program(target="numbers", source="numbers.c")
+numbers = env.Program(target="numbers", source="numbers.c", LIBS='m')
 

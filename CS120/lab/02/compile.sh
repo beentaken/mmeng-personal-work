@@ -1,4 +1,4 @@
 #!/bin/bash
 
-gcc -Wall -Wextra -ansi -pedantic numbers.c -o numbers
+gcc -lm -Wall -Wextra -ansi -pedantic numbers.c -o numbers
 

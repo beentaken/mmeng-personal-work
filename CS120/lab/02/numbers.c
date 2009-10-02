@@ -5,10 +5,10 @@ int main(void)
 {
 	float number1, number2, number3;
 	
-	printf("Enter 3 numbers between 0 and 9.999: \n");
+	printf("Enter 3 numbers between 0 and 9.999: ");
 	scanf("%f %f %f", &number1, &number2, &number3);
 
-	printf("Number\tsin\tcos\ttan\tatan\n");
+	printf("\nNumber\tsin\tcos\ttan\tatan\n");
 	printf("-------------------------------------------\n");
 
 	printf("%.5f\t%.3f\t%.3f\t%.3f\t%.3f\n",

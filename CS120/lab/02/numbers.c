@@ -1,3 +1,18 @@
+/******************************************************************************
+filename	numbers.c
+author		Marcus Meng
+DP email	marcus.meng@digipen.edu
+course		CS120
+section		A
+assignment	2
+due date	N/!
+
+Brief Description:
+	This program takes 3 numbers and displays the various trig function
+	outputs for them.
+
+******************************************************************************/
+
 #include <stdio.h>
 #include <math.h>
 

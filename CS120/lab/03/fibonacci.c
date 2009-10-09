@@ -12,19 +12,19 @@ void fibonacci(int end_value);
 int main(void)
 {
 	int input;
-	do
+	input = get_input();
+	
+	if (input != 1)
 	{
-		input = get_input();
-		if (input != 1)
-		{
-			fibonacci(input);
-		}
-	} while(input != 1);
+		fibonacci(input);
+	}
+
 	return(0);
 }
 
 /*
  * Gets input from user and returns it.
+ * Ensures that it's between 1 and 46, inclusive.
  */
 int get_input()
 {
@@ -41,11 +41,22 @@ int get_input()
 	return(input);
 }
 
+/*
+ * Tosses out a nice looking header.
+ */
 void print_header()
 {
+	int i;
+
+	printf("\n");
 	printf("           Fibonacci        Fibonacci\n");
 	printf(" N           number          quotient\n");
 	printf("-------------------------------------\n");
+
+	for (i = 0; i < 2; ++i)
+	{
+		printf("%2i%14i                  N/A\n", i, i);
+	}
 }
 
 /*
@@ -54,11 +65,11 @@ void print_header()
 void fibonacci(int end_value)
 {
 	int i;
-	double current_value = 0.0, previous_value = 1.0, temp = 0.0;
+	double current_value = 1.0, previous_value = 1.0, temp = 0.0;
 
 	print_header();
 
-	for(i=0; i <= end_value; ++i)
+	for(i=2; i <= end_value; ++i)
 	{
 		printf("%2i%14.0f%21.16f\n", i, current_value,
 			current_value/previous_value);

@@ -5,6 +5,7 @@ collisionActor1 = 0;
 collisionActor2 = 0;
 collisionActor3 = 0;
 collisionActor4 = 0;
+collisionActor5 = 0;
 
 
 --Cameras
@@ -13,12 +14,15 @@ camera0_2_Camera = 0;
 
 --Texts
 timer_10_Text = 0;
+score_11_Text = 0;
+multiplier_12_Text = 0;
 
 --Sounds
 
 --TileMaps
 
 --Sprites
+lives_13_Sprite = 0;
 Background_3_Sprite = 0;
 Map_4_Sprite = 0;
 Ship_5_Sprite = 0;
@@ -51,7 +55,33 @@ function AddCollisionActors0()
 	-------- New Frame 0 --------
 	collisionFrame = CollisionFrame();
 
-	collisionFrame:SetBoundingRectangle(FunRect(512,-640,640,-512)); 
+	collisionFrame:SetBoundingRectangle(FunRect(19,-51,52,-19)); 
+	collisionAnimation:AddCollisionFrame(collisionFrame);
+
+
+	collisionActor0:AddCollisionAnimation(collisionAnimation);
+
+	---- Adding New Animation 1 ----
+	collisionAnimation =  CollisionAnimation();
+
+
+	-------- New Frame 0 --------
+	collisionFrame = CollisionFrame();
+
+	collisionFrame:SetBoundingRectangle(FunRect(19,-51,52,-19)); 
+	collisionAnimation:AddCollisionFrame(collisionFrame);
+
+
+	collisionActor0:AddCollisionAnimation(collisionAnimation);
+
+	---- Adding New Animation 2 ----
+	collisionAnimation =  CollisionAnimation();
+
+
+	-------- New Frame 0 --------
+	collisionFrame = CollisionFrame();
+
+	collisionFrame:SetBoundingRectangle(FunRect(19,-51,51,-19)); 
 	collisionAnimation:AddCollisionFrame(collisionFrame);
 
 
@@ -95,11 +125,7 @@ function AddCollisionActors2()
 	-------- New Frame 0 --------
 	collisionFrame = CollisionFrame();
 
-	collisionFrame:SetBoundingRectangle(FunRect(24,-28,28,-24)); 
-	collisionFrame:AddCollisionData(Point2D(-27.0,23.0),Point2D(28.0,23.0),0,true);
-	collisionFrame:AddCollisionData(Point2D(-27.0,-23.0),Point2D(-27.0,23.0),0,true);
-	collisionFrame:AddCollisionData(Point2D(28.0,23.0),Point2D(28.0,-23.0),0,true);
-	collisionFrame:AddCollisionData(Point2D(28.0,-23.0),Point2D(-27.0,-23.0),0,true);
+	collisionFrame:SetBoundingRectangle(FunRect(512,-640,640,-512)); 
 	collisionAnimation:AddCollisionFrame(collisionFrame);
 
 
@@ -121,8 +147,11 @@ function AddCollisionActors3()
 	-------- New Frame 0 --------
 	collisionFrame = CollisionFrame();
 
-	collisionFrame:SetBoundingRectangle(FunRect(8,-8,8,-8)); 
-	collisionFrame:AddCollisionData(Point2D(0,0),4,0,true);
+	collisionFrame:SetBoundingRectangle(FunRect(24,-28,28,-24)); 
+	collisionFrame:AddCollisionData(Point2D(-27.0,23.0),Point2D(28.0,23.0),0,true);
+	collisionFrame:AddCollisionData(Point2D(-27.0,-23.0),Point2D(-27.0,23.0),0,true);
+	collisionFrame:AddCollisionData(Point2D(28.0,23.0),Point2D(28.0,-23.0),0,true);
+	collisionFrame:AddCollisionData(Point2D(28.0,-23.0),Point2D(-27.0,-23.0),0,true);
 	collisionAnimation:AddCollisionFrame(collisionFrame);
 
 
@@ -144,8 +173,8 @@ function AddCollisionActors4()
 	-------- New Frame 0 --------
 	collisionFrame = CollisionFrame();
 
-	collisionFrame:SetBoundingRectangle(FunRect(188,-240,240,-188)); 
-	collisionFrame:AddCollisionData(Point2D(0,3),20,0,true);
+	collisionFrame:SetBoundingRectangle(FunRect(8,-8,8,-8)); 
+	collisionFrame:AddCollisionData(Point2D(0,0),4,0,true);
 	collisionAnimation:AddCollisionFrame(collisionFrame);
 
 
@@ -155,12 +184,36 @@ function AddCollisionActors4()
 	Game.Get():AddCollisionAssets(collisionActor4);
 end
 
+function AddCollisionActors5()
+
+	collisionActor5 = CollisionActor();
+
+
+	---- Adding New Animation 0 ----
+	collisionAnimation =  CollisionAnimation();
+
+
+	-------- New Frame 0 --------
+	collisionFrame = CollisionFrame();
+
+	collisionFrame:SetBoundingRectangle(FunRect(188,-240,240,-188)); 
+	collisionFrame:AddCollisionData(Point2D(0,3),20,0,true);
+	collisionAnimation:AddCollisionFrame(collisionFrame);
+
+
+	collisionActor5:AddCollisionAnimation(collisionAnimation);
+
+	-- Adding CollisionActor to Game --
+	Game.Get():AddCollisionAssets(collisionActor5);
+end
+
 function AddCollisionActors()
 	AddCollisionActors0()
 	AddCollisionActors1()
 	AddCollisionActors2()
 	AddCollisionActors3()
 	AddCollisionActors4()
+	AddCollisionActors5()
 end
 
 -------------------------LEVEL0--------------------------
@@ -201,11 +254,77 @@ function Set_Level0_Layer0_Objects()
 	timer_10_Text:SetZOrder(0.0);
 	timer_10_Text:SetHUDObject(true);layer0_Layer:AddGameObject(timer_10_Text)
 
+	score_11_Text= Text("0",Game.Get():GetDirectory().."\\Resources\\Fonts\\DefaultFont\\DefaultFont");
+	score_11_Text:SetName("score");
+	score_11_Text:SetPosition(Point2D(-380.0,-300.0));
+	score_11_Text:SetLifeTime(0.0);
+	score_11_Text:SetVisible(true);
+	score_11_Text:SetRotationAngle(0.0);
+	score_11_Text:SetScale(1.0,1.0);
+	score_11_Text:SetCenter(Point2D(0.0,0.0));
+	score_11_Text:SetOpacity(1.0);
+	score_11_Text:SetZOrder(0.0);
+	score_11_Text:SetHUDObject(true);layer0_Layer:AddGameObject(score_11_Text)
+
+	multiplier_12_Text= Text("x1",Game.Get():GetDirectory().."\\Resources\\Fonts\\DefaultFont\\DefaultFont");
+	multiplier_12_Text:SetName("multiplier");
+	multiplier_12_Text:SetPosition(Point2D(-380.0,-260.0));
+	multiplier_12_Text:SetLifeTime(0.0);
+	multiplier_12_Text:SetVisible(true);
+	multiplier_12_Text:SetRotationAngle(0.0);
+	multiplier_12_Text:SetScale(1.0,1.0);
+	multiplier_12_Text:SetCenter(Point2D(0.0,0.0));
+	multiplier_12_Text:SetOpacity(1.0);
+	multiplier_12_Text:SetZOrder(0.0);
+	multiplier_12_Text:SetHUDObject(true);layer0_Layer:AddGameObject(multiplier_12_Text)
+
 
 
 	--Sounds Setters
 
 	--Sprites Setters
+	anim0 = SpriteAnimation(Game.Get():GetDirectory().."\\Resources\\Animations\\Lives1.png",1,1,1.0);
+	anim0:SetName("Lives1");
+		anim1 = SpriteAnimation(Game.Get():GetDirectory().."\\Resources\\Animations\\Lives2.png",1,1,1.0);
+	anim1:SetName("Lives2");
+		anim2 = SpriteAnimation(Game.Get():GetDirectory().."\\Resources\\Animations\\Lives3.png",1,1,1.0);
+	anim2:SetName("Lives3");
+	lives_13_Sprite = Sprite(anim0, anim1, anim2);
+
+	if(not Game.Get():IsNetworkGame() or Game.Get():IsServer())
+	then
+		dynamicCollisionData =  DynamicObject();
+		dynamicCollisionData:AddCollisionData(collisionActor0);
+		dynamicCollisionData:SetCollisionType(false);
+		dynamicCollisionData:SetCollisionThickness(0.0);
+		dynamicCollisionData:SetBoundingRectangleCheckingTileMap(true);
+		dynamicCollisionData:SetZCollision(0);
+		dynamicCollisionData:SetCanCollid(0,true);
+		dynamicCollisionData:SetUpdateOnIdle(false);
+		lives_13_Sprite:AddCollision(dynamicCollisionData, layer0_Layer:GetCollisionId());
+	end
+
+	lives_13_Sprite:SetName("lives");
+	lives_13_Sprite:SetCollisionActorIndex(0);
+	lives_13_Sprite:SetOpacity(1.0);
+	lives_13_Sprite:Play(true);
+	lives_13_Sprite:SetPosition(Point2D(-25.0,-270.0));
+	lives_13_Sprite:SetCurrentAnimationIndex(2);
+	lives_13_Sprite:SetCurrentFrameIndex(0);
+	lives_13_Sprite:SetLoop(true);
+	lives_13_Sprite:SetAnimationSpeed(1.0);
+	lives_13_Sprite:SetFlipHorizontal(false);
+	lives_13_Sprite:SetFlipVertical(false);
+	lives_13_Sprite:SetLifeTime(0.0);
+	lives_13_Sprite:SetVisible(true);
+	lives_13_Sprite:SetRotationAngle(0.0);
+	lives_13_Sprite:SetScale(1.0, 1.0);
+	lives_13_Sprite:SetCenter(Point2D(0.0,0.0));
+	lives_13_Sprite:SetZOrder(0.0);
+	lives_13_Sprite:SetHUDObject(true);
+	layer0_Layer:AddGameObject(lives_13_Sprite)
+
+
 
 	--ParticleSystems Setters
 
@@ -214,6 +333,7 @@ function Set_Level0_Layer0_Objects()
 	--setStaticCollision
 	Level0_Layer0_StaticCollision()
 end
+
 
 
 
@@ -233,7 +353,7 @@ function Set_Level0_Layer1_Objects()
 	if(not Game.Get():IsNetworkGame() or Game.Get():IsServer())
 	then
 		dynamicCollisionData =  DynamicObject();
-		dynamicCollisionData:AddCollisionData(collisionActor0);
+		dynamicCollisionData:AddCollisionData(collisionActor1);
 		dynamicCollisionData:SetCollisionType(false);
 		dynamicCollisionData:SetCollisionThickness(0.0);
 		dynamicCollisionData:SetBoundingRectangleCheckingTileMap(true);
@@ -244,7 +364,7 @@ function Set_Level0_Layer1_Objects()
 	end
 
 	Background_3_Sprite:SetName("Background");
-	Background_3_Sprite:SetCollisionActorIndex(0);
+	Background_3_Sprite:SetCollisionActorIndex(1);
 	Background_3_Sprite:SetOpacity(1.0);
 	Background_3_Sprite:Play(true);
 	Background_3_Sprite:SetPosition(Point2D(0.0,0.0));
@@ -270,7 +390,7 @@ function Set_Level0_Layer1_Objects()
 	if(not Game.Get():IsNetworkGame() or Game.Get():IsServer())
 	then
 		dynamicCollisionData =  DynamicObject();
-		dynamicCollisionData:AddCollisionData(collisionActor1);
+		dynamicCollisionData:AddCollisionData(collisionActor2);
 		dynamicCollisionData:SetCollisionType(false);
 		dynamicCollisionData:SetCollisionThickness(0.0);
 		dynamicCollisionData:SetBoundingRectangleCheckingTileMap(true);
@@ -281,7 +401,7 @@ function Set_Level0_Layer1_Objects()
 	end
 
 	Map_4_Sprite:SetName("Map");
-	Map_4_Sprite:SetCollisionActorIndex(1);
+	Map_4_Sprite:SetCollisionActorIndex(2);
 	Map_4_Sprite:SetOpacity(1.0);
 	Map_4_Sprite:Play(true);
 	Map_4_Sprite:SetPosition(Point2D(0.0,0.0));
@@ -307,7 +427,7 @@ function Set_Level0_Layer1_Objects()
 	if(not Game.Get():IsNetworkGame() or Game.Get():IsServer())
 	then
 		dynamicCollisionData =  DynamicObject();
-		dynamicCollisionData:AddCollisionData(collisionActor2);
+		dynamicCollisionData:AddCollisionData(collisionActor3);
 		dynamicCollisionData:SetCollisionType(true);
 		dynamicCollisionData:SetCollisionThickness(2.0);
 		dynamicCollisionData:SetBoundingRectangleCheckingTileMap(true);
@@ -319,7 +439,7 @@ function Set_Level0_Layer1_Objects()
 	end
 
 	Ship_5_Sprite:SetName("Ship");
-	Ship_5_Sprite:SetCollisionActorIndex(2);
+	Ship_5_Sprite:SetCollisionActorIndex(3);
 	Ship_5_Sprite:SetOpacity(1.0);
 	Ship_5_Sprite:Play(true);
 	Ship_5_Sprite:SetPosition(Point2D(0.0,0.0));
@@ -353,7 +473,7 @@ function Set_Level0_Layer1_Objects()
 	if(not Game.Get():IsNetworkGame() or Game.Get():IsServer())
 	then
 		dynamicCollisionData =  DynamicObject();
-		dynamicCollisionData:AddCollisionData(collisionActor3);
+		dynamicCollisionData:AddCollisionData(collisionActor4);
 		dynamicCollisionData:SetCollisionType(true);
 		dynamicCollisionData:SetCollisionThickness(0.0);
 		dynamicCollisionData:SetBoundingRectangleCheckingTileMap(true);
@@ -364,7 +484,7 @@ function Set_Level0_Layer1_Objects()
 	end
 
 	Bullet_7_Sprite:SetName("Bullet");
-	Bullet_7_Sprite:SetCollisionActorIndex(3);
+	Bullet_7_Sprite:SetCollisionActorIndex(4);
 	Bullet_7_Sprite:SetOpacity(1.0);
 	Bullet_7_Sprite:Play(true);
 	Bullet_7_Sprite:SetPosition(Point2D(0.0,-600.0));
@@ -398,7 +518,7 @@ function Set_Level0_Layer1_Objects()
 	if(not Game.Get():IsNetworkGame() or Game.Get():IsServer())
 	then
 		dynamicCollisionData =  DynamicObject();
-		dynamicCollisionData:AddCollisionData(collisionActor4);
+		dynamicCollisionData:AddCollisionData(collisionActor5);
 		dynamicCollisionData:SetCollisionType(true);
 		dynamicCollisionData:SetCollisionThickness(0.0);
 		dynamicCollisionData:SetBoundingRectangleCheckingTileMap(true);
@@ -410,7 +530,7 @@ function Set_Level0_Layer1_Objects()
 	end
 
 	HomingEnemy_8_Sprite:SetName("HomingEnemy");
-	HomingEnemy_8_Sprite:SetCollisionActorIndex(4);
+	HomingEnemy_8_Sprite:SetCollisionActorIndex(5);
 	HomingEnemy_8_Sprite:SetOpacity(1.0);
 	HomingEnemy_8_Sprite:Play(true);
 	HomingEnemy_8_Sprite:SetPosition(Point2D(200.0,100.0));
@@ -584,12 +704,15 @@ function Reset()
 
 	--Texts
 	timer_10_Text = 0;
+	score_11_Text = 0;
+	multiplier_12_Text = 0;
 
 	--Sounds
 
 	--TileMaps
 
 	--Sprites
+	lives_13_Sprite = 0;
 	Background_3_Sprite = 0;
 	Map_4_Sprite = 0;
 	Ship_5_Sprite = 0;

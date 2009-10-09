@@ -1,6 +1,17 @@
-/*
- * Marcus Meng
- */
+/*******************************************************************************
+filename	fibonacci.c
+author		Marcus Meng
+DP email	marcus.meng@digipen.edu
+course		CS120
+section		A
+assignment	3
+due date	October 9, 2009
+
+Brief Description:
+	This program displays all the fibonacci numbers up to the index specified
+	by the user. The index must be between 2 and 46, inclusive.
+
+*******************************************************************************/
 
 #include <stdio.h> /* Just need printf and scanf for this. */
 #include <math.h> /* Square root function. */
@@ -53,6 +64,10 @@ void print_header()
 	printf(" N           number          quotient\n");
 	printf("-------------------------------------\n");
 
+	/* Stick the first two indices in the header, since they're always
+	 * the same anyways.
+	 */
+
 	for (i = 0; i < 2; ++i)
 	{
 		printf("%2i%14i                  N/A\n", i, i);
@@ -68,6 +83,8 @@ void fibonacci(int end_value)
 	double current_value = 1.0, previous_value = 1.0, temp = 0.0;
 
 	print_header();
+
+	/* Start from 2, since the first two indices are in the header. */
 
 	for(i=2; i <= end_value; ++i)
 	{

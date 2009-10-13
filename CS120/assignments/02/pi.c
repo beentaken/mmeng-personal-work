@@ -46,9 +46,12 @@ double circle_pi(int rectangles)
 
 	for (i = 0; i < rectangles; ++i)
 	{
+		/* Add 0.5 to each width measurement to use midpoint instead of left
+		 * corner for the height calculation. */
         sum += width * height((0.5+i)*width, RADIUS);
 	}
 
+	/* sqrt(RADIUS*RADIUS) is always 1, since radius is 1. So don't use it. */
     return(4.0 * sum);
 }
 
@@ -63,6 +66,8 @@ double leibniz_pi(int iterations)
 
 	while (denominator < iterations*2)
 	{
+		/* denominator is always twice as large as the number of iterations
+		 * we've gone through, so make sure to cut it in half. */
 	    if ((denominator/2) % 2 == 0)
 		{
 	        sum += 1.0 / denominator;

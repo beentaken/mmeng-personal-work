@@ -1,0 +1,8 @@
+env = Environment()
+
+env.Append(CCFLAGS = ['-Werror', '-Wall','-Wextra','-ansi','-pedantic'])
+
+source_files = ("pi.c", "main.c")
+
+numbers = env.Program(target="main", source=source_files, LIBS='m')
+

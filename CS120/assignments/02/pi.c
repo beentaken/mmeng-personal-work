@@ -32,7 +32,7 @@ Brief Description:
  ****************************************************************************/
 double height(double base, double hypotenuse)
 {
-  return(sqrt(hypotenuse*hypotenuse - base*base));
+  return(sqrt(hypotenuse * hypotenuse - base * base));
 }
 
 /*****************************************************************************
@@ -58,7 +58,7 @@ double circle_pi(int rectangles)
   {
     /* Add 0.5 to each width measurement to use midpoint instead of left
      * corner for the height calculation. */
-    sum += width * height((0.5+i)*width, RADIUS);
+    sum += width * height((0.5 + i) * width, RADIUS);
   }
 
   /* sqrt(RADIUS*RADIUS) is always 1, since radius is 1. So don't use it. */

@@ -32,7 +32,7 @@ Brief Description:
  ****************************************************************************/
 double height(double base, double hypotenuse)
 {
-  return(sqrt(hypotenuse*hypotenuse - base*base));
+    return(sqrt(hypotenuse*hypotenuse - base*base));
 }
 
 /*****************************************************************************
@@ -47,22 +47,22 @@ double height(double base, double hypotenuse)
  ****************************************************************************/
 double circle_pi(int rectangles)
 {
-  /* Iteration counter for the 'for' loop. */
-  int i;
+	/* Iteration counter for the 'for' loop. */
+    int i;
 
-  /* sum accumulates the areas of the rectangles in the loop.
-   * width is the base length of each rectangle. */
-  double sum = 0.0, width = RADIUS/rectangles;
+	/* sum accumulates the areas of the rectangles in the loop.
+	 * width is the base length of each rectangle. */
+	double sum = 0.0, width = RADIUS/rectangles;
 
-  for (i = 0; i < rectangles; ++i)
-  {
-    /* Add 0.5 to each width measurement to use midpoint instead of left
-     * corner for the height calculation. */
-    sum += width * height((0.5+i)*width, RADIUS);
-  }
+	for (i = 0; i < rectangles; ++i)
+	{
+		/* Add 0.5 to each width measurement to use midpoint instead of left
+		 * corner for the height calculation. */
+        sum += width * height((0.5+i)*width, RADIUS);
+	}
 
-  /* sqrt(RADIUS*RADIUS) is always 1, since radius is 1. So don't use it. */
-  return(4.0 * sum);
+	/* sqrt(RADIUS*RADIUS) is always 1, since radius is 1. So don't use it. */
+    return(4.0 * sum);
 }
 
 /*****************************************************************************
@@ -77,31 +77,31 @@ double circle_pi(int rectangles)
  ****************************************************************************/
 double leibniz_pi(int iterations)
 {
-  /* First term is 1/1. */
-  int denominator = 1;
+	/* First term is 1/1. */
+	int denominator = 1;
 
-  /* Accumulate the approximation in sum. */
-  double sum = 0.0;
+	/* Accumulate the approximation in sum. */
+	double sum = 0.0;
 
-  while (denominator < iterations * 2)
-  {
-    /* denominator is always twice as large as the number of iterations
-     * we've gone through, so make sure to cut it in half before testing
-     * whether we're on an even or odd iteration. */
-    if ((denominator / 2) % 2 == 0)
-    {
-      sum += 1.0 / denominator;
-    }
-    else
-    {
-      sum -= 1.0 / denominator;
-    }
-    
-    denominator += 2;
-  }
+	while (denominator < iterations * 2)
+	{
+		/* denominator is always twice as large as the number of iterations
+		 * we've gone through, so make sure to cut it in half before testing
+		 * whether we're on an even or odd iteration. */
+	    if ((denominator / 2) % 2 == 0)
+		{
+	        sum += 1.0 / denominator;
+	    }
+		else
+		{
+		    sum -= 1.0 / denominator;
+		}
+		
+		denominator += 2;
+	}
 
-  /* Formula approximates pi/4, so make sure to scale the value back up
-   * when it's returned. */
-  return(sum * 4);
+	/* Formula approximates pi/4, so make sure to scale the value back up
+	 * when it's returned. */
+    return(sum * 4);
 }
 

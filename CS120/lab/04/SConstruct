@@ -1,0 +1,13 @@
+env = Environment()
+
+env.Append(CCFLAGS = ['-Wall','-Wextra','-ansi','-pedantic'])
+
+env.Append(CCFLAGS = ['-DNDEBUG'])
+
+source_files = Split("""
+	main.c
+	triple_cube.c
+	""")
+
+lab03 = env.Program(target="lab03", source=source_files)
+

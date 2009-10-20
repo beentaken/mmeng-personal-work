@@ -35,6 +35,24 @@ ORG	0x18
 ORG	0x040   ; Set program memory at any address beyond the needs of interrupt service routines  
 
 start         
- NOP		
+ MOVLW num1_h ; Set up NUM1 to represent the full number.
+ MOVWF NUM1+1
+ MOVLW num1_l
+ MOVWF NUM1
+
+ MOVLW num2_h ; Set up NUM2 to represent the full number.
+ MOVWF NUM2+1
+ MOVLW num2_l
+ MOVWF NUM2
+
+ MOVF NUM1, W			; Multiply high bits and store into upper result.
+ MULWF NUM2
+ MOVFF PRODL, RESULT
+ MOVFF PRODH, RESULT+1		
+
+ MOVF NUM1+1, W
+ MULWF NUM2+1
+ MOVFF PRODL, RESULT+2
+ MOVFF PRODH, RESULT+3
 
 END

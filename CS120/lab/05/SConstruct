@@ -1,0 +1,13 @@
+env = Environment()
+
+env.Append(CCFLAGS = ['-Werror', '-Wall','-Wextra','-ansi','-pedantic'])
+
+env.Append(CCFLAGS = ['-DNDEBUG'])
+
+source_files = Split("""
+	main.c
+	primes1.c
+	""")
+
+lab7 = env.Program(target="lab7", source=source_files)
+

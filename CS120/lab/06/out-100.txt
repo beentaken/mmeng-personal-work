@@ -1,0 +1,36 @@
+Prime #0001:     2
+Prime #0002:     3
+Prime #0003:     5
+Prime #0004:     7
+Prime #0005:    11
+Prime #0006:    13
+Prime #0007:    17
+Prime #0008:    19
+Prime #0009:    23
+Prime #0010:    29
+Prime #0011:    31
+Prime #0012:    37
+Prime #0013:    41
+Prime #0014:    43
+Prime #0015:    47
+Prime #0016:    53
+Prime #0017:    59
+Prime #0018:    61
+Prime #0019:    67
+Prime #0020:    71
+Prime #0021:    73
+Prime #0022:    79
+Prime #0023:    83
+Prime #0024:    89
+Prime #0025:    97
+25 primes found between 0 and 100.
+twin prime #   1:    3 and    5
+twin prime #   2:    5 and    7
+twin prime #   3:   11 and   13
+twin prime #   4:   17 and   19
+twin prime #   5:   29 and   31
+twin prime #   6:   41 and   43
+twin prime #   7:   59 and   61
+twin prime #   8:   71 and   73
+8 twin primes found between 0 and 100.
+Brun's constant with 8 twin primes is 1.330990365719.

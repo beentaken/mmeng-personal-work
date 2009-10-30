@@ -1,0 +1,1437 @@
+Prime #0001:     2
+Prime #0002:     3
+Prime #0003:     5
+Prime #0004:     7
+Prime #0005:    11
+Prime #0006:    13
+Prime #0007:    17
+Prime #0008:    19
+Prime #0009:    23
+Prime #0010:    29
+Prime #0011:    31
+Prime #0012:    37
+Prime #0013:    41
+Prime #0014:    43
+Prime #0015:    47
+Prime #0016:    53
+Prime #0017:    59
+Prime #0018:    61
+Prime #0019:    67
+Prime #0020:    71
+Prime #0021:    73
+Prime #0022:    79
+Prime #0023:    83
+Prime #0024:    89
+Prime #0025:    97
+Prime #0026:   101
+Prime #0027:   103
+Prime #0028:   107
+Prime #0029:   109
+Prime #0030:   113
+Prime #0031:   127
+Prime #0032:   131
+Prime #0033:   137
+Prime #0034:   139
+Prime #0035:   149
+Prime #0036:   151
+Prime #0037:   157
+Prime #0038:   163
+Prime #0039:   167
+Prime #0040:   173
+Prime #0041:   179
+Prime #0042:   181
+Prime #0043:   191
+Prime #0044:   193
+Prime #0045:   197
+Prime #0046:   199
+Prime #0047:   211
+Prime #0048:   223
+Prime #0049:   227
+Prime #0050:   229
+Prime #0051:   233
+Prime #0052:   239
+Prime #0053:   241
+Prime #0054:   251
+Prime #0055:   257
+Prime #0056:   263
+Prime #0057:   269
+Prime #0058:   271
+Prime #0059:   277
+Prime #0060:   281
+Prime #0061:   283
+Prime #0062:   293
+Prime #0063:   307
+Prime #0064:   311
+Prime #0065:   313
+Prime #0066:   317
+Prime #0067:   331
+Prime #0068:   337
+Prime #0069:   347
+Prime #0070:   349
+Prime #0071:   353
+Prime #0072:   359
+Prime #0073:   367
+Prime #0074:   373
+Prime #0075:   379
+Prime #0076:   383
+Prime #0077:   389
+Prime #0078:   397
+Prime #0079:   401
+Prime #0080:   409
+Prime #0081:   419
+Prime #0082:   421
+Prime #0083:   431
+Prime #0084:   433
+Prime #0085:   439
+Prime #0086:   443
+Prime #0087:   449
+Prime #0088:   457
+Prime #0089:   461
+Prime #0090:   463
+Prime #0091:   467
+Prime #0092:   479
+Prime #0093:   487
+Prime #0094:   491
+Prime #0095:   499
+Prime #0096:   503
+Prime #0097:   509
+Prime #0098:   521
+Prime #0099:   523
+Prime #0100:   541
+Prime #0101:   547
+Prime #0102:   557
+Prime #0103:   563
+Prime #0104:   569
+Prime #0105:   571
+Prime #0106:   577
+Prime #0107:   587
+Prime #0108:   593
+Prime #0109:   599
+Prime #0110:   601
+Prime #0111:   607
+Prime #0112:   613
+Prime #0113:   617
+Prime #0114:   619
+Prime #0115:   631
+Prime #0116:   641
+Prime #0117:   643
+Prime #0118:   647
+Prime #0119:   653
+Prime #0120:   659
+Prime #0121:   661
+Prime #0122:   673
+Prime #0123:   677
+Prime #0124:   683
+Prime #0125:   691
+Prime #0126:   701
+Prime #0127:   709
+Prime #0128:   719
+Prime #0129:   727
+Prime #0130:   733
+Prime #0131:   739
+Prime #0132:   743
+Prime #0133:   751
+Prime #0134:   757
+Prime #0135:   761
+Prime #0136:   769
+Prime #0137:   773
+Prime #0138:   787
+Prime #0139:   797
+Prime #0140:   809
+Prime #0141:   811
+Prime #0142:   821
+Prime #0143:   823
+Prime #0144:   827
+Prime #0145:   829
+Prime #0146:   839
+Prime #0147:   853
+Prime #0148:   857
+Prime #0149:   859
+Prime #0150:   863
+Prime #0151:   877
+Prime #0152:   881
+Prime #0153:   883
+Prime #0154:   887
+Prime #0155:   907
+Prime #0156:   911
+Prime #0157:   919
+Prime #0158:   929
+Prime #0159:   937
+Prime #0160:   941
+Prime #0161:   947
+Prime #0162:   953
+Prime #0163:   967
+Prime #0164:   971
+Prime #0165:   977
+Prime #0166:   983
+Prime #0167:   991
+Prime #0168:   997
+Prime #0169:  1009
+Prime #0170:  1013
+Prime #0171:  1019
+Prime #0172:  1021
+Prime #0173:  1031
+Prime #0174:  1033
+Prime #0175:  1039
+Prime #0176:  1049
+Prime #0177:  1051
+Prime #0178:  1061
+Prime #0179:  1063
+Prime #0180:  1069
+Prime #0181:  1087
+Prime #0182:  1091
+Prime #0183:  1093
+Prime #0184:  1097
+Prime #0185:  1103
+Prime #0186:  1109
+Prime #0187:  1117
+Prime #0188:  1123
+Prime #0189:  1129
+Prime #0190:  1151
+Prime #0191:  1153
+Prime #0192:  1163
+Prime #0193:  1171
+Prime #0194:  1181
+Prime #0195:  1187
+Prime #0196:  1193
+Prime #0197:  1201
+Prime #0198:  1213
+Prime #0199:  1217
+Prime #0200:  1223
+Prime #0201:  1229
+Prime #0202:  1231
+Prime #0203:  1237
+Prime #0204:  1249
+Prime #0205:  1259
+Prime #0206:  1277
+Prime #0207:  1279
+Prime #0208:  1283
+Prime #0209:  1289
+Prime #0210:  1291
+Prime #0211:  1297
+Prime #0212:  1301
+Prime #0213:  1303
+Prime #0214:  1307
+Prime #0215:  1319
+Prime #0216:  1321
+Prime #0217:  1327
+Prime #0218:  1361
+Prime #0219:  1367
+Prime #0220:  1373
+Prime #0221:  1381
+Prime #0222:  1399
+Prime #0223:  1409
+Prime #0224:  1423
+Prime #0225:  1427
+Prime #0226:  1429
+Prime #0227:  1433
+Prime #0228:  1439
+Prime #0229:  1447
+Prime #0230:  1451
+Prime #0231:  1453
+Prime #0232:  1459
+Prime #0233:  1471
+Prime #0234:  1481
+Prime #0235:  1483
+Prime #0236:  1487
+Prime #0237:  1489
+Prime #0238:  1493
+Prime #0239:  1499
+Prime #0240:  1511
+Prime #0241:  1523
+Prime #0242:  1531
+Prime #0243:  1543
+Prime #0244:  1549
+Prime #0245:  1553
+Prime #0246:  1559
+Prime #0247:  1567
+Prime #0248:  1571
+Prime #0249:  1579
+Prime #0250:  1583
+Prime #0251:  1597
+Prime #0252:  1601
+Prime #0253:  1607
+Prime #0254:  1609
+Prime #0255:  1613
+Prime #0256:  1619
+Prime #0257:  1621
+Prime #0258:  1627
+Prime #0259:  1637
+Prime #0260:  1657
+Prime #0261:  1663
+Prime #0262:  1667
+Prime #0263:  1669
+Prime #0264:  1693
+Prime #0265:  1697
+Prime #0266:  1699
+Prime #0267:  1709
+Prime #0268:  1721
+Prime #0269:  1723
+Prime #0270:  1733
+Prime #0271:  1741
+Prime #0272:  1747
+Prime #0273:  1753
+Prime #0274:  1759
+Prime #0275:  1777
+Prime #0276:  1783
+Prime #0277:  1787
+Prime #0278:  1789
+Prime #0279:  1801
+Prime #0280:  1811
+Prime #0281:  1823
+Prime #0282:  1831
+Prime #0283:  1847
+Prime #0284:  1861
+Prime #0285:  1867
+Prime #0286:  1871
+Prime #0287:  1873
+Prime #0288:  1877
+Prime #0289:  1879
+Prime #0290:  1889
+Prime #0291:  1901
+Prime #0292:  1907
+Prime #0293:  1913
+Prime #0294:  1931
+Prime #0295:  1933
+Prime #0296:  1949
+Prime #0297:  1951
+Prime #0298:  1973
+Prime #0299:  1979
+Prime #0300:  1987
+Prime #0301:  1993
+Prime #0302:  1997
+Prime #0303:  1999
+Prime #0304:  2003
+Prime #0305:  2011
+Prime #0306:  2017
+Prime #0307:  2027
+Prime #0308:  2029
+Prime #0309:  2039
+Prime #0310:  2053
+Prime #0311:  2063
+Prime #0312:  2069
+Prime #0313:  2081
+Prime #0314:  2083
+Prime #0315:  2087
+Prime #0316:  2089
+Prime #0317:  2099
+Prime #0318:  2111
+Prime #0319:  2113
+Prime #0320:  2129
+Prime #0321:  2131
+Prime #0322:  2137
+Prime #0323:  2141
+Prime #0324:  2143
+Prime #0325:  2153
+Prime #0326:  2161
+Prime #0327:  2179
+Prime #0328:  2203
+Prime #0329:  2207
+Prime #0330:  2213
+Prime #0331:  2221
+Prime #0332:  2237
+Prime #0333:  2239
+Prime #0334:  2243
+Prime #0335:  2251
+Prime #0336:  2267
+Prime #0337:  2269
+Prime #0338:  2273
+Prime #0339:  2281
+Prime #0340:  2287
+Prime #0341:  2293
+Prime #0342:  2297
+Prime #0343:  2309
+Prime #0344:  2311
+Prime #0345:  2333
+Prime #0346:  2339
+Prime #0347:  2341
+Prime #0348:  2347
+Prime #0349:  2351
+Prime #0350:  2357
+Prime #0351:  2371
+Prime #0352:  2377
+Prime #0353:  2381
+Prime #0354:  2383
+Prime #0355:  2389
+Prime #0356:  2393
+Prime #0357:  2399
+Prime #0358:  2411
+Prime #0359:  2417
+Prime #0360:  2423
+Prime #0361:  2437
+Prime #0362:  2441
+Prime #0363:  2447
+Prime #0364:  2459
+Prime #0365:  2467
+Prime #0366:  2473
+Prime #0367:  2477
+Prime #0368:  2503
+Prime #0369:  2521
+Prime #0370:  2531
+Prime #0371:  2539
+Prime #0372:  2543
+Prime #0373:  2549
+Prime #0374:  2551
+Prime #0375:  2557
+Prime #0376:  2579
+Prime #0377:  2591
+Prime #0378:  2593
+Prime #0379:  2609
+Prime #0380:  2617
+Prime #0381:  2621
+Prime #0382:  2633
+Prime #0383:  2647
+Prime #0384:  2657
+Prime #0385:  2659
+Prime #0386:  2663
+Prime #0387:  2671
+Prime #0388:  2677
+Prime #0389:  2683
+Prime #0390:  2687
+Prime #0391:  2689
+Prime #0392:  2693
+Prime #0393:  2699
+Prime #0394:  2707
+Prime #0395:  2711
+Prime #0396:  2713
+Prime #0397:  2719
+Prime #0398:  2729
+Prime #0399:  2731
+Prime #0400:  2741
+Prime #0401:  2749
+Prime #0402:  2753
+Prime #0403:  2767
+Prime #0404:  2777
+Prime #0405:  2789
+Prime #0406:  2791
+Prime #0407:  2797
+Prime #0408:  2801
+Prime #0409:  2803
+Prime #0410:  2819
+Prime #0411:  2833
+Prime #0412:  2837
+Prime #0413:  2843
+Prime #0414:  2851
+Prime #0415:  2857
+Prime #0416:  2861
+Prime #0417:  2879
+Prime #0418:  2887
+Prime #0419:  2897
+Prime #0420:  2903
+Prime #0421:  2909
+Prime #0422:  2917
+Prime #0423:  2927
+Prime #0424:  2939
+Prime #0425:  2953
+Prime #0426:  2957
+Prime #0427:  2963
+Prime #0428:  2969
+Prime #0429:  2971
+Prime #0430:  2999
+Prime #0431:  3001
+Prime #0432:  3011
+Prime #0433:  3019
+Prime #0434:  3023
+Prime #0435:  3037
+Prime #0436:  3041
+Prime #0437:  3049
+Prime #0438:  3061
+Prime #0439:  3067
+Prime #0440:  3079
+Prime #0441:  3083
+Prime #0442:  3089
+Prime #0443:  3109
+Prime #0444:  3119
+Prime #0445:  3121
+Prime #0446:  3137
+Prime #0447:  3163
+Prime #0448:  3167
+Prime #0449:  3169
+Prime #0450:  3181
+Prime #0451:  3187
+Prime #0452:  3191
+Prime #0453:  3203
+Prime #0454:  3209
+Prime #0455:  3217
+Prime #0456:  3221
+Prime #0457:  3229
+Prime #0458:  3251
+Prime #0459:  3253
+Prime #0460:  3257
+Prime #0461:  3259
+Prime #0462:  3271
+Prime #0463:  3299
+Prime #0464:  3301
+Prime #0465:  3307
+Prime #0466:  3313
+Prime #0467:  3319
+Prime #0468:  3323
+Prime #0469:  3329
+Prime #0470:  3331
+Prime #0471:  3343
+Prime #0472:  3347
+Prime #0473:  3359
+Prime #0474:  3361
+Prime #0475:  3371
+Prime #0476:  3373
+Prime #0477:  3389
+Prime #0478:  3391
+Prime #0479:  3407
+Prime #0480:  3413
+Prime #0481:  3433
+Prime #0482:  3449
+Prime #0483:  3457
+Prime #0484:  3461
+Prime #0485:  3463
+Prime #0486:  3467
+Prime #0487:  3469
+Prime #0488:  3491
+Prime #0489:  3499
+Prime #0490:  3511
+Prime #0491:  3517
+Prime #0492:  3527
+Prime #0493:  3529
+Prime #0494:  3533
+Prime #0495:  3539
+Prime #0496:  3541
+Prime #0497:  3547
+Prime #0498:  3557
+Prime #0499:  3559
+Prime #0500:  3571
+Prime #0501:  3581
+Prime #0502:  3583
+Prime #0503:  3593
+Prime #0504:  3607
+Prime #0505:  3613
+Prime #0506:  3617
+Prime #0507:  3623
+Prime #0508:  3631
+Prime #0509:  3637
+Prime #0510:  3643
+Prime #0511:  3659
+Prime #0512:  3671
+Prime #0513:  3673
+Prime #0514:  3677
+Prime #0515:  3691
+Prime #0516:  3697
+Prime #0517:  3701
+Prime #0518:  3709
+Prime #0519:  3719
+Prime #0520:  3727
+Prime #0521:  3733
+Prime #0522:  3739
+Prime #0523:  3761
+Prime #0524:  3767
+Prime #0525:  3769
+Prime #0526:  3779
+Prime #0527:  3793
+Prime #0528:  3797
+Prime #0529:  3803
+Prime #0530:  3821
+Prime #0531:  3823
+Prime #0532:  3833
+Prime #0533:  3847
+Prime #0534:  3851
+Prime #0535:  3853
+Prime #0536:  3863
+Prime #0537:  3877
+Prime #0538:  3881
+Prime #0539:  3889
+Prime #0540:  3907
+Prime #0541:  3911
+Prime #0542:  3917
+Prime #0543:  3919
+Prime #0544:  3923
+Prime #0545:  3929
+Prime #0546:  3931
+Prime #0547:  3943
+Prime #0548:  3947
+Prime #0549:  3967
+Prime #0550:  3989
+Prime #0551:  4001
+Prime #0552:  4003
+Prime #0553:  4007
+Prime #0554:  4013
+Prime #0555:  4019
+Prime #0556:  4021
+Prime #0557:  4027
+Prime #0558:  4049
+Prime #0559:  4051
+Prime #0560:  4057
+Prime #0561:  4073
+Prime #0562:  4079
+Prime #0563:  4091
+Prime #0564:  4093
+Prime #0565:  4099
+Prime #0566:  4111
+Prime #0567:  4127
+Prime #0568:  4129
+Prime #0569:  4133
+Prime #0570:  4139
+Prime #0571:  4153
+Prime #0572:  4157
+Prime #0573:  4159
+Prime #0574:  4177
+Prime #0575:  4201
+Prime #0576:  4211
+Prime #0577:  4217
+Prime #0578:  4219
+Prime #0579:  4229
+Prime #0580:  4231
+Prime #0581:  4241
+Prime #0582:  4243
+Prime #0583:  4253
+Prime #0584:  4259
+Prime #0585:  4261
+Prime #0586:  4271
+Prime #0587:  4273
+Prime #0588:  4283
+Prime #0589:  4289
+Prime #0590:  4297
+Prime #0591:  4327
+Prime #0592:  4337
+Prime #0593:  4339
+Prime #0594:  4349
+Prime #0595:  4357
+Prime #0596:  4363
+Prime #0597:  4373
+Prime #0598:  4391
+Prime #0599:  4397
+Prime #0600:  4409
+Prime #0601:  4421
+Prime #0602:  4423
+Prime #0603:  4441
+Prime #0604:  4447
+Prime #0605:  4451
+Prime #0606:  4457
+Prime #0607:  4463
+Prime #0608:  4481
+Prime #0609:  4483
+Prime #0610:  4493
+Prime #0611:  4507
+Prime #0612:  4513
+Prime #0613:  4517
+Prime #0614:  4519
+Prime #0615:  4523
+Prime #0616:  4547
+Prime #0617:  4549
+Prime #0618:  4561
+Prime #0619:  4567
+Prime #0620:  4583
+Prime #0621:  4591
+Prime #0622:  4597
+Prime #0623:  4603
+Prime #0624:  4621
+Prime #0625:  4637
+Prime #0626:  4639
+Prime #0627:  4643
+Prime #0628:  4649
+Prime #0629:  4651
+Prime #0630:  4657
+Prime #0631:  4663
+Prime #0632:  4673
+Prime #0633:  4679
+Prime #0634:  4691
+Prime #0635:  4703
+Prime #0636:  4721
+Prime #0637:  4723
+Prime #0638:  4729
+Prime #0639:  4733
+Prime #0640:  4751
+Prime #0641:  4759
+Prime #0642:  4783
+Prime #0643:  4787
+Prime #0644:  4789
+Prime #0645:  4793
+Prime #0646:  4799
+Prime #0647:  4801
+Prime #0648:  4813
+Prime #0649:  4817
+Prime #0650:  4831
+Prime #0651:  4861
+Prime #0652:  4871
+Prime #0653:  4877
+Prime #0654:  4889
+Prime #0655:  4903
+Prime #0656:  4909
+Prime #0657:  4919
+Prime #0658:  4931
+Prime #0659:  4933
+Prime #0660:  4937
+Prime #0661:  4943
+Prime #0662:  4951
+Prime #0663:  4957
+Prime #0664:  4967
+Prime #0665:  4969
+Prime #0666:  4973
+Prime #0667:  4987
+Prime #0668:  4993
+Prime #0669:  4999
+Prime #0670:  5003
+Prime #0671:  5009
+Prime #0672:  5011
+Prime #0673:  5021
+Prime #0674:  5023
+Prime #0675:  5039
+Prime #0676:  5051
+Prime #0677:  5059
+Prime #0678:  5077
+Prime #0679:  5081
+Prime #0680:  5087
+Prime #0681:  5099
+Prime #0682:  5101
+Prime #0683:  5107
+Prime #0684:  5113
+Prime #0685:  5119
+Prime #0686:  5147
+Prime #0687:  5153
+Prime #0688:  5167
+Prime #0689:  5171
+Prime #0690:  5179
+Prime #0691:  5189
+Prime #0692:  5197
+Prime #0693:  5209
+Prime #0694:  5227
+Prime #0695:  5231
+Prime #0696:  5233
+Prime #0697:  5237
+Prime #0698:  5261
+Prime #0699:  5273
+Prime #0700:  5279
+Prime #0701:  5281
+Prime #0702:  5297
+Prime #0703:  5303
+Prime #0704:  5309
+Prime #0705:  5323
+Prime #0706:  5333
+Prime #0707:  5347
+Prime #0708:  5351
+Prime #0709:  5381
+Prime #0710:  5387
+Prime #0711:  5393
+Prime #0712:  5399
+Prime #0713:  5407
+Prime #0714:  5413
+Prime #0715:  5417
+Prime #0716:  5419
+Prime #0717:  5431
+Prime #0718:  5437
+Prime #0719:  5441
+Prime #0720:  5443
+Prime #0721:  5449
+Prime #0722:  5471
+Prime #0723:  5477
+Prime #0724:  5479
+Prime #0725:  5483
+Prime #0726:  5501
+Prime #0727:  5503
+Prime #0728:  5507
+Prime #0729:  5519
+Prime #0730:  5521
+Prime #0731:  5527
+Prime #0732:  5531
+Prime #0733:  5557
+Prime #0734:  5563
+Prime #0735:  5569
+Prime #0736:  5573
+Prime #0737:  5581
+Prime #0738:  5591
+Prime #0739:  5623
+Prime #0740:  5639
+Prime #0741:  5641
+Prime #0742:  5647
+Prime #0743:  5651
+Prime #0744:  5653
+Prime #0745:  5657
+Prime #0746:  5659
+Prime #0747:  5669
+Prime #0748:  5683
+Prime #0749:  5689
+Prime #0750:  5693
+Prime #0751:  5701
+Prime #0752:  5711
+Prime #0753:  5717
+Prime #0754:  5737
+Prime #0755:  5741
+Prime #0756:  5743
+Prime #0757:  5749
+Prime #0758:  5779
+Prime #0759:  5783
+Prime #0760:  5791
+Prime #0761:  5801
+Prime #0762:  5807
+Prime #0763:  5813
+Prime #0764:  5821
+Prime #0765:  5827
+Prime #0766:  5839
+Prime #0767:  5843
+Prime #0768:  5849
+Prime #0769:  5851
+Prime #0770:  5857
+Prime #0771:  5861
+Prime #0772:  5867
+Prime #0773:  5869
+Prime #0774:  5879
+Prime #0775:  5881
+Prime #0776:  5897
+Prime #0777:  5903
+Prime #0778:  5923
+Prime #0779:  5927
+Prime #0780:  5939
+Prime #0781:  5953
+Prime #0782:  5981
+Prime #0783:  5987
+Prime #0784:  6007
+Prime #0785:  6011
+Prime #0786:  6029
+Prime #0787:  6037
+Prime #0788:  6043
+Prime #0789:  6047
+Prime #0790:  6053
+Prime #0791:  6067
+Prime #0792:  6073
+Prime #0793:  6079
+Prime #0794:  6089
+Prime #0795:  6091
+Prime #0796:  6101
+Prime #0797:  6113
+Prime #0798:  6121
+Prime #0799:  6131
+Prime #0800:  6133
+Prime #0801:  6143
+Prime #0802:  6151
+Prime #0803:  6163
+Prime #0804:  6173
+Prime #0805:  6197
+Prime #0806:  6199
+Prime #0807:  6203
+Prime #0808:  6211
+Prime #0809:  6217
+Prime #0810:  6221
+Prime #0811:  6229
+Prime #0812:  6247
+Prime #0813:  6257
+Prime #0814:  6263
+Prime #0815:  6269
+Prime #0816:  6271
+Prime #0817:  6277
+Prime #0818:  6287
+Prime #0819:  6299
+Prime #0820:  6301
+Prime #0821:  6311
+Prime #0822:  6317
+Prime #0823:  6323
+Prime #0824:  6329
+Prime #0825:  6337
+Prime #0826:  6343
+Prime #0827:  6353
+Prime #0828:  6359
+Prime #0829:  6361
+Prime #0830:  6367
+Prime #0831:  6373
+Prime #0832:  6379
+Prime #0833:  6389
+Prime #0834:  6397
+Prime #0835:  6421
+Prime #0836:  6427
+Prime #0837:  6449
+Prime #0838:  6451
+Prime #0839:  6469
+Prime #0840:  6473
+Prime #0841:  6481
+Prime #0842:  6491
+Prime #0843:  6521
+Prime #0844:  6529
+Prime #0845:  6547
+Prime #0846:  6551
+Prime #0847:  6553
+Prime #0848:  6563
+Prime #0849:  6569
+Prime #0850:  6571
+Prime #0851:  6577
+Prime #0852:  6581
+Prime #0853:  6599
+Prime #0854:  6607
+Prime #0855:  6619
+Prime #0856:  6637
+Prime #0857:  6653
+Prime #0858:  6659
+Prime #0859:  6661
+Prime #0860:  6673
+Prime #0861:  6679
+Prime #0862:  6689
+Prime #0863:  6691
+Prime #0864:  6701
+Prime #0865:  6703
+Prime #0866:  6709
+Prime #0867:  6719
+Prime #0868:  6733
+Prime #0869:  6737
+Prime #0870:  6761
+Prime #0871:  6763
+Prime #0872:  6779
+Prime #0873:  6781
+Prime #0874:  6791
+Prime #0875:  6793
+Prime #0876:  6803
+Prime #0877:  6823
+Prime #0878:  6827
+Prime #0879:  6829
+Prime #0880:  6833
+Prime #0881:  6841
+Prime #0882:  6857
+Prime #0883:  6863
+Prime #0884:  6869
+Prime #0885:  6871
+Prime #0886:  6883
+Prime #0887:  6899
+Prime #0888:  6907
+Prime #0889:  6911
+Prime #0890:  6917
+Prime #0891:  6947
+Prime #0892:  6949
+Prime #0893:  6959
+Prime #0894:  6961
+Prime #0895:  6967
+Prime #0896:  6971
+Prime #0897:  6977
+Prime #0898:  6983
+Prime #0899:  6991
+Prime #0900:  6997
+Prime #0901:  7001
+Prime #0902:  7013
+Prime #0903:  7019
+Prime #0904:  7027
+Prime #0905:  7039
+Prime #0906:  7043
+Prime #0907:  7057
+Prime #0908:  7069
+Prime #0909:  7079
+Prime #0910:  7103
+Prime #0911:  7109
+Prime #0912:  7121
+Prime #0913:  7127
+Prime #0914:  7129
+Prime #0915:  7151
+Prime #0916:  7159
+Prime #0917:  7177
+Prime #0918:  7187
+Prime #0919:  7193
+Prime #0920:  7207
+Prime #0921:  7211
+Prime #0922:  7213
+Prime #0923:  7219
+Prime #0924:  7229
+Prime #0925:  7237
+Prime #0926:  7243
+Prime #0927:  7247
+Prime #0928:  7253
+Prime #0929:  7283
+Prime #0930:  7297
+Prime #0931:  7307
+Prime #0932:  7309
+Prime #0933:  7321
+Prime #0934:  7331
+Prime #0935:  7333
+Prime #0936:  7349
+Prime #0937:  7351
+Prime #0938:  7369
+Prime #0939:  7393
+Prime #0940:  7411
+Prime #0941:  7417
+Prime #0942:  7433
+Prime #0943:  7451
+Prime #0944:  7457
+Prime #0945:  7459
+Prime #0946:  7477
+Prime #0947:  7481
+Prime #0948:  7487
+Prime #0949:  7489
+Prime #0950:  7499
+Prime #0951:  7507
+Prime #0952:  7517
+Prime #0953:  7523
+Prime #0954:  7529
+Prime #0955:  7537
+Prime #0956:  7541
+Prime #0957:  7547
+Prime #0958:  7549
+Prime #0959:  7559
+Prime #0960:  7561
+Prime #0961:  7573
+Prime #0962:  7577
+Prime #0963:  7583
+Prime #0964:  7589
+Prime #0965:  7591
+Prime #0966:  7603
+Prime #0967:  7607
+Prime #0968:  7621
+Prime #0969:  7639
+Prime #0970:  7643
+Prime #0971:  7649
+Prime #0972:  7669
+Prime #0973:  7673
+Prime #0974:  7681
+Prime #0975:  7687
+Prime #0976:  7691
+Prime #0977:  7699
+Prime #0978:  7703
+Prime #0979:  7717
+Prime #0980:  7723
+Prime #0981:  7727
+Prime #0982:  7741
+Prime #0983:  7753
+Prime #0984:  7757
+Prime #0985:  7759
+Prime #0986:  7789
+Prime #0987:  7793
+Prime #0988:  7817
+Prime #0989:  7823
+Prime #0990:  7829
+Prime #0991:  7841
+Prime #0992:  7853
+Prime #0993:  7867
+Prime #0994:  7873
+Prime #0995:  7877
+Prime #0996:  7879
+Prime #0997:  7883
+Prime #0998:  7901
+Prime #0999:  7907
+Prime #1000:  7919
+Prime #1001:  7927
+Prime #1002:  7933
+Prime #1003:  7937
+Prime #1004:  7949
+Prime #1005:  7951
+Prime #1006:  7963
+Prime #1007:  7993
+Prime #1008:  8009
+Prime #1009:  8011
+Prime #1010:  8017
+Prime #1011:  8039
+Prime #1012:  8053
+Prime #1013:  8059
+Prime #1014:  8069
+Prime #1015:  8081
+Prime #1016:  8087
+Prime #1017:  8089
+Prime #1018:  8093
+Prime #1019:  8101
+Prime #1020:  8111
+Prime #1021:  8117
+Prime #1022:  8123
+Prime #1023:  8147
+Prime #1024:  8161
+Prime #1025:  8167
+Prime #1026:  8171
+Prime #1027:  8179
+Prime #1028:  8191
+Prime #1029:  8209
+Prime #1030:  8219
+Prime #1031:  8221
+Prime #1032:  8231
+Prime #1033:  8233
+Prime #1034:  8237
+Prime #1035:  8243
+Prime #1036:  8263
+Prime #1037:  8269
+Prime #1038:  8273
+Prime #1039:  8287
+Prime #1040:  8291
+Prime #1041:  8293
+Prime #1042:  8297
+Prime #1043:  8311
+Prime #1044:  8317
+Prime #1045:  8329
+Prime #1046:  8353
+Prime #1047:  8363
+Prime #1048:  8369
+Prime #1049:  8377
+Prime #1050:  8387
+Prime #1051:  8389
+Prime #1052:  8419
+Prime #1053:  8423
+Prime #1054:  8429
+Prime #1055:  8431
+Prime #1056:  8443
+Prime #1057:  8447
+Prime #1058:  8461
+Prime #1059:  8467
+Prime #1060:  8501
+Prime #1061:  8513
+Prime #1062:  8521
+Prime #1063:  8527
+Prime #1064:  8537
+Prime #1065:  8539
+Prime #1066:  8543
+Prime #1067:  8563
+Prime #1068:  8573
+Prime #1069:  8581
+Prime #1070:  8597
+Prime #1071:  8599
+Prime #1072:  8609
+Prime #1073:  8623
+Prime #1074:  8627
+Prime #1075:  8629
+Prime #1076:  8641
+Prime #1077:  8647
+Prime #1078:  8663
+Prime #1079:  8669
+Prime #1080:  8677
+Prime #1081:  8681
+Prime #1082:  8689
+Prime #1083:  8693
+Prime #1084:  8699
+Prime #1085:  8707
+Prime #1086:  8713
+Prime #1087:  8719
+Prime #1088:  8731
+Prime #1089:  8737
+Prime #1090:  8741
+Prime #1091:  8747
+Prime #1092:  8753
+Prime #1093:  8761
+Prime #1094:  8779
+Prime #1095:  8783
+Prime #1096:  8803
+Prime #1097:  8807
+Prime #1098:  8819
+Prime #1099:  8821
+Prime #1100:  8831
+Prime #1101:  8837
+Prime #1102:  8839
+Prime #1103:  8849
+Prime #1104:  8861
+Prime #1105:  8863
+Prime #1106:  8867
+Prime #1107:  8887
+Prime #1108:  8893
+Prime #1109:  8923
+Prime #1110:  8929
+Prime #1111:  8933
+Prime #1112:  8941
+Prime #1113:  8951
+Prime #1114:  8963
+Prime #1115:  8969
+Prime #1116:  8971
+Prime #1117:  8999
+Prime #1118:  9001
+Prime #1119:  9007
+Prime #1120:  9011
+Prime #1121:  9013
+Prime #1122:  9029
+Prime #1123:  9041
+Prime #1124:  9043
+Prime #1125:  9049
+Prime #1126:  9059
+Prime #1127:  9067
+Prime #1128:  9091
+Prime #1129:  9103
+Prime #1130:  9109
+Prime #1131:  9127
+Prime #1132:  9133
+Prime #1133:  9137
+Prime #1134:  9151
+Prime #1135:  9157
+Prime #1136:  9161
+Prime #1137:  9173
+Prime #1138:  9181
+Prime #1139:  9187
+Prime #1140:  9199
+Prime #1141:  9203
+Prime #1142:  9209
+Prime #1143:  9221
+Prime #1144:  9227
+Prime #1145:  9239
+Prime #1146:  9241
+Prime #1147:  9257
+Prime #1148:  9277
+Prime #1149:  9281
+Prime #1150:  9283
+Prime #1151:  9293
+Prime #1152:  9311
+Prime #1153:  9319
+Prime #1154:  9323
+Prime #1155:  9337
+Prime #1156:  9341
+Prime #1157:  9343
+Prime #1158:  9349
+Prime #1159:  9371
+Prime #1160:  9377
+Prime #1161:  9391
+Prime #1162:  9397
+Prime #1163:  9403
+Prime #1164:  9413
+Prime #1165:  9419
+Prime #1166:  9421
+Prime #1167:  9431
+Prime #1168:  9433
+Prime #1169:  9437
+Prime #1170:  9439
+Prime #1171:  9461
+Prime #1172:  9463
+Prime #1173:  9467
+Prime #1174:  9473
+Prime #1175:  9479
+Prime #1176:  9491
+Prime #1177:  9497
+Prime #1178:  9511
+Prime #1179:  9521
+Prime #1180:  9533
+Prime #1181:  9539
+Prime #1182:  9547
+Prime #1183:  9551
+Prime #1184:  9587
+Prime #1185:  9601
+Prime #1186:  9613
+Prime #1187:  9619
+Prime #1188:  9623
+Prime #1189:  9629
+Prime #1190:  9631
+Prime #1191:  9643
+Prime #1192:  9649
+Prime #1193:  9661
+Prime #1194:  9677
+Prime #1195:  9679
+Prime #1196:  9689
+Prime #1197:  9697
+Prime #1198:  9719
+Prime #1199:  9721
+Prime #1200:  9733
+Prime #1201:  9739
+Prime #1202:  9743
+Prime #1203:  9749
+Prime #1204:  9767
+Prime #1205:  9769
+Prime #1206:  9781
+Prime #1207:  9787
+Prime #1208:  9791
+Prime #1209:  9803
+Prime #1210:  9811
+Prime #1211:  9817
+Prime #1212:  9829
+Prime #1213:  9833
+Prime #1214:  9839
+Prime #1215:  9851
+Prime #1216:  9857
+Prime #1217:  9859
+Prime #1218:  9871
+Prime #1219:  9883
+Prime #1220:  9887
+Prime #1221:  9901
+Prime #1222:  9907
+Prime #1223:  9923
+Prime #1224:  9929
+Prime #1225:  9931
+Prime #1226:  9941
+Prime #1227:  9949
+Prime #1228:  9967
+Prime #1229:  9973
+1229 primes found between 0 and 10000.
+twin prime #   1:    3 and    5
+twin prime #   2:    5 and    7
+twin prime #   3:   11 and   13
+twin prime #   4:   17 and   19
+twin prime #   5:   29 and   31
+twin prime #   6:   41 and   43
+twin prime #   7:   59 and   61
+twin prime #   8:   71 and   73
+twin prime #   9:  101 and  103
+twin prime #  10:  107 and  109
+twin prime #  11:  137 and  139
+twin prime #  12:  149 and  151
+twin prime #  13:  179 and  181
+twin prime #  14:  191 and  193
+twin prime #  15:  197 and  199
+twin prime #  16:  227 and  229
+twin prime #  17:  239 and  241
+twin prime #  18:  269 and  271
+twin prime #  19:  281 and  283
+twin prime #  20:  311 and  313
+twin prime #  21:  347 and  349
+twin prime #  22:  419 and  421
+twin prime #  23:  431 and  433
+twin prime #  24:  461 and  463
+twin prime #  25:  521 and  523
+twin prime #  26:  569 and  571
+twin prime #  27:  599 and  601
+twin prime #  28:  617 and  619
+twin prime #  29:  641 and  643
+twin prime #  30:  659 and  661
+twin prime #  31:  809 and  811
+twin prime #  32:  821 and  823
+twin prime #  33:  827 and  829
+twin prime #  34:  857 and  859
+twin prime #  35:  881 and  883
+twin prime #  36: 1019 and 1021
+twin prime #  37: 1031 and 1033
+twin prime #  38: 1049 and 1051
+twin prime #  39: 1061 and 1063
+twin prime #  40: 1091 and 1093
+twin prime #  41: 1151 and 1153
+twin prime #  42: 1229 and 1231
+twin prime #  43: 1277 and 1279
+twin prime #  44: 1289 and 1291
+twin prime #  45: 1301 and 1303
+twin prime #  46: 1319 and 1321
+twin prime #  47: 1427 and 1429
+twin prime #  48: 1451 and 1453
+twin prime #  49: 1481 and 1483
+twin prime #  50: 1487 and 1489
+twin prime #  51: 1607 and 1609
+twin prime #  52: 1619 and 1621
+twin prime #  53: 1667 and 1669
+twin prime #  54: 1697 and 1699
+twin prime #  55: 1721 and 1723
+twin prime #  56: 1787 and 1789
+twin prime #  57: 1871 and 1873
+twin prime #  58: 1877 and 1879
+twin prime #  59: 1931 and 1933
+twin prime #  60: 1949 and 1951
+twin prime #  61: 1997 and 1999
+twin prime #  62: 2027 and 2029
+twin prime #  63: 2081 and 2083
+twin prime #  64: 2087 and 2089
+twin prime #  65: 2111 and 2113
+twin prime #  66: 2129 and 2131
+twin prime #  67: 2141 and 2143
+twin prime #  68: 2237 and 2239
+twin prime #  69: 2267 and 2269
+twin prime #  70: 2309 and 2311
+twin prime #  71: 2339 and 2341
+twin prime #  72: 2381 and 2383
+twin prime #  73: 2549 and 2551
+twin prime #  74: 2591 and 2593
+twin prime #  75: 2657 and 2659
+twin prime #  76: 2687 and 2689
+twin prime #  77: 2711 and 2713
+twin prime #  78: 2729 and 2731
+twin prime #  79: 2789 and 2791
+twin prime #  80: 2801 and 2803
+twin prime #  81: 2969 and 2971
+twin prime #  82: 2999 and 3001
+twin prime #  83: 3119 and 3121
+twin prime #  84: 3167 and 3169
+twin prime #  85: 3251 and 3253
+twin prime #  86: 3257 and 3259
+twin prime #  87: 3299 and 3301
+twin prime #  88: 3329 and 3331
+twin prime #  89: 3359 and 3361
+twin prime #  90: 3371 and 3373
+twin prime #  91: 3389 and 3391
+twin prime #  92: 3461 and 3463
+twin prime #  93: 3467 and 3469
+twin prime #  94: 3527 and 3529
+twin prime #  95: 3539 and 3541
+twin prime #  96: 3557 and 3559
+twin prime #  97: 3581 and 3583
+twin prime #  98: 3671 and 3673
+twin prime #  99: 3767 and 3769
+twin prime # 100: 3821 and 3823
+twin prime # 101: 3851 and 3853
+twin prime # 102: 3917 and 3919
+twin prime # 103: 3929 and 3931
+twin prime # 104: 4001 and 4003
+twin prime # 105: 4019 and 4021
+twin prime # 106: 4049 and 4051
+twin prime # 107: 4091 and 4093
+twin prime # 108: 4127 and 4129
+twin prime # 109: 4157 and 4159
+twin prime # 110: 4217 and 4219
+twin prime # 111: 4229 and 4231
+twin prime # 112: 4241 and 4243
+twin prime # 113: 4259 and 4261
+twin prime # 114: 4271 and 4273
+twin prime # 115: 4337 and 4339
+twin prime # 116: 4421 and 4423
+twin prime # 117: 4481 and 4483
+twin prime # 118: 4517 and 4519
+twin prime # 119: 4547 and 4549
+twin prime # 120: 4637 and 4639
+twin prime # 121: 4649 and 4651
+twin prime # 122: 4721 and 4723
+twin prime # 123: 4787 and 4789
+twin prime # 124: 4799 and 4801
+twin prime # 125: 4931 and 4933
+twin prime # 126: 4967 and 4969
+twin prime # 127: 5009 and 5011
+twin prime # 128: 5021 and 5023
+twin prime # 129: 5099 and 5101
+twin prime # 130: 5231 and 5233
+twin prime # 131: 5279 and 5281
+twin prime # 132: 5417 and 5419
+twin prime # 133: 5441 and 5443
+twin prime # 134: 5477 and 5479
+twin prime # 135: 5501 and 5503
+twin prime # 136: 5519 and 5521
+twin prime # 137: 5639 and 5641
+twin prime # 138: 5651 and 5653
+twin prime # 139: 5657 and 5659
+twin prime # 140: 5741 and 5743
+twin prime # 141: 5849 and 5851
+twin prime # 142: 5867 and 5869
+twin prime # 143: 5879 and 5881
+twin prime # 144: 6089 and 6091
+twin prime # 145: 6131 and 6133
+twin prime # 146: 6197 and 6199
+twin prime # 147: 6269 and 6271
+twin prime # 148: 6299 and 6301
+twin prime # 149: 6359 and 6361
+twin prime # 150: 6449 and 6451
+twin prime # 151: 6551 and 6553
+twin prime # 152: 6569 and 6571
+twin prime # 153: 6659 and 6661
+twin prime # 154: 6689 and 6691
+twin prime # 155: 6701 and 6703
+twin prime # 156: 6761 and 6763
+twin prime # 157: 6779 and 6781
+twin prime # 158: 6791 and 6793
+twin prime # 159: 6827 and 6829
+twin prime # 160: 6869 and 6871
+twin prime # 161: 6947 and 6949
+twin prime # 162: 6959 and 6961
+twin prime # 163: 7127 and 7129
+twin prime # 164: 7211 and 7213
+twin prime # 165: 7307 and 7309
+twin prime # 166: 7331 and 7333
+twin prime # 167: 7349 and 7351
+twin prime # 168: 7457 and 7459
+twin prime # 169: 7487 and 7489
+twin prime # 170: 7547 and 7549
+twin prime # 171: 7559 and 7561
+twin prime # 172: 7589 and 7591
+twin prime # 173: 7757 and 7759
+twin prime # 174: 7877 and 7879
+twin prime # 175: 7949 and 7951
+twin prime # 176: 8009 and 8011
+twin prime # 177: 8087 and 8089
+twin prime # 178: 8219 and 8221
+twin prime # 179: 8231 and 8233
+twin prime # 180: 8291 and 8293
+twin prime # 181: 8387 and 8389
+twin prime # 182: 8429 and 8431
+twin prime # 183: 8537 and 8539
+twin prime # 184: 8597 and 8599
+twin prime # 185: 8627 and 8629
+twin prime # 186: 8819 and 8821
+twin prime # 187: 8837 and 8839
+twin prime # 188: 8861 and 8863
+twin prime # 189: 8969 and 8971
+twin prime # 190: 8999 and 9001
+twin prime # 191: 9011 and 9013
+twin prime # 192: 9041 and 9043
+twin prime # 193: 9239 and 9241
+twin prime # 194: 9281 and 9283
+twin prime # 195: 9341 and 9343
+twin prime # 196: 9419 and 9421
+twin prime # 197: 9431 and 9433
+twin prime # 198: 9437 and 9439
+twin prime # 199: 9461 and 9463
+twin prime # 200: 9629 and 9631
+twin prime # 201: 9677 and 9679
+twin prime # 202: 9719 and 9721
+twin prime # 203: 9767 and 9769
+twin prime # 204: 9857 and 9859
+twin prime # 205: 9929 and 9931
+205 twin primes found between 0 and 10000.
+Brun's constant with 205 twin primes is 1.616893557432.

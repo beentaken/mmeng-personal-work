@@ -1,0 +1,15 @@
+env = Environment()
+
+env.Append(CCFLAGS = ['-Werror', '-Wall','-Wextra','-ansi','-pedantic'])
+
+env.Append(CCFLAGS = ['-DNDEBUG'])
+
+source_files = Split("""
+	main.c
+	sieve.c
+	""")
+
+libraries = ['m']
+
+primes = env.Program(target="primes", LIBS=libraries, source=source_files)
+

@@ -2,7 +2,7 @@ env = Environment()
 
 env.Append(CCFLAGS = ['-Werror', '-Wall','-Wextra','-ansi','-pedantic'])
 
-source_files = ("array.c", "main.c")
+source_files = ("array.c", "main2.c")
 
 array = env.Program(target="array", source=source_files)
 

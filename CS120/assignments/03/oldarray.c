@@ -23,15 +23,15 @@ Description: Given an array, it will reverse it.
 ******************************************************************************/
 void reverse_array(int a[], int size)
 {
-  int temp, i;
+	int temp, i;
 
-  for (i = 0; i < size - i - 1; ++i)
-  {
-    /* Swap a[i] with a[size - 1 - i]. */
-    temp = a[i];
-    a[i] = a[size - i - 1];
-    a[size - i - 1] = temp;
-  }
+	for (i = 0; i < size - i - 1; ++i)
+	{
+		/* Swap a[i] with a[size - 1 - i]. */
+		temp = a[i];
+		a[i] = a[size - i - 1];
+		a[size - i - 1] = temp;
+	}
 }
 
 /******************************************************************************
@@ -49,12 +49,12 @@ Description: Given two arrays of equal size, puts the sum of the elements of
 ******************************************************************************/
 void add_arrays(const int a[], const int b[], int c[], int size)
 {
-  int i;
+	int i;
 
-  for (i = 0; i < size; ++i)
-  {
-    c[i] = a[i] + b[i];
-  }
+	for (i = 0; i < size; ++i)
+	{
+		c[i] = a[i] + b[i];
+	}
 }
 
 /******************************************************************************
@@ -70,12 +70,12 @@ Description: Multiplies all elements of an array by a factor.
 ******************************************************************************/
 void scalar_multiply(int a[], int size, int multiplier)
 {
-  int i;
+	int i;
 
-  for (i = 0; i < size; ++i)
-  {
-    a[i] *= multiplier;
-  }
+	for (i = 0; i < size; ++i)
+	{
+		a[i] *= multiplier;
+	}
 }
 
 /******************************************************************************
@@ -91,15 +91,15 @@ Description: Calculates the dot product of two given integer arrays.
 ******************************************************************************/
 int dot_product(const int a[], const int b[], int size)
 {
-  int sum = 0;
-  int i;
+	int sum = 0;
+	int i;
 
-  for (i = 0; i < size; ++i)
-  {
-    sum += a[i] * b[i];
-  }
+	for (i = 0; i < size; ++i)
+	{
+		sum += a[i] * b[i];
+	}
 
-  return sum;
+	return sum;
 }
 
 /******************************************************************************
@@ -115,8 +115,8 @@ Description: Calculates the cross product of two given arrays.
 ******************************************************************************/
 void cross_product(const int a[], const int b[], int c[])
 {
-  c[0] =   a[1] * b[2] - a[2] * b[1];
-  c[1] = -(b[2] * a[0] - b[0] * a[2]);
-  c[2] =   a[0] * b[1] - a[1] * b[0];
+	c[0] =   a[1] * b[2] - a[2] * b[1];
+	c[1] = -(b[2] * a[0] - b[0] * a[2]);
+	c[2] =   a[0] * b[1] - a[1] * b[0];
 }
 

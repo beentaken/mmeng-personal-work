@@ -1,0 +1,19 @@
+env = Environment()
+
+env.Append(CCFLAGS = ['-Werror', '-Wall','-Wextra','-ansi','-pedantic'])
+
+env.Append(CCFLAGS = ['-DNDEBUG'])
+
+human_files = Split("""
+	human.c
+	""")
+
+computer_files = Split("""
+	computer.c
+	""")
+
+libraries = ['m']
+
+human = env.Program(target="human", source=human_files)
+computer = env.Program(target="computer", source=computer_files)
+

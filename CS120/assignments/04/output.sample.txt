@@ -1,0 +1,36 @@
+Testing #1: a is a palindrome
+Testing #2: a is a palindrome
+
+Testing #1: ab is not a palindrome
+Testing #2: ab is not a palindrome
+
+Testing #1: aa is a palindrome
+Testing #2: aa is a palindrome
+
+Testing #1: abcdcba is a palindrome
+Testing #2: abcdcba is a palindrome
+
+Testing #1: madamImadam is a palindrome
+Testing #2: madamImadam is a palindrome
+
+Testing #1: madamIamadam is not a palindrome
+Testing #2: madamIamadam is not a palindrome
+
+Testing #1: aBcDEDcBa is a palindrome
+Testing #2: aBcDEDcBa is a palindrome
+
+Testing #1: aBcDEEDcBa is a palindrome
+Testing #2: aBcDEEDcBa is a palindrome
+
+Testing #1: aBcDEeDcBa is not a palindrome
+Testing #2: aBcDEeDcBa is not a palindrome
+
+Testing #1: helivedasadevileh is a palindrome
+Testing #2: helivedasadevileh is a palindrome
+
+Testing #1: bottom is not a palindrome
+Testing #2: bottom is not a palindrome
+
+Testing #1: 12321 is a palindrome
+Testing #2: 12321 is a palindrome
+

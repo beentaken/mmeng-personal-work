@@ -1,0 +1,8 @@
+env = Environment()
+
+env.Append(CCFLAGS = ['-Werror', '-Wall','-Wextra','-ansi','-pedantic'])
+
+source_files = ("palindrome1.c", "palindrome2.c",  "main.c")
+
+pal = env.Program(target="pal", source=source_files)
+

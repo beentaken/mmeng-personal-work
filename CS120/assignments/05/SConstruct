@@ -1,0 +1,8 @@
+env = Environment()
+
+env.Append(CCFLAGS = ['-Werror', '-Wall','-Wextra','-ansi','-pedantic'])
+
+source_files = ("main.c", "jumble.c")
+
+jumble = env.Program(target="jumble", source=source_files)
+

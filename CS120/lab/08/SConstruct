@@ -1,0 +1,15 @@
+env = Environment()
+
+env.Append(CCFLAGS = ['-Werror', '-Wall','-Wextra','-ansi','-pedantic'])
+
+env.Append(CCFLAGS = ['-DNDEBUG'])
+
+source_files = Split("""
+	main.c
+	reverse.c
+	""")
+
+libraries = ['m']
+
+reverse = env.Program(target="reverse", source=source_files)
+

@@ -1,0 +1,8 @@
+env = Environment()
+
+env.Append(CCFLAGS = ['-Werror', '-Wall','-Wextra','-ansi','-pedantic'])
+
+source_files = ("driver.c", "scantext.c")
+
+scantext = env.Program(target="scantext", source=source_files)
+

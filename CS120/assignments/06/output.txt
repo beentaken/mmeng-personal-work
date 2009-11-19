@@ -37,11 +37,11 @@ With tab size of 4, the print length is 6.
 
 == test5 ==========================================================
 |This is a simple string.|
-Word count is  4
+Word count is  5
 
 == test6 ==========================================================
 |These	words	are	separated	by	tabs.|
-Word count is  5
+Word count is  6
 
 == test7 ==========================================================
 |  This string has leading and trailing spaces.  |

@@ -37,7 +37,7 @@ Description: Determines if a character is a space, tab, or newline.
 
      Inputs: glyph - the character to check.
 
-    Outputs: Returns 1 if the character is a space, tab, or newline, 0 otherwise.
+    Outputs: Returns 1 if character is a space, tab, or newline, 0 otherwise.
 ******************************************************************************/
 static int is_whitespace(const char glyph)
 {
@@ -151,7 +151,8 @@ Description: Finds the current and display lengths of a null-terminated string.
     Outputs: string_length contains the length of the unmodified string.
              display_length contains length of the string with tabs expanded.
 ******************************************************************************/
-void calculate_lengths(const char *string, int tabsize, int *string_length, int *display_length)
+void calculate_lengths(const char *string, int tabsize,
+                       int *string_length, int *display_length)
 {
   *string_length = mystrlen(string);
   *display_length = (*string_length) + ((tabsize - 1) * count_tabs(string));

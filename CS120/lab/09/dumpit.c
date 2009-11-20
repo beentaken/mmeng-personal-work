@@ -36,7 +36,7 @@ static void format(const char* inbuf, char *outbuf, int count, int start)
 	/* Replace nonprintables with a dot. */
 	for (i = MAX_OUTPUT_LENGTH - MAX_INPUT_LENGTH - 1; i < MAX_OUTPUT_LENGTH; ++i)
 	{
-		if (outbuf[i] <= 32 || outbuf[i] >= 126)
+		if (outbuf[i] < 32 || outbuf[i] > 126)
 		{
 			outbuf[i] = '.';
 		}

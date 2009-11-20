@@ -1,0 +1,15 @@
+env = Environment()
+
+env.Append(CCFLAGS = ['-Werror', '-Wall','-Wextra','-ansi','-pedantic'])
+
+env.Append(CCFLAGS = ['-DNDEBUG'])
+
+source_files = Split("""
+	main.c
+	dumpit.c
+	""")
+
+libraries = ['m']
+
+dumpit = env.Program(target="dumpit", source=source_files)
+

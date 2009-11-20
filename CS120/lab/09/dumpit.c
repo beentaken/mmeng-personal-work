@@ -24,19 +24,20 @@ static void format(const char* inbuf, char *outbuf, int count, int start)
 		if (8 == i)
 			++offset;
 		/* Position the format so that it overwrites the previous terminator. */
-		sprintf(outbuf + (3 * i) + offset, "%02X  ", inbuf[i]);
+		sprintf(outbuf + (3 * i) + offset, "%02X  ", ((unsigned char *)inbuf)[i]);
 	}
 
 	/* Remove the terminator that sprintf adds. */
-	outbuf[3 * i + offset + 1] = ' ';
+	outbuf[(3 * i) + offset + 1] = ' ';
 
 	/* Dump inbuf into the end of outbuf. */
 	strncpy(outbuf + (MAX_OUTPUT_LENGTH - MAX_INPUT_LENGTH - 1), inbuf, count);
 
 	/* Replace nonprintables with a dot. */
-	for (i = MAX_OUTPUT_LENGTH - MAX_INPUT_LENGTH - 1; i < MAX_OUTPUT_LENGTH; ++i)
+	for (i = MAX_OUTPUT_LENGTH - MAX_INPUT_LENGTH - 1;
+		i < MAX_OUTPUT_LENGTH - (MAX_INPUT_LENGTH - count); ++i)
 	{
-		if (outbuf[i] < 32 || outbuf[i] > 126)
+		if ((outbuf[i] < ' ') || (outbuf[i] > '~'))
 		{
 			outbuf[i] = '.';
 		}

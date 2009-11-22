@@ -31,7 +31,7 @@ static void format(const char* inbuf, char *outbuf, int count, int start)
 	outbuf[(3 * i) + offset + 1] = ' ';
 
 	/* Dump inbuf into the end of outbuf. */
-	strncpy(outbuf + (MAX_OUTPUT_LENGTH - MAX_INPUT_LENGTH - 1), inbuf, count);
+	memcpy(outbuf + (MAX_OUTPUT_LENGTH - MAX_INPUT_LENGTH - 1), inbuf, count);
 
 	/* Replace nonprintables with a dot. */
 	for (i = MAX_OUTPUT_LENGTH - MAX_INPUT_LENGTH - 1;

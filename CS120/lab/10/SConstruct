@@ -1,0 +1,41 @@
+env = Environment()
+
+env.Append(CCFLAGS = ['-Werror', '-Wall','-Wextra','-ansi','-pedantic'])
+
+env.Append(CCFLAGS = ['-DNDEBUG'])
+
+fractions_source_files = Split("""
+	main_fractions.c
+	fractions.c
+	""")
+
+tablen_source_files = Split("""
+	main_tablen.c
+	tablen.c
+	""")
+
+propercase_source_files = Split("""
+	main_propercase.c
+	propercase.c
+	""")
+
+stripcomments_source_files = Split("""
+	main_stripcomments.c
+	stripcomments.c
+	""")
+
+decoder_source_files = Split("""
+	main_decoder.c
+	decoder.c
+	""")
+
+libraries = ['m']
+
+fractions = env.Program(target="fractions", source=fractions_source_files)
+tablen = env.Program(target="tablen", source=tablen_source_files)
+propercase = env.Program(target="propercase", source=propercase_source_files)
+stripcomments = env.Program(target="stripcomments", source=stripcomments_source_files)
+decoder = env.Program(target="decoder", source=decoder_source_files)
+
+Default(fractions)
+

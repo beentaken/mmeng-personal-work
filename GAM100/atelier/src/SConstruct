@@ -1,0 +1,10 @@
+env = Environment()
+
+env.Append(CCFLAGS = ['-std=c99', '-Werror', '-Wall','-Wextra','-pedantic'])
+
+source_files = Split("""main.c
+			parser.c
+			""")
+
+release = env.Program(target="atelier", source=source_files)
+

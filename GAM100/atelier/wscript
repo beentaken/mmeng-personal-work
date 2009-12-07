@@ -1,0 +1,24 @@
+#! /usr/bin/env python
+# encoding: utf-8
+# Marcus Meng 2009
+
+# the following two variables are used by the target "waf dist"
+VERSION='0.0.1'
+APPNAME='atelier'
+
+# these variables are mandatory ('/' are converted automatically)
+srcdir = '.'
+blddir = 'build'
+
+def set_options(opt):
+	#opt.tool_options('compiler_cc')
+	pass
+
+def configure(conf):
+	#conf.check_tool('compiler_cc')
+	conf.check_tool('gcc')
+	conf.env.CCFLAGS = ['-Wextra', '-Wall', '-std=c99', '-pedantic']
+
+def build(bld):
+	bld.add_subdirs('src')
+

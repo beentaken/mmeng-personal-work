@@ -5,7 +5,10 @@
 #ifndef PARSER_H
 #define PARSER_H
 
+#include "definitions.h"
+
 void test_print(void);
+struct COMMAND get_command(void);
 
 #endif
 

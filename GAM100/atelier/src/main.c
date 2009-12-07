@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 
-#include "parser.h"
+#include "game.h"
 
 int main(int argc, char* argv[])
 {
@@ -12,7 +12,8 @@ int main(int argc, char* argv[])
 	{
 		puts(argv[1]);
 	}
-	test_print();
+
+	while(game_loop());
 	return 0;
 }
 

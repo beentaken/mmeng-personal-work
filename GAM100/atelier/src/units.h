@@ -56,5 +56,8 @@ unit * create_unit(enum UNIT_TYPE type, enum ELEMENT aspect, int power, unit * p
 BOOL destroy_unit(unit * to_destroy);
 void display_units(unit * head);
 
+// Internal stuff for cleanups and things. Should never be called on its own.
+void destroy_all_units(unit * head);
+
 #endif
 

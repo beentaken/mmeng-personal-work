@@ -2,7 +2,11 @@
 
 BOOL game_loop(unit * head, unit * tail)
 {
-	struct COMMAND current_order = get_command();
+	struct COMMAND current_order;
+
+	display_units(head);
+
+	current_order = get_command();
 
 	switch(current_order.order)
 	{
@@ -11,22 +15,15 @@ BOOL game_loop(unit * head, unit * tail)
 		case CREATE:
 			if (tail == NULL)
 			{
-				tail = create_unit(DIODE, WOOD, current_order.value, tail);
+				tail = create_unit(DIODE, WOOD, current_order.value, head);
 			}
 			else
 			{
 				create_unit(DIODE, WOOD, current_order.value, tail);
 			}
 			assert(tail != NULL);
-
-			if (head == NULL)
-			{
-				head = tail;
-			}
-
 			assert(head != NULL);
 
-			display_units(head);
 			break;
 		case INVALID:
 		default:

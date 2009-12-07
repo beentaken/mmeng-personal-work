@@ -16,9 +16,16 @@ int main(int argc, char* argv[])
 
 	unit * head;
 	unit * tail;
-	head = tail = NULL;
+	// Hardcoding an initial setup. This will change once an actual level
+	// system is implemented.
+	head = create_unit(DIODE, FIRE, 200, NULL);
+	tail = head->next;
 
 	while(game_loop(head, tail));
+
+	// Do some cleanup before we leave. Can't have the OS steal all the
+	// fun, after all, right?
+//	destroy_all_units(head);
 
 	return 0;
 }

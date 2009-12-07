@@ -1,5 +1,6 @@
 #include "units.h"
 
+// This is adding it before the tail, instead of after. Hmmm. Must fix.
 unit * create_unit(enum UNIT_TYPE type, enum ELEMENT aspect, int power, unit * parent)
 {
 	unit * new_unit = malloc(sizeof(unit));
@@ -31,10 +32,29 @@ BOOL destroy_unit(unit * to_destroy)
 
 		if (to_destroy->next)
 		{
-			to_destroy->next->prev = to_destroy->prev;
-		}
+			if (to_destroy->prev)
+			{
+				to_destroy->next->prev = to_destroy->prev;
+				to_destroy->prev->next = to_destroy->next;
 
-		free(to_destroy);
+				free(to_destroy);
+			}
+			else
+			{
+				unit *temp = to_destroy;
+				to_destroy = to_destroy->next;
+
+				free(temp);
+			}
+
+		}
+		else
+		{
+			unit * temp = to_destroy;
+			to_destroy = NULL;
+
+			free(temp);
+		}
 
 		return TRUE;
 	}
@@ -87,6 +107,14 @@ void display_units(unit * head)
 		printf("(%d)\n", head->power);
 
 		display_units(head->next);
+	}
+}
+
+void destroy_all_units(unit * head)
+{
+	while (head != NULL)
+	{
+		destroy_unit(head);
 	}
 }
 

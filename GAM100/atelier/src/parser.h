@@ -5,6 +5,10 @@
 #ifndef PARSER_H
 #define PARSER_H
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
 #include "definitions.h"
 
 void test_print(void);

@@ -5,6 +5,7 @@
 #include <stdio.h>
 
 #include "game.h"
+#include "units.h"
 
 int main(int argc, char* argv[])
 {
@@ -13,7 +14,12 @@ int main(int argc, char* argv[])
 		puts(argv[1]);
 	}
 
-	while(game_loop());
+	unit * head;
+	unit * tail;
+	head = tail = NULL;
+
+	while(game_loop(head, tail));
+
 	return 0;
 }
 

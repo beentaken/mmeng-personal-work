@@ -1,6 +1,7 @@
 #ifndef UNITS_H
 #define UNITS_H
 
+#include <assert.h>
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -52,9 +53,9 @@ typedef struct UNIT_STRUCT unit;
 
 // Functions to manipulate stuff.
 
-unit * create_unit(enum UNIT_TYPE type, enum ELEMENT aspect, int power, unit * parent);
+unit * create_unit(const enum UNIT_TYPE type, const enum ELEMENT aspect, const int power, unit * parent);
 BOOL destroy_unit(unit * to_destroy);
-void display_units(unit * head);
+void display_units(const unit * head);
 
 // Internal stuff for cleanups and things. Should never be called on its own.
 void destroy_all_units(unit * head);

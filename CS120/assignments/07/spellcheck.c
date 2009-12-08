@@ -26,6 +26,7 @@ int info(const char *dictionary, int *shortest, int *longest, int *num_words)
 {
 	FILE *working_file = fopen(dictionary, "rt"); /* Current dictionary. */
 	char current_word[LONGEST_WORD];
+
 	if (working_file == NULL)
 	{
 		return FILE_ERR_OPEN;
@@ -40,6 +41,7 @@ int info(const char *dictionary, int *shortest, int *longest, int *num_words)
 	while (current_word != NULL)
 	{
 		int length;
+
 		current_word[strlen(current_word)] = '\0';
 		length = strlen(current_word);
 
@@ -56,6 +58,8 @@ int info(const char *dictionary, int *shortest, int *longest, int *num_words)
 
 		fgets(current_word, LONGEST_WORD, working_file);
 	}
+
+	fclose(working_file);
 
 	return FILE_OK;
 }
@@ -75,7 +79,7 @@ int spell_check(const char *dictionary, const char *word)
 	while (current_word != NULL)
 	{
 		mystrupr(current_word);
-		current_word[strlen(current_word)] = '\0';
+		current_word[strlen(current_word) - 1] = '\0';
 		if (strcmp(current_word, word))
 		{
 			fclose(working_file);
@@ -103,11 +107,12 @@ int word_lengths(const char *dictionary, int lengths[], int count)
 	memset(lengths, sizeof(int), sizeof(int) * count);
 
 	fgets(current_word, LONGEST_WORD, working_file);
-	current_word[strlen(current_word)] = '\0';
 
 	while (current_word != NULL)
 	{
-		int length = strlen(current_word);
+		int length;
+		current_word[strlen(current_word) - 1] = '\0';
+		length = strlen(current_word);
 
 		if (length < count)
 		{
@@ -115,7 +120,6 @@ int word_lengths(const char *dictionary, int lengths[], int count)
 		}
 
 		fgets(current_word, LONGEST_WORD, working_file);
-		current_word[strlen(current_word)] = '\0';
 	}
 
 	fclose(working_file);

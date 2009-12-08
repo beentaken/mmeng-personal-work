@@ -1,0 +1,8 @@
+env = Environment()
+
+env.Append(CCFLAGS = ['-Werror', '-Wall','-Wextra','-ansi','-pedantic'])
+
+source_files = ("driver.c", "spellcheck.c")
+
+spell = env.Program(target="spell", source=source_files)
+

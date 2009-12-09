@@ -1,4 +1,4 @@
-/*******************************************************************************
+/******************************************************************************
 filename    spellcheck.c
 author      Marcus Meng
 DP email    marcus.meng@digipen.edu
@@ -9,7 +9,7 @@ due date    December 09, 2009
 
 Brief Description:
   Contains functions for reading data out of simple dictionary text files.
-*******************************************************************************/
+******************************************************************************/
 #include <string.h> /* strlen, strcmp, strcpy, memset */
 #include <stdio.h>  /* FILE, fopen, fgets, fclose */
 

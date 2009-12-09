@@ -192,9 +192,8 @@ int main(void)
 
   test2("lexicon.txt");
   test2("small.txt");
-#if 0
   test2("allwords.txt");
-#endif
+
   test3("lexicon.txt", 'a');
   test3("lexicon.txt", 'A');
   test3("lexicon.txt", 'l');

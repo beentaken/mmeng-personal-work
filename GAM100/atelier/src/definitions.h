@@ -21,12 +21,16 @@ enum COMMAND_LIST
 	INVALID,
 	// Menu and metagame stuff.
 	SAVE,
+	NEW_GAME,
+	RETURN_TO_MENU,
+	CREDITS,
+	HELP,
 	QUIT,
 	// In-game stuff.
 	MOVE,
 	CREATE,
 	REMOVE,
-	ATTACH
+	SWITCH_LINES
 };
 
 struct COMMAND

@@ -1,0 +1,76 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+BOOL	definitions.h	/^typedef enum boolean BOOL;$/;"	t	typeref:enum:boolean
+COMMAND	definitions.h	/^struct COMMAND$/;"	s
+COMMAND_LIST	definitions.h	/^enum COMMAND_LIST$/;"	g
+CREATE	definitions.h	/^	CREATE,$/;"	e	enum:COMMAND_LIST
+CREDITS	definitions.h	/^	CREDITS,$/;"	e	enum:COMMAND_LIST
+DEFINITIONS_H	definitions.h	2;"	d
+DIODE	units.h	/^	DIODE, \/\/ Only lets power flow one way.$/;"	e	enum:UNIT_TYPE
+EARTH	units.h	/^	EARTH,$/;"	e	enum:ELEMENT
+ELEMENT	units.h	/^enum ELEMENT$/;"	g
+FALSE	definitions.h	/^	FALSE,$/;"	e	enum:boolean
+FIRE	units.h	/^	FIRE,$/;"	e	enum:ELEMENT
+GAME	state.h	/^	GAME$/;"	e	enum:STATE
+GAMESTATE	state.h	/^struct GAMESTATE$/;"	s
+GAME_H	game.h	5;"	d
+GATE	units.h	/^	GATE, \/\/ Modifies aspect of power moving through.$/;"	e	enum:UNIT_TYPE
+HELP	definitions.h	/^	HELP,$/;"	e	enum:COMMAND_LIST
+INVALID	definitions.h	/^	INVALID,$/;"	e	enum:COMMAND_LIST
+MAX_INPUT_LENGTH	definitions.h	5;"	d
+MAX_LINES	state.h	7;"	d
+MENU	state.h	/^	MENU,$/;"	e	enum:STATE
+MENU_H	menu.h	2;"	d
+METAL	units.h	/^	METAL,$/;"	e	enum:ELEMENT
+MOVE	definitions.h	/^	MOVE,$/;"	e	enum:COMMAND_LIST
+NEW_GAME	definitions.h	/^	NEW_GAME,$/;"	e	enum:COMMAND_LIST
+PARSER_H	parser.h	6;"	d
+QUIT	definitions.h	/^	QUIT,$/;"	e	enum:COMMAND_LIST
+REMOVE	definitions.h	/^	REMOVE,$/;"	e	enum:COMMAND_LIST
+RESISTOR	units.h	/^	RESISTOR, \/\/ Reduces or inflames power moving through.$/;"	e	enum:UNIT_TYPE
+RESULT	units.h	/^	RESULT \/\/ Used when doing the end calculations.$/;"	e	enum:UNIT_TYPE
+RETURN_TO_MENU	definitions.h	/^	RETURN_TO_MENU,$/;"	e	enum:COMMAND_LIST
+SAVE	definitions.h	/^	SAVE,$/;"	e	enum:COMMAND_LIST
+SOURCE	units.h	/^	SOURCE, \/\/ Each level starts out with one of these.$/;"	e	enum:UNIT_TYPE
+STATE	state.h	/^enum STATE$/;"	g
+STATE_H	state.h	2;"	d
+SWITCH_LINES	definitions.h	/^	SWITCH_LINES$/;"	e	enum:COMMAND_LIST
+TRUE	definitions.h	/^	TRUE$/;"	e	enum:boolean
+UNITS_H	units.h	2;"	d
+UNIT_STRUCT	units.h	/^struct UNIT_STRUCT$/;"	s
+UNIT_TYPE	units.h	/^enum UNIT_TYPE$/;"	g
+WATER	units.h	/^	WATER$/;"	e	enum:ELEMENT
+WOOD	units.h	/^	WOOD,$/;"	e	enum:ELEMENT
+append_unit	units.c	/^void append_unit(unit *head, unit *to_append)$/;"	f
+aspect	units.h	/^	enum ELEMENT aspect;$/;"	m	struct:UNIT_STRUCT	typeref:enum:UNIT_STRUCT::ELEMENT
+boolean	definitions.h	/^enum boolean$/;"	g
+calculate_stack	units.c	/^unit calculate_stack(const unit *head, const enum ELEMENT current_element, const int current_power)$/;"	f
+create_unit	units.c	/^unit * create_unit(const enum UNIT_TYPE type, const enum ELEMENT aspect, const int power, unit * parent)$/;"	f
+current_line	state.h	/^	int current_line;$/;"	m	struct:GAMESTATE
+current_state	state.h	/^	enum STATE current_state;$/;"	m	struct:GAMESTATE	typeref:enum:GAMESTATE::STATE
+destroy_all_units	units.c	/^void destroy_all_units(unit * head)$/;"	f
+destroy_unit	units.c	/^BOOL destroy_unit(unit * to_destroy)$/;"	f
+display_units	units.c	/^void display_units(const unit * head)$/;"	f
+game_loop	game.c	/^BOOL game_loop(struct GAMESTATE *current)$/;"	f
+get_command	parser.c	/^struct COMMAND get_command()$/;"	f
+in_game	game.c	/^BOOL in_game(struct GAMESTATE *current)$/;"	f
+initialize_game_state	state.c	/^void initialize_game_state(struct GAMESTATE *current)$/;"	f
+lines	state.h	/^	unit *lines[MAX_LINES];$/;"	m	struct:GAMESTATE
+main	main.c	/^int main(int argc, char* argv[])$/;"	f
+menu	menu.c	/^BOOL menu(struct GAMESTATE *current)$/;"	f
+next	units.h	/^	struct UNIT_STRUCT * next;$/;"	m	struct:UNIT_STRUCT	typeref:struct:UNIT_STRUCT::UNIT_STRUCT
+order	definitions.h	/^	enum COMMAND_LIST order;$/;"	m	struct:COMMAND	typeref:enum:COMMAND::COMMAND_LIST
+power	units.h	/^	int power;$/;"	m	struct:UNIT_STRUCT
+prev	units.h	/^	struct UNIT_STRUCT * prev;$/;"	m	struct:UNIT_STRUCT	typeref:struct:UNIT_STRUCT::UNIT_STRUCT
+print_all_lines	game.c	/^void print_all_lines(unit * head[], const int current_line, const int lines)$/;"	f
+print_credits	menu.c	/^void print_credits()$/;"	f
+print_help	menu.c	/^void print_help()$/;"	f
+print_keys	game.c	/^void print_keys()$/;"	f
+test_print	parser.c	/^void test_print()$/;"	f
+type	units.h	/^	enum UNIT_TYPE type;$/;"	m	struct:UNIT_STRUCT	typeref:enum:UNIT_STRUCT::UNIT_TYPE
+unit	units.h	/^typedef struct UNIT_STRUCT unit;$/;"	t	typeref:struct:UNIT_STRUCT
+value	definitions.h	/^	int value;$/;"	m	struct:COMMAND

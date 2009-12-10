@@ -3,7 +3,9 @@
 // This is adding it before the tail, instead of after. Hmmm. Must fix.
 unit * create_unit(const enum UNIT_TYPE type, const enum ELEMENT aspect, const int power, unit * parent)
 {
-	unit * new_unit = malloc(sizeof(unit));
+	unit * new_unit = (unit*)malloc(sizeof(unit));
+
+	assert(new_unit != NULL);
 
 	new_unit->type = type;
 	new_unit->aspect = aspect;
@@ -22,6 +24,18 @@ unit * create_unit(const enum UNIT_TYPE type, const enum ELEMENT aspect, const i
 	}
 
 	return new_unit;
+}
+
+void append_unit(unit *head, unit *to_append)
+{
+	if (head != NULL)
+	{
+		append_unit(head->next, to_append);
+	}
+	else
+	{
+		head = to_append;
+	}
 }
 
 BOOL destroy_unit(unit * to_destroy)
@@ -79,8 +93,14 @@ void display_units(const unit * head)
 			case RESISTOR:
 				printf("Resistor/");
 				break;
+			case SOURCE:
+				printf("Source/");
+				break;
+			case RESULT:
+				printf("Result/");
+				break;
 			default:
-				printf("ERR: Type case met default.\n");
+				printf("ERR: Type case met default in display_units.\n");
 		}
 
 		switch (head->aspect)
@@ -101,12 +121,121 @@ void display_units(const unit * head)
 				printf("Water");
 				break;
 			default:
-				printf("ERR: Element case met default.\n");
+				printf("ERR: Element case met default in display_units.\n");
 		}
 
-		printf("(%d)\n", head->power);
+		printf("(%d) ", head->power);
 
 		display_units(head->next);
+	}
+	else
+	{
+		printf("\n");
+	}
+}
+
+unit calculate_stack(const unit *head, const enum ELEMENT current_element, const int current_power)
+{
+	if (head != NULL)
+	{
+		switch (head->aspect)
+		{
+			case FIRE:
+				if (WOOD == current_element)
+				{
+					return calculate_stack(head->next, head->aspect, current_power * 2);
+				}
+				else if (WATER == current_element)
+				{
+					return calculate_stack(head->next, head->aspect, current_power / 2);
+				}
+				else
+				{
+					// Bleed off 10 power.
+					return calculate_stack(head->next, head->aspect, current_power - 10);
+				}
+				
+				break;
+			case EARTH:
+				if (METAL == current_element)
+				{
+					return calculate_stack(head->next, head->aspect, current_power * 2);
+				}
+				else if (WOOD == current_element)
+				{
+					return calculate_stack(head->next, head->aspect, current_power / 2);
+				}
+				else
+				{
+					// Bleed off 10 power.
+					return calculate_stack(head->next, head->aspect, current_power - 10);
+				}
+				
+				break;
+			case METAL:
+				if (EARTH == current_element)
+				{
+					return calculate_stack(head->next, head->aspect, current_power * 2);
+				}
+				else if (FIRE == current_element)
+				{
+					return calculate_stack(head->next, head->aspect, current_power / 2);
+				}
+				else
+				{
+					// Bleed off 10 power.
+					return calculate_stack(head->next, head->aspect, current_power - 10);
+				}
+				
+				break;
+			case WATER:
+				if (METAL == current_element)
+				{
+					return calculate_stack(head->next, head->aspect, current_power * 2);
+				}
+				else if (FIRE == current_element)
+				{
+					return calculate_stack(head->next, head->aspect, current_power / 2);
+				}
+				else
+				{
+					// Bleed off 10 power.
+					return calculate_stack(head->next, head->aspect, current_power - 10);
+				}
+				
+				break;
+			case WOOD:
+				if (WATER == current_element)
+				{
+					return calculate_stack(head->next, head->aspect, current_power * 2);
+				}
+				else if (METAL == current_element)
+				{
+					return calculate_stack(head->next, head->aspect, current_power / 2);
+				}
+				else
+				{
+					// Bleed off 10 power.
+					return calculate_stack(head->next, head->aspect, current_power - 10);
+				}
+				
+				break;
+			default:
+				printf("ERR: Default case hit in calculate_stack function.\n");
+		}
+	}
+	else
+	{
+		unit current_data;
+
+		current_data.type = RESULT;
+		current_data.aspect = current_element;
+		current_data.power = current_power;
+
+		current_data.next = NULL;
+		current_data.prev = NULL;
+
+		return current_data;
 	}
 }
 

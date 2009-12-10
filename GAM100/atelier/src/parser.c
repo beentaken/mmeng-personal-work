@@ -33,6 +33,24 @@ struct COMMAND get_command()
 		case 'c':
 			current_input.order = CREATE;
 			break;
+		case 'n':
+			current_input.order = NEW_GAME;
+			break;
+		case 'm':
+			current_input.order = RETURN_TO_MENU;
+			break;
+		case '?':
+			current_input.order = HELP;
+			break;
+		case 'a':
+			current_input.order = CREDITS;
+			break;
+		case 's':
+			current_input.order = SWITCH_LINES;
+			break;
+		default:
+			current_input.order = INVALID;
+			break;
 	}
 
 	next_token = strtok(NULL, delims);

@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 #include "game.h"
-#include "units.h"
+#include "state.h"
 
 int main(int argc, char* argv[])
 {
@@ -14,14 +14,13 @@ int main(int argc, char* argv[])
 		puts(argv[1]);
 	}
 
-	unit * head;
-	unit * tail;
+	struct GAMESTATE current_gamestate;
+
+	initialize_game_state(&current_gamestate);
 	// Hardcoding an initial setup. This will change once an actual level
 	// system is implemented.
-	head = create_unit(DIODE, FIRE, 200, NULL);
-	tail = head->next;
 
-	while(game_loop(head, tail));
+	while(game_loop(&current_gamestate));
 
 	// Do some cleanup before we leave. Can't have the OS steal all the
 	// fun, after all, right?

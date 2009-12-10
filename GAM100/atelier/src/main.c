@@ -3,6 +3,7 @@
  */
 
 #include <stdio.h>
+#include <string.h>
 
 #include "game.h"
 #include "state.h"
@@ -11,7 +12,20 @@ int main(int argc, char* argv[])
 {
 	if (argc > 1)
 	{
-		puts(argv[1]);
+		int i;
+
+		for (i = 1; i < argc; ++i)
+		{
+			if (strcmp(argv[i], "--debug") == 0)
+			{
+				printf("Debug mode.\n");
+			}
+			else if (strcmp(argv[i], "--help") == 0)
+			{
+				printf("%s\n\n\t--help\tShow help.\n\t--debug\tEnable debug mode.",
+					argv[0]);
+			}
+		}
 	}
 
 	struct GAMESTATE current_gamestate;
@@ -24,7 +38,7 @@ int main(int argc, char* argv[])
 
 	// Do some cleanup before we leave. Can't have the OS steal all the
 	// fun, after all, right?
-//	destroy_all_units(head);
+	destroy_game_state(&current_gamestate);
 
 	return 0;
 }

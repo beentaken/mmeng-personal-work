@@ -1,5 +1,6 @@
 #include "state.h"
 
+// This function contains some arbitrary defaults for test purposes.
 void initialize_game_state(struct GAMESTATE *current)
 {
 	current->current_state = MENU;
@@ -20,5 +21,17 @@ void initialize_game_state(struct GAMESTATE *current)
 	append_unit(current->pool, create_unit(DIODE, FIRE, 300, NULL));
 	append_unit(current->pool, create_unit(DIODE, METAL, 100, NULL));
 	append_unit(current->pool, create_unit(DIODE, EARTH, 100, NULL));
+}
+
+void destroy_game_state(struct GAMESTATE *current)
+{
+	int i;
+
+	for (i = 0; i < MAX_LINES; ++i)
+	{
+		destroy_pool(current->lines[i]);
+	}
+
+	destroy_pool(current->pool);
 }
 

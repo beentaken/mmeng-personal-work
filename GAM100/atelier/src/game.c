@@ -1,12 +1,5 @@
 #include "game.h"
 
-/* Currently, this function contains a switch case to process commands that
- * the game recieves from the parser functions. It should assume that head
- * is a valid pointer to a defined unit.
- *
- * It should also check whether the victory condition has been met with the
- * set of units provided.
- */
 BOOL game_loop(struct GAMESTATE *current)
 {
 	switch (current->current_state)
@@ -29,6 +22,7 @@ BOOL check_victory(unit *head[], const int lines)
 
 	unit end_value = calculate_stack(head[0]->next, head[0]->aspect, head[0]->power);
 
+	// Start from Line 1 because we have the first row counted already.
 	for (i = 1; i < lines; ++i)
 	{
 		end_value = calculate_stack(head[i], end_value.aspect, end_value.power);
@@ -81,7 +75,8 @@ BOOL in_game(struct GAMESTATE *current)
 	struct COMMAND current_order;
 
 	printf("\nCurrent pool:\n");
-	display_pool(current->pool, 0);
+	// Currently, only display the non-0 indices.
+	display_pool(current->pool->next, 1);
 
 	printf("\nCurrent lines:\n");
 	print_all_lines(current->lines, current->current_line, MAX_LINES);
@@ -106,13 +101,13 @@ BOOL in_game(struct GAMESTATE *current)
 			print_keys();
 			break;
 		case CREATE:
-			;
-			// Create a unit and append it to the end of the list.
-//			append_unit(current->lines[current->current_line], create_unit(DIODE, WOOD, current_order.value, NULL));
-			if (current_order.value > 0)
+			if (current_order.value > 1 && current_order.value < get_pool_size(current->pool))
 			{
-				printf("ERR: Index 0 is currently not working.\n");
 				move_unit(current->lines[current->current_line], get_unit(current->pool, current_order.value));
+			}
+			else
+			{
+				printf("Specified index is out of range.\n");
 			}
 			
 			break;

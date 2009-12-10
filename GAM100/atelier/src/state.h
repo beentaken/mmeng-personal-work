@@ -22,6 +22,7 @@ struct GAMESTATE
 };
 
 void initialize_game_state(struct GAMESTATE *state);
+void destroy_game_state(struct GAMESTATE *state);
 
 #endif
 

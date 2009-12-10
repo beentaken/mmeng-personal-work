@@ -36,6 +36,18 @@ unit *get_tail(unit *head)
 	return(head);
 }
 
+int get_pool_size(const unit *head)
+{
+	if (head != NULL)
+	{
+		return 1 + get_pool_size(head->next);
+	}
+	else
+	{
+		return 0;
+	}
+}
+
 void append_unit(unit *head, unit *to_append)
 {
 	if (head != NULL)
@@ -104,35 +116,10 @@ BOOL move_unit(unit *new_pool, unit *to_move)
 
 BOOL destroy_unit(unit * to_destroy)
 {
-	if (to_destroy)
+	if (to_destroy != NULL)
 	{
-		to_destroy->prev->next = to_destroy->next;
-
-		if (to_destroy->next)
-		{
-			if (to_destroy->prev)
-			{
-				to_destroy->next->prev = to_destroy->prev;
-				to_destroy->prev->next = to_destroy->next;
-
-				free(to_destroy);
-			}
-			else
-			{
-				unit *temp = to_destroy;
-				to_destroy = to_destroy->next;
-
-				free(temp);
-			}
-
-		}
-		else
-		{
-			unit * temp = to_destroy;
-			to_destroy = NULL;
-
-			free(temp);
-		}
+		free(to_destroy);
+		to_destroy = NULL;
 
 		return TRUE;
 	}
@@ -348,11 +335,11 @@ unit *get_unit(unit *head, const int index)
 	return head;
 }
 
-void destroy_all_units(unit * head)
+void destroy_pool(unit * head)
 {
 	while (head != NULL)
 	{
-		assert(head->prev == NULL);
+		destroy_pool(head->next);
 		destroy_unit(head);
 	}
 }

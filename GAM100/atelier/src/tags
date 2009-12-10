@@ -53,12 +53,14 @@ check_victory	game.c	/^BOOL check_victory(unit *head[], const int lines)$/;"	f
 create_unit	units.c	/^unit * create_unit(const enum UNIT_TYPE type, const enum ELEMENT aspect, const int power, unit * parent)$/;"	f
 current_line	state.h	/^	int current_line;$/;"	m	struct:GAMESTATE
 current_state	state.h	/^	enum STATE current_state;$/;"	m	struct:GAMESTATE	typeref:enum:GAMESTATE::STATE
-destroy_all_units	units.c	/^void destroy_all_units(unit * head)$/;"	f
+destroy_game_state	state.c	/^void destroy_game_state(struct GAMESTATE *current)$/;"	f
+destroy_pool	units.c	/^void destroy_pool(unit * head)$/;"	f
 destroy_unit	units.c	/^BOOL destroy_unit(unit * to_destroy)$/;"	f
 display_pool	units.c	/^void display_pool(const unit *head, const int index)$/;"	f
 display_units	units.c	/^void display_units(const unit * head)$/;"	f
 game_loop	game.c	/^BOOL game_loop(struct GAMESTATE *current)$/;"	f
 get_command	parser.c	/^struct COMMAND get_command()$/;"	f
+get_pool_size	units.c	/^int get_pool_size(const unit *head)$/;"	f
 get_tail	units.c	/^unit *get_tail(unit *head)$/;"	f
 get_unit	units.c	/^unit *get_unit(unit *head, const int index)$/;"	f
 in_game	game.c	/^BOOL in_game(struct GAMESTATE *current)$/;"	f

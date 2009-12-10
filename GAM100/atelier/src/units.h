@@ -89,6 +89,15 @@ unit *get_tail(unit *head);
  */
 unit *get_unit(unit *head, const int index);
 
+/* Finds how long the linked list is.
+ *
+ * Preconditions: head is either a valid linked list node or NULL.
+ * Postconditions: head is unchanged.
+ *
+ * Returns: The total index size of the list.
+ */
+int get_pool_size(const unit *head);
+
 /* Removes a unit from the pool it is in.
  *
  * Preconditions: to_remove is a non-NULL, valid unit pointer.
@@ -142,7 +151,7 @@ void display_units(const unit * head);
 unit calculate_stack(const unit *head, const enum ELEMENT current_element, const int current_power);
 
 // Internal stuff for cleanups and things. Should never be called on its own.
-void destroy_all_units(unit * head);
+void destroy_pool(unit * head);
 
 #endif
 

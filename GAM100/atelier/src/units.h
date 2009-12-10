@@ -117,6 +117,13 @@ BOOL move_unit(unit *new_pool, unit *to_move);
  */
 BOOL destroy_unit(unit * to_destroy);
 
+/* Displays a formatted pool with indices.
+ *
+ * Preconditions: None.
+ * Postconditions: All units are displayed with indices.
+ */
+void display_pool(const unit *head, const int index);
+
 /* Displays all the units in a pool.
  *
  * Preconditions: None.

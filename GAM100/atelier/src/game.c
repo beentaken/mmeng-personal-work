@@ -81,7 +81,7 @@ BOOL in_game(struct GAMESTATE *current)
 	struct COMMAND current_order;
 
 	printf("\nCurrent pool:\n");
-	display_units(current->pool);
+	display_pool(current->pool, 0);
 
 	printf("\nCurrent lines:\n");
 	print_all_lines(current->lines, current->current_line, MAX_LINES);

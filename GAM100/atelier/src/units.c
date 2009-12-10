@@ -200,6 +200,42 @@ void display_units(const unit * head)
 	}
 }
 
+void display_pool(const unit *head, const int index)
+{
+	if (head != NULL)
+	{
+		printf("%d: ", index);
+		switch (head->aspect)
+		{
+			case WOOD:
+				printf("Wood");
+				break;
+			case FIRE:
+				printf("Fire");
+				break;
+			case EARTH:
+				printf("Earth");
+				break;
+			case METAL:
+				printf("Metal");
+				break;
+			case WATER:
+				printf("Water");
+				break;
+			default:
+				printf("ERR: Aspect case met default in display_pool.\n");
+		}
+
+		printf("(%d) ", head->power);
+
+		display_pool(head->next, index + 1);
+	}
+	else
+	{
+		printf("\n");
+	}
+}
+
 unit calculate_stack(const unit *head, const enum ELEMENT current_element, const int current_power)
 {
 	if (head != NULL)
@@ -304,7 +340,7 @@ unit calculate_stack(const unit *head, const enum ELEMENT current_element, const
 
 unit *get_unit(unit *head, const int index)
 {
-	if (head != NULL && index >= 0)
+	if (head != NULL && index > 0)
 	{
 		return get_unit(head->next, index - 1);
 	}

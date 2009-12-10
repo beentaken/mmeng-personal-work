@@ -55,6 +55,7 @@ current_line	state.h	/^	int current_line;$/;"	m	struct:GAMESTATE
 current_state	state.h	/^	enum STATE current_state;$/;"	m	struct:GAMESTATE	typeref:enum:GAMESTATE::STATE
 destroy_all_units	units.c	/^void destroy_all_units(unit * head)$/;"	f
 destroy_unit	units.c	/^BOOL destroy_unit(unit * to_destroy)$/;"	f
+display_pool	units.c	/^void display_pool(const unit *head, const int index)$/;"	f
 display_units	units.c	/^void display_units(const unit * head)$/;"	f
 game_loop	game.c	/^BOOL game_loop(struct GAMESTATE *current)$/;"	f
 get_command	parser.c	/^struct COMMAND get_command()$/;"	f

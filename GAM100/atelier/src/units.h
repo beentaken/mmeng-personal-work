@@ -80,6 +80,15 @@ void append_unit(unit * head, unit * to_append);
  */
 unit *get_tail(unit *head);
 
+/* Finds a unit at a specified index.
+ *
+ * Preconditions: None.
+ * Postcondition: The list is unchanged.
+ *
+ * Returns: A pointer to the unit in the index specified, NULL otherwise.
+ */
+unit *get_unit(unit *head, const int index);
+
 /* Removes a unit from the pool it is in.
  *
  * Preconditions: to_remove is a non-NULL, valid unit pointer.

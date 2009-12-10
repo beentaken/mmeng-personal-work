@@ -302,6 +302,16 @@ unit calculate_stack(const unit *head, const enum ELEMENT current_element, const
 	return current_data;
 }
 
+unit *get_unit(unit *head, const int index)
+{
+	if (head != NULL && index >= 0)
+	{
+		return get_unit(head->next, index - 1);
+	}
+
+	return head;
+}
+
 void destroy_all_units(unit * head)
 {
 	while (head != NULL)

@@ -1,0 +1,22 @@
+Title: Atelier README File
+Author: Marcus Meng
+
+Atelier is a game in which the player attempts to construct magical circuits that transfer sufficient power of an appropriate elemental aspect into a spell they are constructing.
+
+#Requirements#
+
+To build:
+
+* Python, if you want to use the waf auto-build system.
+* GCC 4.3 or higher, or an alternative C99-compatible compiler.
+
+To run:
+
+* A command line interface.
+
+#Modifying the Source#
+
+To add new gamestates, add a new entry to the enum in states.h, then add a case for that entry in the loop function in game.c. You will probably want to create a new header and source file for your gamestate and include it in game.h.
+
+To add new commands, add a new entry to the commands enum in definitions.h, and add a method to deal with it in the get_command function in parser.c. Add a case for the command in the states you want the command to be valid in.
+

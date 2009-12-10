@@ -1,0 +1,15 @@
+High Priority
+
+* Add a victory condition check.
+* Add a pool of components to draw from.
+* Add a delete unit command.
+
+Medium Priority
+
+* Move unit command.
+* Make level data in text files seperate from game code.
+
+Low Priority
+
+* Better error checking.
+

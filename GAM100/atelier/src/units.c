@@ -63,6 +63,13 @@ unit *remove_unit(unit *to_remove)
 	{
 		unit *removed = to_remove;
 
+		if (removed->next == NULL && removed->prev == NULL)
+		{
+			to_remove = NULL;
+
+			return removed;
+		}
+
 		if (removed->prev != NULL)
 		{
 			removed->prev->next = removed->next;
@@ -83,7 +90,14 @@ unit *remove_unit(unit *to_remove)
 
 BOOL move_unit(unit *new_pool, unit *to_move)
 {
-	append_unit(new_pool, remove_unit(to_move));
+	if (new_pool != NULL)
+	{
+		append_unit(new_pool, remove_unit(to_move));
+	}
+	else
+	{
+		new_pool = remove_unit(to_move);
+	}
 
 	return(TRUE);
 }
@@ -195,11 +209,11 @@ unit calculate_stack(const unit *head, const enum ELEMENT current_element, const
 			case FIRE:
 				if (WOOD == current_element)
 				{
-					return calculate_stack(head->next, head->aspect, current_power * 2);
+					return calculate_stack(head->next, head->aspect, current_power + head->power);
 				}
 				else if (WATER == current_element)
 				{
-					return calculate_stack(head->next, head->aspect, current_power / 2);
+					return calculate_stack(head->next, head->aspect, current_power - head->power);
 				}
 				else
 				{
@@ -211,11 +225,11 @@ unit calculate_stack(const unit *head, const enum ELEMENT current_element, const
 			case EARTH:
 				if (METAL == current_element)
 				{
-					return calculate_stack(head->next, head->aspect, current_power * 2);
+					return calculate_stack(head->next, head->aspect, current_power + head->power);
 				}
 				else if (WOOD == current_element)
 				{
-					return calculate_stack(head->next, head->aspect, current_power / 2);
+					return calculate_stack(head->next, head->aspect, current_power - head->power);
 				}
 				else
 				{
@@ -227,11 +241,11 @@ unit calculate_stack(const unit *head, const enum ELEMENT current_element, const
 			case METAL:
 				if (EARTH == current_element)
 				{
-					return calculate_stack(head->next, head->aspect, current_power * 2);
+					return calculate_stack(head->next, head->aspect, current_power + head->power);
 				}
 				else if (FIRE == current_element)
 				{
-					return calculate_stack(head->next, head->aspect, current_power / 2);
+					return calculate_stack(head->next, head->aspect, current_power - head->power);
 				}
 				else
 				{
@@ -243,11 +257,11 @@ unit calculate_stack(const unit *head, const enum ELEMENT current_element, const
 			case WATER:
 				if (METAL == current_element)
 				{
-					return calculate_stack(head->next, head->aspect, current_power * 2);
+					return calculate_stack(head->next, head->aspect, current_power + head->power);
 				}
 				else if (FIRE == current_element)
 				{
-					return calculate_stack(head->next, head->aspect, current_power / 2);
+					return calculate_stack(head->next, head->aspect, current_power - head->power);
 				}
 				else
 				{
@@ -259,11 +273,11 @@ unit calculate_stack(const unit *head, const enum ELEMENT current_element, const
 			case WOOD:
 				if (WATER == current_element)
 				{
-					return calculate_stack(head->next, head->aspect, current_power * 2);
+					return calculate_stack(head->next, head->aspect, current_power + head->power);
 				}
 				else if (METAL == current_element)
 				{
-					return calculate_stack(head->next, head->aspect, current_power / 2);
+					return calculate_stack(head->next, head->aspect, current_power - head->power);
 				}
 				else
 				{

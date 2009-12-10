@@ -109,7 +109,7 @@ BOOL in_game(struct GAMESTATE *current)
 			;
 			// Create a unit and append it to the end of the list.
 //			append_unit(current->lines[current->current_line], create_unit(DIODE, WOOD, current_order.value, NULL));
-			move_unit(current->lines[current->current_line], current->pool);
+			move_unit(current->lines[current->current_line], get_tail(current->pool));
 			
 			break;
 		case SWITCH_LINES:

@@ -16,6 +16,15 @@ void print_help()
 	printf("Try to build a system where you have sufficient power output at the\n"
 		" end of a set of chains to win. The elemental effects of each component\n"
 		" will influence how much power is lost or gained per step.\n\n");
+	printf("\tWood feeds Fire;\n\tFire feeds Earth;\n\tEarth feeds Metal;\n"
+		"\tMetal feeds Water;\n\tWater feeds Wood.\n\n");
+	printf("\tWood restrains Earth;\n\tEarth restrains Water;\n\tWater restrains Fire;\n"
+		"\tFire restrains Metal;\n\tMetal restrains Wood.\n\n");
+
+	printf("The aspect of the power flow changes as it passes through the units.\n"
+		"If the aspect of a power flow feeds the unit it passes through, the\n"
+		"unit's power is added to the flow. If it restrains it, the unit's power\n"
+		"is deducted from the flow.\n\n");
 }
 
 BOOL menu(struct GAMESTATE *current)

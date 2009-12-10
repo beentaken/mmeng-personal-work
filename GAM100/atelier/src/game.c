@@ -71,8 +71,8 @@ void print_all_lines(unit * head[], const int current_line, const int lines)
 void print_keys()
 {
 	printf("\n");
-	printf("c: Move the next unit in the pool to the current line.\n");
-	printf("r: Remove the last unit, returning it to the pool.\n");
+	printf("c <number>: Move the specified unit in the pool to the current line.\n");
+	printf("r: Remove the last unit in the current line, returning it to the pool.\n");
 	printf("s <number>: Switch to specified line.\n");
 }
 
@@ -109,7 +109,11 @@ BOOL in_game(struct GAMESTATE *current)
 			;
 			// Create a unit and append it to the end of the list.
 //			append_unit(current->lines[current->current_line], create_unit(DIODE, WOOD, current_order.value, NULL));
-			move_unit(current->lines[current->current_line], get_unit(current->pool, current_order.value));
+			if (current_order.value > 0)
+			{
+				printf("ERR: Index 0 is currently not working.\n");
+				move_unit(current->lines[current->current_line], get_unit(current->pool, current_order.value));
+			}
 			
 			break;
 		case SWITCH_LINES:

@@ -335,12 +335,15 @@ unit *get_unit(unit *head, const int index)
 	return head;
 }
 
+// Not tail recursive, sadface.
 void destroy_pool(unit * head)
 {
-	while (head != NULL)
+	if (head != NULL)
 	{
 		destroy_pool(head->next);
 		destroy_unit(head);
+
+		assert(head == NULL);
 	}
 }
 

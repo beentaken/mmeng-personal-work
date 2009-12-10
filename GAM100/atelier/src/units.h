@@ -150,7 +150,12 @@ void display_units(const unit * head);
  */
 unit calculate_stack(const unit *head, const enum ELEMENT current_element, const int current_power);
 
-// Internal stuff for cleanups and things. Should never be called on its own.
+/* Destroys all units in a given pool.
+ *
+ * Preconditions: None.
+ * Postconditions: All units in a pool are deallocated and the pointers are
+ * 		set to NULL.
+ */
 void destroy_pool(unit * head);
 
 #endif

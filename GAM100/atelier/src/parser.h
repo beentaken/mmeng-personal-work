@@ -11,7 +11,14 @@
 #include <string.h>
 #include "definitions.h"
 
-void test_print(void);
+/* Gets user input and parses it.
+ *
+ * Preconditions: None.
+ * Postconditions: None.
+ *
+ * Returns: A COMMAND struct containing values representing the commands the
+ * 		user entered.
+ */
 struct COMMAND get_command(void);
 
 #endif

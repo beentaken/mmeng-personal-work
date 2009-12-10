@@ -1,4 +1,4 @@
 #!/bin/bash
 
-./build/default/src/atelier
+$1 ./build/default/src/atelier
 

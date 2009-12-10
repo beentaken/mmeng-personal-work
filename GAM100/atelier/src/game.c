@@ -82,6 +82,7 @@ BOOL in_game(struct GAMESTATE *current)
 	print_all_lines(current->lines, current->current_line, MAX_LINES);
 
 	// Check to see if we've won!
+	// Current hardcoded, fix this.
 	if (check_victory(current->lines, MAX_LINES))
 	{
 		current->current_state = MENU;
@@ -101,7 +102,7 @@ BOOL in_game(struct GAMESTATE *current)
 			print_keys();
 			break;
 		case CREATE:
-			if (current_order.value > 1 && current_order.value < get_pool_size(current->pool))
+			if (current_order.value > 0 && current_order.value < get_pool_size(current->pool))
 			{
 				move_unit(current->lines[current->current_line], get_unit(current->pool, current_order.value));
 			}
@@ -123,7 +124,10 @@ BOOL in_game(struct GAMESTATE *current)
 
 			break;
 		case REMOVE:
-			move_unit(current->pool, get_tail(current->lines[current->current_line]));
+			if (get_pool_size(current->lines[current->current_line]) > 1)
+			{
+				move_unit(current->pool, get_tail(current->lines[current->current_line]));
+			}
 
 			break;
 		case INVALID:

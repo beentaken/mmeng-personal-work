@@ -17,7 +17,7 @@ def set_options(opt):
 def configure(conf):
 	#conf.check_tool('compiler_cc')
 	conf.check_tool('gcc')
-	conf.env.CCFLAGS = ['-Wextra', '-Wall', '-std=c99', '-pedantic']
+	conf.env.CCFLAGS = ['-Wextra', '-Wall', '-std=c99', '-pedantic', '-g']
 
 def build(bld):
 	bld.add_subdirs('src')

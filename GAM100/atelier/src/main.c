@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
 
 	// Do some cleanup before we leave. Can't have the OS steal all the
 	// fun, after all, right?
-	destroy_game_state(&current_gamestate);
+	// destroy_game_state(&current_gamestate);
 
 	return 0;
 }

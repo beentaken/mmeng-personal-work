@@ -48,6 +48,9 @@ struct COMMAND get_command()
 		case 's':
 			current_input.order = SWITCH_LINES;
 			break;
+		case 'r':
+			current_input.order = REMOVE;
+			break;
 		default:
 			current_input.order = INVALID;
 			break;

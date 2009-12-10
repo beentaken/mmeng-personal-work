@@ -26,16 +26,66 @@ unit * create_unit(const enum UNIT_TYPE type, const enum ELEMENT aspect, const i
 	return new_unit;
 }
 
+unit *get_tail(unit *head)
+{
+	if (head != NULL && head->next != NULL)
+	{
+		return get_tail(head->next);
+	}
+
+	return(head);
+}
+
 void append_unit(unit *head, unit *to_append)
 {
 	if (head != NULL)
 	{
-		append_unit(head->next, to_append);
+		if (head->next != NULL)
+		{
+			append_unit(head->next, to_append);
+		}
+		else
+		{
+			to_append->next = head->next;
+			to_append->prev = head;
+			head->next = to_append;
+		}
 	}
 	else
 	{
 		head = to_append;
 	}
+}
+
+unit *remove_unit(unit *to_remove)
+{
+	if (to_remove != NULL)
+	{
+		unit *removed = to_remove;
+
+		if (removed->prev != NULL)
+		{
+			removed->prev->next = removed->next;
+		}
+		
+		if (removed->next != NULL)
+		{
+			removed->next->prev = removed->prev;
+		}
+
+		to_remove = removed->next;
+
+		return removed;
+	}
+
+	return NULL;
+}
+
+BOOL move_unit(unit *new_pool, unit *to_move)
+{
+	append_unit(new_pool, remove_unit(to_move));
+
+	return(TRUE);
 }
 
 BOOL destroy_unit(unit * to_destroy)
@@ -82,6 +132,8 @@ void display_units(const unit * head)
 {
 	if (head)
 	{
+		// Disable this display for now, since it's technically unused.
+#if 0
 		switch (head->type)
 		{
 			case DIODE:
@@ -102,7 +154,7 @@ void display_units(const unit * head)
 			default:
 				printf("ERR: Type case met default in display_units.\n");
 		}
-
+#endif
 		switch (head->aspect)
 		{
 			case WOOD:
@@ -224,19 +276,16 @@ unit calculate_stack(const unit *head, const enum ELEMENT current_element, const
 				printf("ERR: Default case hit in calculate_stack function.\n");
 		}
 	}
-	else
-	{
-		unit current_data;
+	unit current_data;
 
-		current_data.type = RESULT;
-		current_data.aspect = current_element;
-		current_data.power = current_power;
+	current_data.type = RESULT;
+	current_data.aspect = current_element;
+	current_data.power = current_power;
 
-		current_data.next = NULL;
-		current_data.prev = NULL;
+	current_data.next = NULL;
+	current_data.prev = NULL;
 
-		return current_data;
-	}
+	return current_data;
 }
 
 void destroy_all_units(unit * head)

@@ -49,6 +49,7 @@ append_unit	units.c	/^void append_unit(unit *head, unit *to_append)$/;"	f
 aspect	units.h	/^	enum ELEMENT aspect;$/;"	m	struct:UNIT_STRUCT	typeref:enum:UNIT_STRUCT::ELEMENT
 boolean	definitions.h	/^enum boolean$/;"	g
 calculate_stack	units.c	/^unit calculate_stack(const unit *head, const enum ELEMENT current_element, const int current_power)$/;"	f
+check_victory	game.c	/^BOOL check_victory(unit *head[], const int lines)$/;"	f
 create_unit	units.c	/^unit * create_unit(const enum UNIT_TYPE type, const enum ELEMENT aspect, const int power, unit * parent)$/;"	f
 current_line	state.h	/^	int current_line;$/;"	m	struct:GAMESTATE
 current_state	state.h	/^	enum STATE current_state;$/;"	m	struct:GAMESTATE	typeref:enum:GAMESTATE::STATE
@@ -57,19 +58,23 @@ destroy_unit	units.c	/^BOOL destroy_unit(unit * to_destroy)$/;"	f
 display_units	units.c	/^void display_units(const unit * head)$/;"	f
 game_loop	game.c	/^BOOL game_loop(struct GAMESTATE *current)$/;"	f
 get_command	parser.c	/^struct COMMAND get_command()$/;"	f
+get_tail	units.c	/^unit *get_tail(unit *head)$/;"	f
 in_game	game.c	/^BOOL in_game(struct GAMESTATE *current)$/;"	f
 initialize_game_state	state.c	/^void initialize_game_state(struct GAMESTATE *current)$/;"	f
 lines	state.h	/^	unit *lines[MAX_LINES];$/;"	m	struct:GAMESTATE
 main	main.c	/^int main(int argc, char* argv[])$/;"	f
 menu	menu.c	/^BOOL menu(struct GAMESTATE *current)$/;"	f
+move_unit	units.c	/^BOOL move_unit(unit *new_pool, unit *to_move)$/;"	f
 next	units.h	/^	struct UNIT_STRUCT * next;$/;"	m	struct:UNIT_STRUCT	typeref:struct:UNIT_STRUCT::UNIT_STRUCT
 order	definitions.h	/^	enum COMMAND_LIST order;$/;"	m	struct:COMMAND	typeref:enum:COMMAND::COMMAND_LIST
+pool	state.h	/^	unit *pool;$/;"	m	struct:GAMESTATE
 power	units.h	/^	int power;$/;"	m	struct:UNIT_STRUCT
 prev	units.h	/^	struct UNIT_STRUCT * prev;$/;"	m	struct:UNIT_STRUCT	typeref:struct:UNIT_STRUCT::UNIT_STRUCT
 print_all_lines	game.c	/^void print_all_lines(unit * head[], const int current_line, const int lines)$/;"	f
 print_credits	menu.c	/^void print_credits()$/;"	f
 print_help	menu.c	/^void print_help()$/;"	f
 print_keys	game.c	/^void print_keys()$/;"	f
+remove_unit	units.c	/^unit *remove_unit(unit *to_remove)$/;"	f
 test_print	parser.c	/^void test_print()$/;"	f
 type	units.h	/^	enum UNIT_TYPE type;$/;"	m	struct:UNIT_STRUCT	typeref:enum:UNIT_STRUCT::UNIT_TYPE
 unit	units.h	/^typedef struct UNIT_STRUCT unit;$/;"	t	typeref:struct:UNIT_STRUCT

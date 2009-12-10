@@ -18,6 +18,7 @@ struct GAMESTATE
 	int current_line;
 
 	unit *lines[MAX_LINES];
+	unit *pool;
 };
 
 void initialize_game_state(struct GAMESTATE *state);

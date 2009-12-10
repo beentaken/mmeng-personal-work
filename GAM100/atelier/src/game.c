@@ -23,6 +23,25 @@ BOOL game_loop(struct GAMESTATE *current)
 	}
 }
 
+BOOL check_victory(unit *head[], const int lines)
+{
+	int i;
+
+	unit end_value = calculate_stack(head[0]->next, head[0]->aspect, head[0]->power);
+
+	for (i = 1; i < lines; ++i)
+	{
+		end_value = calculate_stack(head[i], end_value.aspect, end_value.power);
+	}
+
+	if (end_value.power > 999)
+	{
+		return TRUE;
+	}
+
+	return FALSE;
+}
+
 void print_all_lines(unit * head[], const int current_line, const int lines)
 {
 	int i;
@@ -40,7 +59,7 @@ void print_all_lines(unit * head[], const int current_line, const int lines)
 
 	unit end_value = calculate_stack(head[0]->next, head[0]->aspect, head[0]->power);
 
-	for (i = 1; i < MAX_LINES; ++i)
+	for (i = 1; i < lines; ++i)
 	{
 		end_value = calculate_stack(head[i], end_value.aspect, end_value.power);
 	}
@@ -52,8 +71,8 @@ void print_all_lines(unit * head[], const int current_line, const int lines)
 void print_keys()
 {
 	printf("\n");
-	printf("c: Create a new unit.\n");
-	printf("d: Delete the last unit.\n");
+	printf("c: Move the next unit in the pool to the current line.\n");
+	printf("r: Remove the last unit, returning it to the pool.\n");
 	printf("s <number>: Switch to specified line.\n");
 }
 
@@ -61,8 +80,21 @@ BOOL in_game(struct GAMESTATE *current)
 {
 	struct COMMAND current_order;
 
+	printf("\nCurrent pool:\n");
+	display_units(current->pool);
+
 	printf("\nCurrent lines:\n");
 	print_all_lines(current->lines, current->current_line, MAX_LINES);
+
+	// Check to see if we've won!
+	if (check_victory(current->lines, MAX_LINES))
+	{
+		current->current_state = MENU;
+
+		printf("Victory condition reached, sequence has exceeded 1000 power.\n");
+
+		return TRUE;
+	}
 
 	current_order = get_command();
 
@@ -72,12 +104,13 @@ BOOL in_game(struct GAMESTATE *current)
 			return FALSE;
 		case HELP:
 			print_keys();
+			break;
 		case CREATE:
 			;
 			// Create a unit and append it to the end of the list.
-			// TODO: Make this work right!
-			create_unit(DIODE, WOOD, current_order.value, current->lines[current->current_line]);
-
+//			append_unit(current->lines[current->current_line], create_unit(DIODE, WOOD, current_order.value, NULL));
+			move_unit(current->lines[current->current_line], current->pool);
+			
 			break;
 		case SWITCH_LINES:
 			if (current_order.value >= 0 && current_order.value < MAX_LINES)
@@ -88,6 +121,10 @@ BOOL in_game(struct GAMESTATE *current)
 			{
 				printf("\nInvalid line number.\n");
 			}
+
+			break;
+		case REMOVE:
+			move_unit(current->pool, get_tail(current->lines[current->current_line]));
 
 			break;
 		case INVALID:

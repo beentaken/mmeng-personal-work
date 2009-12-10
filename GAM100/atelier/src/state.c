@@ -15,5 +15,15 @@ void initialize_game_state(struct GAMESTATE *current)
 	}
 
 	current->lines[0] = create_unit(SOURCE, WATER, 100, NULL);
+
+	current->pool = create_unit(DIODE, FIRE, 100, NULL);
+	append_unit(current->pool, create_unit(DIODE, WOOD, 100, NULL));
+	append_unit(current->pool, create_unit(DIODE, METAL, 100, NULL));
+	append_unit(current->pool, create_unit(DIODE, FIRE, 100, NULL));
+	append_unit(current->pool, create_unit(DIODE, WOOD, 150, NULL));
+	append_unit(current->pool, create_unit(DIODE, EARTH, 200, NULL));
+	append_unit(current->pool, create_unit(DIODE, FIRE, 300, NULL));
+	append_unit(current->pool, create_unit(DIODE, METAL, 100, NULL));
+	append_unit(current->pool, create_unit(DIODE, EARTH, 100, NULL));
 }
 

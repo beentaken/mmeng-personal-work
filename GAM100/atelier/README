@@ -10,6 +10,12 @@ To build:
 * Python, if you want to use the waf auto-build system.
 * GCC 4.3 or higher, or an alternative C99-compatible compiler.
 
+It should compile correctly with the command line:
+
+	gcc -o atelier -std=c99 -Wextra -Wall -pedantic -DNDEBUG
+
+waf, of course, should handle this automatically.
+
 To run:
 
 * A command line interface.

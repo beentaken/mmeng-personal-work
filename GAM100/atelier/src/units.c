@@ -100,7 +100,7 @@ unit *remove_unit(unit *to_remove)
 	return NULL;
 }
 
-BOOL move_unit(unit *new_pool, unit *to_move)
+bool move_unit(unit *new_pool, unit *to_move)
 {
 	if (new_pool != NULL)
 	{
@@ -111,21 +111,21 @@ BOOL move_unit(unit *new_pool, unit *to_move)
 		new_pool = remove_unit(to_move);
 	}
 
-	return(TRUE);
+	return(true);
 }
 
-BOOL destroy_unit(unit * to_destroy)
+bool destroy_unit(unit * to_destroy)
 {
 	if (to_destroy != NULL)
 	{
 		free(to_destroy);
 		to_destroy = NULL;
 
-		return TRUE;
+		return true;
 	}
 	else
 	{
-		return FALSE;
+		return false;
 	}
 }
 

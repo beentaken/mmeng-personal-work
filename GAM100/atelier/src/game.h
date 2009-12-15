@@ -6,6 +6,7 @@
 
 #include <assert.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 #include "definitions.h"
 #include "state.h"
@@ -20,7 +21,7 @@
  *
  * Returns: FALSE if the user selects a "quit" option, TRUE otherwise.
  */
-BOOL game_loop(struct GAMESTATE *current);
+bool game_loop(struct GAMESTATE *current);
 
 /* This takes an array containing pointers to the heads of all the linked
  * lists, and prints all the lists preceded by an index.
@@ -37,7 +38,7 @@ void print_all_lines(unit *head[], const int current_line, const int lines);
  *
  * Returns: FALSE if the user selects the "quit" option, TRUE otherwise.
  */
-BOOL in_game(struct GAMESTATE *current);
+bool in_game(struct GAMESTATE *current);
 
 #endif
 

@@ -27,7 +27,7 @@ void print_help()
 		"is deducted from the flow.\n\n");
 }
 
-BOOL menu(struct GAMESTATE *current)
+bool menu(struct GAMESTATE *current)
 {
 	printf("\nAtelier\n\n");
 
@@ -45,10 +45,10 @@ BOOL menu(struct GAMESTATE *current)
 	{
 		case NEW_GAME:
 			current->current_state = GAME;
-			return TRUE;
+			return true;
 			break;
 		case QUIT:
-			return FALSE;
+			return false;
 			break;
 		case HELP:
 			print_help();
@@ -62,9 +62,9 @@ BOOL menu(struct GAMESTATE *current)
 		default:
 			// This shouldn't ever happen.
 			printf("ERR: Default case in menu function hit.\n");
-			return FALSE;
+			return false;
 	}
 
-	return TRUE;
+	return true;
 }
 

@@ -1,6 +1,6 @@
 #include "game.h"
 
-BOOL game_loop(struct GAMESTATE *current)
+bool game_loop(struct GAMESTATE *current)
 {
 	switch (current->current_state)
 	{
@@ -12,11 +12,11 @@ BOOL game_loop(struct GAMESTATE *current)
 			break;
 		default:
 			// If we get here, there's a problem...
-			return TRUE;
+			return true;
 	}
 }
 
-BOOL check_victory(unit *head[], const int lines)
+bool check_victory(unit *head[], const int lines)
 {
 	int i;
 
@@ -30,10 +30,10 @@ BOOL check_victory(unit *head[], const int lines)
 
 	if (end_value.power > 999)
 	{
-		return TRUE;
+		return true;
 	}
 
-	return FALSE;
+	return false;
 }
 
 void print_all_lines(unit * head[], const int current_line, const int lines)
@@ -70,7 +70,7 @@ void print_keys()
 	printf("s <number>: Switch to specified line.\n");
 }
 
-BOOL in_game(struct GAMESTATE *current)
+bool in_game(struct GAMESTATE *current)
 {
 	struct COMMAND current_order;
 
@@ -89,7 +89,7 @@ BOOL in_game(struct GAMESTATE *current)
 
 		printf("Victory condition reached, sequence has exceeded 1000 power.\n");
 
-		return TRUE;
+		return true;
 	}
 
 	current_order = get_command();
@@ -97,7 +97,7 @@ BOOL in_game(struct GAMESTATE *current)
 	switch(current_order.order)
 	{
 		case QUIT:
-			return FALSE;
+			return false;
 		case HELP:
 			print_keys();
 			break;
@@ -135,6 +135,6 @@ BOOL in_game(struct GAMESTATE *current)
 			printf("\nUnrecognized command.\n");
 	}
 
-	return TRUE;
+	return true;
 }
 

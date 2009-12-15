@@ -2,6 +2,8 @@
 #define MENU_H
 
 #include <stdio.h>
+#include <stdbool.h>
+
 #include "definitions.h"
 #include "parser.h"
 #include "state.h"
@@ -20,7 +22,7 @@ void print_credits();
  *
  * Returns: FALSE if the user enters a quit command, TRUE otherwise.
  */
-BOOL menu(struct GAMESTATE *current);
+bool menu(struct GAMESTATE *current);
 
 #endif
 

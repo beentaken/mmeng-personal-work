@@ -4,7 +4,6 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.7	//
-BOOL	definitions.h	/^typedef enum boolean BOOL;$/;"	t	typeref:enum:boolean
 COMMAND	definitions.h	/^struct COMMAND$/;"	s
 COMMAND_LIST	definitions.h	/^enum COMMAND_LIST$/;"	g
 CREATE	definitions.h	/^	CREATE,$/;"	e	enum:COMMAND_LIST
@@ -13,7 +12,6 @@ DEFINITIONS_H	definitions.h	2;"	d
 DIODE	units.h	/^	DIODE, \/\/ Only lets power flow one way.$/;"	e	enum:UNIT_TYPE
 EARTH	units.h	/^	EARTH,$/;"	e	enum:ELEMENT
 ELEMENT	units.h	/^enum ELEMENT$/;"	g
-FALSE	definitions.h	/^	FALSE,$/;"	e	enum:boolean
 FIRE	units.h	/^	FIRE,$/;"	e	enum:ELEMENT
 GAME	state.h	/^	GAME$/;"	e	enum:STATE
 GAMESTATE	state.h	/^struct GAMESTATE$/;"	s
@@ -39,7 +37,6 @@ SOURCE	units.h	/^	SOURCE, \/\/ Each level starts out with one of these.$/;"	e	en
 STATE	state.h	/^enum STATE$/;"	g
 STATE_H	state.h	2;"	d
 SWITCH_LINES	definitions.h	/^	SWITCH_LINES$/;"	e	enum:COMMAND_LIST
-TRUE	definitions.h	/^	TRUE$/;"	e	enum:boolean
 UNITS_H	units.h	2;"	d
 UNIT_STRUCT	units.h	/^struct UNIT_STRUCT$/;"	s
 UNIT_TYPE	units.h	/^enum UNIT_TYPE$/;"	g
@@ -47,28 +44,27 @@ WATER	units.h	/^	WATER$/;"	e	enum:ELEMENT
 WOOD	units.h	/^	WOOD,$/;"	e	enum:ELEMENT
 append_unit	units.c	/^void append_unit(unit *head, unit *to_append)$/;"	f
 aspect	units.h	/^	enum ELEMENT aspect;$/;"	m	struct:UNIT_STRUCT	typeref:enum:UNIT_STRUCT::ELEMENT
-boolean	definitions.h	/^enum boolean$/;"	g
 calculate_stack	units.c	/^unit calculate_stack(const unit *head, const enum ELEMENT current_element, const int current_power)$/;"	f
-check_victory	game.c	/^BOOL check_victory(unit *head[], const int lines)$/;"	f
+check_victory	game.c	/^bool check_victory(unit *head[], const int lines)$/;"	f
 create_unit	units.c	/^unit * create_unit(const enum UNIT_TYPE type, const enum ELEMENT aspect, const int power, unit * parent)$/;"	f
 current_line	state.h	/^	int current_line;$/;"	m	struct:GAMESTATE
 current_state	state.h	/^	enum STATE current_state;$/;"	m	struct:GAMESTATE	typeref:enum:GAMESTATE::STATE
 destroy_game_state	state.c	/^void destroy_game_state(struct GAMESTATE *current)$/;"	f
 destroy_pool	units.c	/^void destroy_pool(unit * head)$/;"	f
-destroy_unit	units.c	/^BOOL destroy_unit(unit * to_destroy)$/;"	f
+destroy_unit	units.c	/^bool destroy_unit(unit * to_destroy)$/;"	f
 display_pool	units.c	/^void display_pool(const unit *head, const int index)$/;"	f
 display_units	units.c	/^void display_units(const unit * head)$/;"	f
-game_loop	game.c	/^BOOL game_loop(struct GAMESTATE *current)$/;"	f
+game_loop	game.c	/^bool game_loop(struct GAMESTATE *current)$/;"	f
 get_command	parser.c	/^struct COMMAND get_command()$/;"	f
 get_pool_size	units.c	/^int get_pool_size(const unit *head)$/;"	f
 get_tail	units.c	/^unit *get_tail(unit *head)$/;"	f
 get_unit	units.c	/^unit *get_unit(unit *head, const int index)$/;"	f
-in_game	game.c	/^BOOL in_game(struct GAMESTATE *current)$/;"	f
+in_game	game.c	/^bool in_game(struct GAMESTATE *current)$/;"	f
 initialize_game_state	state.c	/^void initialize_game_state(struct GAMESTATE *current)$/;"	f
 lines	state.h	/^	unit *lines[MAX_LINES];$/;"	m	struct:GAMESTATE
 main	main.c	/^int main(int argc, char* argv[])$/;"	f
-menu	menu.c	/^BOOL menu(struct GAMESTATE *current)$/;"	f
-move_unit	units.c	/^BOOL move_unit(unit *new_pool, unit *to_move)$/;"	f
+menu	menu.c	/^bool menu(struct GAMESTATE *current)$/;"	f
+move_unit	units.c	/^bool move_unit(unit *new_pool, unit *to_move)$/;"	f
 next	units.h	/^	struct UNIT_STRUCT * next;$/;"	m	struct:UNIT_STRUCT	typeref:struct:UNIT_STRUCT::UNIT_STRUCT
 order	definitions.h	/^	enum COMMAND_LIST order;$/;"	m	struct:COMMAND	typeref:enum:COMMAND::COMMAND_LIST
 pool	state.h	/^	unit *pool;$/;"	m	struct:GAMESTATE

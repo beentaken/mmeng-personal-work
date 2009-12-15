@@ -4,6 +4,7 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 #include "definitions.h"
 
@@ -115,7 +116,7 @@ unit *remove_unit(unit *to_remove);
  *
  * Returns: TRUE if the move succeeded, FALSE otherwise.
  */
-BOOL move_unit(unit *new_pool, unit *to_move);
+bool move_unit(unit *new_pool, unit *to_move);
 
 /* Destroys a unit.
  *
@@ -124,7 +125,7 @@ BOOL move_unit(unit *new_pool, unit *to_move);
  *
  * Returns: TRUE if the deallocation succeeded, FALSE otherwise.
  */
-BOOL destroy_unit(unit * to_destroy);
+bool destroy_unit(unit * to_destroy);
 
 /* Displays a formatted pool with indices.
  *

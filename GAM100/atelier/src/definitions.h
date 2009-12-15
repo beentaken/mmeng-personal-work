@@ -4,16 +4,6 @@
 // Magic numbers.
 #define MAX_INPUT_LENGTH 80
 
-// General types.
-
-enum boolean
-{
-	FALSE,
-	TRUE
-};
-
-typedef enum boolean BOOL;
-
 // Interactions.
 
 enum COMMAND_LIST

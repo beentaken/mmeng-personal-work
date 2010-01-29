@@ -6,7 +6,7 @@ SRCFILES=main.cpp fibonacci.cpp
 
 ifeq "$(CXX)" "g++"
 	CCFLAGS=-Wall -Wextra -Werror -ansi -pedantic
-#	LDFLAGS=-Wl,--enable-auto-import
+	LDFLAGS=-Wl,--enable-auto-import
 	OUTFLAG=-o 
 	BINDIR=gnu
 else ifeq "$(CXX)" "cl"
@@ -22,8 +22,8 @@ endif
 all: fib
 
 fib:
-	$(CXX) $(CCFLAGS) $(LDFLAGS) $(SRCFILES) $(OUTFLAG)$(BINDIR)/$@
+	$(CXX) $(CCFLAGS) $(LDFLAGS) $(OUTFLAG)$(BINDIR)/$@ $(SRCFILES)
 
 clean:
-	rm $(BINDIR)/*
+	rm ./*.obj $(BINDIR)/*
 

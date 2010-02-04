@@ -1,0 +1,16 @@
+env = Environment()
+
+env.Append(CCFLAGS = ['-Werror', '-Wall','-Wextra','-ansi','-pedantic', '-g'])
+
+env.Append(CCFLAGS = ['-DNDEBUG'])
+
+warships_source_files = Split("""
+	driver-big.cpp
+	Ocean.cpp
+	PRNG.cpp
+	""")
+
+libraries = ['m']
+
+warships = env.Program(target="warships", source=warships_source_files)
+

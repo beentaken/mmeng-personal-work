@@ -1,1 +1,0 @@
-/usr/bin/c++   -Wextra -Wall -ansi -pedantic  -fPIC CMakeFiles/ll.dir/list.cpp.o CMakeFiles/ll.dir/main.cpp.o  -o ll -rdynamic 

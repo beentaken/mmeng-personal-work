@@ -35,6 +35,15 @@
 
 namespace 
 {
+  /*!
+   * Creates a Node, sets the initial value, and returns a pointer to it.
+   *
+   * \param value
+   * 	The initial value of the node.
+   *
+   * \return
+   * 	A pointer to the newly created node.
+   */
   struct Node* MakeNode(int value)
   {
     struct Node *pNode = new Node; // Allocate memory
@@ -45,6 +54,12 @@ namespace
   }
 }
 
+/*!
+ * \brief Prints out all values in a list, space-seperated.
+ *
+ * \param list
+ * 	The list to print out.
+ */
 void PrintList(struct Node *list)
 {
   while (list)
@@ -55,6 +70,15 @@ void PrintList(struct Node *list)
   std::cout << std::endl;
 }
 
+/*!
+ * \brief Counts up the number of nodes in a list.
+ *
+ * \param list
+ * 	The list to count.
+ *
+ * \return
+ * 	The number of nodes in the list.
+ */
 int Count(struct Node *list)
 {
   int count = 0;
@@ -68,6 +92,15 @@ int Count(struct Node *list)
 
 // STUDENT IMPLEMENTATION STARTS HERE.
 
+/*!
+ * \brief Adds a node with the given value to the end of a list.
+ *
+ * \param ppList
+ * 	A pointer to the list to modify.
+ *
+ * \param value
+ * 	The value of the new node to add.
+ */
 void AddToEnd(struct Node **ppList, int value)
 {
 	if (*ppList)
@@ -80,6 +113,15 @@ void AddToEnd(struct Node **ppList, int value)
 	}
 }
 
+/*!
+ * \brief Adds a new node with the given value to the front of a list.
+ *
+ * \param ppList
+ * 	The list to modify.
+ *
+ * \param value
+ * 	The value of the node to add.
+ */
 void AddToFront(struct Node **ppList, int value)
 {
 	Node* newHead = MakeNode(value);
@@ -88,6 +130,12 @@ void AddToFront(struct Node **ppList, int value)
 	*ppList = newHead;
 }
 
+/*!
+ * \brief Destroys all the nodes in a list, freeing up the memory.
+ *
+ * \param pList
+ * 	The list to deallocate.
+ */
 void FreeList(struct Node *pList)
 {
 	if (pList)
@@ -98,6 +146,18 @@ void FreeList(struct Node *pList)
 	delete pList;
 }
 
+/*!
+ * \brief Inserts a new node with the given value at the specified index.
+ *
+ * \param ppList
+ * 	A pointer to the list to modify.
+ *
+ * \param value
+ * 	The value of the node to add.
+ *
+ * \param position
+ * 	The index of the new node.
+ */
 void Insert(struct Node **ppList, int value, int position)
 {
 	if (*ppList && position > 0)
@@ -114,6 +174,18 @@ void Insert(struct Node **ppList, int value, int position)
 	// Do nothing if we're at end of list and position > 0.
 }
 
+/*!
+ * \brief Finds a node with the given value in the list.
+ *
+ * \param list
+ * 	The list to search.
+ *
+ * \param value
+ * 	The value to search for.
+ * 
+ * \return
+ * 	A pointer to the node containing the value, if found, NULL otherwise.
+ */
 struct Node *FindItem(struct Node *list, int value)
 {
 	if (list && list->number != value)

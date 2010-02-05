@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/amackenzie/work/mmeng-personal-work/CS170/labs/03/list.cpp
+iostream
+-
+list.h
+/home/amackenzie/work/mmeng-personal-work/CS170/labs/03/list.h
+
+/home/amackenzie/work/mmeng-personal-work/CS170/labs/03/list.h
+
+/home/amackenzie/work/mmeng-personal-work/CS170/labs/03/main.cpp
+iostream
+-
+iomanip
+-
+list.h
+/home/amackenzie/work/mmeng-personal-work/CS170/labs/03/list.h
+

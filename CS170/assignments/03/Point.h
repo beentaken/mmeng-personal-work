@@ -1,3 +1,18 @@
+/******************************************************************************/
+/*!
+\file   Point.h
+\author Marcus Meng
+\par    email: marcus.meng\@digipen.edu
+\par    DigiPen login: marcus.meng
+\par    Course: CS170
+\par    Assignment #3
+\date   2/17/2010
+\brief  
+	Contains the prototypes for the Point class, constructors, and
+	associated overloaded operators.
+*/
+/******************************************************************************/
+
 ////////////////////////////////////////////////////////////////////////////////
 #ifndef POINT_H
 #define POINT_H

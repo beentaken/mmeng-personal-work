@@ -1,5 +1,5 @@
 #include "Point.h"  // Point members
-#include <cmath>    // sqrt, atan, sin, cos
+#include <cmath>    // sqrt, atan, sin, cos, abs
 
 namespace
 {
@@ -32,11 +32,11 @@ double Point::RadiansToDegrees(double radians) const
 ///////////////////////////////////////////////////////////////////////////////
 // 16 public member functions (2 constructors, 14 operators) 
 
-Point::Point() : x_(0), y_(0)
+Point::Point() : x_(0.0), y_(0.0)
 {
 }
 
-Point::Point(const int x, const int y) : x_(x), y_(y)
+Point::Point(const double x, const double y) : x_(x), y_(y)
 {
 }
 
@@ -44,8 +44,21 @@ Point Point::operator%(const double &rhs) const
 {
 	double in_radians(DegreesToRadians(rhs));
 
-	return(Point(x_ * std::cos(in_radians) - y_ * std::sin(in_radians),
-			x_ * std::sin(in_radians) + y_ * std::cos(in_radians)));
+	// The x_value of the new Point.
+	double new_x(x_ * std::cos(in_radians) - y_ * std::sin(in_radians));
+	// The y_value of the new Point.
+	double new_y(x_ * std::sin(in_radians) + y_ * std::cos(in_radians));
+
+	if (std::abs(new_x) < EPSILON)
+	{
+		new_x = 0.0;
+	}
+	if (std::abs(new_y) < EPSILON)
+	{
+		new_y = 0.0;
+	}
+
+	return(Point(new_x, new_y));
 }
 
 double Point::operator-(const Point &rhs) const

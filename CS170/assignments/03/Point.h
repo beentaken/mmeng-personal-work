@@ -12,7 +12,7 @@ namespace CS170
     public:
         // Constructors (2)
 	Point();
-	Point(const int x, const int y);
+	Point(const double x, const double y);
 
         // Overloaded operators (14 member functions)
 	Point operator%(const double &rhs) const;

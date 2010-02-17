@@ -1,3 +1,25 @@
+/******************************************************************************/
+/*!
+\file   Point.cpp
+\author Marcus Meng
+\par    email: marcus.meng\@digipen.edu
+\par    DigiPen login: marcus.meng
+\par    Course: CS170
+\par    Assignment #3
+\date   2/17/2010
+\brief
+	This file contains the implementations for the constructors and the
+	overloaded operators dealing with the Point class.
+
+  Hours spent on this assignment: 1
+
+  Specific portions that gave you the most trouble: 
+  
+  Just debugging.
+
+*/
+/******************************************************************************/
+
 #include "Point.h"  // Point members
 #include <cmath>    // sqrt, atan, sin, cos, abs
 
@@ -32,14 +54,33 @@ double Point::RadiansToDegrees(double radians) const
 ///////////////////////////////////////////////////////////////////////////////
 // 16 public member functions (2 constructors, 14 operators) 
 
+/*****************************************************************************/
+/*!
+\brief
+	Constructs a point with the default values of 0, 0.
+*/
+/*****************************************************************************/
 Point::Point() : x_(0.0), y_(0.0)
 {
 }
 
+/*****************************************************************************/
+/*!
+\brief
+	Constructs a point at the given coordinates.
+
+\param x
+	The X coordinate.
+
+\param y
+	The Y coordinate.
+*/
+/*****************************************************************************/
 Point::Point(const double x, const double y) : x_(x), y_(y)
 {
 }
 
+// Rotates the point by the given number of degrees.
 Point Point::operator%(const double &rhs) const
 {
 	double in_radians(DegreesToRadians(rhs));
@@ -61,16 +102,19 @@ Point Point::operator%(const double &rhs) const
 	return(Point(new_x, new_y));
 }
 
+// Finds the distance between two points.
 double Point::operator-(const Point &rhs) const
 {
 	return(std::sqrt(std::abs(square(rhs.x_ - x_) + square(rhs.y_ - y_))));
 }
 
+// Finds the midpoint of two points.
 Point Point::operator^(const Point &rhs) const
 {
 	return(Point((x_ + rhs.x_) / 2, (y_ + rhs.y_) / 2));
 }
 
+// Translates a point by the value of a second point.
 Point& Point::operator+=(const Point &rhs)
 {
 	x_ += rhs.x_;
@@ -79,6 +123,7 @@ Point& Point::operator+=(const Point &rhs)
 	return(*this);
 }
 
+// Translates the x and y coordinates of a point by the value.
 Point& Point::operator+=(const double &rhs)
 {
 	x_ += rhs;
@@ -87,11 +132,13 @@ Point& Point::operator+=(const double &rhs)
 	return(*this);
 }
 
+// Translates a point by the negative of the provided value.
 Point Point::operator-(const double &rhs) const
 {
 	return(Point(x_ - rhs, y_ - rhs));
 }
 
+// Pre-increments the X and Y coordinates of the point.
 Point& Point::operator++()
 {
 	++x_;
@@ -100,6 +147,7 @@ Point& Point::operator++()
 	return(*this);
 }
 
+// Post-increments the X and Y coordinates of the point.
 Point Point::operator++(int)
 {
 	Point temp(x_, y_);
@@ -110,6 +158,7 @@ Point Point::operator++(int)
 	return(temp);
 }
 
+// Pre-decrements the X and Y values of the point.
 Point& Point::operator--()
 {
 	--x_;
@@ -118,6 +167,7 @@ Point& Point::operator--()
 	return(*this);
 }
 
+// Post-decrements the X and Y values of the point.
 Point Point::operator--(int)
 {
 	Point temp(x_, y_);
@@ -128,16 +178,19 @@ Point Point::operator--(int)
 	return(temp);
 }
 
+// Multiples the X and Y values of the point by -1.
 Point Point::operator-() const
 {
 	return(Point(-x_, -y_));
 }
 
+// Translates a point by the value of the second Point.
 Point Point::operator+(const Point &rhs) const
 {
 	return(Point(x_ + rhs.x_, y_ + rhs.y_));
 }
 
+// Translates a point by the value of the provided constant.
 Point Point::operator*(const double &rhs) const
 {
 	return(Point(x_ * rhs, y_ * rhs));
@@ -146,6 +199,7 @@ Point Point::operator*(const double &rhs) const
 ///////////////////////////////////////////////////////////////////////////////
 // 2 friend functions (operators)
 
+// Inserts the point into an ostream in the "(X, Y)" format.
 std::ostream& operator<<(std::ostream &lhs, const Point &rhs)
 {
 	lhs << '(' << rhs.x_ << ", " << rhs.y_ << ')';
@@ -153,6 +207,7 @@ std::ostream& operator<<(std::ostream &lhs, const Point &rhs)
 	return(lhs);
 }
 
+// Reads two values into the point.
 std::istream& operator>>(std::istream &lhs, Point &rhs)
 {
 	lhs >> rhs.x_ >> rhs.y_;
@@ -163,16 +218,19 @@ std::istream& operator>>(std::istream &lhs, Point &rhs)
 ///////////////////////////////////////////////////////////////////////////////
 // 2 non-members, non-friends (operators)
 
+// Adds a double and a point.
 Point operator+(const double &lhs, const Point &rhs)
 {
 	return(rhs + Point(lhs, lhs));
 }
 
+// Adds a point and a double.
 Point operator+(const Point &lhs, const double &rhs)
 {
 	return(rhs + lhs);
 }
 
+// Scales a point by the double provided.
 Point operator*(const double &lhs, const Point &rhs)
 {
 	return(rhs * lhs);

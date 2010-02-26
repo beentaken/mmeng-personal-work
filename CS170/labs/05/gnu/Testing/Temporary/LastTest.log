@@ -1,0 +1,16 @@
+Start testing: Feb 26 11:48 PST
+----------------------------------------------------------
+Changing directory into: /home/amackenzie/work/mmeng-personal-work/CS170/labs/05/gnu
+1/1 Testing: BASIC_DIFF
+1/1 Test: BASIC_DIFF
+Command: "/home/amackenzie/work/mmeng-personal-work/CS170/labs/05/gnu/difftest.sh" "./ll" "myoutput.txt" "output-all.txt" 
+Directory: /home/amackenzie/work/mmeng-personal-work/CS170/labs/05/gnu
+"BASIC_DIFF" start time: Feb 26 11:48 PST
+Output:
+----------------------------------------------------------
+----------------------------------------------------------
+"BASIC_DIFF" end time: Feb 26 11:48 PST
+"BASIC_DIFF" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 26 11:48 PST

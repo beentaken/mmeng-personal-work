@@ -314,13 +314,26 @@ std::ostream &operator<<(std::ostream &lhs, const List &rhs)
 	return lhs;
 }
 
-void List::Merge(Node** ppList, Node* toAdd)
+/*!
+ * \brief Merges two sorted lists together.
+ *
+ * \param ppList
+ * 	A pointer to the list to merge to.
+ *
+ * \param toAdd
+ * 	A list of values to merge.
+ */
+void List::Merge(Node** ppList, Node** toAdd)
 {
-	if (*ppList && toAdd)
+	if (*ppList && *toAdd)
 	{
-		if (*ppList->number > toAdd->number)
+		if ((*ppList)->number > (*toAdd)->number)
 		{
-			t
+			Node* temp = *toAdd;
+			*toAdd = (*toAdd)->next;
+			temp->next = *ppList;
+			*ppList = temp;
+			Merge(&(*ppList)->next, toAdd);
 		}
 		else
 		{
@@ -329,11 +342,13 @@ void List::Merge(Node** ppList, Node* toAdd)
 	}
 	else if (toAdd != NULL && *ppList == NULL)
 	{
-		// Attach remainder of toAdd to ppList.
+		*ppList = *toAdd;
+		*toAdd = NULL;
 	}
 }
 
 void List::Merge(List &rhs)
 {
+	Merge(&head_, &rhs.head_);
 }
 

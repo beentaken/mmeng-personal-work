@@ -47,6 +47,7 @@ class List
 		void Concat(struct Node **Destination, struct Node *Source);
 		void Delete(struct Node **ppList, struct Node *Items);
 		void Insert(struct Node **ppList, int value);
+		void Merge(struct Node **ppList, struct Node** toAdd);
 	
 		void FreeList(struct Node *pList);
 };

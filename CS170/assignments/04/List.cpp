@@ -1,3 +1,25 @@
+/******************************************************************************/
+/*!
+\file   List.cpp
+\author Marcus Meng
+\par    email: marcus.meng\@digipen.edu
+\par    DigiPen login: marcus.meng
+\par    Course: CS170
+\par    Assignment #4
+\date   March 3, 2010
+\brief
+	This file contains the implementations for the constructors and the
+	overloaded operators dealing with the List class.
+
+  Hours spent on this assignment: 1
+
+  Specific portions that gave you the most trouble: 
+  
+  Just debugging.
+
+*/
+/******************************************************************************/
+
 #include "List.h"  // List class
 #include <iomanip> // setw
 
@@ -10,10 +32,12 @@ namespace CS170
 // public methods in this order: 
 // Constructors (default, copy, non-defaults), destructor, operators, others
 
+	/**********************************************************************/
 	/*!
 	 * \brief
 	 * 	Constructs a default List.
 	 */
+	/**********************************************************************/
 	List::List(void)
 	{
 		head_ = NULL;
@@ -22,6 +46,7 @@ namespace CS170
 		++object_count_;
 	}
 
+	/**********************************************************************/
 	/*!
 	 * \brief
 	 * 	Constructs a copy of the List in the argument.
@@ -29,6 +54,7 @@ namespace CS170
 	 * \param to_copy
 	 * 	The list to copy.
 	 */
+	/**********************************************************************/
 	List::List(const List& to_copy)
 	{
 		head_ = NULL;
@@ -43,6 +69,7 @@ namespace CS170
 		++object_count_;
 	}
 
+	/**********************************************************************/
 	/*!
 	 * \brief Constructs a list containing nodes with the values provided.
 	 *
@@ -53,6 +80,7 @@ namespace CS170
 	 * \param size
 	 * 	The size of the array passed in the argument.
 	 */
+	/**********************************************************************/
 	List::List(const int* array, const int size)
 	{
 		head_ = NULL;
@@ -67,15 +95,18 @@ namespace CS170
 		++object_count_;
 	}
 
+	/**********************************************************************/
 	/*!
 	 * \brief
 	 * 	Destructor for the List.
 	 */
+	/**********************************************************************/
 	List::~List(void)
 	{
 		clear();
 	}
 
+	/**********************************************************************/
 	/*!
 	 * \brief
 	 * 	Assignment/copy operator.
@@ -86,6 +117,7 @@ namespace CS170
 	 * \returns
 	 * 	A reference to the now-modified List.
 	 */
+	/**********************************************************************/
 	List& List::operator=(const List& rhs)
 	{
 		clear();
@@ -98,6 +130,7 @@ namespace CS170
 		return(*this);
 	}
 
+	/**********************************************************************/
 	/*!
 	 * \brief
 	 * 	Appends the data in a List to the current List.
@@ -108,6 +141,7 @@ namespace CS170
 	 * \returns
 	 * 	A reference to the modified current List.
 	 */
+	/**********************************************************************/
         List& List::operator+=(const List& rhs)
 	{
 		for (int i = 0; i < rhs.size(); ++i)
@@ -118,6 +152,7 @@ namespace CS170
 		return(*this);
 	}
 
+	/**********************************************************************/
 	/*!
 	 * \brief
 	 * 	Creates a new List containing all the values in the current
@@ -130,6 +165,7 @@ namespace CS170
 	 * 	A newly created List containing the values in both the current
 	 * 	and provided Lists.
 	 */
+	/**********************************************************************/
         List List::operator+(const List& rhs) const
 	{
 		List temp(*this);
@@ -139,6 +175,7 @@ namespace CS170
 		return(temp);
 	}
 
+	/**********************************************************************/
 	/*!
 	 * \brief
 	 * 	Finds the value of the List at the specified index. Does NOT
@@ -150,6 +187,7 @@ namespace CS170
 	 * \returns
 	 * 	A reference to the value at the specified index.
 	 */
+	/**********************************************************************/
         int& List::operator[](const int index)
 	{
 		Node* temp = head_;
@@ -162,6 +200,7 @@ namespace CS170
 		return(temp->data);
 	}
 
+	/**********************************************************************/
 	/*!
 	 * \brief
 	 * 	Const version of the index function.
@@ -172,6 +211,7 @@ namespace CS170
 	 * \returns
 	 * 	The value of the node at the specified index.
 	 */
+	/**********************************************************************/
         int List::operator[](const int index) const
 	{
 		Node* temp = head_;
@@ -184,6 +224,7 @@ namespace CS170
 		return(temp->data);
 	}
 
+	/**********************************************************************/
 	/*!
 	 * \brief
 	 * 	Prepends a given value to the List.
@@ -191,6 +232,7 @@ namespace CS170
 	 * \param new_value
 	 * 	The value to prepend.
 	 */
+	/**********************************************************************/
 	void List::push_front(const int new_value)
 	{
 		Node* temp = new_node(new_value);
@@ -206,6 +248,7 @@ namespace CS170
 		++size_;
 	}
 
+	/**********************************************************************/
 	/*!
 	 * \brief
 	 * 	Appends a given value to the List.
@@ -213,6 +256,7 @@ namespace CS170
 	 * \param new_value
 	 * 	The value to append.
 	 */
+	/**********************************************************************/
 	void List::push_back(const int new_value)
 	{
 		if (tail_ == NULL)
@@ -230,6 +274,7 @@ namespace CS170
 		}
 	}
 
+	/**********************************************************************/
 	/*!
 	 * \brief
 	 * 	Removes the first value in the list.
@@ -237,6 +282,7 @@ namespace CS170
 	 * \returns
 	 * 	The value of the node in the List, -1 if the List is empty.
 	 */
+	/**********************************************************************/
 	int List::pop_front(void)
 	{
 		if (head_)
@@ -258,6 +304,7 @@ namespace CS170
 		}
 	}
 
+	/**********************************************************************/
 	/*!
 	 * \brief
 	 * 	Finds the current number of nodes in the List.
@@ -265,11 +312,13 @@ namespace CS170
 	 * \returns
 	 * 	The number of nodes in the List.
 	 */
+	/**********************************************************************/
 	int List::size(void) const
 	{
 		return(size_);
 	}
 
+	/**********************************************************************/
 	/*!
 	 * \brief
 	 * 	Finds out whether the List is empty.
@@ -277,15 +326,18 @@ namespace CS170
 	 * \returns
 	 * 	True if the List does not contain any nodes, false otherwise.
 	 */
+	/**********************************************************************/
 	bool List::empty(void) const
 	{
 		return(size_ == 0);
 	}
 
+	/**********************************************************************/
 	/*!
 	 * \brief
 	 * 	Deallocates all nodes in the List.
 	 */
+	/**********************************************************************/
 	void List::clear(void)
 	{
 		while(!empty())
@@ -294,6 +346,7 @@ namespace CS170
 		}
 	}
 
+	/**********************************************************************/
 	/*!
 	 * \brief
 	 * 	Finds the total number of Lists created in the program.
@@ -301,6 +354,7 @@ namespace CS170
 	 * \returns
 	 * 	The number of times the constructors for Lists have been run.
 	 */
+	/**********************************************************************/
 	int List::object_count(void)
 	{
 		return(object_count_);
@@ -310,6 +364,7 @@ namespace CS170
 ////////////////////////////////////////////////////////////////////////////////
 // private methods
 
+	/**********************************************************************/
 	/*!
 	 * \brief
 	 * 	Allocates a new Node pointer.
@@ -320,6 +375,7 @@ namespace CS170
 	 * \returns
 	 * 	A pointer to the newly-allocated Node.
 	 */
+	/**********************************************************************/
 	List::Node* List::new_node(int data) const
 	{
 		Node* temp = new Node;

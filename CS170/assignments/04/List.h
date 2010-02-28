@@ -1,3 +1,17 @@
+/******************************************************************************/
+/*!
+\file   List.h
+\author Marcus Meng
+\par    email: marcus.meng\@digipen.edu
+\par    DigiPen login: marcus.meng
+\par    Course: CS170
+\par    Assignment #4
+\date   March 3, 2010
+\brief
+	This file contains the prototypes for the various functions dealing
+	with the List class.
+*/
+/******************************************************************************/
 ////////////////////////////////////////////////////////////////////////////////
 #ifndef LIST_H
 #define LIST_H

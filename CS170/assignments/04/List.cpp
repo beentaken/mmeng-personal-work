@@ -26,7 +26,7 @@
 namespace CS170
 {
 
-	int List::object_count_ = 0;
+	int List::object_count_ = 0;	// Keeps track of number of Lists.
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 // public methods in this order: 
@@ -168,7 +168,7 @@ namespace CS170
 	/**********************************************************************/
         List List::operator+(const List& rhs) const
 	{
-		List temp(*this);
+		List temp(*this); // Hold the current value for a postinc.
 		
 		temp += rhs;
 
@@ -190,7 +190,7 @@ namespace CS170
 	/**********************************************************************/
         int& List::operator[](const int index)
 	{
-		Node* temp = head_;
+		Node* temp = head_; // Iterator.
 
 		for (int i = 0; i < index; ++i)
 		{
@@ -214,7 +214,7 @@ namespace CS170
 	/**********************************************************************/
         int List::operator[](const int index) const
 	{
-		Node* temp = head_;
+		Node* temp = head_; // Iterator.
 
 		for (int i = 0; i < index; ++i)
 		{
@@ -235,7 +235,7 @@ namespace CS170
 	/**********************************************************************/
 	void List::push_front(const int new_value)
 	{
-		Node* temp = new_node(new_value);
+		Node* temp = new_node(new_value); // Hold the new node to add.
 
 		temp->next = head_;
 		head_ = temp;
@@ -265,7 +265,7 @@ namespace CS170
 		}
 		else
 		{
-			Node* temp = new_node(new_value);
+			Node* temp = new_node(new_value); // New node to add.
 
 			tail_->next = temp;
 			tail_ = tail_->next;
@@ -287,8 +287,8 @@ namespace CS170
 	{
 		if (head_)
 		{
-			int temp = head_->data;
-			Node* to_delete = head_;
+			int temp = head_->data; // Hold the value to return.
+			Node* to_delete = head_; // Hold the head temporarily.
 
 			head_ = head_->next;
 
@@ -378,7 +378,7 @@ namespace CS170
 	/**********************************************************************/
 	List::Node* List::new_node(int data) const
 	{
-		Node* temp = new Node;
+		Node* temp = new Node; // Hold the new node to return.
 
 		temp->data = data;
 		temp->next = NULL;

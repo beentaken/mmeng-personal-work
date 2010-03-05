@@ -5,7 +5,7 @@
 \par    email: marcus.meng\@digipen.edu
 \par    DigiPen login: marcus.meng
 \par    Course: CS170
-\par    Lab #3
+\par    Lab #6
 \date   2/5/2010
 \brief  
     Contains implementation of the linked list lab.
@@ -23,32 +23,49 @@
 
   Specific portions that gave you the most trouble: 
   	None.
-
-  
-  
-  
 */
 /******************************************************************************/
 
 #include <iostream> // cout, endl
 #include "List.h"
 
+/*!
+ * \brief Constructs a default Node.
+ */
 Node::Node(int value)
 :number(value), next(NULL)
 {
 }
 
+/*!
+ * \brief Constructs a default List.
+ */
 List::List(void)
 {
 	head_ = 0;
 }
 
+/*!
+ * \brief Allocates a new Node.
+ *
+ * \param value
+ * 	The value to assign to the new Node.
+ *
+ * \return
+ * 	A pointer to the newly-allocated Node.
+ */
 Node* List::MakeNode(int value)
 {
 	// The constructor sets the value and sets next to 0.
 	return new Node(value);
 }
 
+/*!
+ * \brief Counts the number of Nodes in a List.
+ *
+ * \return
+ * 	The number of Nodes in the List.
+ */
 int List::Count(void)
 {
 	int count = 0;
@@ -62,6 +79,11 @@ int List::Count(void)
 }
 // STUDENT IMPLEMENTATION STARTS HERE.
 
+/*!
+ * \brief Destructor for a List.
+ *
+ * Frees up any existing Node memory in the List.
+ */
 List::~List(void)
 {
 	FreeList(head_);
@@ -88,6 +110,12 @@ void List::AddToEnd(struct Node **ppList, int value)
 	}
 }
 
+/*!
+ * \brief Adds a value to the end of a List.
+ *
+ * \param value
+ * 	The value to append to the List.
+ */
 void List::AddToEnd(int value)
 {
 	AddToEnd(&head_, value);
@@ -110,6 +138,12 @@ void List::AddToFront(struct Node **ppList, int value)
 	*ppList = newHead;
 }
 
+/*!
+ * \brief Adds a value to the front of the List.
+ *
+ * \param value
+ * 	The value to prepend to the List.
+ */
 void List::AddToFront(int value)
 {
 	AddToFront(&head_, value);
@@ -159,6 +193,17 @@ void List::Insert(struct Node **ppList, int value, int position)
 	// Do nothing if we're at end of list and position > 0.
 }
 
+/*!
+ * \brief Inserts a value into a given position in the list.
+ *
+ * Does not insert the value if the position is out of bounds for the list.
+ *
+ * \param value
+ * 	The value to insert.
+ *
+ * \param position
+ * 	The index to insert the value at.
+ */
 void List::Insert(int value, int position)
 {
 	Insert(&head_, value, position);
@@ -188,6 +233,17 @@ struct Node *List::FindItem(struct Node *list, int value)
 	}
 }
 
+/*!
+ * \brief Finds a Node with a given value in the List.
+ *
+ * This is a very un-useful function ever since this became a class.
+ *
+ * \param value
+ * 	The value to look for in the List.
+ *
+ * \return
+ * 	A pointer to the Node containing the value.
+ */
 struct Node *List::FindItem(int value)
 {
 	return(FindItem(head_, value));
@@ -220,6 +276,12 @@ void List::Delete(struct Node **ppList, int value)
 	}
 }
 
+/*!
+ * \brief Deletes the first occurance of a given value from the List.
+ *
+ * \param value
+ * 	The value to delete.
+ */
 void List::Delete(int value)
 {
 	Delete(&head_, value);
@@ -243,6 +305,12 @@ void List::Concat(struct Node **Destination, struct Node *Source)
 	}
 }
 
+/*!
+ * \brief Concatenates two Lists together.
+ *
+ * \param toConcat
+ * 	The List to append to the current List.
+ */
 void List::Concat(const List &toConcat)
 {
 	Concat(&head_, toConcat.head_);
@@ -266,6 +334,12 @@ void List::Delete(struct Node **ppList, struct Node *Items)
 	}
 }
 
+/*!
+ * \brief Deletes all the values in the second List from the current.
+ *
+ * \param toDelete
+ * 	A List containing all the values to delete.
+ */
 void List::Delete(List &toDelete)
 {
 	Delete(&head_, toDelete.head_);
@@ -292,11 +366,29 @@ void List::Insert(struct Node **ppList, int value)
 	}
 }
 
+/*!
+ * \brief Inserts a value into a sorted order in the current List.
+ *
+ * \param value
+ * 	The value to insert.
+ */
 void List::Insert(int value)
 {
 	Insert(&head_, value);
 }
 
+/*!
+ * \brief Inserts the contents of the Node linked list into the stream.
+ *
+ * \param lhs
+ * 	The stream to insert into.
+ *
+ * \param rhs
+ * 	The current Node to insert into the stream.
+ *
+ * \return
+ * 	A reference to the stream.
+ */
 std::ostream &operator<<(std::ostream &lhs, const Node *rhs)
 {
 	if (rhs)
@@ -307,6 +399,18 @@ std::ostream &operator<<(std::ostream &lhs, const Node *rhs)
 	return lhs;
 }
 
+/*!
+ * \brief Outputs the contents of a List into the stream specified.
+ *
+ * \param lhs
+ * 	The stream to insert data into.
+ *
+ * \param rhs
+ * 	The List to output.
+ *
+ * \return
+ * 	A reference to the stream.
+ */
 std::ostream &operator<<(std::ostream &lhs, const List &rhs)
 {
 	lhs << rhs.head_;
@@ -333,12 +437,8 @@ void List::Merge(Node** ppList, Node** toAdd)
 			*toAdd = (*toAdd)->next;
 			temp->next = *ppList;
 			*ppList = temp;
-			Merge(&(*ppList)->next, toAdd);
 		}
-		else
-		{
-			Merge(&(*ppList)->next, toAdd);
-		}
+		Merge(&(*ppList)->next, toAdd);
 	}
 	else if (toAdd != NULL && *ppList == NULL)
 	{
@@ -347,6 +447,14 @@ void List::Merge(Node** ppList, Node** toAdd)
 	}
 }
 
+/*!
+ * \brief Merges the specified List with the current one.
+ *
+ * Both Lists should be in sorted order ahead of time.
+ *
+ * \param rhs
+ * 	The List to merge with the current List.
+ */
 void List::Merge(List &rhs)
 {
 	Merge(&head_, &rhs.head_);

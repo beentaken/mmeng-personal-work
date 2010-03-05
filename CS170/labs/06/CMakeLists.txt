@@ -13,5 +13,5 @@ endif(CMAKE_COMPILER_IS_GNUCXX)
 add_executable(ll List.cpp main.cpp)
 
 enable_testing()
-add_test(BASIC_DIFF difftest.sh ./ll myoutput.txt output-all.txt)
+add_test(BASIC_DIFF ${PROJECT_SOURCE_DIR}/difftest.sh ll ./myoutput.txt ${PROJECT_SOURCE_DIR}/output-all.txt)
 

@@ -1,3 +1,18 @@
+/*****************************************************************************/
+/*!
+\file   Functions.h
+\author Marcus Meng
+\par    email: marcus.meng@digipen.edu
+\par    DigiPen login: marcus.meng
+\par    Course: CS170
+\par    Assignment 5
+\date   Marcus 24, 2010
+\brief
+	This file contains the prototypes for various templated range-based
+	functions.
+*/
+/*****************************************************************************/
+
 //---------------------------------------------------------------------------
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H

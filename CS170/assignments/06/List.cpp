@@ -174,10 +174,7 @@ List<T>& List<T>::operator=(const List &rhs)
 {
 	clear();
 
-	for (int i = 0; i < rhs.size(); ++i)
-	{
-		push_back(rhs[i]);
-	}
+	*this += rhs;
 
 	return(*this);
 }

@@ -34,6 +34,3 @@ Items in the list: 10000
 Total number of Nodes in use: 0
 ============================================
 
-real 12.56
-user 12.54
-sys 0.00

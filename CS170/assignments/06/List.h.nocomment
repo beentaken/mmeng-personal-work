@@ -1,17 +1,4 @@
-/*****************************************************************************/
-/*!
-\file   List.h
-\author Marcus Meng
-\par    email: marcus.meng@digipen.edu
-\par    DigiPen login: marcus.meng
-\par    Course: CS170
-\par    Assignment 6
-\date   March 31, 2010
-\brief
-	This file contains the prototypes and overall data structure for a
-	templated linked-list based container class.
-*/
-/*****************************************************************************/
+/* file_header_comment */
 
 ////////////////////////////////////////////////////////////////////////////////
 #ifndef LIST_H

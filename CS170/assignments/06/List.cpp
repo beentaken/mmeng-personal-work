@@ -58,7 +58,7 @@ List<T>::List(const List &list)
 	head_ = tail_ = NULL;
 	size_ = 0;
 
-	*this = list;
+	*this += list;
 }
 
 /* function_header_comment */
@@ -93,6 +93,8 @@ void List<T>::clear(void)
 {
   while (!empty())
     pop_front();
+
+  head_ = tail_ = NULL;
 }
 
 /* function_header_comment */
@@ -172,9 +174,10 @@ bool List<T>::empty(void) const
 template <typename T>
 List<T>& List<T>::operator=(const List &rhs)
 {
+	List temp(rhs); // To prevent self-assignment issues.
 	clear();
 
-	*this += rhs;
+	*this += temp;
 
 	return(*this);
 }
@@ -183,7 +186,7 @@ List<T>& List<T>::operator=(const List &rhs)
 template <typename T>
 List<T> List<T>::operator+(const List& rhs) const
 {
-	List temp(*this);
+	List temp(*this); // Create a copy of the List to return.
 
 	temp += rhs;
 

@@ -1,0 +1,67 @@
+
+TestStress1...
+Items in the list: 100000
+Sum of 10%: 49486
+
+============================================
+Total number of Nodes in use: 0
+============================================
+
+real 2.09
+user 2.07
+sys 0.01
+
+TestStress2...
+Items in the list: 1000000
+
+============================================
+Total number of Nodes in use: 0
+============================================
+
+real 1.29
+user 1.28
+sys 0.01
+
+TestStress3...
+Items in the list: 1000000
+
+============================================
+Total number of Nodes in use: 0
+============================================
+
+real 2.62
+user 2.62
+sys 0.01
+
+TestStress4...
+Items in the list: 50000
+The number 3 appears 5552 times in the list
+
+============================================
+Total number of Nodes in use: 0
+============================================
+
+real 4.90
+user 4.89
+sys 0.01
+
+TestStress5...
+The number 1 appears 1115 times in the list
+The number 2 appears 1064 times in the list
+The number 3 appears 1113 times in the list
+The number 4 appears 1126 times in the list
+The number 5 appears 1082 times in the list
+The number 6 appears 1137 times in the list
+The number 7 appears 1114 times in the list
+The number 8 appears 1139 times in the list
+The number 9 appears 1110 times in the list
+Items in the list: 10000
+Items in the list: 10000
+
+============================================
+Total number of Nodes in use: 0
+============================================
+
+real 1.78
+user 1.78
+sys 0.00

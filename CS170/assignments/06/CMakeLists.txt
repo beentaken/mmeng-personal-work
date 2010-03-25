@@ -16,6 +16,6 @@ add_executable(ll-stress driver-stress.cpp)
 
 enable_testing()
 add_test(SAMPLE_DIFF ${PROJECT_SOURCE_DIR}/difftest.sh ll-sample ./myoutput-sample.txt ${PROJECT_SOURCE_DIR}/output-sample.txt)
-add_test(PERSON_DIFF ${PROJECT_SOURCE_DIR}/difftest.sh ll-sample-person ./myouput-sample-person.txt ${PROJECT_SOURCE_DIR}/output-sample-person.txt)
+add_test(PERSON_DIFF ${PROJECT_SOURCE_DIR}/difftest.sh ll-sample-person ./myoutput-sample-person.txt ${PROJECT_SOURCE_DIR}/output-sample-person.txt)
 add_test(STRESS_DIFF ${PROJECT_SOURCE_DIR}/difftest.sh ll-stress ./myoutput-stress.txt ${PROJECT_SOURCE_DIR}/output-stress2.txt)
 

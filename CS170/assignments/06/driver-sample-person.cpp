@@ -1,5 +1,6 @@
 #include <iostream> // cout, endl
 #include <cstdio>   // sprintf
+#include <cstring>
 #include "List.h"
 
 const unsigned ID_LEN = 6;

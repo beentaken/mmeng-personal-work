@@ -1,3 +1,5 @@
+/* file_header_comment */
+
 ////////////////////////////////////////////////////////////////////////////////
 #ifndef LIST_H
 #define LIST_H
@@ -23,7 +25,7 @@ namespace CS170
       List(const List &list);
 
         // Contruct a list from a T array
-      List(const T *array, int size);
+      List(const T *array, const int size);
 
         // Destructor
       ~List(void);
@@ -46,8 +48,8 @@ namespace CS170
       List& operator+=(const List &list);
 
         // Overloaded subscript operators
-      const T& operator[](int index) const;
-      T& operator[](int index);
+      const T& operator[](const int index) const;
+      T& operator[](const int index);
 
         // Output operator for printing lists (<<)
       friend std::ostream & operator<< <T> (std::ostream & os, const List &list);
@@ -61,7 +63,7 @@ namespace CS170
       {
         Node *next;     // pointer to the next Node
         T data;         // the actual data in the node
-        Node(T value);  // non-default constructor
+        Node(const T &value);  // non-default constructor
         ~Node(void);    // destructor
         static int node_count_; // number of Nodes created
       };

@@ -1,0 +1,59 @@
+\section{Required Materials.}
+
+Aside from the board itself, each player will get 20 square tiles.
+The tiles should be seperated into sets of 4, giving each player a 5 sets of tiles.
+
+\section{Preparing for Play.}
+
+The players will then proceed to arrange each set of tiles into a pattern.
+The tiles must be connected in such a way that all the tiles in a given set are connected on a side.
+This configuration cannot be changed later on in the game, and when units are moved, the entire configuration moves as one.
+
+Every unit must be placed on the grid at the start of play.
+A valid starting position is anywhere where at least one tile of a unit is touching the edge of that player's side of the board.
+
+\section{Taking a Turn.}
+
+\subsection{Moving.}
+
+On each turn, the players can make one move for each unit they control.
+The movement in each turn can be any combination of horizontal or vertical shifts, or 90-degree rotations.
+Moving the unit a single square vertically or horizontally is a shift.
+To rotate a unit, choose one tile in the unit and turn the entire unit 90-degrees around that tile.
+Units can never end in a position where any tiles overlap the tiles of another unit.
+Every unit can make (6 - size) movements per turn.
+
+\subsection{Attacking.}
+
+Units may attack out to two squares away from themselves.
+The attack must be evaluated horizontally or vertically out from the unit on the grid.
+The attack starts from each tile of the unit perpendicular to the direction of the attack.
+
+The range may be modified by unit configuration as well as by whatever ground effects the unit may have.
+
+If there are two or more tiles in the line that the attack is firing out from, each tile beyond the first confers an additional one square's range to the attack.
+Thus, if a unit has three tiles arranged in a line, and fires parallel to that line, the attack has a range of four squares.
+
+When a unit is within an attack range, the unit has taken a hit.
+The player who was attacked is allowed to pick a single tile to remove from his unit.
+The block must be chosen so that the remaining tiles in the unit are still connected to each other.
+The unit is considered to be dead when its last tile is hit.
+
+\subsection{Ground Effects.}
+
+At all times, units will have ground effects on them.
+Which particular effects the unit has on it at any given time depends on its position.
+Check the color of the grid underneath the unit to determine which effect that particular square has.
+The effects of all squares that the unit is located are always applied.
+
+\begin{description}
+\item[Yellow] squares confer an additional 1 square's range to the unit's attack.
+\item[Red] squares confer an additional 1 movement during any turn where the unit starts movement from a position containing a red square.
+\item[Blue] squares allow a unit to include any adjacent friendly unit's configuration as part of its own for range determinations.
+\end{description}
+
+\section{Victory Condition.}
+
+The players take turns attacking each other until either one player's units have been annihilated, or when the players agree to end the game.
+In the latter case, the player with more total tiles still in play wins.
+

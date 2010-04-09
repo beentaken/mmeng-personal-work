@@ -45,6 +45,8 @@ class Vector
       // where it was found
     int find(int value) const;
 
+    void pack(void);
+
       // Deletes the underlying array and sets size_ to 0
     void clear(void);
 
@@ -85,9 +87,11 @@ class Vector
     
       // Grows the array when necessary. (Twice as large as before.)
       // Sizes of the array: 0, 1, 2, 4, 8, 16, etc.
-    void Vector::grow(void);
+    void grow(void);
     
     // Other private methods...
+    void copy_array(const int *source, const unsigned size, int *destination);
+    void reverse_copy_array(const int *source, const unsigned size, int *destination);
 };
 
 } // namespace CS170

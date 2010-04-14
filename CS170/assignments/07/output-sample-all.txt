@@ -1,0 +1,2708 @@
+
+Test1--------------------------------------------------------
+Word: Four (FOUR)
+Word: score (SCORE)
+Word: and (AND)
+Word: seven (SEVEN)
+Word: years (YEARS)
+Word: ago (AGO)
+Word: our (OUR)
+Word: fathers (FATHERS)
+Word: brought (BROUGHT)
+Word: forth (FORTH)
+Word: on (ON)
+Word: this (THIS)
+Word: continent (CONTINENT)
+Word: a (A)
+Word: new (NEW)
+Word: NATION (NATION)
+Word: fast123 (FAST123)
+Word: 123  abc (123  ABC)
+Word: Hello!! (HELLO!!)
+Word:  ()
+Word: *&^%$#8UPPERlower (*&^%$#8UPPERLOWER)
+
+Test2--------------------------------------------------------
+Dictionary: lexicon.txt
+Number of words: 12
+Shortest word: 4 letters
+Longest word: 10 letters
+
+Test2--------------------------------------------------------
+Dictionary: small.txt
+Number of words: 35
+Shortest word: 2 letters
+Longest word: 12 letters
+
+Test2--------------------------------------------------------
+Dictionary: allwords.txt
+Number of words: 168093
+Shortest word: 1 letters
+Longest word: 15 letters
+
+Test3--------------------------------------------------------
+Dictionary: lexicon.txt
+Number of words starting with a: 1
+
+Test3--------------------------------------------------------
+Dictionary: lexicon.txt
+Number of words starting with A: 1
+
+Test3--------------------------------------------------------
+Dictionary: lexicon.txt
+Number of words starting with l: 2
+
+Test3--------------------------------------------------------
+Dictionary: lexicon.txt
+Number of words starting with $: 0
+
+Test3--------------------------------------------------------
+Dictionary: lexicon.txt
+Number of words starting with e: 0
+
+Test3--------------------------------------------------------
+Dictionary: allwords.txt
+Number of words starting with M: 9330
+
+Test3--------------------------------------------------------
+Dictionary: allwords.txt
+Number of words starting with q: 804
+
+Test3--------------------------------------------------------
+Dictionary: allwords.txt
+Number of words starting with 5: 0
+
+Test4--------------------------------------------------------
+The word APPLE is spelled correctly.
+
+Test4--------------------------------------------------------
+The word Apple is spelled correctly.
+
+Test4--------------------------------------------------------
+The word apple is spelled correctly.
+
+Test4--------------------------------------------------------
+The word appl is misspelled.
+
+Test4--------------------------------------------------------
+The word abalone is spelled correctly.
+
+Test4--------------------------------------------------------
+The word interdigitation is spelled correctly.
+
+Test4--------------------------------------------------------
+The word interdigalizing is misspelled.
+
+Test5--------------------------------------------------------
+Misspelled words: *** None ***
+
+Test6--------------------------------------------------------
+Misspelled words: sevn fawthers foarth contnent nashun 
+
+Test7--------------------------------------------------------
+Dictionary: allwords.txt
+Number of words of length  1 is      1
+Number of words of length  2 is     96
+Number of words of length  3 is    972
+Number of words of length  4 is   3903
+Number of words of length  5 is   8636
+Total number of words counted: 13608
+
+Test7--------------------------------------------------------
+Dictionary: allwords.txt
+Number of words of length  1 is      1
+Number of words of length  2 is     96
+Number of words of length  3 is    972
+Number of words of length  4 is   3903
+Number of words of length  5 is   8636
+Number of words of length  6 is  15232
+Number of words of length  7 is  23109
+Number of words of length  8 is  28419
+Number of words of length  9 is  24792
+Number of words of length 10 is  20194
+Number of words of length 11 is  15407
+Number of words of length 12 is  11273
+Number of words of length 13 is   7781
+Number of words of length 14 is   5100
+Number of words of length 15 is   3178
+Number of words of length 16 is      0
+Number of words of length 17 is      0
+Number of words of length 18 is      0
+Number of words of length 19 is      0
+Number of words of length 20 is      0
+Total number of words counted: 168093
+
+Test8--------------------------------------------------------
+String: |When in the Course of human events|
+There are 7 tokens
+|When|
+|in|
+|the|
+|Course|
+|of|
+|human|
+|events|
+----------------------------------
+String: |  When    in the    Course of human events    |
+There are 7 tokens
+|When|
+|in|
+|the|
+|Course|
+|of|
+|human|
+|events|
+----------------------------------
+String: |WhenintheCourseofhumanevents|
+There are 1 tokens
+|WhenintheCourseofhumanevents|
+----------------------------------
+String: ||
+There are 0 tokens
+----------------------------------
+
+Test9--------------------------------------------------------
+There are 71 tokens
+|When|
+|in|
+|the|
+|Course|
+|of|
+|human|
+|events,|
+|it|
+|becomes|
+|necessary|
+|for|
+|one|
+|people|
+|to|
+|dissolve|
+|the|
+|political|
+|bands|
+|which|
+|have|
+|connected|
+|them|
+|with|
+|another,|
+|and|
+|to|
+|assume|
+|among|
+|the|
+|powers|
+|of|
+|the|
+|earth,|
+|the|
+|separate|
+|and|
+|equal|
+|station|
+|to|
+|which|
+|the|
+|Laws|
+|of|
+|Nature|
+|and|
+|of|
+|Nature's|
+|God|
+|entitle|
+|them,|
+|a|
+|decent|
+|respect|
+|to|
+|the|
+|opinions|
+|of|
+|mankind|
+|requires|
+|that|
+|they|
+|should|
+|declare|
+|the|
+|causes|
+|which|
+|impel|
+|them|
+|to|
+|the|
+|separation.|
+
+Test10--------------------------------------------------------
+There are 23 lines wrapped at 20 characters:
+Line #  1 [18] |When in the Course|
+Line #  2 [19] |of human events, it|
+Line #  3 [17] |becomes necessary|
+Line #  4 [17] |for one people to|
+Line #  5 [12] |dissolve the|
+Line #  6 [15] |political bands|
+Line #  7 [20] |which have connected|
+Line #  8 [18] |them with another,|
+Line #  9 [19] |and to assume among|
+Line # 10 [17] |the powers of the|
+Line # 11 [19] |earth, the separate|
+Line # 12 [20] |and equal station to|
+Line # 13 [17] |which the Laws of|
+Line # 14 [13] |Nature and of|
+Line # 15 [20] |Nature's God entitle|
+Line # 16 [14] |them, a decent|
+Line # 17 [14] |respect to the|
+Line # 18 [19] |opinions of mankind|
+Line # 19 [18] |requires that they|
+Line # 20 [18] |should declare the|
+Line # 21 [18] |causes which impel|
+Line # 22 [11] |them to the|
+Line # 23 [11] |separation.|
+Shortest line: 11
+ Longest line: 20
+
+
+SomeWidths--------------------------------------------------------
+There are 11 lines wrapped at 1 characters:
+Line #  1 [ 4] |When|
+Line #  2 [ 2] |in|
+Line #  3 [ 3] |the|
+Line #  4 [ 6] |Course|
+Line #  5 [ 2] |of|
+Line #  6 [ 5] |human|
+Line #  7 [ 7] |events,|
+Line #  8 [ 2] |it|
+Line #  9 [ 7] |becomes|
+Line # 10 [ 9] |necessary|
+Line # 11 [ 3] |for|
+Shortest line: 2
+ Longest line: 9
+
+
+SomeWidths--------------------------------------------------------
+There are 11 lines wrapped at 4 characters:
+Line #  1 [ 4] |When|
+Line #  2 [ 2] |in|
+Line #  3 [ 3] |the|
+Line #  4 [ 6] |Course|
+Line #  5 [ 2] |of|
+Line #  6 [ 5] |human|
+Line #  7 [ 7] |events,|
+Line #  8 [ 2] |it|
+Line #  9 [ 7] |becomes|
+Line # 10 [ 9] |necessary|
+Line # 11 [ 3] |for|
+Shortest line: 2
+ Longest line: 9
+
+
+SomeWidths--------------------------------------------------------
+There are 9 lines wrapped at 8 characters:
+Line #  1 [ 7] |When in|
+Line #  2 [ 3] |the|
+Line #  3 [ 6] |Course|
+Line #  4 [ 8] |of human|
+Line #  5 [ 7] |events,|
+Line #  6 [ 2] |it|
+Line #  7 [ 7] |becomes|
+Line #  8 [ 9] |necessary|
+Line #  9 [ 3] |for|
+Shortest line: 2
+ Longest line: 9
+
+
+SomeWidths--------------------------------------------------------
+There are 7 lines wrapped at 12 characters:
+Line #  1 [11] |When in the|
+Line #  2 [ 9] |Course of|
+Line #  3 [ 5] |human|
+Line #  4 [10] |events, it|
+Line #  5 [ 7] |becomes|
+Line #  6 [ 9] |necessary|
+Line #  7 [ 3] |for|
+Shortest line: 3
+ Longest line: 11
+
+
+SomeWidths--------------------------------------------------------
+There are 4 lines wrapped at 19 characters:
+Line #  1 [18] |When in the Course|
+Line #  2 [19] |of human events, it|
+Line #  3 [17] |becomes necessary|
+Line #  4 [ 3] |for|
+Shortest line: 3
+ Longest line: 19
+
+
+SomeWidths--------------------------------------------------------
+There are 3 lines wrapped at 25 characters:
+Line #  1 [21] |When in the Course of|
+Line #  2 [24] |human events, it becomes|
+Line #  3 [13] |necessary for|
+Shortest line: 13
+ Longest line: 24
+
+
+SomeWidths--------------------------------------------------------
+There are 2 lines wrapped at 35 characters:
+Line #  1 [35] |When in the Course of human events,|
+Line #  2 [24] |it becomes necessary for|
+Shortest line: 24
+ Longest line: 35
+
+
+SomeWidths--------------------------------------------------------
+There are 1 lines wrapped at 70 characters:
+Line #  1 [60] |When in the Course of human events, it becomes necessary for|
+Shortest line: 60
+ Longest line: 60
+
+
+SomeWidths--------------------------------------------------------
+There are 2 lines wrapped at 59 characters:
+Line #  1 [56] |When in the Course of human events, it becomes necessary|
+Line #  2 [ 3] |for|
+Shortest line: 3
+ Longest line: 56
+
+
+SomeWidths--------------------------------------------------------
+There are 1 lines wrapped at 60 characters:
+Line #  1 [60] |When in the Course of human events, it becomes necessary for|
+Shortest line: 60
+ Longest line: 60
+
+
+SomeWidths--------------------------------------------------------
+There are 1 lines wrapped at 61 characters:
+Line #  1 [60] |When in the Course of human events, it becomes necessary for|
+Shortest line: 60
+ Longest line: 60
+
+
+AllWidths--------------------------------------------------------
+There are 71 lines wrapped at 1 characters:
+Line #  1 [ 4] |When|
+Line #  2 [ 2] |in|
+Line #  3 [ 3] |the|
+Line #  4 [ 6] |Course|
+Line #  5 [ 2] |of|
+Line #  6 [ 5] |human|
+Line #  7 [ 7] |events,|
+Line #  8 [ 2] |it|
+Line #  9 [ 7] |becomes|
+Line # 10 [ 9] |necessary|
+Line # 11 [ 3] |for|
+Line # 12 [ 3] |one|
+Line # 13 [ 6] |people|
+Line # 14 [ 2] |to|
+Line # 15 [ 8] |dissolve|
+Line # 16 [ 3] |the|
+Line # 17 [ 9] |political|
+Line # 18 [ 5] |bands|
+Line # 19 [ 5] |which|
+Line # 20 [ 4] |have|
+Line # 21 [ 9] |connected|
+Line # 22 [ 4] |them|
+Line # 23 [ 4] |with|
+Line # 24 [ 8] |another,|
+Line # 25 [ 3] |and|
+Line # 26 [ 2] |to|
+Line # 27 [ 6] |assume|
+Line # 28 [ 5] |among|
+Line # 29 [ 3] |the|
+Line # 30 [ 6] |powers|
+Line # 31 [ 2] |of|
+Line # 32 [ 3] |the|
+Line # 33 [ 6] |earth,|
+Line # 34 [ 3] |the|
+Line # 35 [ 8] |separate|
+Line # 36 [ 3] |and|
+Line # 37 [ 5] |equal|
+Line # 38 [ 7] |station|
+Line # 39 [ 2] |to|
+Line # 40 [ 5] |which|
+Line # 41 [ 3] |the|
+Line # 42 [ 4] |Laws|
+Line # 43 [ 2] |of|
+Line # 44 [ 6] |Nature|
+Line # 45 [ 3] |and|
+Line # 46 [ 2] |of|
+Line # 47 [ 8] |Nature's|
+Line # 48 [ 3] |God|
+Line # 49 [ 7] |entitle|
+Line # 50 [ 5] |them,|
+Line # 51 [ 1] |a|
+Line # 52 [ 6] |decent|
+Line # 53 [ 7] |respect|
+Line # 54 [ 2] |to|
+Line # 55 [ 3] |the|
+Line # 56 [ 8] |opinions|
+Line # 57 [ 2] |of|
+Line # 58 [ 7] |mankind|
+Line # 59 [ 8] |requires|
+Line # 60 [ 4] |that|
+Line # 61 [ 4] |they|
+Line # 62 [ 6] |should|
+Line # 63 [ 7] |declare|
+Line # 64 [ 3] |the|
+Line # 65 [ 6] |causes|
+Line # 66 [ 5] |which|
+Line # 67 [ 5] |impel|
+Line # 68 [ 4] |them|
+Line # 69 [ 2] |to|
+Line # 70 [ 3] |the|
+Line # 71 [11] |separation.|
+Shortest line: 1
+ Longest line: 11
+
+
+AllWidths--------------------------------------------------------
+There are 71 lines wrapped at 2 characters:
+Line #  1 [ 4] |When|
+Line #  2 [ 2] |in|
+Line #  3 [ 3] |the|
+Line #  4 [ 6] |Course|
+Line #  5 [ 2] |of|
+Line #  6 [ 5] |human|
+Line #  7 [ 7] |events,|
+Line #  8 [ 2] |it|
+Line #  9 [ 7] |becomes|
+Line # 10 [ 9] |necessary|
+Line # 11 [ 3] |for|
+Line # 12 [ 3] |one|
+Line # 13 [ 6] |people|
+Line # 14 [ 2] |to|
+Line # 15 [ 8] |dissolve|
+Line # 16 [ 3] |the|
+Line # 17 [ 9] |political|
+Line # 18 [ 5] |bands|
+Line # 19 [ 5] |which|
+Line # 20 [ 4] |have|
+Line # 21 [ 9] |connected|
+Line # 22 [ 4] |them|
+Line # 23 [ 4] |with|
+Line # 24 [ 8] |another,|
+Line # 25 [ 3] |and|
+Line # 26 [ 2] |to|
+Line # 27 [ 6] |assume|
+Line # 28 [ 5] |among|
+Line # 29 [ 3] |the|
+Line # 30 [ 6] |powers|
+Line # 31 [ 2] |of|
+Line # 32 [ 3] |the|
+Line # 33 [ 6] |earth,|
+Line # 34 [ 3] |the|
+Line # 35 [ 8] |separate|
+Line # 36 [ 3] |and|
+Line # 37 [ 5] |equal|
+Line # 38 [ 7] |station|
+Line # 39 [ 2] |to|
+Line # 40 [ 5] |which|
+Line # 41 [ 3] |the|
+Line # 42 [ 4] |Laws|
+Line # 43 [ 2] |of|
+Line # 44 [ 6] |Nature|
+Line # 45 [ 3] |and|
+Line # 46 [ 2] |of|
+Line # 47 [ 8] |Nature's|
+Line # 48 [ 3] |God|
+Line # 49 [ 7] |entitle|
+Line # 50 [ 5] |them,|
+Line # 51 [ 1] |a|
+Line # 52 [ 6] |decent|
+Line # 53 [ 7] |respect|
+Line # 54 [ 2] |to|
+Line # 55 [ 3] |the|
+Line # 56 [ 8] |opinions|
+Line # 57 [ 2] |of|
+Line # 58 [ 7] |mankind|
+Line # 59 [ 8] |requires|
+Line # 60 [ 4] |that|
+Line # 61 [ 4] |they|
+Line # 62 [ 6] |should|
+Line # 63 [ 7] |declare|
+Line # 64 [ 3] |the|
+Line # 65 [ 6] |causes|
+Line # 66 [ 5] |which|
+Line # 67 [ 5] |impel|
+Line # 68 [ 4] |them|
+Line # 69 [ 2] |to|
+Line # 70 [ 3] |the|
+Line # 71 [11] |separation.|
+Shortest line: 1
+ Longest line: 11
+
+
+AllWidths--------------------------------------------------------
+There are 71 lines wrapped at 3 characters:
+Line #  1 [ 4] |When|
+Line #  2 [ 2] |in|
+Line #  3 [ 3] |the|
+Line #  4 [ 6] |Course|
+Line #  5 [ 2] |of|
+Line #  6 [ 5] |human|
+Line #  7 [ 7] |events,|
+Line #  8 [ 2] |it|
+Line #  9 [ 7] |becomes|
+Line # 10 [ 9] |necessary|
+Line # 11 [ 3] |for|
+Line # 12 [ 3] |one|
+Line # 13 [ 6] |people|
+Line # 14 [ 2] |to|
+Line # 15 [ 8] |dissolve|
+Line # 16 [ 3] |the|
+Line # 17 [ 9] |political|
+Line # 18 [ 5] |bands|
+Line # 19 [ 5] |which|
+Line # 20 [ 4] |have|
+Line # 21 [ 9] |connected|
+Line # 22 [ 4] |them|
+Line # 23 [ 4] |with|
+Line # 24 [ 8] |another,|
+Line # 25 [ 3] |and|
+Line # 26 [ 2] |to|
+Line # 27 [ 6] |assume|
+Line # 28 [ 5] |among|
+Line # 29 [ 3] |the|
+Line # 30 [ 6] |powers|
+Line # 31 [ 2] |of|
+Line # 32 [ 3] |the|
+Line # 33 [ 6] |earth,|
+Line # 34 [ 3] |the|
+Line # 35 [ 8] |separate|
+Line # 36 [ 3] |and|
+Line # 37 [ 5] |equal|
+Line # 38 [ 7] |station|
+Line # 39 [ 2] |to|
+Line # 40 [ 5] |which|
+Line # 41 [ 3] |the|
+Line # 42 [ 4] |Laws|
+Line # 43 [ 2] |of|
+Line # 44 [ 6] |Nature|
+Line # 45 [ 3] |and|
+Line # 46 [ 2] |of|
+Line # 47 [ 8] |Nature's|
+Line # 48 [ 3] |God|
+Line # 49 [ 7] |entitle|
+Line # 50 [ 5] |them,|
+Line # 51 [ 1] |a|
+Line # 52 [ 6] |decent|
+Line # 53 [ 7] |respect|
+Line # 54 [ 2] |to|
+Line # 55 [ 3] |the|
+Line # 56 [ 8] |opinions|
+Line # 57 [ 2] |of|
+Line # 58 [ 7] |mankind|
+Line # 59 [ 8] |requires|
+Line # 60 [ 4] |that|
+Line # 61 [ 4] |they|
+Line # 62 [ 6] |should|
+Line # 63 [ 7] |declare|
+Line # 64 [ 3] |the|
+Line # 65 [ 6] |causes|
+Line # 66 [ 5] |which|
+Line # 67 [ 5] |impel|
+Line # 68 [ 4] |them|
+Line # 69 [ 2] |to|
+Line # 70 [ 3] |the|
+Line # 71 [11] |separation.|
+Shortest line: 1
+ Longest line: 11
+
+
+AllWidths--------------------------------------------------------
+There are 71 lines wrapped at 4 characters:
+Line #  1 [ 4] |When|
+Line #  2 [ 2] |in|
+Line #  3 [ 3] |the|
+Line #  4 [ 6] |Course|
+Line #  5 [ 2] |of|
+Line #  6 [ 5] |human|
+Line #  7 [ 7] |events,|
+Line #  8 [ 2] |it|
+Line #  9 [ 7] |becomes|
+Line # 10 [ 9] |necessary|
+Line # 11 [ 3] |for|
+Line # 12 [ 3] |one|
+Line # 13 [ 6] |people|
+Line # 14 [ 2] |to|
+Line # 15 [ 8] |dissolve|
+Line # 16 [ 3] |the|
+Line # 17 [ 9] |political|
+Line # 18 [ 5] |bands|
+Line # 19 [ 5] |which|
+Line # 20 [ 4] |have|
+Line # 21 [ 9] |connected|
+Line # 22 [ 4] |them|
+Line # 23 [ 4] |with|
+Line # 24 [ 8] |another,|
+Line # 25 [ 3] |and|
+Line # 26 [ 2] |to|
+Line # 27 [ 6] |assume|
+Line # 28 [ 5] |among|
+Line # 29 [ 3] |the|
+Line # 30 [ 6] |powers|
+Line # 31 [ 2] |of|
+Line # 32 [ 3] |the|
+Line # 33 [ 6] |earth,|
+Line # 34 [ 3] |the|
+Line # 35 [ 8] |separate|
+Line # 36 [ 3] |and|
+Line # 37 [ 5] |equal|
+Line # 38 [ 7] |station|
+Line # 39 [ 2] |to|
+Line # 40 [ 5] |which|
+Line # 41 [ 3] |the|
+Line # 42 [ 4] |Laws|
+Line # 43 [ 2] |of|
+Line # 44 [ 6] |Nature|
+Line # 45 [ 3] |and|
+Line # 46 [ 2] |of|
+Line # 47 [ 8] |Nature's|
+Line # 48 [ 3] |God|
+Line # 49 [ 7] |entitle|
+Line # 50 [ 5] |them,|
+Line # 51 [ 1] |a|
+Line # 52 [ 6] |decent|
+Line # 53 [ 7] |respect|
+Line # 54 [ 2] |to|
+Line # 55 [ 3] |the|
+Line # 56 [ 8] |opinions|
+Line # 57 [ 2] |of|
+Line # 58 [ 7] |mankind|
+Line # 59 [ 8] |requires|
+Line # 60 [ 4] |that|
+Line # 61 [ 4] |they|
+Line # 62 [ 6] |should|
+Line # 63 [ 7] |declare|
+Line # 64 [ 3] |the|
+Line # 65 [ 6] |causes|
+Line # 66 [ 5] |which|
+Line # 67 [ 5] |impel|
+Line # 68 [ 4] |them|
+Line # 69 [ 2] |to|
+Line # 70 [ 3] |the|
+Line # 71 [11] |separation.|
+Shortest line: 1
+ Longest line: 11
+
+
+AllWidths--------------------------------------------------------
+There are 71 lines wrapped at 5 characters:
+Line #  1 [ 4] |When|
+Line #  2 [ 2] |in|
+Line #  3 [ 3] |the|
+Line #  4 [ 6] |Course|
+Line #  5 [ 2] |of|
+Line #  6 [ 5] |human|
+Line #  7 [ 7] |events,|
+Line #  8 [ 2] |it|
+Line #  9 [ 7] |becomes|
+Line # 10 [ 9] |necessary|
+Line # 11 [ 3] |for|
+Line # 12 [ 3] |one|
+Line # 13 [ 6] |people|
+Line # 14 [ 2] |to|
+Line # 15 [ 8] |dissolve|
+Line # 16 [ 3] |the|
+Line # 17 [ 9] |political|
+Line # 18 [ 5] |bands|
+Line # 19 [ 5] |which|
+Line # 20 [ 4] |have|
+Line # 21 [ 9] |connected|
+Line # 22 [ 4] |them|
+Line # 23 [ 4] |with|
+Line # 24 [ 8] |another,|
+Line # 25 [ 3] |and|
+Line # 26 [ 2] |to|
+Line # 27 [ 6] |assume|
+Line # 28 [ 5] |among|
+Line # 29 [ 3] |the|
+Line # 30 [ 6] |powers|
+Line # 31 [ 2] |of|
+Line # 32 [ 3] |the|
+Line # 33 [ 6] |earth,|
+Line # 34 [ 3] |the|
+Line # 35 [ 8] |separate|
+Line # 36 [ 3] |and|
+Line # 37 [ 5] |equal|
+Line # 38 [ 7] |station|
+Line # 39 [ 2] |to|
+Line # 40 [ 5] |which|
+Line # 41 [ 3] |the|
+Line # 42 [ 4] |Laws|
+Line # 43 [ 2] |of|
+Line # 44 [ 6] |Nature|
+Line # 45 [ 3] |and|
+Line # 46 [ 2] |of|
+Line # 47 [ 8] |Nature's|
+Line # 48 [ 3] |God|
+Line # 49 [ 7] |entitle|
+Line # 50 [ 5] |them,|
+Line # 51 [ 1] |a|
+Line # 52 [ 6] |decent|
+Line # 53 [ 7] |respect|
+Line # 54 [ 2] |to|
+Line # 55 [ 3] |the|
+Line # 56 [ 8] |opinions|
+Line # 57 [ 2] |of|
+Line # 58 [ 7] |mankind|
+Line # 59 [ 8] |requires|
+Line # 60 [ 4] |that|
+Line # 61 [ 4] |they|
+Line # 62 [ 6] |should|
+Line # 63 [ 7] |declare|
+Line # 64 [ 3] |the|
+Line # 65 [ 6] |causes|
+Line # 66 [ 5] |which|
+Line # 67 [ 5] |impel|
+Line # 68 [ 4] |them|
+Line # 69 [ 2] |to|
+Line # 70 [ 3] |the|
+Line # 71 [11] |separation.|
+Shortest line: 1
+ Longest line: 11
+
+
+AllWidths--------------------------------------------------------
+There are 65 lines wrapped at 6 characters:
+Line #  1 [ 4] |When|
+Line #  2 [ 6] |in the|
+Line #  3 [ 6] |Course|
+Line #  4 [ 2] |of|
+Line #  5 [ 5] |human|
+Line #  6 [ 7] |events,|
+Line #  7 [ 2] |it|
+Line #  8 [ 7] |becomes|
+Line #  9 [ 9] |necessary|
+Line # 10 [ 3] |for|
+Line # 11 [ 3] |one|
+Line # 12 [ 6] |people|
+Line # 13 [ 2] |to|
+Line # 14 [ 8] |dissolve|
+Line # 15 [ 3] |the|
+Line # 16 [ 9] |political|
+Line # 17 [ 5] |bands|
+Line # 18 [ 5] |which|
+Line # 19 [ 4] |have|
+Line # 20 [ 9] |connected|
+Line # 21 [ 4] |them|
+Line # 22 [ 4] |with|
+Line # 23 [ 8] |another,|
+Line # 24 [ 6] |and to|
+Line # 25 [ 6] |assume|
+Line # 26 [ 5] |among|
+Line # 27 [ 3] |the|
+Line # 28 [ 6] |powers|
+Line # 29 [ 6] |of the|
+Line # 30 [ 6] |earth,|
+Line # 31 [ 3] |the|
+Line # 32 [ 8] |separate|
+Line # 33 [ 3] |and|
+Line # 34 [ 5] |equal|
+Line # 35 [ 7] |station|
+Line # 36 [ 2] |to|
+Line # 37 [ 5] |which|
+Line # 38 [ 3] |the|
+Line # 39 [ 4] |Laws|
+Line # 40 [ 2] |of|
+Line # 41 [ 6] |Nature|
+Line # 42 [ 6] |and of|
+Line # 43 [ 8] |Nature's|
+Line # 44 [ 3] |God|
+Line # 45 [ 7] |entitle|
+Line # 46 [ 5] |them,|
+Line # 47 [ 1] |a|
+Line # 48 [ 6] |decent|
+Line # 49 [ 7] |respect|
+Line # 50 [ 6] |to the|
+Line # 51 [ 8] |opinions|
+Line # 52 [ 2] |of|
+Line # 53 [ 7] |mankind|
+Line # 54 [ 8] |requires|
+Line # 55 [ 4] |that|
+Line # 56 [ 4] |they|
+Line # 57 [ 6] |should|
+Line # 58 [ 7] |declare|
+Line # 59 [ 3] |the|
+Line # 60 [ 6] |causes|
+Line # 61 [ 5] |which|
+Line # 62 [ 5] |impel|
+Line # 63 [ 4] |them|
+Line # 64 [ 6] |to the|
+Line # 65 [11] |separation.|
+Shortest line: 1
+ Longest line: 11
+
+
+AllWidths--------------------------------------------------------
+There are 62 lines wrapped at 7 characters:
+Line #  1 [ 7] |When in|
+Line #  2 [ 3] |the|
+Line #  3 [ 6] |Course|
+Line #  4 [ 2] |of|
+Line #  5 [ 5] |human|
+Line #  6 [ 7] |events,|
+Line #  7 [ 2] |it|
+Line #  8 [ 7] |becomes|
+Line #  9 [ 9] |necessary|
+Line # 10 [ 7] |for one|
+Line # 11 [ 6] |people|
+Line # 12 [ 2] |to|
+Line # 13 [ 8] |dissolve|
+Line # 14 [ 3] |the|
+Line # 15 [ 9] |political|
+Line # 16 [ 5] |bands|
+Line # 17 [ 5] |which|
+Line # 18 [ 4] |have|
+Line # 19 [ 9] |connected|
+Line # 20 [ 4] |them|
+Line # 21 [ 4] |with|
+Line # 22 [ 8] |another,|
+Line # 23 [ 6] |and to|
+Line # 24 [ 6] |assume|
+Line # 25 [ 5] |among|
+Line # 26 [ 3] |the|
+Line # 27 [ 6] |powers|
+Line # 28 [ 6] |of the|
+Line # 29 [ 6] |earth,|
+Line # 30 [ 3] |the|
+Line # 31 [ 8] |separate|
+Line # 32 [ 3] |and|
+Line # 33 [ 5] |equal|
+Line # 34 [ 7] |station|
+Line # 35 [ 2] |to|
+Line # 36 [ 5] |which|
+Line # 37 [ 3] |the|
+Line # 38 [ 7] |Laws of|
+Line # 39 [ 6] |Nature|
+Line # 40 [ 6] |and of|
+Line # 41 [ 8] |Nature's|
+Line # 42 [ 3] |God|
+Line # 43 [ 7] |entitle|
+Line # 44 [ 7] |them, a|
+Line # 45 [ 6] |decent|
+Line # 46 [ 7] |respect|
+Line # 47 [ 6] |to the|
+Line # 48 [ 8] |opinions|
+Line # 49 [ 2] |of|
+Line # 50 [ 7] |mankind|
+Line # 51 [ 8] |requires|
+Line # 52 [ 4] |that|
+Line # 53 [ 4] |they|
+Line # 54 [ 6] |should|
+Line # 55 [ 7] |declare|
+Line # 56 [ 3] |the|
+Line # 57 [ 6] |causes|
+Line # 58 [ 5] |which|
+Line # 59 [ 5] |impel|
+Line # 60 [ 7] |them to|
+Line # 61 [ 3] |the|
+Line # 62 [11] |separation.|
+Shortest line: 2
+ Longest line: 11
+
+
+AllWidths--------------------------------------------------------
+There are 60 lines wrapped at 8 characters:
+Line #  1 [ 7] |When in|
+Line #  2 [ 3] |the|
+Line #  3 [ 6] |Course|
+Line #  4 [ 8] |of human|
+Line #  5 [ 7] |events,|
+Line #  6 [ 2] |it|
+Line #  7 [ 7] |becomes|
+Line #  8 [ 9] |necessary|
+Line #  9 [ 7] |for one|
+Line # 10 [ 6] |people|
+Line # 11 [ 2] |to|
+Line # 12 [ 8] |dissolve|
+Line # 13 [ 3] |the|
+Line # 14 [ 9] |political|
+Line # 15 [ 5] |bands|
+Line # 16 [ 5] |which|
+Line # 17 [ 4] |have|
+Line # 18 [ 9] |connected|
+Line # 19 [ 4] |them|
+Line # 20 [ 4] |with|
+Line # 21 [ 8] |another,|
+Line # 22 [ 6] |and to|
+Line # 23 [ 6] |assume|
+Line # 24 [ 5] |among|
+Line # 25 [ 3] |the|
+Line # 26 [ 6] |powers|
+Line # 27 [ 6] |of the|
+Line # 28 [ 6] |earth,|
+Line # 29 [ 3] |the|
+Line # 30 [ 8] |separate|
+Line # 31 [ 3] |and|
+Line # 32 [ 5] |equal|
+Line # 33 [ 7] |station|
+Line # 34 [ 8] |to which|
+Line # 35 [ 8] |the Laws|
+Line # 36 [ 2] |of|
+Line # 37 [ 6] |Nature|
+Line # 38 [ 6] |and of|
+Line # 39 [ 8] |Nature's|
+Line # 40 [ 3] |God|
+Line # 41 [ 7] |entitle|
+Line # 42 [ 7] |them, a|
+Line # 43 [ 6] |decent|
+Line # 44 [ 7] |respect|
+Line # 45 [ 6] |to the|
+Line # 46 [ 8] |opinions|
+Line # 47 [ 2] |of|
+Line # 48 [ 7] |mankind|
+Line # 49 [ 8] |requires|
+Line # 50 [ 4] |that|
+Line # 51 [ 4] |they|
+Line # 52 [ 6] |should|
+Line # 53 [ 7] |declare|
+Line # 54 [ 3] |the|
+Line # 55 [ 6] |causes|
+Line # 56 [ 5] |which|
+Line # 57 [ 5] |impel|
+Line # 58 [ 7] |them to|
+Line # 59 [ 3] |the|
+Line # 60 [11] |separation.|
+Shortest line: 2
+ Longest line: 11
+
+
+AllWidths--------------------------------------------------------
+There are 54 lines wrapped at 9 characters:
+Line #  1 [ 7] |When in|
+Line #  2 [ 3] |the|
+Line #  3 [ 9] |Course of|
+Line #  4 [ 5] |human|
+Line #  5 [ 7] |events,|
+Line #  6 [ 2] |it|
+Line #  7 [ 7] |becomes|
+Line #  8 [ 9] |necessary|
+Line #  9 [ 7] |for one|
+Line # 10 [ 9] |people to|
+Line # 11 [ 8] |dissolve|
+Line # 12 [ 3] |the|
+Line # 13 [ 9] |political|
+Line # 14 [ 5] |bands|
+Line # 15 [ 5] |which|
+Line # 16 [ 4] |have|
+Line # 17 [ 9] |connected|
+Line # 18 [ 9] |them with|
+Line # 19 [ 8] |another,|
+Line # 20 [ 6] |and to|
+Line # 21 [ 6] |assume|
+Line # 22 [ 9] |among the|
+Line # 23 [ 9] |powers of|
+Line # 24 [ 3] |the|
+Line # 25 [ 6] |earth,|
+Line # 26 [ 3] |the|
+Line # 27 [ 8] |separate|
+Line # 28 [ 9] |and equal|
+Line # 29 [ 7] |station|
+Line # 30 [ 8] |to which|
+Line # 31 [ 8] |the Laws|
+Line # 32 [ 9] |of Nature|
+Line # 33 [ 6] |and of|
+Line # 34 [ 8] |Nature's|
+Line # 35 [ 3] |God|
+Line # 36 [ 7] |entitle|
+Line # 37 [ 7] |them, a|
+Line # 38 [ 6] |decent|
+Line # 39 [ 7] |respect|
+Line # 40 [ 6] |to the|
+Line # 41 [ 8] |opinions|
+Line # 42 [ 2] |of|
+Line # 43 [ 7] |mankind|
+Line # 44 [ 8] |requires|
+Line # 45 [ 9] |that they|
+Line # 46 [ 6] |should|
+Line # 47 [ 7] |declare|
+Line # 48 [ 3] |the|
+Line # 49 [ 6] |causes|
+Line # 50 [ 5] |which|
+Line # 51 [ 5] |impel|
+Line # 52 [ 7] |them to|
+Line # 53 [ 3] |the|
+Line # 54 [11] |separation.|
+Shortest line: 2
+ Longest line: 11
+
+
+AllWidths--------------------------------------------------------
+There are 47 lines wrapped at 10 characters:
+Line #  1 [ 7] |When in|
+Line #  2 [10] |the Course|
+Line #  3 [ 8] |of human|
+Line #  4 [10] |events, it|
+Line #  5 [ 7] |becomes|
+Line #  6 [ 9] |necessary|
+Line #  7 [ 7] |for one|
+Line #  8 [ 9] |people to|
+Line #  9 [ 8] |dissolve|
+Line # 10 [ 3] |the|
+Line # 11 [ 9] |political|
+Line # 12 [ 5] |bands|
+Line # 13 [10] |which have|
+Line # 14 [ 9] |connected|
+Line # 15 [ 9] |them with|
+Line # 16 [ 8] |another,|
+Line # 17 [ 6] |and to|
+Line # 18 [ 6] |assume|
+Line # 19 [ 9] |among the|
+Line # 20 [ 9] |powers of|
+Line # 21 [10] |the earth,|
+Line # 22 [ 3] |the|
+Line # 23 [ 8] |separate|
+Line # 24 [ 9] |and equal|
+Line # 25 [10] |station to|
+Line # 26 [ 9] |which the|
+Line # 27 [ 7] |Laws of|
+Line # 28 [10] |Nature and|
+Line # 29 [ 2] |of|
+Line # 30 [ 8] |Nature's|
+Line # 31 [ 3] |God|
+Line # 32 [ 7] |entitle|
+Line # 33 [ 7] |them, a|
+Line # 34 [ 6] |decent|
+Line # 35 [10] |respect to|
+Line # 36 [ 3] |the|
+Line # 37 [ 8] |opinions|
+Line # 38 [10] |of mankind|
+Line # 39 [ 8] |requires|
+Line # 40 [ 9] |that they|
+Line # 41 [ 6] |should|
+Line # 42 [ 7] |declare|
+Line # 43 [10] |the causes|
+Line # 44 [ 5] |which|
+Line # 45 [10] |impel them|
+Line # 46 [ 6] |to the|
+Line # 47 [11] |separation.|
+Shortest line: 2
+ Longest line: 11
+
+
+AllWidths--------------------------------------------------------
+There are 44 lines wrapped at 11 characters:
+Line #  1 [11] |When in the|
+Line #  2 [ 9] |Course of|
+Line #  3 [ 5] |human|
+Line #  4 [10] |events, it|
+Line #  5 [ 7] |becomes|
+Line #  6 [ 9] |necessary|
+Line #  7 [ 7] |for one|
+Line #  8 [ 9] |people to|
+Line #  9 [ 8] |dissolve|
+Line # 10 [ 3] |the|
+Line # 11 [ 9] |political|
+Line # 12 [11] |bands which|
+Line # 13 [ 4] |have|
+Line # 14 [ 9] |connected|
+Line # 15 [ 9] |them with|
+Line # 16 [ 8] |another,|
+Line # 17 [ 6] |and to|
+Line # 18 [ 6] |assume|
+Line # 19 [ 9] |among the|
+Line # 20 [ 9] |powers of|
+Line # 21 [10] |the earth,|
+Line # 22 [ 3] |the|
+Line # 23 [ 8] |separate|
+Line # 24 [ 9] |and equal|
+Line # 25 [10] |station to|
+Line # 26 [ 9] |which the|
+Line # 27 [ 7] |Laws of|
+Line # 28 [10] |Nature and|
+Line # 29 [11] |of Nature's|
+Line # 30 [11] |God entitle|
+Line # 31 [ 7] |them, a|
+Line # 32 [ 6] |decent|
+Line # 33 [10] |respect to|
+Line # 34 [ 3] |the|
+Line # 35 [11] |opinions of|
+Line # 36 [ 7] |mankind|
+Line # 37 [ 8] |requires|
+Line # 38 [ 9] |that they|
+Line # 39 [ 6] |should|
+Line # 40 [11] |declare the|
+Line # 41 [ 6] |causes|
+Line # 42 [11] |which impel|
+Line # 43 [11] |them to the|
+Line # 44 [11] |separation.|
+Shortest line: 3
+ Longest line: 11
+
+
+AllWidths--------------------------------------------------------
+There are 40 lines wrapped at 12 characters:
+Line #  1 [11] |When in the|
+Line #  2 [ 9] |Course of|
+Line #  3 [ 5] |human|
+Line #  4 [10] |events, it|
+Line #  5 [ 7] |becomes|
+Line #  6 [ 9] |necessary|
+Line #  7 [ 7] |for one|
+Line #  8 [ 9] |people to|
+Line #  9 [12] |dissolve the|
+Line # 10 [ 9] |political|
+Line # 11 [11] |bands which|
+Line # 12 [ 4] |have|
+Line # 13 [ 9] |connected|
+Line # 14 [ 9] |them with|
+Line # 15 [12] |another, and|
+Line # 16 [ 9] |to assume|
+Line # 17 [ 9] |among the|
+Line # 18 [ 9] |powers of|
+Line # 19 [10] |the earth,|
+Line # 20 [12] |the separate|
+Line # 21 [ 9] |and equal|
+Line # 22 [10] |station to|
+Line # 23 [ 9] |which the|
+Line # 24 [ 7] |Laws of|
+Line # 25 [10] |Nature and|
+Line # 26 [11] |of Nature's|
+Line # 27 [11] |God entitle|
+Line # 28 [ 7] |them, a|
+Line # 29 [ 6] |decent|
+Line # 30 [10] |respect to|
+Line # 31 [12] |the opinions|
+Line # 32 [10] |of mankind|
+Line # 33 [ 8] |requires|
+Line # 34 [ 9] |that they|
+Line # 35 [ 6] |should|
+Line # 36 [11] |declare the|
+Line # 37 [12] |causes which|
+Line # 38 [10] |impel them|
+Line # 39 [ 6] |to the|
+Line # 40 [11] |separation.|
+Shortest line: 4
+ Longest line: 12
+
+
+AllWidths--------------------------------------------------------
+There are 35 lines wrapped at 13 characters:
+Line #  1 [11] |When in the|
+Line #  2 [ 9] |Course of|
+Line #  3 [13] |human events,|
+Line #  4 [10] |it becomes|
+Line #  5 [13] |necessary for|
+Line #  6 [13] |one people to|
+Line #  7 [12] |dissolve the|
+Line #  8 [ 9] |political|
+Line #  9 [11] |bands which|
+Line # 10 [ 4] |have|
+Line # 11 [ 9] |connected|
+Line # 12 [ 9] |them with|
+Line # 13 [12] |another, and|
+Line # 14 [ 9] |to assume|
+Line # 15 [ 9] |among the|
+Line # 16 [13] |powers of the|
+Line # 17 [10] |earth, the|
+Line # 18 [12] |separate and|
+Line # 19 [13] |equal station|
+Line # 20 [12] |to which the|
+Line # 21 [ 7] |Laws of|
+Line # 22 [13] |Nature and of|
+Line # 23 [12] |Nature's God|
+Line # 24 [13] |entitle them,|
+Line # 25 [ 8] |a decent|
+Line # 26 [10] |respect to|
+Line # 27 [12] |the opinions|
+Line # 28 [10] |of mankind|
+Line # 29 [13] |requires that|
+Line # 30 [11] |they should|
+Line # 31 [11] |declare the|
+Line # 32 [12] |causes which|
+Line # 33 [13] |impel them to|
+Line # 34 [ 3] |the|
+Line # 35 [11] |separation.|
+Shortest line: 3
+ Longest line: 13
+
+
+AllWidths--------------------------------------------------------
+There are 34 lines wrapped at 14 characters:
+Line #  1 [11] |When in the|
+Line #  2 [ 9] |Course of|
+Line #  3 [13] |human events,|
+Line #  4 [10] |it becomes|
+Line #  5 [13] |necessary for|
+Line #  6 [13] |one people to|
+Line #  7 [12] |dissolve the|
+Line #  8 [ 9] |political|
+Line #  9 [11] |bands which|
+Line # 10 [14] |have connected|
+Line # 11 [ 9] |them with|
+Line # 12 [12] |another, and|
+Line # 13 [ 9] |to assume|
+Line # 14 [ 9] |among the|
+Line # 15 [13] |powers of the|
+Line # 16 [10] |earth, the|
+Line # 17 [12] |separate and|
+Line # 18 [13] |equal station|
+Line # 19 [12] |to which the|
+Line # 20 [14] |Laws of Nature|
+Line # 21 [ 6] |and of|
+Line # 22 [12] |Nature's God|
+Line # 23 [13] |entitle them,|
+Line # 24 [ 8] |a decent|
+Line # 25 [14] |respect to the|
+Line # 26 [11] |opinions of|
+Line # 27 [ 7] |mankind|
+Line # 28 [13] |requires that|
+Line # 29 [11] |they should|
+Line # 30 [11] |declare the|
+Line # 31 [12] |causes which|
+Line # 32 [13] |impel them to|
+Line # 33 [ 3] |the|
+Line # 34 [11] |separation.|
+Shortest line: 3
+ Longest line: 14
+
+
+AllWidths--------------------------------------------------------
+There are 31 lines wrapped at 15 characters:
+Line #  1 [11] |When in the|
+Line #  2 [15] |Course of human|
+Line #  3 [10] |events, it|
+Line #  4 [ 7] |becomes|
+Line #  5 [13] |necessary for|
+Line #  6 [13] |one people to|
+Line #  7 [12] |dissolve the|
+Line #  8 [15] |political bands|
+Line #  9 [10] |which have|
+Line # 10 [14] |connected them|
+Line # 11 [13] |with another,|
+Line # 12 [13] |and to assume|
+Line # 13 [ 9] |among the|
+Line # 14 [13] |powers of the|
+Line # 15 [10] |earth, the|
+Line # 16 [12] |separate and|
+Line # 17 [13] |equal station|
+Line # 18 [12] |to which the|
+Line # 19 [14] |Laws of Nature|
+Line # 20 [15] |and of Nature's|
+Line # 21 [11] |God entitle|
+Line # 22 [14] |them, a decent|
+Line # 23 [14] |respect to the|
+Line # 24 [11] |opinions of|
+Line # 25 [ 7] |mankind|
+Line # 26 [13] |requires that|
+Line # 27 [11] |they should|
+Line # 28 [11] |declare the|
+Line # 29 [12] |causes which|
+Line # 30 [13] |impel them to|
+Line # 31 [15] |the separation.|
+Shortest line: 7
+ Longest line: 15
+
+
+AllWidths--------------------------------------------------------
+There are 29 lines wrapped at 16 characters:
+Line #  1 [11] |When in the|
+Line #  2 [15] |Course of human|
+Line #  3 [10] |events, it|
+Line #  4 [ 7] |becomes|
+Line #  5 [13] |necessary for|
+Line #  6 [13] |one people to|
+Line #  7 [12] |dissolve the|
+Line #  8 [15] |political bands|
+Line #  9 [10] |which have|
+Line # 10 [14] |connected them|
+Line # 11 [13] |with another,|
+Line # 12 [13] |and to assume|
+Line # 13 [16] |among the powers|
+Line # 14 [13] |of the earth,|
+Line # 15 [16] |the separate and|
+Line # 16 [16] |equal station to|
+Line # 17 [14] |which the Laws|
+Line # 18 [16] |of Nature and of|
+Line # 19 [12] |Nature's God|
+Line # 20 [15] |entitle them, a|
+Line # 21 [14] |decent respect|
+Line # 22 [15] |to the opinions|
+Line # 23 [10] |of mankind|
+Line # 24 [13] |requires that|
+Line # 25 [11] |they should|
+Line # 26 [11] |declare the|
+Line # 27 [12] |causes which|
+Line # 28 [13] |impel them to|
+Line # 29 [15] |the separation.|
+Shortest line: 7
+ Longest line: 16
+
+
+AllWidths--------------------------------------------------------
+There are 27 lines wrapped at 17 characters:
+Line #  1 [11] |When in the|
+Line #  2 [15] |Course of human|
+Line #  3 [10] |events, it|
+Line #  4 [17] |becomes necessary|
+Line #  5 [17] |for one people to|
+Line #  6 [12] |dissolve the|
+Line #  7 [15] |political bands|
+Line #  8 [10] |which have|
+Line #  9 [14] |connected them|
+Line # 10 [17] |with another, and|
+Line # 11 [15] |to assume among|
+Line # 12 [17] |the powers of the|
+Line # 13 [10] |earth, the|
+Line # 14 [12] |separate and|
+Line # 15 [16] |equal station to|
+Line # 16 [17] |which the Laws of|
+Line # 17 [13] |Nature and of|
+Line # 18 [12] |Nature's God|
+Line # 19 [15] |entitle them, a|
+Line # 20 [17] |decent respect to|
+Line # 21 [15] |the opinions of|
+Line # 22 [16] |mankind requires|
+Line # 23 [16] |that they should|
+Line # 24 [11] |declare the|
+Line # 25 [12] |causes which|
+Line # 26 [17] |impel them to the|
+Line # 27 [11] |separation.|
+Shortest line: 10
+ Longest line: 17
+
+
+AllWidths--------------------------------------------------------
+There are 24 lines wrapped at 18 characters:
+Line #  1 [18] |When in the Course|
+Line #  2 [16] |of human events,|
+Line #  3 [10] |it becomes|
+Line #  4 [17] |necessary for one|
+Line #  5 [18] |people to dissolve|
+Line #  6 [13] |the political|
+Line #  7 [16] |bands which have|
+Line #  8 [14] |connected them|
+Line #  9 [17] |with another, and|
+Line # 10 [15] |to assume among|
+Line # 11 [17] |the powers of the|
+Line # 12 [10] |earth, the|
+Line # 13 [18] |separate and equal|
+Line # 14 [16] |station to which|
+Line # 15 [18] |the Laws of Nature|
+Line # 16 [15] |and of Nature's|
+Line # 17 [17] |God entitle them,|
+Line # 18 [16] |a decent respect|
+Line # 19 [18] |to the opinions of|
+Line # 20 [16] |mankind requires|
+Line # 21 [16] |that they should|
+Line # 22 [18] |declare the causes|
+Line # 23 [16] |which impel them|
+Line # 24 [18] |to the separation.|
+Shortest line: 10
+ Longest line: 18
+
+
+AllWidths--------------------------------------------------------
+There are 24 lines wrapped at 19 characters:
+Line #  1 [18] |When in the Course|
+Line #  2 [19] |of human events, it|
+Line #  3 [17] |becomes necessary|
+Line #  4 [17] |for one people to|
+Line #  5 [12] |dissolve the|
+Line #  6 [15] |political bands|
+Line #  7 [10] |which have|
+Line #  8 [19] |connected them with|
+Line #  9 [15] |another, and to|
+Line # 10 [16] |assume among the|
+Line # 11 [13] |powers of the|
+Line # 12 [19] |earth, the separate|
+Line # 13 [17] |and equal station|
+Line # 14 [17] |to which the Laws|
+Line # 15 [16] |of Nature and of|
+Line # 16 [12] |Nature's God|
+Line # 17 [15] |entitle them, a|
+Line # 18 [17] |decent respect to|
+Line # 19 [15] |the opinions of|
+Line # 20 [16] |mankind requires|
+Line # 21 [16] |that they should|
+Line # 22 [18] |declare the causes|
+Line # 23 [19] |which impel them to|
+Line # 24 [15] |the separation.|
+Shortest line: 10
+ Longest line: 19
+
+
+AllWidths--------------------------------------------------------
+There are 23 lines wrapped at 20 characters:
+Line #  1 [18] |When in the Course|
+Line #  2 [19] |of human events, it|
+Line #  3 [17] |becomes necessary|
+Line #  4 [17] |for one people to|
+Line #  5 [12] |dissolve the|
+Line #  6 [15] |political bands|
+Line #  7 [20] |which have connected|
+Line #  8 [18] |them with another,|
+Line #  9 [19] |and to assume among|
+Line # 10 [17] |the powers of the|
+Line # 11 [19] |earth, the separate|
+Line # 12 [20] |and equal station to|
+Line # 13 [17] |which the Laws of|
+Line # 14 [13] |Nature and of|
+Line # 15 [20] |Nature's God entitle|
+Line # 16 [14] |them, a decent|
+Line # 17 [14] |respect to the|
+Line # 18 [19] |opinions of mankind|
+Line # 19 [18] |requires that they|
+Line # 20 [18] |should declare the|
+Line # 21 [18] |causes which impel|
+Line # 22 [11] |them to the|
+Line # 23 [11] |separation.|
+Shortest line: 11
+ Longest line: 20
+
+
+AllWidths--------------------------------------------------------
+There are 23 lines wrapped at 21 characters:
+Line #  1 [21] |When in the Course of|
+Line #  2 [16] |human events, it|
+Line #  3 [21] |becomes necessary for|
+Line #  4 [13] |one people to|
+Line #  5 [12] |dissolve the|
+Line #  6 [21] |political bands which|
+Line #  7 [19] |have connected them|
+Line #  8 [20] |with another, and to|
+Line #  9 [16] |assume among the|
+Line # 10 [20] |powers of the earth,|
+Line # 11 [16] |the separate and|
+Line # 12 [16] |equal station to|
+Line # 13 [17] |which the Laws of|
+Line # 14 [13] |Nature and of|
+Line # 15 [20] |Nature's God entitle|
+Line # 16 [14] |them, a decent|
+Line # 17 [14] |respect to the|
+Line # 18 [19] |opinions of mankind|
+Line # 19 [18] |requires that they|
+Line # 20 [18] |should declare the|
+Line # 21 [18] |causes which impel|
+Line # 22 [11] |them to the|
+Line # 23 [11] |separation.|
+Shortest line: 11
+ Longest line: 21
+
+
+AllWidths--------------------------------------------------------
+There are 20 lines wrapped at 22 characters:
+Line #  1 [21] |When in the Course of|
+Line #  2 [16] |human events, it|
+Line #  3 [21] |becomes necessary for|
+Line #  4 [22] |one people to dissolve|
+Line #  5 [19] |the political bands|
+Line #  6 [20] |which have connected|
+Line #  7 [22] |them with another, and|
+Line #  8 [19] |to assume among the|
+Line #  9 [20] |powers of the earth,|
+Line # 10 [22] |the separate and equal|
+Line # 11 [20] |station to which the|
+Line # 12 [21] |Laws of Nature and of|
+Line # 13 [20] |Nature's God entitle|
+Line # 14 [22] |them, a decent respect|
+Line # 15 [18] |to the opinions of|
+Line # 16 [21] |mankind requires that|
+Line # 17 [19] |they should declare|
+Line # 18 [22] |the causes which impel|
+Line # 19 [11] |them to the|
+Line # 20 [11] |separation.|
+Shortest line: 11
+ Longest line: 22
+
+
+AllWidths--------------------------------------------------------
+There are 19 lines wrapped at 23 characters:
+Line #  1 [21] |When in the Course of|
+Line #  2 [16] |human events, it|
+Line #  3 [21] |becomes necessary for|
+Line #  4 [22] |one people to dissolve|
+Line #  5 [19] |the political bands|
+Line #  6 [20] |which have connected|
+Line #  7 [22] |them with another, and|
+Line #  8 [19] |to assume among the|
+Line #  9 [20] |powers of the earth,|
+Line # 10 [22] |the separate and equal|
+Line # 11 [20] |station to which the|
+Line # 12 [21] |Laws of Nature and of|
+Line # 13 [20] |Nature's God entitle|
+Line # 14 [22] |them, a decent respect|
+Line # 15 [18] |to the opinions of|
+Line # 16 [21] |mankind requires that|
+Line # 17 [23] |they should declare the|
+Line # 18 [23] |causes which impel them|
+Line # 19 [18] |to the separation.|
+Shortest line: 16
+ Longest line: 23
+
+
+AllWidths--------------------------------------------------------
+There are 18 lines wrapped at 24 characters:
+Line #  1 [21] |When in the Course of|
+Line #  2 [24] |human events, it becomes|
+Line #  3 [24] |necessary for one people|
+Line #  4 [15] |to dissolve the|
+Line #  5 [21] |political bands which|
+Line #  6 [24] |have connected them with|
+Line #  7 [22] |another, and to assume|
+Line #  8 [23] |among the powers of the|
+Line #  9 [23] |earth, the separate and|
+Line # 10 [22] |equal station to which|
+Line # 11 [22] |the Laws of Nature and|
+Line # 12 [23] |of Nature's God entitle|
+Line # 13 [22] |them, a decent respect|
+Line # 14 [18] |to the opinions of|
+Line # 15 [21] |mankind requires that|
+Line # 16 [23] |they should declare the|
+Line # 17 [23] |causes which impel them|
+Line # 18 [18] |to the separation.|
+Shortest line: 15
+ Longest line: 24
+
+
+AllWidths--------------------------------------------------------
+There are 18 lines wrapped at 25 characters:
+Line #  1 [21] |When in the Course of|
+Line #  2 [24] |human events, it becomes|
+Line #  3 [24] |necessary for one people|
+Line #  4 [25] |to dissolve the political|
+Line #  5 [16] |bands which have|
+Line #  6 [19] |connected them with|
+Line #  7 [22] |another, and to assume|
+Line #  8 [23] |among the powers of the|
+Line #  9 [23] |earth, the separate and|
+Line # 10 [22] |equal station to which|
+Line # 11 [25] |the Laws of Nature and of|
+Line # 12 [20] |Nature's God entitle|
+Line # 13 [25] |them, a decent respect to|
+Line # 14 [23] |the opinions of mankind|
+Line # 15 [25] |requires that they should|
+Line # 16 [24] |declare the causes which|
+Line # 17 [17] |impel them to the|
+Line # 18 [11] |separation.|
+Shortest line: 11
+ Longest line: 25
+
+
+AllWidths--------------------------------------------------------
+There are 17 lines wrapped at 26 characters:
+Line #  1 [21] |When in the Course of|
+Line #  2 [24] |human events, it becomes|
+Line #  3 [24] |necessary for one people|
+Line #  4 [25] |to dissolve the political|
+Line #  5 [26] |bands which have connected|
+Line #  6 [25] |them with another, and to|
+Line #  7 [26] |assume among the powers of|
+Line #  8 [23] |the earth, the separate|
+Line #  9 [26] |and equal station to which|
+Line # 10 [25] |the Laws of Nature and of|
+Line # 11 [26] |Nature's God entitle them,|
+Line # 12 [23] |a decent respect to the|
+Line # 13 [19] |opinions of mankind|
+Line # 14 [25] |requires that they should|
+Line # 15 [24] |declare the causes which|
+Line # 16 [17] |impel them to the|
+Line # 17 [11] |separation.|
+Shortest line: 11
+ Longest line: 26
+
+
+AllWidths--------------------------------------------------------
+There are 17 lines wrapped at 27 characters:
+Line #  1 [27] |When in the Course of human|
+Line #  2 [18] |events, it becomes|
+Line #  3 [27] |necessary for one people to|
+Line #  4 [22] |dissolve the political|
+Line #  5 [26] |bands which have connected|
+Line #  6 [25] |them with another, and to|
+Line #  7 [26] |assume among the powers of|
+Line #  8 [27] |the earth, the separate and|
+Line #  9 [26] |equal station to which the|
+Line # 10 [21] |Laws of Nature and of|
+Line # 11 [26] |Nature's God entitle them,|
+Line # 12 [23] |a decent respect to the|
+Line # 13 [19] |opinions of mankind|
+Line # 14 [25] |requires that they should|
+Line # 15 [24] |declare the causes which|
+Line # 16 [17] |impel them to the|
+Line # 17 [11] |separation.|
+Shortest line: 11
+ Longest line: 27
+
+
+AllWidths--------------------------------------------------------
+There are 16 lines wrapped at 28 characters:
+Line #  1 [27] |When in the Course of human|
+Line #  2 [28] |events, it becomes necessary|
+Line #  3 [26] |for one people to dissolve|
+Line #  4 [25] |the political bands which|
+Line #  5 [24] |have connected them with|
+Line #  6 [28] |another, and to assume among|
+Line #  7 [28] |the powers of the earth, the|
+Line #  8 [26] |separate and equal station|
+Line #  9 [27] |to which the Laws of Nature|
+Line # 10 [27] |and of Nature's God entitle|
+Line # 11 [25] |them, a decent respect to|
+Line # 12 [23] |the opinions of mankind|
+Line # 13 [25] |requires that they should|
+Line # 14 [24] |declare the causes which|
+Line # 15 [17] |impel them to the|
+Line # 16 [11] |separation.|
+Shortest line: 11
+ Longest line: 28
+
+
+AllWidths--------------------------------------------------------
+There are 15 lines wrapped at 29 characters:
+Line #  1 [27] |When in the Course of human|
+Line #  2 [28] |events, it becomes necessary|
+Line #  3 [26] |for one people to dissolve|
+Line #  4 [25] |the political bands which|
+Line #  5 [24] |have connected them with|
+Line #  6 [28] |another, and to assume among|
+Line #  7 [28] |the powers of the earth, the|
+Line #  8 [29] |separate and equal station to|
+Line #  9 [28] |which the Laws of Nature and|
+Line # 10 [29] |of Nature's God entitle them,|
+Line # 11 [23] |a decent respect to the|
+Line # 12 [28] |opinions of mankind requires|
+Line # 13 [28] |that they should declare the|
+Line # 14 [26] |causes which impel them to|
+Line # 15 [15] |the separation.|
+Shortest line: 15
+ Longest line: 29
+
+
+AllWidths--------------------------------------------------------
+There are 15 lines wrapped at 30 characters:
+Line #  1 [27] |When in the Course of human|
+Line #  2 [28] |events, it becomes necessary|
+Line #  3 [30] |for one people to dissolve the|
+Line #  4 [26] |political bands which have|
+Line #  5 [28] |connected them with another,|
+Line #  6 [30] |and to assume among the powers|
+Line #  7 [30] |of the earth, the separate and|
+Line #  8 [26] |equal station to which the|
+Line #  9 [30] |Laws of Nature and of Nature's|
+Line # 10 [26] |God entitle them, a decent|
+Line # 11 [26] |respect to the opinions of|
+Line # 12 [26] |mankind requires that they|
+Line # 13 [25] |should declare the causes|
+Line # 14 [23] |which impel them to the|
+Line # 15 [11] |separation.|
+Shortest line: 11
+ Longest line: 30
+
+
+AllWidths--------------------------------------------------------
+There are 14 lines wrapped at 31 characters:
+Line #  1 [27] |When in the Course of human|
+Line #  2 [28] |events, it becomes necessary|
+Line #  3 [30] |for one people to dissolve the|
+Line #  4 [26] |political bands which have|
+Line #  5 [28] |connected them with another,|
+Line #  6 [30] |and to assume among the powers|
+Line #  7 [30] |of the earth, the separate and|
+Line #  8 [31] |equal station to which the Laws|
+Line #  9 [29] |of Nature and of Nature's God|
+Line # 10 [30] |entitle them, a decent respect|
+Line # 11 [26] |to the opinions of mankind|
+Line # 12 [25] |requires that they should|
+Line # 13 [30] |declare the causes which impel|
+Line # 14 [23] |them to the separation.|
+Shortest line: 23
+ Longest line: 31
+
+
+AllWidths--------------------------------------------------------
+There are 14 lines wrapped at 32 characters:
+Line #  1 [27] |When in the Course of human|
+Line #  2 [32] |events, it becomes necessary for|
+Line #  3 [26] |one people to dissolve the|
+Line #  4 [26] |political bands which have|
+Line #  5 [32] |connected them with another, and|
+Line #  6 [29] |to assume among the powers of|
+Line #  7 [27] |the earth, the separate and|
+Line #  8 [31] |equal station to which the Laws|
+Line #  9 [29] |of Nature and of Nature's God|
+Line # 10 [30] |entitle them, a decent respect|
+Line # 11 [26] |to the opinions of mankind|
+Line # 12 [25] |requires that they should|
+Line # 13 [30] |declare the causes which impel|
+Line # 14 [23] |them to the separation.|
+Shortest line: 23
+ Longest line: 32
+
+
+AllWidths--------------------------------------------------------
+There are 14 lines wrapped at 33 characters:
+Line #  1 [27] |When in the Course of human|
+Line #  2 [32] |events, it becomes necessary for|
+Line #  3 [26] |one people to dissolve the|
+Line #  4 [26] |political bands which have|
+Line #  5 [32] |connected them with another, and|
+Line #  6 [33] |to assume among the powers of the|
+Line #  7 [29] |earth, the separate and equal|
+Line #  8 [28] |station to which the Laws of|
+Line #  9 [26] |Nature and of Nature's God|
+Line # 10 [33] |entitle them, a decent respect to|
+Line # 11 [32] |the opinions of mankind requires|
+Line # 12 [28] |that they should declare the|
+Line # 13 [30] |causes which impel them to the|
+Line # 14 [11] |separation.|
+Shortest line: 11
+ Longest line: 33
+
+
+AllWidths--------------------------------------------------------
+There are 14 lines wrapped at 34 characters:
+Line #  1 [27] |When in the Course of human|
+Line #  2 [32] |events, it becomes necessary for|
+Line #  3 [26] |one people to dissolve the|
+Line #  4 [26] |political bands which have|
+Line #  5 [32] |connected them with another, and|
+Line #  6 [33] |to assume among the powers of the|
+Line #  7 [29] |earth, the separate and equal|
+Line #  8 [28] |station to which the Laws of|
+Line #  9 [34] |Nature and of Nature's God entitle|
+Line # 10 [29] |them, a decent respect to the|
+Line # 11 [33] |opinions of mankind requires that|
+Line # 12 [30] |they should declare the causes|
+Line # 13 [23] |which impel them to the|
+Line # 14 [11] |separation.|
+Shortest line: 11
+ Longest line: 34
+
+
+AllWidths--------------------------------------------------------
+There are 12 lines wrapped at 35 characters:
+Line #  1 [35] |When in the Course of human events,|
+Line #  2 [35] |it becomes necessary for one people|
+Line #  3 [31] |to dissolve the political bands|
+Line #  4 [30] |which have connected them with|
+Line #  5 [32] |another, and to assume among the|
+Line #  6 [33] |powers of the earth, the separate|
+Line #  7 [35] |and equal station to which the Laws|
+Line #  8 [29] |of Nature and of Nature's God|
+Line #  9 [33] |entitle them, a decent respect to|
+Line # 10 [32] |the opinions of mankind requires|
+Line # 11 [35] |that they should declare the causes|
+Line # 12 [35] |which impel them to the separation.|
+Shortest line: 29
+ Longest line: 35
+
+
+AllWidths--------------------------------------------------------
+There are 12 lines wrapped at 36 characters:
+Line #  1 [35] |When in the Course of human events,|
+Line #  2 [35] |it becomes necessary for one people|
+Line #  3 [31] |to dissolve the political bands|
+Line #  4 [30] |which have connected them with|
+Line #  5 [32] |another, and to assume among the|
+Line #  6 [33] |powers of the earth, the separate|
+Line #  7 [35] |and equal station to which the Laws|
+Line #  8 [29] |of Nature and of Nature's God|
+Line #  9 [33] |entitle them, a decent respect to|
+Line # 10 [32] |the opinions of mankind requires|
+Line # 11 [35] |that they should declare the causes|
+Line # 12 [35] |which impel them to the separation.|
+Shortest line: 29
+ Longest line: 35
+
+
+AllWidths--------------------------------------------------------
+There are 12 lines wrapped at 37 characters:
+Line #  1 [35] |When in the Course of human events,|
+Line #  2 [35] |it becomes necessary for one people|
+Line #  3 [37] |to dissolve the political bands which|
+Line #  4 [37] |have connected them with another, and|
+Line #  5 [33] |to assume among the powers of the|
+Line #  6 [37] |earth, the separate and equal station|
+Line #  7 [34] |to which the Laws of Nature and of|
+Line #  8 [35] |Nature's God entitle them, a decent|
+Line #  9 [34] |respect to the opinions of mankind|
+Line # 10 [37] |requires that they should declare the|
+Line # 11 [30] |causes which impel them to the|
+Line # 12 [11] |separation.|
+Shortest line: 11
+ Longest line: 37
+
+
+AllWidths--------------------------------------------------------
+There are 12 lines wrapped at 38 characters:
+Line #  1 [38] |When in the Course of human events, it|
+Line #  2 [35] |becomes necessary for one people to|
+Line #  3 [34] |dissolve the political bands which|
+Line #  4 [37] |have connected them with another, and|
+Line #  5 [33] |to assume among the powers of the|
+Line #  6 [37] |earth, the separate and equal station|
+Line #  7 [34] |to which the Laws of Nature and of|
+Line #  8 [35] |Nature's God entitle them, a decent|
+Line #  9 [34] |respect to the opinions of mankind|
+Line # 10 [37] |requires that they should declare the|
+Line # 11 [30] |causes which impel them to the|
+Line # 12 [11] |separation.|
+Shortest line: 11
+ Longest line: 38
+
+
+AllWidths--------------------------------------------------------
+There are 11 lines wrapped at 39 characters:
+Line #  1 [38] |When in the Course of human events, it|
+Line #  2 [35] |becomes necessary for one people to|
+Line #  3 [39] |dissolve the political bands which have|
+Line #  4 [35] |connected them with another, and to|
+Line #  5 [37] |assume among the powers of the earth,|
+Line #  6 [39] |the separate and equal station to which|
+Line #  7 [38] |the Laws of Nature and of Nature's God|
+Line #  8 [37] |entitle them, a decent respect to the|
+Line #  9 [38] |opinions of mankind requires that they|
+Line # 10 [37] |should declare the causes which impel|
+Line # 11 [23] |them to the separation.|
+Shortest line: 23
+ Longest line: 39
+
+
+AllWidths--------------------------------------------------------
+There are 11 lines wrapped at 40 characters:
+Line #  1 [38] |When in the Course of human events, it|
+Line #  2 [35] |becomes necessary for one people to|
+Line #  3 [39] |dissolve the political bands which have|
+Line #  4 [35] |connected them with another, and to|
+Line #  5 [37] |assume among the powers of the earth,|
+Line #  6 [39] |the separate and equal station to which|
+Line #  7 [38] |the Laws of Nature and of Nature's God|
+Line #  8 [37] |entitle them, a decent respect to the|
+Line #  9 [38] |opinions of mankind requires that they|
+Line # 10 [37] |should declare the causes which impel|
+Line # 11 [23] |them to the separation.|
+Shortest line: 23
+ Longest line: 39
+
+
+AllWidths--------------------------------------------------------
+There are 11 lines wrapped at 41 characters:
+Line #  1 [38] |When in the Course of human events, it|
+Line #  2 [35] |becomes necessary for one people to|
+Line #  3 [39] |dissolve the political bands which have|
+Line #  4 [35] |connected them with another, and to|
+Line #  5 [41] |assume among the powers of the earth, the|
+Line #  6 [39] |separate and equal station to which the|
+Line #  7 [34] |Laws of Nature and of Nature's God|
+Line #  8 [37] |entitle them, a decent respect to the|
+Line #  9 [38] |opinions of mankind requires that they|
+Line # 10 [37] |should declare the causes which impel|
+Line # 11 [23] |them to the separation.|
+Shortest line: 23
+ Longest line: 41
+
+
+AllWidths--------------------------------------------------------
+There are 11 lines wrapped at 42 characters:
+Line #  1 [38] |When in the Course of human events, it|
+Line #  2 [35] |becomes necessary for one people to|
+Line #  3 [39] |dissolve the political bands which have|
+Line #  4 [42] |connected them with another, and to assume|
+Line #  5 [34] |among the powers of the earth, the|
+Line #  6 [39] |separate and equal station to which the|
+Line #  7 [42] |Laws of Nature and of Nature's God entitle|
+Line #  8 [41] |them, a decent respect to the opinions of|
+Line #  9 [41] |mankind requires that they should declare|
+Line # 10 [34] |the causes which impel them to the|
+Line # 11 [11] |separation.|
+Shortest line: 11
+ Longest line: 42
+
+
+AllWidths--------------------------------------------------------
+There are 10 lines wrapped at 43 characters:
+Line #  1 [38] |When in the Course of human events, it|
+Line #  2 [35] |becomes necessary for one people to|
+Line #  3 [39] |dissolve the political bands which have|
+Line #  4 [42] |connected them with another, and to assume|
+Line #  5 [43] |among the powers of the earth, the separate|
+Line #  6 [38] |and equal station to which the Laws of|
+Line #  7 [42] |Nature and of Nature's God entitle them, a|
+Line #  8 [41] |decent respect to the opinions of mankind|
+Line #  9 [37] |requires that they should declare the|
+Line # 10 [42] |causes which impel them to the separation.|
+Shortest line: 35
+ Longest line: 43
+
+
+AllWidths--------------------------------------------------------
+There are 10 lines wrapped at 44 characters:
+Line #  1 [38] |When in the Course of human events, it|
+Line #  2 [44] |becomes necessary for one people to dissolve|
+Line #  3 [40] |the political bands which have connected|
+Line #  4 [42] |them with another, and to assume among the|
+Line #  5 [43] |powers of the earth, the separate and equal|
+Line #  6 [42] |station to which the Laws of Nature and of|
+Line #  7 [43] |Nature's God entitle them, a decent respect|
+Line #  8 [40] |to the opinions of mankind requires that|
+Line #  9 [42] |they should declare the causes which impel|
+Line # 10 [23] |them to the separation.|
+Shortest line: 23
+ Longest line: 44
+
+
+AllWidths--------------------------------------------------------
+There are 10 lines wrapped at 45 characters:
+Line #  1 [38] |When in the Course of human events, it|
+Line #  2 [44] |becomes necessary for one people to dissolve|
+Line #  3 [45] |the political bands which have connected them|
+Line #  4 [44] |with another, and to assume among the powers|
+Line #  5 [44] |of the earth, the separate and equal station|
+Line #  6 [43] |to which the Laws of Nature and of Nature's|
+Line #  7 [41] |God entitle them, a decent respect to the|
+Line #  8 [45] |opinions of mankind requires that they should|
+Line #  9 [42] |declare the causes which impel them to the|
+Line # 10 [11] |separation.|
+Shortest line: 11
+ Longest line: 45
+
+
+AllWidths--------------------------------------------------------
+There are 9 lines wrapped at 46 characters:
+Line #  1 [46] |When in the Course of human events, it becomes|
+Line #  2 [40] |necessary for one people to dissolve the|
+Line #  3 [46] |political bands which have connected them with|
+Line #  4 [46] |another, and to assume among the powers of the|
+Line #  5 [46] |earth, the separate and equal station to which|
+Line #  6 [46] |the Laws of Nature and of Nature's God entitle|
+Line #  7 [41] |them, a decent respect to the opinions of|
+Line #  8 [45] |mankind requires that they should declare the|
+Line #  9 [42] |causes which impel them to the separation.|
+Shortest line: 40
+ Longest line: 46
+
+
+AllWidths--------------------------------------------------------
+There are 9 lines wrapped at 47 characters:
+Line #  1 [46] |When in the Course of human events, it becomes|
+Line #  2 [40] |necessary for one people to dissolve the|
+Line #  3 [46] |political bands which have connected them with|
+Line #  4 [46] |another, and to assume among the powers of the|
+Line #  5 [46] |earth, the separate and equal station to which|
+Line #  6 [46] |the Laws of Nature and of Nature's God entitle|
+Line #  7 [41] |them, a decent respect to the opinions of|
+Line #  8 [45] |mankind requires that they should declare the|
+Line #  9 [42] |causes which impel them to the separation.|
+Shortest line: 40
+ Longest line: 46
+
+
+AllWidths--------------------------------------------------------
+There are 9 lines wrapped at 48 characters:
+Line #  1 [46] |When in the Course of human events, it becomes|
+Line #  2 [40] |necessary for one people to dissolve the|
+Line #  3 [46] |political bands which have connected them with|
+Line #  4 [46] |another, and to assume among the powers of the|
+Line #  5 [46] |earth, the separate and equal station to which|
+Line #  6 [46] |the Laws of Nature and of Nature's God entitle|
+Line #  7 [41] |them, a decent respect to the opinions of|
+Line #  8 [45] |mankind requires that they should declare the|
+Line #  9 [42] |causes which impel them to the separation.|
+Shortest line: 40
+ Longest line: 46
+
+
+AllWidths--------------------------------------------------------
+There are 9 lines wrapped at 49 characters:
+Line #  1 [46] |When in the Course of human events, it becomes|
+Line #  2 [40] |necessary for one people to dissolve the|
+Line #  3 [46] |political bands which have connected them with|
+Line #  4 [46] |another, and to assume among the powers of the|
+Line #  5 [46] |earth, the separate and equal station to which|
+Line #  6 [46] |the Laws of Nature and of Nature's God entitle|
+Line #  7 [49] |them, a decent respect to the opinions of mankind|
+Line #  8 [44] |requires that they should declare the causes|
+Line #  9 [35] |which impel them to the separation.|
+Shortest line: 35
+ Longest line: 49
+
+
+AllWidths--------------------------------------------------------
+There are 9 lines wrapped at 50 characters:
+Line #  1 [46] |When in the Course of human events, it becomes|
+Line #  2 [50] |necessary for one people to dissolve the political|
+Line #  3 [49] |bands which have connected them with another, and|
+Line #  4 [44] |to assume among the powers of the earth, the|
+Line #  5 [47] |separate and equal station to which the Laws of|
+Line #  6 [49] |Nature and of Nature's God entitle them, a decent|
+Line #  7 [48] |respect to the opinions of mankind requires that|
+Line #  8 [50] |they should declare the causes which impel them to|
+Line #  9 [15] |the separation.|
+Shortest line: 15
+ Longest line: 50
+
+
+AllWidths--------------------------------------------------------
+There are 9 lines wrapped at 51 characters:
+Line #  1 [46] |When in the Course of human events, it becomes|
+Line #  2 [50] |necessary for one people to dissolve the political|
+Line #  3 [49] |bands which have connected them with another, and|
+Line #  4 [44] |to assume among the powers of the earth, the|
+Line #  5 [47] |separate and equal station to which the Laws of|
+Line #  6 [49] |Nature and of Nature's God entitle them, a decent|
+Line #  7 [48] |respect to the opinions of mankind requires that|
+Line #  8 [50] |they should declare the causes which impel them to|
+Line #  9 [15] |the separation.|
+Shortest line: 15
+ Longest line: 50
+
+
+AllWidths--------------------------------------------------------
+There are 9 lines wrapped at 52 characters:
+Line #  1 [46] |When in the Course of human events, it becomes|
+Line #  2 [50] |necessary for one people to dissolve the political|
+Line #  3 [52] |bands which have connected them with another, and to|
+Line #  4 [50] |assume among the powers of the earth, the separate|
+Line #  5 [52] |and equal station to which the Laws of Nature and of|
+Line #  6 [50] |Nature's God entitle them, a decent respect to the|
+Line #  7 [45] |opinions of mankind requires that they should|
+Line #  8 [42] |declare the causes which impel them to the|
+Line #  9 [11] |separation.|
+Shortest line: 11
+ Longest line: 52
+
+
+AllWidths--------------------------------------------------------
+There are 8 lines wrapped at 53 characters:
+Line #  1 [46] |When in the Course of human events, it becomes|
+Line #  2 [50] |necessary for one people to dissolve the political|
+Line #  3 [52] |bands which have connected them with another, and to|
+Line #  4 [50] |assume among the powers of the earth, the separate|
+Line #  5 [52] |and equal station to which the Laws of Nature and of|
+Line #  6 [50] |Nature's God entitle them, a decent respect to the|
+Line #  7 [53] |opinions of mankind requires that they should declare|
+Line #  8 [46] |the causes which impel them to the separation.|
+Shortest line: 46
+ Longest line: 53
+
+
+AllWidths--------------------------------------------------------
+There are 8 lines wrapped at 54 characters:
+Line #  1 [46] |When in the Course of human events, it becomes|
+Line #  2 [50] |necessary for one people to dissolve the political|
+Line #  3 [52] |bands which have connected them with another, and to|
+Line #  4 [54] |assume among the powers of the earth, the separate and|
+Line #  5 [48] |equal station to which the Laws of Nature and of|
+Line #  6 [50] |Nature's God entitle them, a decent respect to the|
+Line #  7 [53] |opinions of mankind requires that they should declare|
+Line #  8 [46] |the causes which impel them to the separation.|
+Shortest line: 46
+ Longest line: 54
+
+
+AllWidths--------------------------------------------------------
+There are 8 lines wrapped at 55 characters:
+Line #  1 [46] |When in the Course of human events, it becomes|
+Line #  2 [50] |necessary for one people to dissolve the political|
+Line #  3 [52] |bands which have connected them with another, and to|
+Line #  4 [54] |assume among the powers of the earth, the separate and|
+Line #  5 [48] |equal station to which the Laws of Nature and of|
+Line #  6 [50] |Nature's God entitle them, a decent respect to the|
+Line #  7 [53] |opinions of mankind requires that they should declare|
+Line #  8 [46] |the causes which impel them to the separation.|
+Shortest line: 46
+ Longest line: 54
+
+
+AllWidths--------------------------------------------------------
+There are 8 lines wrapped at 56 characters:
+Line #  1 [56] |When in the Course of human events, it becomes necessary|
+Line #  2 [52] |for one people to dissolve the political bands which|
+Line #  3 [53] |have connected them with another, and to assume among|
+Line #  4 [55] |the powers of the earth, the separate and equal station|
+Line #  5 [55] |to which the Laws of Nature and of Nature's God entitle|
+Line #  6 [49] |them, a decent respect to the opinions of mankind|
+Line #  7 [56] |requires that they should declare the causes which impel|
+Line #  8 [23] |them to the separation.|
+Shortest line: 23
+ Longest line: 56
+
+
+AllWidths--------------------------------------------------------
+There are 8 lines wrapped at 57 characters:
+Line #  1 [56] |When in the Course of human events, it becomes necessary|
+Line #  2 [57] |for one people to dissolve the political bands which have|
+Line #  3 [52] |connected them with another, and to assume among the|
+Line #  4 [54] |powers of the earth, the separate and equal station to|
+Line #  5 [52] |which the Laws of Nature and of Nature's God entitle|
+Line #  6 [49] |them, a decent respect to the opinions of mankind|
+Line #  7 [56] |requires that they should declare the causes which impel|
+Line #  8 [23] |them to the separation.|
+Shortest line: 23
+ Longest line: 57
+
+
+AllWidths--------------------------------------------------------
+There are 8 lines wrapped at 58 characters:
+Line #  1 [56] |When in the Course of human events, it becomes necessary|
+Line #  2 [57] |for one people to dissolve the political bands which have|
+Line #  3 [52] |connected them with another, and to assume among the|
+Line #  4 [54] |powers of the earth, the separate and equal station to|
+Line #  5 [58] |which the Laws of Nature and of Nature's God entitle them,|
+Line #  6 [57] |a decent respect to the opinions of mankind requires that|
+Line #  7 [54] |they should declare the causes which impel them to the|
+Line #  8 [11] |separation.|
+Shortest line: 11
+ Longest line: 58
+
+
+AllWidths--------------------------------------------------------
+There are 8 lines wrapped at 59 characters:
+Line #  1 [56] |When in the Course of human events, it becomes necessary|
+Line #  2 [57] |for one people to dissolve the political bands which have|
+Line #  3 [59] |connected them with another, and to assume among the powers|
+Line #  4 [57] |of the earth, the separate and equal station to which the|
+Line #  5 [57] |Laws of Nature and of Nature's God entitle them, a decent|
+Line #  6 [53] |respect to the opinions of mankind requires that they|
+Line #  7 [49] |should declare the causes which impel them to the|
+Line #  8 [11] |separation.|
+Shortest line: 11
+ Longest line: 59
+
+
+AllWidths--------------------------------------------------------
+There are 7 lines wrapped at 60 characters:
+Line #  1 [60] |When in the Course of human events, it becomes necessary for|
+Line #  2 [53] |one people to dissolve the political bands which have|
+Line #  3 [59] |connected them with another, and to assume among the powers|
+Line #  4 [57] |of the earth, the separate and equal station to which the|
+Line #  5 [57] |Laws of Nature and of Nature's God entitle them, a decent|
+Line #  6 [60] |respect to the opinions of mankind requires that they should|
+Line #  7 [54] |declare the causes which impel them to the separation.|
+Shortest line: 53
+ Longest line: 60
+
+
+AllWidths--------------------------------------------------------
+There are 7 lines wrapped at 61 characters:
+Line #  1 [60] |When in the Course of human events, it becomes necessary for|
+Line #  2 [53] |one people to dissolve the political bands which have|
+Line #  3 [59] |connected them with another, and to assume among the powers|
+Line #  4 [57] |of the earth, the separate and equal station to which the|
+Line #  5 [57] |Laws of Nature and of Nature's God entitle them, a decent|
+Line #  6 [60] |respect to the opinions of mankind requires that they should|
+Line #  7 [54] |declare the causes which impel them to the separation.|
+Shortest line: 53
+ Longest line: 60
+
+
+AllWidths--------------------------------------------------------
+There are 7 lines wrapped at 62 characters:
+Line #  1 [60] |When in the Course of human events, it becomes necessary for|
+Line #  2 [53] |one people to dissolve the political bands which have|
+Line #  3 [62] |connected them with another, and to assume among the powers of|
+Line #  4 [62] |the earth, the separate and equal station to which the Laws of|
+Line #  5 [60] |Nature and of Nature's God entitle them, a decent respect to|
+Line #  6 [61] |the opinions of mankind requires that they should declare the|
+Line #  7 [42] |causes which impel them to the separation.|
+Shortest line: 42
+ Longest line: 62
+
+
+AllWidths--------------------------------------------------------
+There are 7 lines wrapped at 63 characters:
+Line #  1 [60] |When in the Course of human events, it becomes necessary for|
+Line #  2 [63] |one people to dissolve the political bands which have connected|
+Line #  3 [63] |them with another, and to assume among the powers of the earth,|
+Line #  4 [62] |the separate and equal station to which the Laws of Nature and|
+Line #  5 [62] |of Nature's God entitle them, a decent respect to the opinions|
+Line #  6 [61] |of mankind requires that they should declare the causes which|
+Line #  7 [29] |impel them to the separation.|
+Shortest line: 29
+ Longest line: 63
+
+
+AllWidths--------------------------------------------------------
+There are 7 lines wrapped at 64 characters:
+Line #  1 [64] |When in the Course of human events, it becomes necessary for one|
+Line #  2 [64] |people to dissolve the political bands which have connected them|
+Line #  3 [62] |with another, and to assume among the powers of the earth, the|
+Line #  4 [61] |separate and equal station to which the Laws of Nature and of|
+Line #  5 [62] |Nature's God entitle them, a decent respect to the opinions of|
+Line #  6 [64] |mankind requires that they should declare the causes which impel|
+Line #  7 [23] |them to the separation.|
+Shortest line: 23
+ Longest line: 64
+
+
+AllWidths--------------------------------------------------------
+There are 7 lines wrapped at 65 characters:
+Line #  1 [64] |When in the Course of human events, it becomes necessary for one|
+Line #  2 [64] |people to dissolve the political bands which have connected them|
+Line #  3 [62] |with another, and to assume among the powers of the earth, the|
+Line #  4 [61] |separate and equal station to which the Laws of Nature and of|
+Line #  5 [62] |Nature's God entitle them, a decent respect to the opinions of|
+Line #  6 [64] |mankind requires that they should declare the causes which impel|
+Line #  7 [23] |them to the separation.|
+Shortest line: 23
+ Longest line: 64
+
+
+AllWidths--------------------------------------------------------
+There are 7 lines wrapped at 66 characters:
+Line #  1 [64] |When in the Course of human events, it becomes necessary for one|
+Line #  2 [64] |people to dissolve the political bands which have connected them|
+Line #  3 [62] |with another, and to assume among the powers of the earth, the|
+Line #  4 [61] |separate and equal station to which the Laws of Nature and of|
+Line #  5 [62] |Nature's God entitle them, a decent respect to the opinions of|
+Line #  6 [64] |mankind requires that they should declare the causes which impel|
+Line #  7 [23] |them to the separation.|
+Shortest line: 23
+ Longest line: 64
+
+
+AllWidths--------------------------------------------------------
+There are 7 lines wrapped at 67 characters:
+Line #  1 [64] |When in the Course of human events, it becomes necessary for one|
+Line #  2 [64] |people to dissolve the political bands which have connected them|
+Line #  3 [62] |with another, and to assume among the powers of the earth, the|
+Line #  4 [61] |separate and equal station to which the Laws of Nature and of|
+Line #  5 [62] |Nature's God entitle them, a decent respect to the opinions of|
+Line #  6 [64] |mankind requires that they should declare the causes which impel|
+Line #  7 [23] |them to the separation.|
+Shortest line: 23
+ Longest line: 64
+
+
+AllWidths--------------------------------------------------------
+There are 7 lines wrapped at 68 characters:
+Line #  1 [64] |When in the Course of human events, it becomes necessary for one|
+Line #  2 [64] |people to dissolve the political bands which have connected them|
+Line #  3 [62] |with another, and to assume among the powers of the earth, the|
+Line #  4 [61] |separate and equal station to which the Laws of Nature and of|
+Line #  5 [62] |Nature's God entitle them, a decent respect to the opinions of|
+Line #  6 [64] |mankind requires that they should declare the causes which impel|
+Line #  7 [23] |them to the separation.|
+Shortest line: 23
+ Longest line: 64
+
+
+AllWidths--------------------------------------------------------
+There are 7 lines wrapped at 69 characters:
+Line #  1 [64] |When in the Course of human events, it becomes necessary for one|
+Line #  2 [69] |people to dissolve the political bands which have connected them with|
+Line #  3 [66] |another, and to assume among the powers of the earth, the separate|
+Line #  4 [65] |and equal station to which the Laws of Nature and of Nature's God|
+Line #  5 [66] |entitle them, a decent respect to the opinions of mankind requires|
+Line #  6 [59] |that they should declare the causes which impel them to the|
+Line #  7 [11] |separation.|
+Shortest line: 11
+ Longest line: 69
+
+
+AllWidths--------------------------------------------------------
+There are 6 lines wrapped at 70 characters:
+Line #  1 [64] |When in the Course of human events, it becomes necessary for one|
+Line #  2 [69] |people to dissolve the political bands which have connected them with|
+Line #  3 [70] |another, and to assume among the powers of the earth, the separate and|
+Line #  4 [69] |equal station to which the Laws of Nature and of Nature's God entitle|
+Line #  5 [68] |them, a decent respect to the opinions of mankind requires that they|
+Line #  6 [61] |should declare the causes which impel them to the separation.|
+Shortest line: 61
+ Longest line: 70
+
+
+AllWidths--------------------------------------------------------
+There are 6 lines wrapped at 71 characters:
+Line #  1 [71] |When in the Course of human events, it becomes necessary for one people|
+Line #  2 [71] |to dissolve the political bands which have connected them with another,|
+Line #  3 [67] |and to assume among the powers of the earth, the separate and equal|
+Line #  4 [71] |station to which the Laws of Nature and of Nature's God entitle them, a|
+Line #  5 [67] |decent respect to the opinions of mankind requires that they should|
+Line #  6 [54] |declare the causes which impel them to the separation.|
+Shortest line: 54
+ Longest line: 71
+
+
+AllWidths--------------------------------------------------------
+There are 6 lines wrapped at 72 characters:
+Line #  1 [71] |When in the Course of human events, it becomes necessary for one people|
+Line #  2 [71] |to dissolve the political bands which have connected them with another,|
+Line #  3 [67] |and to assume among the powers of the earth, the separate and equal|
+Line #  4 [71] |station to which the Laws of Nature and of Nature's God entitle them, a|
+Line #  5 [67] |decent respect to the opinions of mankind requires that they should|
+Line #  6 [54] |declare the causes which impel them to the separation.|
+Shortest line: 54
+ Longest line: 71
+
+
+AllWidths--------------------------------------------------------
+There are 6 lines wrapped at 73 characters:
+Line #  1 [71] |When in the Course of human events, it becomes necessary for one people|
+Line #  2 [71] |to dissolve the political bands which have connected them with another,|
+Line #  3 [67] |and to assume among the powers of the earth, the separate and equal|
+Line #  4 [71] |station to which the Laws of Nature and of Nature's God entitle them, a|
+Line #  5 [67] |decent respect to the opinions of mankind requires that they should|
+Line #  6 [54] |declare the causes which impel them to the separation.|
+Shortest line: 54
+ Longest line: 71
+
+
+AllWidths--------------------------------------------------------
+There are 6 lines wrapped at 74 characters:
+Line #  1 [74] |When in the Course of human events, it becomes necessary for one people to|
+Line #  2 [72] |dissolve the political bands which have connected them with another, and|
+Line #  3 [74] |to assume among the powers of the earth, the separate and equal station to|
+Line #  4 [67] |which the Laws of Nature and of Nature's God entitle them, a decent|
+Line #  5 [72] |respect to the opinions of mankind requires that they should declare the|
+Line #  6 [42] |causes which impel them to the separation.|
+Shortest line: 42
+ Longest line: 74
+
+
+AllWidths--------------------------------------------------------
+There are 6 lines wrapped at 75 characters:
+Line #  1 [74] |When in the Course of human events, it becomes necessary for one people to|
+Line #  2 [75] |dissolve the political bands which have connected them with another, and to|
+Line #  3 [71] |assume among the powers of the earth, the separate and equal station to|
+Line #  4 [75] |which the Laws of Nature and of Nature's God entitle them, a decent respect|
+Line #  5 [71] |to the opinions of mankind requires that they should declare the causes|
+Line #  6 [35] |which impel them to the separation.|
+Shortest line: 35
+ Longest line: 75
+
+
+AllWidths--------------------------------------------------------
+There are 6 lines wrapped at 76 characters:
+Line #  1 [74] |When in the Course of human events, it becomes necessary for one people to|
+Line #  2 [75] |dissolve the political bands which have connected them with another, and to|
+Line #  3 [71] |assume among the powers of the earth, the separate and equal station to|
+Line #  4 [75] |which the Laws of Nature and of Nature's God entitle them, a decent respect|
+Line #  5 [71] |to the opinions of mankind requires that they should declare the causes|
+Line #  6 [35] |which impel them to the separation.|
+Shortest line: 35
+ Longest line: 75
+
+
+AllWidths--------------------------------------------------------
+There are 6 lines wrapped at 77 characters:
+Line #  1 [74] |When in the Course of human events, it becomes necessary for one people to|
+Line #  2 [75] |dissolve the political bands which have connected them with another, and to|
+Line #  3 [77] |assume among the powers of the earth, the separate and equal station to which|
+Line #  4 [76] |the Laws of Nature and of Nature's God entitle them, a decent respect to the|
+Line #  5 [76] |opinions of mankind requires that they should declare the causes which impel|
+Line #  6 [23] |them to the separation.|
+Shortest line: 23
+ Longest line: 77
+
+
+AllWidths--------------------------------------------------------
+There are 6 lines wrapped at 78 characters:
+Line #  1 [74] |When in the Course of human events, it becomes necessary for one people to|
+Line #  2 [75] |dissolve the political bands which have connected them with another, and to|
+Line #  3 [77] |assume among the powers of the earth, the separate and equal station to which|
+Line #  4 [76] |the Laws of Nature and of Nature's God entitle them, a decent respect to the|
+Line #  5 [76] |opinions of mankind requires that they should declare the causes which impel|
+Line #  6 [23] |them to the separation.|
+Shortest line: 23
+ Longest line: 77
+
+
+AllWidths--------------------------------------------------------
+There are 6 lines wrapped at 79 characters:
+Line #  1 [74] |When in the Course of human events, it becomes necessary for one people to|
+Line #  2 [75] |dissolve the political bands which have connected them with another, and to|
+Line #  3 [77] |assume among the powers of the earth, the separate and equal station to which|
+Line #  4 [76] |the Laws of Nature and of Nature's God entitle them, a decent respect to the|
+Line #  5 [76] |opinions of mankind requires that they should declare the causes which impel|
+Line #  6 [23] |them to the separation.|
+Shortest line: 23
+ Longest line: 77
+
+
+AllWidths--------------------------------------------------------
+There are 6 lines wrapped at 80 characters:
+Line #  1 [74] |When in the Course of human events, it becomes necessary for one people to|
+Line #  2 [75] |dissolve the political bands which have connected them with another, and to|
+Line #  3 [77] |assume among the powers of the earth, the separate and equal station to which|
+Line #  4 [76] |the Laws of Nature and of Nature's God entitle them, a decent respect to the|
+Line #  5 [76] |opinions of mankind requires that they should declare the causes which impel|
+Line #  6 [23] |them to the separation.|
+Shortest line: 23
+ Longest line: 77
+
+
+AllWidths--------------------------------------------------------
+There are 6 lines wrapped at 81 characters:
+Line #  1 [74] |When in the Course of human events, it becomes necessary for one people to|
+Line #  2 [75] |dissolve the political bands which have connected them with another, and to|
+Line #  3 [81] |assume among the powers of the earth, the separate and equal station to which the|
+Line #  4 [81] |Laws of Nature and of Nature's God entitle them, a decent respect to the opinions|
+Line #  5 [79] |of mankind requires that they should declare the causes which impel them to the|
+Line #  6 [11] |separation.|
+Shortest line: 11
+ Longest line: 81
+
+
+AllWidths--------------------------------------------------------
+There are 6 lines wrapped at 82 characters:
+Line #  1 [74] |When in the Course of human events, it becomes necessary for one people to|
+Line #  2 [82] |dissolve the political bands which have connected them with another, and to assume|
+Line #  3 [82] |among the powers of the earth, the separate and equal station to which the Laws of|
+Line #  4 [76] |Nature and of Nature's God entitle them, a decent respect to the opinions of|
+Line #  5 [76] |mankind requires that they should declare the causes which impel them to the|
+Line #  6 [11] |separation.|
+Shortest line: 11
+ Longest line: 82
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 83 characters:
+Line #  1 [83] |When in the Course of human events, it becomes necessary for one people to dissolve|
+Line #  2 [83] |the political bands which have connected them with another, and to assume among the|
+Line #  3 [83] |powers of the earth, the separate and equal station to which the Laws of Nature and|
+Line #  4 [82] |of Nature's God entitle them, a decent respect to the opinions of mankind requires|
+Line #  5 [71] |that they should declare the causes which impel them to the separation.|
+Shortest line: 71
+ Longest line: 83
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 84 characters:
+Line #  1 [83] |When in the Course of human events, it becomes necessary for one people to dissolve|
+Line #  2 [83] |the political bands which have connected them with another, and to assume among the|
+Line #  3 [83] |powers of the earth, the separate and equal station to which the Laws of Nature and|
+Line #  4 [82] |of Nature's God entitle them, a decent respect to the opinions of mankind requires|
+Line #  5 [71] |that they should declare the causes which impel them to the separation.|
+Shortest line: 71
+ Longest line: 83
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 85 characters:
+Line #  1 [83] |When in the Course of human events, it becomes necessary for one people to dissolve|
+Line #  2 [83] |the political bands which have connected them with another, and to assume among the|
+Line #  3 [83] |powers of the earth, the separate and equal station to which the Laws of Nature and|
+Line #  4 [82] |of Nature's God entitle them, a decent respect to the opinions of mankind requires|
+Line #  5 [71] |that they should declare the causes which impel them to the separation.|
+Shortest line: 71
+ Longest line: 83
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 86 characters:
+Line #  1 [83] |When in the Course of human events, it becomes necessary for one people to dissolve|
+Line #  2 [83] |the political bands which have connected them with another, and to assume among the|
+Line #  3 [86] |powers of the earth, the separate and equal station to which the Laws of Nature and of|
+Line #  4 [84] |Nature's God entitle them, a decent respect to the opinions of mankind requires that|
+Line #  5 [66] |they should declare the causes which impel them to the separation.|
+Shortest line: 66
+ Longest line: 86
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 87 characters:
+Line #  1 [87] |When in the Course of human events, it becomes necessary for one people to dissolve the|
+Line #  2 [86] |political bands which have connected them with another, and to assume among the powers|
+Line #  3 [79] |of the earth, the separate and equal station to which the Laws of Nature and of|
+Line #  4 [84] |Nature's God entitle them, a decent respect to the opinions of mankind requires that|
+Line #  5 [66] |they should declare the causes which impel them to the separation.|
+Shortest line: 66
+ Longest line: 87
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 88 characters:
+Line #  1 [87] |When in the Course of human events, it becomes necessary for one people to dissolve the|
+Line #  2 [86] |political bands which have connected them with another, and to assume among the powers|
+Line #  3 [88] |of the earth, the separate and equal station to which the Laws of Nature and of Nature's|
+Line #  4 [87] |God entitle them, a decent respect to the opinions of mankind requires that they should|
+Line #  5 [54] |declare the causes which impel them to the separation.|
+Shortest line: 54
+ Longest line: 88
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 89 characters:
+Line #  1 [87] |When in the Course of human events, it becomes necessary for one people to dissolve the|
+Line #  2 [89] |political bands which have connected them with another, and to assume among the powers of|
+Line #  3 [89] |the earth, the separate and equal station to which the Laws of Nature and of Nature's God|
+Line #  4 [83] |entitle them, a decent respect to the opinions of mankind requires that they should|
+Line #  5 [54] |declare the causes which impel them to the separation.|
+Shortest line: 54
+ Longest line: 89
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 90 characters:
+Line #  1 [87] |When in the Course of human events, it becomes necessary for one people to dissolve the|
+Line #  2 [89] |political bands which have connected them with another, and to assume among the powers of|
+Line #  3 [89] |the earth, the separate and equal station to which the Laws of Nature and of Nature's God|
+Line #  4 [83] |entitle them, a decent respect to the opinions of mankind requires that they should|
+Line #  5 [54] |declare the causes which impel them to the separation.|
+Shortest line: 54
+ Longest line: 89
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 91 characters:
+Line #  1 [87] |When in the Course of human events, it becomes necessary for one people to dissolve the|
+Line #  2 [89] |political bands which have connected them with another, and to assume among the powers of|
+Line #  3 [89] |the earth, the separate and equal station to which the Laws of Nature and of Nature's God|
+Line #  4 [91] |entitle them, a decent respect to the opinions of mankind requires that they should declare|
+Line #  5 [46] |the causes which impel them to the separation.|
+Shortest line: 46
+ Longest line: 91
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 92 characters:
+Line #  1 [87] |When in the Course of human events, it becomes necessary for one people to dissolve the|
+Line #  2 [89] |political bands which have connected them with another, and to assume among the powers of|
+Line #  3 [89] |the earth, the separate and equal station to which the Laws of Nature and of Nature's God|
+Line #  4 [91] |entitle them, a decent respect to the opinions of mankind requires that they should declare|
+Line #  5 [46] |the causes which impel them to the separation.|
+Shortest line: 46
+ Longest line: 91
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 93 characters:
+Line #  1 [87] |When in the Course of human events, it becomes necessary for one people to dissolve the|
+Line #  2 [93] |political bands which have connected them with another, and to assume among the powers of the|
+Line #  3 [93] |earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle|
+Line #  4 [87] |them, a decent respect to the opinions of mankind requires that they should declare the|
+Line #  5 [42] |causes which impel them to the separation.|
+Shortest line: 42
+ Longest line: 93
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 94 characters:
+Line #  1 [87] |When in the Course of human events, it becomes necessary for one people to dissolve the|
+Line #  2 [93] |political bands which have connected them with another, and to assume among the powers of the|
+Line #  3 [93] |earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle|
+Line #  4 [94] |them, a decent respect to the opinions of mankind requires that they should declare the causes|
+Line #  5 [35] |which impel them to the separation.|
+Shortest line: 35
+ Longest line: 94
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 95 characters:
+Line #  1 [87] |When in the Course of human events, it becomes necessary for one people to dissolve the|
+Line #  2 [93] |political bands which have connected them with another, and to assume among the powers of the|
+Line #  3 [93] |earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle|
+Line #  4 [94] |them, a decent respect to the opinions of mankind requires that they should declare the causes|
+Line #  5 [35] |which impel them to the separation.|
+Shortest line: 35
+ Longest line: 94
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 96 characters:
+Line #  1 [87] |When in the Course of human events, it becomes necessary for one people to dissolve the|
+Line #  2 [93] |political bands which have connected them with another, and to assume among the powers of the|
+Line #  3 [93] |earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle|
+Line #  4 [94] |them, a decent respect to the opinions of mankind requires that they should declare the causes|
+Line #  5 [35] |which impel them to the separation.|
+Shortest line: 35
+ Longest line: 94
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 97 characters:
+Line #  1 [97] |When in the Course of human events, it becomes necessary for one people to dissolve the political|
+Line #  2 [94] |bands which have connected them with another, and to assume among the powers of the earth, the|
+Line #  3 [97] |separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent|
+Line #  4 [96] |respect to the opinions of mankind requires that they should declare the causes which impel them|
+Line #  5 [18] |to the separation.|
+Shortest line: 18
+ Longest line: 97
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 98 characters:
+Line #  1 [97] |When in the Course of human events, it becomes necessary for one people to dissolve the political|
+Line #  2 [94] |bands which have connected them with another, and to assume among the powers of the earth, the|
+Line #  3 [97] |separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent|
+Line #  4 [96] |respect to the opinions of mankind requires that they should declare the causes which impel them|
+Line #  5 [18] |to the separation.|
+Shortest line: 18
+ Longest line: 97
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 99 characters:
+Line #  1 [97] |When in the Course of human events, it becomes necessary for one people to dissolve the political|
+Line #  2 [94] |bands which have connected them with another, and to assume among the powers of the earth, the|
+Line #  3 [97] |separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent|
+Line #  4 [99] |respect to the opinions of mankind requires that they should declare the causes which impel them to|
+Line #  5 [15] |the separation.|
+Shortest line: 15
+ Longest line: 99
+
+
+AllWidths--------------------------------------------------------
+There are 5 lines wrapped at 100 characters:
+Line #  1 [97] |When in the Course of human events, it becomes necessary for one people to dissolve the political|
+Line #  2 [94] |bands which have connected them with another, and to assume among the powers of the earth, the|
+Line #  3 [97] |separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent|
+Line #  4 [99] |respect to the opinions of mankind requires that they should declare the causes which impel them to|
+Line #  5 [15] |the separation.|
+Shortest line: 15
+ Longest line: 99
+
+
+Test13--------------------------------------------------------
+Acronym: GV, Words (1): Guava 
+Acronym: PAP, Words (2): Papaya pineapple 
+Acronym: ABC, Words (0): 
+
+Test14--------------------------------------------------------
+Acronym: bbq, Words (4): barbeque barbequed barbeques barbequing 
+Acronym: byob, Words (0): 
+Acronym: ATHF, Words (2): antishoplifting antitheft 
+Acronym: icbm, Words (1): incunabulum 
+Acronym: TCBY, Words (6): teachably traceability tractability tractably trafficability tricarboxylic 
+Acronym: bsgd, Words (2): besieged besmudged 
+Acronym: imHO, Words (5): immethodical immethodically immunopathology incomprehension isomorphous 
+
+Test15--------------------------------------------------------
+Acronym: ROYG, Words (4): rebodying recopying reenjoying roystering 
+Acronym: rofl, Words (12): remorseful reposeful retroflex riboflavin rockfall rockfalls roofless rooflike roofline rooflines roomful roomfuls 
+Acronym: otoh, Words (17): octothorp octothorps osteopath osteopaths osteopathy otolith otolithic otoliths outbought outcoach outcoached outcoaches outfought outgrowth outgrowths outthought outwrought 
+Acronym: asap, Words (7): airscape airscapes ascocarp ascocarpic ascocarps asynapses asynapsis 
+
+Test16--------------------------------------------------------
+Acronym: PHAT, Words (270): pachydermatous panchromatic pantothenate pantothenates paraphrastic parenchymatous patriarchate patriarchates penchant penchants perchlorate perchlorates periphrastic perishabilities perishability phaeton phaetons phagocyte phagocytes phagocytic phagocytize phagocytized phagocytizes phagocytizing phagocytose phagocytosed phagocytoses phagocytosing phagocytosis phagocytotic phalansteries phalanstery phallist phallists phallocentric phanerophyte phanerophytes phantasied phantasies phantasm phantasma phantasmagoria phantasmagorias phantasmagoric phantasmal phantasmata phantasmic phantasms phantast phantasts phantasy phantasying phantom phantomlike phantoms pharmaceutical pharmaceuticals pharmacist pharmacists pharmacognostic pharmacokinetic pharmacologist pharmacologists pharmacotherapy pharyngitides pharyngitis phaseout phaseouts phat phatic phatically pheasant pheasants phenacetin phenacetins phenacite phenacites phenakite phenakites phenanthrene phenanthrenes phenate phenates phenobarbital phenobarbitals phenobarbitone phenobarbitones phenolate phenolated phenolates phenomenalist phenomenalistic phenomenalists philanthropic philanthropical philanthropies philanthropist philanthropists philanthropoid philanthropoids philanthropy philatelic philatelically philatelies philatelist philatelists philately phlegmatic phlegmatically phonate phonated phonates phonating phonation phonations phonematic phonotactic phonotactics phorate phorates phosphatase phosphatases phosphate phosphates phosphatic phosphatide phosphatides phosphatidic phosphatidyl phosphatidyls phosphatization phosphatize phosphatized phosphatizes phosphatizing phosphaturia phosphaturias phosphocreatine phosphorylate phosphorylated phosphorylates phosphorylating phosphorylation phosphorylative photoautotroph photoautotrophs photocathode photocathodes photodissociate photoduplicate photoduplicated photoduplicates photoexcitation photogrammetric photogrammetry photoionization photojournalist photonegative photooxidation photooxidations photooxidative photoreaction photoreactions photostat photostated photostatic photostating photostats photostatted photostatting photosynthate photosynthates phototactic phototactically phragmoplast phragmoplasts phraseologist phraseologists phratral phratric phratries phratry phreatic phreatophyte phreatophytes phreatophytic phylacteries phylactery phyllotactic physiatrist physiatrists physicalist physicalistic physicalists physicalities physicality physiocratic physiopathology physiotherapist phytoflagellate phytopathogen phytopathogenic phytopathogens phytopathology phytoplankter phytoplankters phytoplankton phytoplanktonic phytoplanktons pithecanthropi pithecanthropus plainchant plainchants polychaete polychaetes polychromatic postharvest posthaste posthastes postheat postheats postholocaust preharvest preharvests preheat preheated preheater preheaters preheating preheats pretheater prophylactic prophylactics proudhearted psychasthenia psychasthenias psychasthenic psychasthenics psychiatric psychiatrically psychiatries psychiatrist psychiatrists psychiatry psychoacoustic psychoacoustics psychoactive psychoanalyst psychoanalysts psychoanalytic psychodramatic psychopath psychopathic psychopathics psychopathies psychopathology psychopaths psychopathy psychosexuality psychosomatic psychosomatics psychotherapist punishabilities punishability purpleheart purplehearts pushcart pushcarts pyrophosphate pyrophosphates 
+Acronym: OTOH, Words (37): octothorp octothorps oligotrophic opisthobranch opisthobranchs orthochromatic orthographic orthographical orthographies orthography orthophosphate orthophosphates orthopsychiatry orthorhombic osteoarthritic osteoarthritis osteopath osteopathic osteopathically osteopathies osteopaths osteopathy otolith otolithic otoliths outbought outcoach outcoached outcoaches outcoaching outdoorsmanship outfought outgrowth outgrowths outthought outwrought overthought 
+Acronym: fdr, Words (134): faddier fader faders fairleader fairleaders falderal falderals falderol falderols fatshedera fatshederas faultfinder faultfinders federacies federacy federal federalese federaleses federalism federalisms federalist federalists federalization federalizations federalize federalized federalizes federalizing federally federals federate federated federates federating federation federations federative federatively fedora fedoras feeder feeders feldsher feldshers feldspar feldspars fender fendered fenderless fenders feodaries feodary feudaries feudary feudatories feudatory fiddler fiddlers fidgeter fidgeters fiduciaries fiduciary fielder fielders fieldfare fieldfares fieldstrip fieldstripped fieldstripping fieldstrips fieldstript fieldwork fieldworks finder finders firedrake firedrakes flatlander flatlanders fledgier flinder flinders flooder flooders floodwater floodwaters flounder floundered floundering flounders fluidextract fluidextracts fluidizer fluidizers fluidram fluidrams fodder foddered foddering fodders folder folderol folderols folders fonder fondler fondlers footdragger footdraggers forbidder forbidders foreboder foreboders foreshadower foreshadowers forrader forrarder forwarder forwarders founder foundered foundering founders foundries foundry fourdrinier fourdriniers freeholder freeholders freeloader freeloaders friendlier frondeur frondeurs 
+Acronym: isbn, Words (28): immunosorbent immunosorbents impassableness impossibleness inexcusableness infusibleness infusiblenesses insatiableness inscribing inscrutableness insensibleness inseparableness insolubilizing insolubleness insolublenesses insubordinate insubordinately insubordinates insubordination insubstantial invisibleness invisiblenesses irascibleness irasciblenesses isobutane isobutanes isobutylene isobutylenes 
+
+Test17--------------------------------------------------------
+There are 26 lines wrapped at 20 characters:
+Line #  1 [16] |When   in the   |
+Line #  2 [16] |Course of  human|
+Line #  3 [20] |events, it   becomes|
+Line #  4 [20] |necessary for one   |
+Line #  5 [18] |people to dissolve|
+Line #  6 [15] |the   political|
+Line #  7 [20] |bands   which have  |
+Line #  8 [18] |  connected   them|
+Line #  9 [17] |with     another,|
+Line # 10 [19] |and to    assume   |
+Line # 11 [19] |among the powers of|
+Line # 12 [14] |the earth, the|
+Line # 13 [18] |separate and equal|
+Line # 14 [20] |station to which the|
+Line # 15 [20] |  Laws of Nature    |
+Line # 16 [16] |  and         of|
+Line # 17 [20] |Nature's God entitle|
+Line # 18 [18] |them,     a decent|
+Line # 19 [16] |respect to the  |
+Line # 20 [17] |opinions of      |
+Line # 21 [18] |mankind requires  |
+Line # 22 [20] |that they   should  |
+Line # 23 [17] | declare     the |
+Line # 24 [19] |causes  which impel|
+Line # 25 [13] |them   to the|
+Line # 26 [11] |separation.|
+Shortest line: 11
+ Longest line: 20
+

@@ -1,42 +1,11 @@
-/*****************************************************************************/
-/*!
-\file   filename
-\author Marcus Meng
-\par    email: marcus.meng@digipen.edu
-\par    DigiPen login: marcus.meng
-\par    Course: CS170
-\par    Assignment 7
-\date   April 14, 2010
-\brief
-	This file contains the implementations for various string utilities
-	and the SpellChecker class.
-
-Hours spent on this assignment: 4
-
-Specific portions that gave you the most trouble:
-
-The WordWrap function, which refuses to play nicely on line_length == 1;
-
-*/
-/*****************************************************************************/
+/* file_header_comment */
 #include <fstream>        // ifstream
 #include "FileStrings.h"  // SpellChecker, StringUtils, DictionaryInfo
-
+#include <iostream> // debug
 namespace CS170
 {
 
-/*****************************************************************************/
-/*!
-\brief
-	Converts a given string to all caps.
-
-\param string
-	The string to convert.
-
-\return
-	A reference to the newly converted string.
-*/
-/*****************************************************************************/
+/* function_header_comment */
 std::string& StringUtils::UpperCase(std::string& string)
 {
   std::string::iterator it;
@@ -47,22 +16,7 @@ std::string& StringUtils::UpperCase(std::string& string)
   return string;
 }
 
-/*****************************************************************************/
-/*!
-\brief
-	Splits up a string into the appropriately wrapped lines. Does not
-	break words.
-
-\param words
-	The string to break up.
-
-\param line_length
-	The length of each line.
-
-\return
-	A vector containing the nicely cut lines.
-*/
-/*****************************************************************************/
+/* function_header_comment */
 std::vector<std::string> StringUtils::WordWrap(const std::string &words,
 		size_t line_length)
 {
@@ -103,6 +57,19 @@ std::vector<std::string> StringUtils::WordWrap(const std::string &words,
 				lines.push_back(words.substr(i, found - i));
 			}
 		}
+		// Unfortunately, we didn't, so let's stick the rest of
+		// the word we were on into the vector and hope for
+		// the best.
+/*		else
+		{
+			found = words.find_first_of(delimiters, i);
+			if (found == std::string::npos) // HATE.
+			{
+				break;
+			}
+			lines.push_back(words.substr(i, found - i));
+		}
+*/
 		// Advance to the start of the next word, to start
 		// the line with.
 		i = words.find_first_not_of(delimiters,found);
@@ -111,18 +78,7 @@ std::vector<std::string> StringUtils::WordWrap(const std::string &words,
 	return(lines);
 }
 
-/*****************************************************************************/
-/*!
-\brief
-	Splits up and obtains all the words in a string.
-
-\param words
-	The string to tokenize.
-
-\return
-	A vector containing all the words in the string.
-*/
-/*****************************************************************************/
+/* function_header_comment */
 std::vector<std::string> StringUtils::Tokenize(const std::string &words)
 {
 	// What constitutes seperation between words?
@@ -153,15 +109,7 @@ std::vector<std::string> StringUtils::Tokenize(const std::string &words)
 	return tokens;
 }
 
-/*****************************************************************************/
-/*!
-\brief
-	Constructor for the SpellChecker.
-
-\param dictionary
-	The filename of the dictionary to use.
-*/
-/*****************************************************************************/
+/* function_header_comment */
 SpellChecker::SpellChecker(const std::string &dictionary)
 {
 	dictionary_ = dictionary;
@@ -178,7 +126,7 @@ SpellChecker::SpellChecker(const std::string &dictionary)
 			if (input.eof())
 				break;
 
-			words_.push_back(current);
+			words_.push_back(StringUtils::UpperCase(current));
 		}
 
 		// Force an init.
@@ -187,18 +135,7 @@ SpellChecker::SpellChecker(const std::string &dictionary)
 	}
 }
 
-/*****************************************************************************/
-/*!
-\brief
-	Gets various info about the loaded dictionary.
-
-\param info
-	A struct to put the various dictionary information fields into.
-
-\return
-	A code denoting whether the function ran successfully.
-*/
-/*****************************************************************************/
+/* function_header_comment */
 SpellChecker::SCResult SpellChecker::GetInfo(DictionaryInfo &info) const
 {
 	info.shortest = words_.front().length();
@@ -219,18 +156,7 @@ SpellChecker::SCResult SpellChecker::GetInfo(DictionaryInfo &info) const
 	return scrWORD_OK;
 }
 
-/*****************************************************************************/
-/*!
-\brief
-	Checks the spelling of a given word against the internal dictionary.
-
-\param word
-	The word to spellcheck.
-
-\return
-	scrWORD_OK if the word is correctly spelled, scrWORD_BAD otherwise.
-*/
-/*****************************************************************************/
+/* function_header_comment */
 SpellChecker::SCResult SpellChecker::SpellCheck(const std::string &word) const
 {
 	std::vector<std::string>::const_iterator iter;
@@ -240,9 +166,7 @@ SpellChecker::SCResult SpellChecker::SpellCheck(const std::string &word) const
 
 	while(iter != words_.end())
 	{
-		std::string upper_compare(*iter);
-		StringUtils::UpperCase(upper_compare);
-		int result = to_compare.compare(upper_compare);
+		int result = to_compare.compare(*iter);
 
 		if (result == 0)
 			return scrWORD_OK;
@@ -255,21 +179,7 @@ SpellChecker::SCResult SpellChecker::SpellCheck(const std::string &word) const
 	return scrWORD_BAD;
 }
 
-/*****************************************************************************/
-/*!
-\brief
-	Find the number of words of various lengths in the dictionary.
-
-\param lengths
-	A vector containing the number of words of each length.
-
-\param count
-	The max word length to record.
-
-\return
-	A code denoting the success of the function.
-*/
-/*****************************************************************************/
+/* function_header_comment */
 SpellChecker::SCResult SpellChecker::WordLengths(std::vector<int>& lengths, size_t count) const
 {
 	std::vector<std::string>::const_iterator iter;
@@ -289,18 +199,7 @@ SpellChecker::SCResult SpellChecker::WordLengths(std::vector<int>& lengths, size
 	return scrFILE_OK;
 }
 
-/*****************************************************************************/
-/*!
-\brief
-	Finds the number of words starting with a certain letter.
-
-\param letter
-	The letter to check for.
-
-\return
-	A code denoting the success of the function's run.
-*/
-/*****************************************************************************/
+/* function_header_comment */
 SpellChecker::SCResult SpellChecker::WordsStartingWith(char letter, int& count) const
 {
 	std::vector<std::string>::const_iterator iter = words_.begin();
@@ -308,7 +207,7 @@ SpellChecker::SCResult SpellChecker::WordsStartingWith(char letter, int& count) 
 	
 	// Convert to uppercase.
 	if (letter >= 'a' && letter <= 'z')
-		letter -= SPACE;
+		letter -= 'a' - 'A';
 
 	while (iter != words_.end())
 	{
@@ -320,24 +219,7 @@ SpellChecker::SCResult SpellChecker::WordsStartingWith(char letter, int& count) 
 	return scrWORD_OK;
 }
 
-/*****************************************************************************/
-/*!
-\brief
-	Finds out what words might fit a given acronym.
-
-\param acronym
-	A string containing the acronym to try to expand.
-
-\param words
-	A vector containing the expanded words.
-
-\param maxlen
-	The maximum length of the words to expand to.
-
-\return
-	A code denoting the success of the function's execution.
-*/
-/*****************************************************************************/
+/* function_header_comment */
 SpellChecker::SCResult SpellChecker::AcronymToWord(const std::string &acronym,
 		std::vector<std::string> &words,
 		size_t maxlen) const
@@ -355,26 +237,19 @@ SpellChecker::SCResult SpellChecker::AcronymToWord(const std::string &acronym,
 			continue;
 		}
 
-		std::string upper_compare(*iter);
-		StringUtils::UpperCase(upper_compare);
 		// The individual letters of our acronym.
 		std::string::const_iterator match = to_compare.begin();
 		// The letters of the word we're comparing it to.
-		std::string::const_iterator letter = upper_compare.begin();
-		if ((*letter) == (*match))
+		std::string::const_iterator letter = (*iter).begin();
+		while (letter != (*iter).end())
 		{
-			++letter;
-			++match;
-			while (letter != upper_compare.end())
+			if ((*letter) == (*match))
 			{
-				if ((*letter) == (*match))
-				{
-					++match;
-					if (match == to_compare.end())
-						break;
-				}
-				++letter;
+				++match;
+				if (match == to_compare.end())
+					break;
 			}
+			++letter;
 		}
 
 		if (match == to_compare.end())

@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.6)
 project(FILESTRINGS)
 
 if(CMAKE_COMPILER_IS_GNUCXX)
-	set(CMAKE_CXX_FLAGS "-O -Wextra -Wall -ansi -pedantic -g")
+	set(CMAKE_CXX_FLAGS "-O -Werror -Wextra -Wall -ansi -pedantic -g")
 elseif(MSVC)
 	set(CMAKE_CXX_FLAGS "/EHa /W4 /WX /Za")
 elseif(BORLAND)

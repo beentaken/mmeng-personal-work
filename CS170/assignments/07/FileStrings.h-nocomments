@@ -1,18 +1,4 @@
-/*****************************************************************************/
-/*!
-\file   filename
-\author Marcus Meng
-\par    email: marcus.meng@digipen.edu
-\par    DigiPen login: marcus.meng
-\par    Course: CS170
-\par    Assignment 7
-\date   April 14, 2010
-\brief
-	This file contains the prototypes for the various string-related
-	utilities and SpellChecker class.
-
-*/
-/*****************************************************************************/
+/* file_header_comment */
 ////////////////////////////////////////////////////////////////////////////////
 #ifndef FILESTRINGS_H
 #define FILESTRINGS_H

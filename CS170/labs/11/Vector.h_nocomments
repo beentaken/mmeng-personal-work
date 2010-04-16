@@ -1,17 +1,4 @@
-/*****************************************************************************/
-/*!
-\file   Vector.h
-\author Marcus Meng
-\par    email: marcus.meng\@digipen.edu
-\par    DigiPen login: marcus.meng
-\par    Course: CS170
-\par    Lab 11
-\date   April 16, 2010
-\brief
-	This file contains the prototypes for the Vector class and associated
-	functions.
-*/
-/*****************************************************************************/
+/* file_header_comment */
 ////////////////////////////////////////////////////////////////////////////////
 #ifndef VECTOR_H
 #define VECTOR_H

@@ -1,12 +1,12 @@
 /*****************************************************************************/
 /*!
-\file   filename
+\file   Vector.cpp
 \author Marcus Meng
-\par    email: marcus.meng@digipen.edu
+\par    email: marcus.meng\@digipen.edu
 \par    DigiPen login: marcus.meng
 \par    Course: CS170
-\par    Lab 9
-\date   April 9, 2010
+\par    Lab 11
+\date   April 16, 2010
 \brief
 	This file contains the implementations for the various Vector member
 	functions.

@@ -532,9 +532,9 @@ int Vector::bsearch(int value) const
 /*****************************************************************************/
 void Vector::reverse(void)
 {
-	for (unsigned i = size(); i > size() - i; --i)
+	for (unsigned i = 0; i < size() - i; ++i)
 	{
-		swap(array_[i], array_[size() - i]);
+		swap(array_[i], array_[size() - 1 - i]);
 	}
 }
 

@@ -436,15 +436,15 @@ Vector::SortResult Vector::bubble_sort(void)
 {
 	SortResult to_return = {0, 0};
 	bool sorted = false;
-	while (!sorted)
+	for (unsigned i = 0; i < size() && !sorted; ++i)
 	{
 		sorted = true;
-		for(unsigned i = 0; i < size() - 1; ++i)
+		for(unsigned j = 0; j < size() - 1 - i; ++j)
 		{
 			++to_return.compares;
-			if (array_[i] > array_[i + 1])
+			if (array_[j] > array_[j + 1])
 			{
-				swap(array_[i], array_[i+1]);
+				swap(array_[j], array_[j+1]);
 				++to_return.swaps;
 
 				sorted = false;
@@ -470,7 +470,7 @@ Vector::SortResult Vector::selection_sort(void)
 	for (int i = 0; i < static_cast<int>(size()); ++i)
 	{
 		int index_small = i;
-		for (int j = i; j < static_cast<int>(size()); ++j)
+		for (int j = i + 1; j < static_cast<int>(size()); ++j)
 		{
 			++to_return.compares;
 			if (array_[j] < array_[index_small])

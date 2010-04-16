@@ -13,5 +13,5 @@ endif(CMAKE_COMPILER_IS_GNUCXX)
 add_executable(vector Vector.cpp main.cpp)
 
 enable_testing()
-add_test(BASIC_DIFF ${PROJECT_SOURCE_DIR}/difftest.sh vector ./myoutput.txt ${PROJECT_SOURCE_DIR}/output-gnu-compares-all.txt)
+add_test(BASIC_DIFF ${PROJECT_SOURCE_DIR}/difftest.sh vector ./myoutput.txt ${PROJECT_SOURCE_DIR}/output-gnu-all.txt)
 

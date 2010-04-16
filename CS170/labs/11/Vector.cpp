@@ -467,10 +467,10 @@ Vector::SortResult Vector::bubble_sort(void)
 Vector::SortResult Vector::selection_sort(void)
 {
 	SortResult to_return = {0, 0};
-	for (int i = 0; i < static_cast<int>(size()); ++i)
+	for (unsigned i = 0; i < size(); ++i)
 	{
-		int index_small = i;
-		for (int j = i + 1; j < static_cast<int>(size()); ++j)
+		unsigned index_small = i;
+		for (unsigned j = i + 1; j < size(); ++j)
 		{
 			++to_return.compares;
 			if (array_[j] < array_[index_small])
@@ -479,7 +479,7 @@ Vector::SortResult Vector::selection_sort(void)
 			}
 		}
 
-		if (i != index_small)
+		if (i < index_small)
 		{
 			++to_return.swaps;
 			swap(array_[i], array_[index_small]);

@@ -4,8 +4,6 @@
 
 #include "Vector.h"
 
-#define SHOW_COMPARESx
-
 // generate random numbers between low and high 
 int RandomInt(int low, int high)
 {

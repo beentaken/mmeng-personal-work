@@ -49,7 +49,7 @@ Vector::Vector(void) : array_(0), size_(0), capacity_(0), allocs_(0)
 	The size of the array.
 */
 /*****************************************************************************/
-Vector::Vector(const int *array, unsigned size)
+Vector::Vector(const int array[], unsigned size)
 :array_(NULL), size_(0), capacity_(0), allocs_(0)
 {
 	capacity_ = size;

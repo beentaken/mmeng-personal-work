@@ -1,0 +1,55 @@
+bcc_c:
+	echo Compile all with C
+	bcc32 -c -w -tWC driver.c
+	bcc32 -c -w splitter.c
+	ilink32 c0x32.obj splitter.obj driver.obj,bcc0.exe,,cw32.lib import32.lib,,
+
+bcc_c_cpp:
+	echo Compile with C and C++
+	bcc32 -c -w -P -tWC driver.cpp
+	bcc32 -c -w splitter.c
+	ilink32 c0x32.obj splitter.obj driver.obj,bcc1.exe,,cw32.lib import32.lib,,
+
+bcc_cpp:
+	echo Compile all with C++
+	bcc32 -c -w -P -tWC driver.cpp
+	bcc32 -c -w -P splitter.c
+	ilink32 c0x32.obj splitter.obj driver.obj,bcc2.exe,,cw32.lib import32.lib,,
+
+gcc_c:
+	echo Compile all with C
+	gcc -c splitter.c -Wall -Wextra
+	gcc -c driver.c -Wall -Wextra
+	gcc -o gcc0.exe splitter.o driver.o -Wall -Wextra
+
+gcc_c_cpp:
+	echo Compile with C and C++
+	gcc -c splitter.c -Wall -Wextra
+	g++ -c driver.cpp -Wall -Wextra 
+	g++ -o gcc1.exe splitter.o driver.o -Wall -Wextra 
+
+gcc_cpp:
+	echo Compile all with C++
+	g++ -c splitter.c -Wall -Wextra
+	g++ -c driver.ppc -Wall -Wextra
+	g++ -o gcc2.exe splitter.o driver.o -Wall -Wextra
+
+msc_c:
+	echo compile all with C
+	cl /D  "_CRT_SECURE_NO_DEPRECATE" /W4 /Wp64 /Za /TC splitter.c /c
+	cl /D  "_CRT_SECURE_NO_DEPRECATE" /W4 /Wp64 /Za /TC driver.c /c
+	cl /W4 /Fems0.exe splitter.obj driver.obj
+
+msc_c_cpp:
+	echo compile with C and C++
+	cl /D  "_CRT_SECURE_NO_DEPRECATE" /W4 /Wp64 /Za /TC splitter.c /c
+	cl /D  "_CRT_SECURE_NO_DEPRECATE" /W4 /Wp64 /Za /TP /EHsc driver.cpp /c
+	cl /W4 /Fems1.exe splitter.obj driver.obj
+
+msc_cpp:
+	echo compile all with C++
+	cl /D  "_CRT_SECURE_NO_DEPRECATE" /W4 /Wp64 /Za /TP splitter.c /c
+	cl /D  "_CRT_SECURE_NO_DEPRECATE" /W4 /Wp64 /Za /TP /EHsc driver.cpp /c
+	cl /W4 /Fems2.exe splitter.obj driver.obj
+clean:
+	rm -f *.o *.obj *.manifest *.tds *.exe

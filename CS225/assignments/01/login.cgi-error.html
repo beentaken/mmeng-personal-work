@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head>
+
+
+<title>Digipen Online Testing</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head><body>
+Uploading ddd.zip to 2009-09-08-10-21-14.zip<br><p>Done. File ddd.zip uploaded to 2009-09-08-10-21-14.zip (1434 bytes)</p><hr><strong>compiling 2009-09-08-10-21-14.zip</strong><br>Check splitter.h:  found<br>Check splitter.c:  found<br>Check index.chm:  found<br><strong>successfully found all required files</strong><hr>Building Makefile<br><strong>Driver compiled.</strong><hr>USING executable <strong>teacher-assign1.exe</strong><hr><strong>running 0</strong><br><tt>Split 120-byte-file file into 100-byte pieces
+</tt><br><tt>./teacher-assign1.exe -s 100 -o test0_ -i 120-byte-file &gt;/dev/null
+</tt><br><tt>0
+</tt><br><tt>A thread exited while 2 threads were running.
+</tt><br><tt>Counting the chunks - should be 2
+</tt><br><tt>number of chunks OK
+</tt><br><tt>Checking chunk sizes - should be 100 and 20
+</tt><br><tt>-rw-r--r-- 1 100 Sep  8 10:21 test0_0001
+</tt><br><tt>-rw-r--r-- 1  20 Sep  8 10:21 test0_0002
+</tt><br><hr><strong>running 1</strong><br><tt>Split 200-byte-file file into 100-byte pieces
+</tt><br><tt>./teacher-assign1.exe -s 100 -o test1_ -i 200-byte-file &gt;/dev/null
+</tt><br><tt>0
+</tt><br><tt>A thread exited while 2 threads were running.
+</tt><br><tt>Counting the chunks - should be 2
+</tt><br><tt>number of chunks OK
+</tt><br><tt>Checking chunk sizes - should be 100 and 100
+</tt><br><tt>-rw-r--r-- 1 100 Sep  8 10:21 test1_0001
+</tt><br><tt>-rw-r--r-- 1 100 Sep  8 10:21 test1_0002
+</tt><br><hr><strong>running 2</strong><br><tt>Join 2 files
+</tt><br><tt>./teacher-assign1.exe -j -o joined_file -i chunk1 chunk2 &gt;/dev/null
+</tt><br><tt>0
+</tt><br><tt>A thread exited while 2 threads were running.
+</tt><br><tt>Checking the "joined_file" content (if you do not see ERROR, you should be fine)
+</tt><br><tt>123								123
+</tt><br><tt>456							      |	457
+</tt><br><tt>make: *** [2] Error 1
+</tt><br><hr><strong>running valgrind</strong><br>==12268== Memcheck, a memory error detector.
+<br>==12268== Copyright (C) 2002-2006, and GNU GPL'd, by Julian Seward et al.
+<br>==12268== Using LibVEX rev 1658, a library for dynamic binary translation.
+<br>==12268== Copyright (C) 2004-2006, and GNU GPL'd, by OpenWorks LLP.
+<br>==12268== Using valgrind-3.2.1-Debian, a dynamic binary instrumentation framework.
+<br>==12268== Copyright (C) 2000-2006, and GNU GPL'd, by Julian Seward et al.
+<br>==12268== For more details, rerun with: -v
+<br>==12268== 
+<br>==12268== 
+<br>==12268== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 17 from 1)
+<br>==12268== malloc/free: in use at exit: 100 bytes in 1 blocks.
+<br>==12268== malloc/free: 7 allocs, 6 frees, 1,201 bytes allocated.
+<br>==12268== For counts of detected errors, rerun with: -v
+<br>==12268== searching for pointers to 1 not-freed blocks.
+<br>==12268== checked 108,620 bytes.
+<br>==12268== 
+<br>==12268== LEAK SUMMARY:
+<br>==12268==    definitely lost: 100 bytes in 1 blocks.
+<br>==12268==      possibly lost: 0 bytes in 0 blocks.
+<br>==12268==    still reachable: 0 bytes in 0 blocks.
+<br>==12268==         suppressed: 0 bytes in 0 blocks.
+<br>==12268== Use --leak-check=full to see details of leaked memory.
+<br>A thread exited while 2 threads were running.
+<br><hr>
+</body></html>

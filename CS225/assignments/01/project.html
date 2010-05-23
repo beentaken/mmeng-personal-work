@@ -1,0 +1,169 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="new.css">
+<title>Splitter Project</title>
+</head>
+
+<body>
+<center>
+<h1>Programming assignment (splitter/joiner)</h1>
+</h2>
+</center>
+	<a href="handout.pdf">Assignment</a>
+	<br>
+	<ul>
+		<li><a href="Makefile">Makefile</a> notice there are 10 tagrets (3 targets for each of the 3 compilers + CodeGurad enabled)
+	  <li><a href="Doxyfile">doxygen configuration</a> Doxyfile comments are required
+	  <li><a href="bcc_cg.cgi">CodeGuard configuration</a> memory will be tested - about 15-20% of the grade 
+	</ul>
+	<br> 
+	browse
+<a href=".">project folder</a>
+<hr>
+<br>I provided an incomplete implementation <tt>splitter.c</tt>, it's main goal is to show how to name
+the chunks. Compile using "C" target:
+<br>Imitating splitting:
+<pre>
+$ ./a.out -s 14 -o part_ -i test1
+split test1 into chunks of size 14 bytes, which are named 
+part_0001
+part_0002
+part_0003
+part_0004
+...
+</pre>
+<br>Imitating joining:
+<pre>
+$ ./a.out -j -o combined -i test1 test2 test3
+join
+test1
+test2
+test3
+into combined
+</pre>
+
+<hr>
+<b>Online tests</b> use <tt>120-byte-file, 200-byte-file</tt> to test splitting (Do not edit these file - it may change newline) Also 
+notice that your browser will change newlines if you first open a file and than choose "save". If you want to download
+a file without changing newlines - right-click the link to a file (INSTEAD of opening it) and choose "save link as")
+
+<ul>
+<li><tt>./my.exe -s 100 -o test0_ -i 120-byte-file</tt>
+    <br>should produce 2 chunks <tt>test0_0001</tt> and <tt>test0_0002</tt> of sizes 100 and 20 bytes correspondingly.
+<li><tt>./my.exe -s 100 -o test1_ -i 200-byte-file</tt>
+    <br>should produce 2 chunks <tt>test1_0001</tt> and <tt>test1_0002</tt> of sizes 100 and 100 bytes.
+</ul>
+<tt>120-byte-file</tt> is a file containing 119 "1"s and a linux new line.
+<br>
+<tt>200-byte-file</tt> is a file containing 199 "1"s and a linux new line.
+
+<hr>
+<br>Join test uses <tt>chunk1</tt> and <tt>chunk2</tt> (files are in the zip-file. Do not edit these file - it may change newline):
+<ul>
+  <li> <br>./my.exe -j -o joined_file -i chunk1 chunk2 
+	 <br>should produce a file <tt>joined_file</tt> of size 8 bytes.
+	 <br><tt>chunk1</tt> is a 4-byte file "123&lt;linux_newline&gt;" in ASCII "31 32 33 0a"
+	 <br><tt>chunk2</tt> is a 4-byte file "456&lt;linux newline&gt;" in ASCII "34 35 36 0a"
+	 <br><tt>joined_file</tt> should be an 8-byte file "123&lt;linux_newline&gt;456&lt;linux newline&gt;" in ASCII "31 32 33 0a 34 35 36 0a".
+	 <br>Output of <tt><pre>od -x joined_file</pre></tt> should be
+       <tt><pre>0000000 3231 0a33 3534 0a36</pre></tt>
+</ul>
+
+<hr>
+<h1><b>Here is how correct output from online submission should look like</b>:</h1>
+
+<strong>compiling 2008-09-06-00-14-40.zip</strong><br />Check splitter.h:  found<br />Check splitter.c:  found<br />Check index.chm:  found<br /><strong>successfully found all required files</strong><hr />Building Makefile<br /><strong>Driver compiled.</strong><hr />USING executable <strong>dummy-assign1.exe</strong><hr /><strong>running 0</strong><br /><tt>Split 120-byte-file file into 100-byte pieces
+
+</tt><br /><tt>./dummy-assign1.exe -s 100 -o test0_ -i 120-byte-file >/dev/null
+</tt><br /><tt>0
+</tt><br /><tt>A thread exited while 2 threads were running.
+</tt><br /><tt>count the chunks - should be 2
+</tt><br /><tt>number of chunks OK
+</tt><br /><tt>check sizes - should be 100 and 20
+</tt><br /><tt>-rw-r--r-- 1 100 Sep  6 02:19 test0_0001
+</tt><br /><tt>-rw-r--r-- 1  20 Sep  6 02:19 test0_0002
+</tt><br /><hr /><strong>running 1</strong><br /><tt>Split 200-byte-file file into 100-byte pieces
+</tt><br /><tt>./dummy-assign1.exe -s 100 -o test1_ -i 200-byte-file >/dev/null
+</tt><br /><tt>0
+</tt><br /><tt>A thread exited while 2 threads were running.
+</tt><br /><tt>count the chunks - should be 2
+</tt><br /><tt>number of chunks OK
+</tt><br /><tt>check sizes - should be 100 and 100
+</tt><br /><tt>-rw-r--r-- 1 100 Sep  6 02:19 test1_0001
+
+</tt><br /><tt>-rw-r--r-- 1 100 Sep  6 02:19 test1_0002
+</tt><br /><hr /><strong>running 2</strong><br /><tt>Join 2 files
+</tt><br /><tt>./dummy-assign1.exe -j -o joined_file -i chunk1 chunk2 >/dev/null
+</tt><br /><tt>0
+</tt><br /><tt>A thread exited while 2 threads were running.
+</tt><br /><tt>Check the created file
+</tt><br /><tt>123								123
+</tt><br /><tt>456								456
+</tt><br /><hr /><strong>running valgrind</strong><br />==28218== Memcheck, a memory error detector.
+<br />==28218== Copyright (C) 2002-2006, and GNU GPL'd, by Julian Seward et al.
+<br />==28218== Using LibVEX rev 1658, a library for dynamic binary translation.
+<br />==28218== Copyright (C) 2004-2006, and GNU GPL'd, by OpenWorks LLP.
+<br />==28218== Using valgrind-3.2.1-Debian, a dynamic binary instrumentation framework.
+<br />==28218== Copyright (C) 2000-2006, and GNU GPL'd, by Julian Seward et al.
+<br />==28218== For more details, rerun with: -v
+
+<br />==28218== 
+<br />==28218== 
+<br />==28218== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 17 from 1)
+	<br />==28218== malloc/free: in use at exit: 0 bytes in 0 blocks.
+	<br />==28218== malloc/free: 7 allocs, 7 frees, 1,201 bytes allocated.
+	<br />==28218== For counts of detected errors, rerun with: -v
+	<br />==28218== All heap blocks were freed -- no leaks are possible.
+	<br />A thread exited while 2 threads were running.
+	<br /><hr />
+
+
+<pre>
+some of may have noticed that CodeGuard reports a "Function failure"
+when opening a non-existing file (see below). This is OK, given you have code
+after "fopen" to check for success. In order to get rid of CodeGuard message
+add these lines in the end of "cgi" file:
+----lines start----
+[fopen]
+Access=yes
+Param=yes
+Fail=no
+Log=yes
+Warn=yes
+Disable=no
+----lines end----
+
+In general if you have an issue with one of the built-in functions (and
+		there are many issues) it's OK to suppress those warning.
+Add a similar block and substitute "[fopen]" with whatever function errors
+you want to suppress. For a complete list of functions use:
+Start->Borland Developer Studio 2006->Turbo IDE
+then
+Tools->CodeGuard Configuration->Function Objects
+
+
+This is how the message looks like:
+=======================================================
+Error 00001. 0x820000 (Thread 0x0F74):
+	Function failure:
+	fopen(0x00C5221F ["d"], 0x00419130 ["rb"])=0x00000000
+
+	| splitter.c line 17:
+	|
+	|>      IN=fopen(filename,"rb");
+	|       if (!IN) { free(buffer); return E_BAD_SOURCE; }
+	Call Tree:
+	   0x00401482(=ddd.exe:0x01:000482) splitter.c#17
+	      0x004013A0(=ddd.exe:0x01:0003A0) driver.c#31
+		     0x00416EE6(=ddd.exe:0x01:015EE6)
+
+	------------------------------------------
+</pre>
+
+<hr>
+<hr>
+<hr>
+This is how errors look like on the submission page -- see test 2 and a memory leak (valgrind)
+	<br> <a href="login.cgi-error.html">login.cgi-error.html</a>
+</body>
+</html>

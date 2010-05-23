@@ -1,0 +1,69 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="new.css">
+<title>Programming assignment</title>
+</head>
+
+<body>
+<center>
+<h1>Programming assignment - map using binary tree</h1>
+</center>
+
+
+<p>	<a href="handout.pdf"><font size=+1>Assignment Statement (pdf)</font></a>
+	<br>
+	<a href="Doxyfile">doxygen configuration</a>
+	<br>
+	<a href="bcc_cg.cgi">CodeGuard configuration</a>
+	<br>
+	<a href="Makefile">Makefile</a>  see Assignment on how to use it, 
+        or just copy/paste command lines for each compiler.
+	</ul>
+	<br> All the files above including header, partial inplementation, driver,
+	master output, configuration files, etc. are in 
+	<a href="project.zip">project.zip</a>
+	<br> 
+	browse
+<a href=".">project folder</a>
+<hr>
+<br>
+using the driver:
+<br>
+<tt> <pre>
+./EXECUTABLE TEST_NUMBER &gt; my_out
+diff my_out outTEST_NUMBER --strip-trailing-cr
+</pre> </tt>
+<br>where TEST_NUMBER is 0..10
+<br>EXECUTABLE is one of gcc0.exe msc0.exe bcc0.exe
+<hr>
+<br>To run all tests 
+<tt> <pre>
+for ((i=0;i&lt;20;++i)); do ./bcc0.exe $i &gt; out$i.my_bcc; done
+for ((i=0;i&lt;20;++i)); do echo "COMPARE test $i"; diff out$i out$i.my_bcc --strip-trailing-cr; done
+</pre> </tt>
+<hr>
+<br>
+
+<ul>
+<p><b>Grading notes:</b>
+<ul>
+<li>your code will be graded based on all 3 compilers - both compilation
+and run-time
+<li>memory errors/leaks will be penalized (CodeGuard will be used to detect those)
+any)
+<li><tt>doxygen</tt> comments are required
+</ul>
+
+<br>
+<h2>Grading criteria</h2>
+Roughly:
+<pre>
+Submission 10
+Compile    20 
+Runtime    40
+CodeGuard  20
+Quality    10
+</pre>
+
+</body>
+</html>

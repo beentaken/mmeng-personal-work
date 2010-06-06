@@ -1,3 +1,22 @@
+/*!
+\file   map.c
+\author Marcus Meng
+\par    email: marcus.meng\@digipen.edu
+\par    DigiPen login: marcus.meng
+\par    Course: CS225
+\par    Assignment 2
+\date   June 5, 2010
+\brief
+	This file contains implementations for the functions required to
+	build a basic BST-based map.
+
+Hours spent on this assignment: 4
+
+Specific portions that gave you the most trouble:
+
+I kept screwing up random pointer stuff.
+
+*/
 #include "map.h"
 #include <stdlib.h> /* malloc, free */
 #include <stdio.h> /* printf */
@@ -27,6 +46,23 @@ struct Node
 };
 
 /*helper - I use it in insert */
+/*!
+ * \brief A function to help create new nodes.
+ *
+ * \param key
+ * 	The key to assign to the new node.
+ *
+ * \param value
+ * 	The value to assign to the new node.
+ *
+ * \param parent
+ * 	The parent of the new node.
+ *
+ * \param perror
+ * 	An error code, should anything untowards happen.
+ *
+ * \return A pointer to the newly created node.
+ */
 struct Node* create(int key, int value, struct Node* parent,int *perror)
 {
 	struct Node* new = (struct Node*)malloc(sizeof(struct Node));
@@ -40,6 +76,20 @@ struct Node* create(int key, int value, struct Node* parent,int *perror)
 	return new;
 }
 
+/*!
+ * \brief Inserts a new node recursively.
+ *
+ * \param ppRoot
+ * 	The root of the tree to work in.
+ *
+ * \param key
+ * 	The key of the new node to insert.
+ *
+ * \param value
+ * 	The value of the new node to insert.
+ *
+ * \return An error code, or 0 if no error.
+ */
 int insert_recursive(Node_handle* ppRoot, int key, int value)
 {
 	int perror = 0;
@@ -80,6 +130,20 @@ int insert_recursive(Node_handle* ppRoot, int key, int value)
 	return(perror);
 }
 
+/*!
+ * \brief Inserts a new node using an interative method.
+ *
+ * \param ppRoot
+ * 	The root of the tree to work in.
+ *
+ * \param key
+ * 	The key of the node to create.
+ *
+ * \param value
+ * 	The value of the node to create.
+ *
+ * \return An error code, or 0 if no errors.
+ */
 int insert_iterative(Node_handle* ppRoot, int key, int value)
 {
 	Node_handle current_node = *ppRoot; /* Keep track of where we are. */
@@ -120,9 +184,19 @@ int insert_iterative(Node_handle* ppRoot, int key, int value)
 		}
 	}
 
-	return(0);
+	return(perror);
 }
 
+/*!
+ * \brief Deletes the node with the given key using a very questionable
+ * and slow method.
+ *
+ * \param ppRoot
+ * 	The root of the tree to work in.
+ *
+ * \param key
+ * 	The key of the node to delete.
+ */
 void delete_silly(Node_handle* ppRoot,int key)
 {
 	/*reinsert all nodes from the branches into the tree*/
@@ -184,37 +258,91 @@ void delete_silly(Node_handle* ppRoot,int key)
 	}
 }
 
+/*!
+ * \brief Gets the key of a given node.
+ *
+ * \param node
+ * 	The node to get the key of.
+ *
+ * \return The key of the given node.
+ */
 int getkey(Node_handle const node)
 {
 	return(node->key);
 }
 
+/*!
+ * \brief Gets the value of a given node.
+ *
+ * \param node
+ * 	The node to obtain the value of.
+ *
+ * \return The value of the given node.
+ */
 int getvalue(Node_handle const node)
 {
 	return(node->value);
 }
 
+/*!
+ * \brief Gets the next left node of the given node.
+ *
+ * \param node
+ * 	The node to look to the right of.
+ *
+ * \return A pointer to the next left node.
+ */
 Node_handle getleft(Node_handle const node)
 {
 	return(node->left);
 }
 
+/*!
+ * \brief Gets the next right node of the given node.
+ *
+ * \param node
+ * 	The node to look to the right of.
+ *
+ * \return A pointer to the next right node.
+ */
 Node_handle getright(Node_handle const node)
 {
 	return(node->right);
 }
 
+/*!
+ * \brief Sets the value in a given node.
+ *
+ * \param node
+ * 	The node to modify the value of.
+ *
+ * \param newvalue
+ * 	The new value to set.
+ */
 void setvalue(Node_handle node, int newvalue)
 {
 	node->value = newvalue;
 }
 
+/*!
+ * \brief Gets the parent of the given node.
+ *
+ * \param node
+ * 	The node to look at.
+ *
+ * \return A pointer to the parent of the node. NULL if the node is the root.
+ */
 Node_handle getparent(Node_handle const node)
 {
 	return(node->parent);
 }
 
-/* may be useful for debugging */
+/*!
+ * \brief Prints out various debugging information about a node.
+ *
+ * \param node
+ * 	The node to dump info on.
+ */
 void print(Node_handle node)
 {
 	printf ("Node: address %p, key %d, value %d, left %p, right %p, parent %p\n",
@@ -231,7 +359,7 @@ void print(Node_handle node)
  * \brief Finds a the node to be deleted, then calls delete_proper_helper to
  * 	finish the job.
  *
- * \brief ppRoot
+ * \param ppRoot
  * 	The root of the tree to work in.
  *
  * \param key
@@ -285,87 +413,77 @@ void delete_proper_helper(Node_handle p_delete, Node_handle* ppRoot)
 		dir = (getleft(parent)==p_delete)?left:right;
 	}
 
-	/* If there's only a left child to p_delete. */
-	if (NULL != getleft(p_delete) && NULL == getright(p_delete))
+	/* Has two children. */
+	if (NULL != p_delete->left && NULL != p_delete->right)
 	{
-		switch(dir)
+		Node_handle successor = increment(p_delete);
+
+		p_delete->key = successor->key;
+		p_delete->value = successor->value;
+
+		delete_proper_helper(successor, ppRoot);
+
+		return; /* Make sure we don't short circuit! */
+	}
+	/* Left child only. */
+	else if (NULL != p_delete->left && NULL == p_delete->right)
+	{
+		switch (dir)
 		{
 			case left:
 				parent->left = p_delete->left;
+				parent->left->parent = parent;
 				break;
 			case right:
 				parent->right = p_delete->left;
+				parent->right->parent = parent;
 				break;
 			default:
-				/* p_delete is the root? */
+				/* Root! */
 				*ppRoot = p_delete->left;
-				free(p_delete); /* Done! */
+				(*ppRoot)->parent = NULL;
+				break;
 		}
 	}
-	/* Only a right child. */
-	if (NULL != getright(p_delete) && NULL == getleft(p_delete))
+	/* Right child only. */
+	else if (NULL == p_delete->left && NULL != p_delete->right)
 	{
-		switch(dir)
+		switch (dir)
 		{
 			case left:
 				parent->left = p_delete->right;
+				parent->left->parent = parent;
 				break;
 			case right:
 				parent->right = p_delete->right;
+				parent->right->parent = parent;
 				break;
 			default:
-				/* p_delete is the root? */
-				*ppRoot = p_delete->left;
-				free(p_delete); /* Done! */
+				/* Root! */
+				*ppRoot = p_delete->right;
+				(*ppRoot)->parent = NULL;
 				break;
 		}
 	}
-	/* Two child nodes, uh oh. */
-	else if (NULL != getright(p_delete) && NULL != getleft(p_delete))
-	{
-
-		Node_handle successor = increment(p_delete);
-
-		if (successor)
-		{
-			/* Alright, swap the key and value with the successor. */
-			int temp = successor->key;
-			successor->key = p_delete->key;
-			p_delete->key = temp;
-
-			temp = successor->value;
-			successor->value = p_delete->value;
-			p_delete->value = temp;
-
-			/* Done, now call this on itself.
-			 * Successor will have no left children and so can be
-			 * deleted trivially.
-			 */
-
-			delete_proper_helper(successor, ppRoot);
-		}
-	}
-	/* No children! */
+	/* No children. */
 	else
 	{
-		if (parent)
+		switch (dir)
 		{
-			switch(dir)
-			{
-				case left:
-					parent->left = NULL;
-					break;
-				case right:
-					parent->right = NULL;
-					break;
-				default:
-					/* We must be the root. */
-					*ppRoot = NULL;
-			}
+			case left:
+				parent->left = NULL;
+				break;
+			case right:
+				parent->right = NULL;
+				break;
+			default:
+				/* Root! */
+				*ppRoot = NULL;
+				break;
 		}
-
-		free(p_delete); /* Done. */
 	}
+
+	free(p_delete);
 }
 
 /*!
@@ -395,11 +513,19 @@ void delete(Node_handle* ppRoot,int key)
 	{
 		struct Node *parent = getparent(p_delete);
 		enum Dir {left,right,root} dir;
-		Node_handle to_attach = (p_delete->right) ? p_delete->right : p_delete->left;
+		Node_handle to_attach = (p_delete->left) ? p_delete->left : p_delete->right;
 
 		/* need to know whether the deleted node is left or right child */
-		if ( parent == NULL) dir = root;
-		else                 dir = (getleft(parent)==p_delete)?left:right;
+		if ( parent == NULL)
+			dir = root;
+		else
+			dir = (getleft(parent)==p_delete)?left:right;
+
+		/* If there are any children, set the new parent. */
+		if (NULL != to_attach)
+		{
+			to_attach->parent = parent;
+		}
 
 		/* Key exists, let's get to work. */
 		switch(dir)
@@ -416,13 +542,13 @@ void delete(Node_handle* ppRoot,int key)
 				break;
 		}
 
-		/* If we attached the right, and a left child exists, we'll need
+		/* If we attached the left, and a right child exists, we'll need
 		 * to accomodate that. */
-		if ((to_attach == p_delete->right) && (NULL != p_delete->left))
+		if ((to_attach == p_delete->left) && (NULL != p_delete->right))
 		{
-			Node_handle smallest = first(parent->right);
-			smallest->left = p_delete->left;
-			p_delete->left->parent = smallest;
+			Node_handle largest = last(to_attach);
+			largest->right = p_delete->right;
+			p_delete->right->parent = largest;
 		}
 
 

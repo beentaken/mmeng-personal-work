@@ -33,5 +33,4 @@ add_test(TEST16 ${PROJECT_SOURCE_DIR}/difftest.sh ./map 16 ./myoutput16.txt ${PR
 add_test(TEST17 ${PROJECT_SOURCE_DIR}/difftest.sh ./map 17 ./myoutput17.txt ${PROJECT_SOURCE_DIR}/out17)
 add_test(TEST18 ${PROJECT_SOURCE_DIR}/difftest.sh ./map 18 ./myoutput18.txt ${PROJECT_SOURCE_DIR}/out18)
 add_test(TEST19 ${PROJECT_SOURCE_DIR}/difftest.sh ./map 19 ./myoutput19.txt ${PROJECT_SOURCE_DIR}/out19)
-add_test(TEST20 ${PROJECT_SOURCE_DIR}/difftest.sh ./map 20 ./myoutput20.txt ${PROJECT_SOURCE_DIR}/out20)
 

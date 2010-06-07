@@ -1,5 +1,4 @@
 #!/bin/bash
 
-./$1 $2 > $3
-diff --strip-trailing-cr $4 $3
+./$1 $2 | diff --strip-trailing-cr $3 -
 

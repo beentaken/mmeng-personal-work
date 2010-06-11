@@ -1,0 +1,18 @@
+PDFLATEX_COMMAND=pdflatex
+RTFLATEX_COMMAND=latex2rtf
+PROJECT_NAME=xxy
+
+all: $(PROJECT_NAME)
+
+rtf: $(PROJECT_NAME).tex
+	$(RTFLATEX_COMMAND) $(PROJECT_NAME).tex
+
+$(PROJECT_NAME): $(PROJECT_NAME).aux $(PROJECT_NAME).tex $(PROJECT_NAME).toc
+	$(PDFLATEX_COMMAND) $@
+
+$(PROJECT_NAME).aux $(PROJECT_NAME).pdf $(PROJECT_NAME).toc: $(PROJECT_NAME).tex
+	$(PDFLATEX_COMMAND) $(PROJECT_NAME)
+
+clean:
+	rm -f *.aux *.toc *.log *.pdf
+

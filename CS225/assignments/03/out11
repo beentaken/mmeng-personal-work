@@ -1,0 +1,88 @@
+---ORIGINAL----
+              7 -> 7
+              /
+       6 -> 6
+       /
+              \
+              5 -> 5
+4 -> 4
+              3 -> 3
+              /
+       \
+       2 -> 2
+              \
+              1 -> 1
+
+-------
+
+erase 1
+---MODIFIED ORIGINAL----
+              7 -> 7
+              /
+       6 -> 6
+       /
+              \
+              5 -> 5
+4 -> 4
+              3 -> 3
+              /
+       \
+       2 -> 2
+
+-------
+
+erase 2
+---MODIFIED ORIGINAL----
+              7 -> 7
+              /
+       6 -> 6
+       /
+              \
+              5 -> 5
+4 -> 4
+       \
+       3 -> 3
+
+-------
+
+erase 3
+---MODIFIED ORIGINAL----
+              7 -> 7
+              /
+       6 -> 6
+       /
+              \
+              5 -> 5
+4 -> 4
+
+-------
+
+erase 4
+---MODIFIED ORIGINAL----
+       7 -> 7
+       /
+6 -> 6
+       \
+       5 -> 5
+
+-------
+
+erase 5
+---MODIFIED ORIGINAL----
+       7 -> 7
+       /
+6 -> 6
+
+-------
+
+erase 6
+---MODIFIED ORIGINAL----
+7 -> 7
+
+-------
+
+erase 7
+---MODIFIED ORIGINAL----
+
+-------
+

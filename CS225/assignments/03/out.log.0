@@ -1,0 +1,195 @@
+LOG enter CS225::Map::Map_iterator::Map_iterator(CS225::Map::Node*) (map.cpp +181)
+LOG leaving CS225::Map::Map_iterator::Map_iterator(CS225::Map::Node*) (map.cpp) 780
+LOG enter CS225::Map::Map_iterator_const::Map_iterator_const(CS225::Map::Node*) (map.cpp +250)
+LOG leaving CS225::Map::Map_iterator_const::Map_iterator_const(CS225::Map::Node*) (map.cpp) 556
+LOG enter int& CS225::Map::operator[](int) (map.cpp +98)
+LOG enter CS225::Map::Node* CS225::Map::find_node(int) const (map.cpp +110)
+LOG leaving CS225::Map::Node* CS225::Map::find_node(int) const (map.cpp) 576
+LOG enter CS225::Map::Node* CS225::Map::insert_node(int, int) (map.cpp +124)
+LOG enter CS225::Map::Node::Node(int, int, CS225::Map::Node*, CS225::Map::Node*, CS225::Map::Node*) (map.cpp +18)
+LOG leaving CS225::Map::Node::Node(int, int, CS225::Map::Node*, CS225::Map::Node*, CS225::Map::Node*) (map.cpp) 564
+LOG leaving CS225::Map::Node* CS225::Map::insert_node(int, int) (map.cpp) 263912
+LOG leaving int& CS225::Map::operator[](int) (map.cpp) 840036
+-------
+LOG enter std::ostream& CS225::operator<<(std::ostream&, const CS225::Map&) (map.cpp +424)
+LOG enter void CS225::Map::print(std::ostream&) const (map.cpp +430)
+LOG enter CS225::Map::Node* CS225::Map::Node::last() (map.cpp +342)
+LOG leaving CS225::Map::Node* CS225::Map::Node::last() (map.cpp) 620
+LOG enter int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp +400)
+LOG leaving int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp) 616
+LOG enter char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp +413)
+LOG leaving char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp) 612
+1 -> 1
+LOG enter CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp +374)
+LOG leaving CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp) 672
+
+LOG leaving void CS225::Map::print(std::ostream&) const (map.cpp) 1.23352e+06
+LOG leaving std::ostream& CS225::operator<<(std::ostream&, const CS225::Map&) (map.cpp) 1.50592e+06
+-------
+
+LOG enter int& CS225::Map::operator[](int) (map.cpp +98)
+LOG enter CS225::Map::Node* CS225::Map::find_node(int) const (map.cpp +110)
+LOG leaving CS225::Map::Node* CS225::Map::find_node(int) const (map.cpp) 608
+LOG enter CS225::Map::Node* CS225::Map::insert_node(int, int) (map.cpp +124)
+LOG enter CS225::Map::Node::Node(int, int, CS225::Map::Node*, CS225::Map::Node*, CS225::Map::Node*) (map.cpp +18)
+LOG leaving CS225::Map::Node::Node(int, int, CS225::Map::Node*, CS225::Map::Node*, CS225::Map::Node*) (map.cpp) 412
+LOG leaving CS225::Map::Node* CS225::Map::insert_node(int, int) (map.cpp) 278960
+LOG leaving int& CS225::Map::operator[](int) (map.cpp) 901716
+-------
+LOG enter std::ostream& CS225::operator<<(std::ostream&, const CS225::Map&) (map.cpp +424)
+LOG enter void CS225::Map::print(std::ostream&) const (map.cpp +430)
+LOG enter CS225::Map::Node* CS225::Map::Node::last() (map.cpp +342)
+LOG leaving CS225::Map::Node* CS225::Map::Node::last() (map.cpp) 1252
+LOG enter int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp +400)
+LOG leaving int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp) 1168
+LOG enter char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp +413)
+LOG leaving char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp) 544
+       2 -> 2
+       /
+LOG enter CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp +374)
+LOG leaving CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp) 560
+LOG enter int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp +400)
+LOG leaving int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp) 428
+LOG enter char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp +413)
+LOG leaving char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp) 472
+1 -> 1
+LOG enter CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp +374)
+LOG leaving CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp) 544
+
+LOG leaving void CS225::Map::print(std::ostream&) const (map.cpp) 1.88136e+06
+LOG leaving std::ostream& CS225::operator<<(std::ostream&, const CS225::Map&) (map.cpp) 2.15195e+06
+-------
+
+LOG enter int& CS225::Map::operator[](int) (map.cpp +98)
+LOG enter CS225::Map::Node* CS225::Map::find_node(int) const (map.cpp +110)
+LOG leaving CS225::Map::Node* CS225::Map::find_node(int) const (map.cpp) 556
+LOG enter CS225::Map::Node* CS225::Map::insert_node(int, int) (map.cpp +124)
+LOG enter CS225::Map::Node::Node(int, int, CS225::Map::Node*, CS225::Map::Node*, CS225::Map::Node*) (map.cpp +18)
+LOG leaving CS225::Map::Node::Node(int, int, CS225::Map::Node*, CS225::Map::Node*, CS225::Map::Node*) (map.cpp) 412
+LOG leaving CS225::Map::Node* CS225::Map::insert_node(int, int) (map.cpp) 257024
+LOG leaving int& CS225::Map::operator[](int) (map.cpp) 767512
+-------
+LOG enter std::ostream& CS225::operator<<(std::ostream&, const CS225::Map&) (map.cpp +424)
+LOG enter void CS225::Map::print(std::ostream&) const (map.cpp +430)
+LOG enter CS225::Map::Node* CS225::Map::Node::last() (map.cpp +342)
+LOG leaving CS225::Map::Node* CS225::Map::Node::last() (map.cpp) 524
+LOG enter int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp +400)
+LOG leaving int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp) 808
+LOG enter char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp +413)
+LOG leaving char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp) 492
+       2 -> 2
+       /
+LOG enter CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp +374)
+LOG leaving CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp) 508
+LOG enter int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp +400)
+LOG leaving int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp) 488
+LOG enter char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp +413)
+LOG leaving char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp) 520
+1 -> 1
+LOG enter CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp +374)
+LOG enter CS225::Map::Node* CS225::Map::Node::last() (map.cpp +342)
+LOG leaving CS225::Map::Node* CS225::Map::Node::last() (map.cpp) 504
+LOG leaving CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp) 267856
+LOG enter int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp +400)
+LOG leaving int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp) 544
+LOG enter char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp +413)
+LOG leaving char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp) 492
+       \
+       0 -> 0
+LOG enter CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp +374)
+LOG leaving CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp) 620
+
+LOG leaving void CS225::Map::print(std::ostream&) const (map.cpp) 2.89668e+06
+LOG leaving std::ostream& CS225::operator<<(std::ostream&, const CS225::Map&) (map.cpp) 3.1639e+06
+-------
+
+LOG enter std::ostream& CS225::operator<<(std::ostream&, const CS225::Map&) (map.cpp +424)
+LOG enter void CS225::Map::print(std::ostream&) const (map.cpp +430)
+LOG enter CS225::Map::Node* CS225::Map::Node::last() (map.cpp +342)
+LOG leaving CS225::Map::Node* CS225::Map::Node::last() (map.cpp) 524
+LOG enter int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp +400)
+LOG leaving int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp) 444
+LOG enter char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp +413)
+LOG leaving char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp) 492
+       2 -> 2
+       /
+LOG enter CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp +374)
+LOG leaving CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp) 444
+LOG enter int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp +400)
+LOG leaving int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp) 488
+LOG enter char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp +413)
+LOG leaving char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp) 472
+1 -> 1
+LOG enter CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp +374)
+LOG enter CS225::Map::Node* CS225::Map::Node::last() (map.cpp +342)
+LOG leaving CS225::Map::Node* CS225::Map::Node::last() (map.cpp) 504
+LOG leaving CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp) 302456
+LOG enter int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp +400)
+LOG leaving int CS225::Map::getdepth(const CS225::Map::Node*) const (map.cpp) 444
+LOG enter char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp +413)
+LOG leaving char CS225::Map::getedgesymbol(const CS225::Map::Node*) const (map.cpp) 492
+       \
+       0 -> 0
+LOG enter CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp +374)
+LOG leaving CS225::Map::Node* CS225::Map::Node::decrement() (map.cpp) 436
+
+LOG leaving void CS225::Map::print(std::ostream&) const (map.cpp) 2.92848e+06
+LOG leaving std::ostream& CS225::operator<<(std::ostream&, const CS225::Map&) (map.cpp) 3.19558e+06
+LOG enter virtual CS225::Map::~Map() (map.cpp +93)
+LOG enter void CS225::Map::delete_tree(CS225::Map::Node*) const (map.cpp +84)
+LOG enter void CS225::Map::delete_tree(CS225::Map::Node*) const (map.cpp +84)
+LOG enter void CS225::Map::delete_tree(CS225::Map::Node*) const (map.cpp +84)
+LOG leaving void CS225::Map::delete_tree(CS225::Map::Node*) const (map.cpp) 516
+LOG enter void CS225::Map::delete_tree(CS225::Map::Node*) const (map.cpp +84)
+LOG leaving void CS225::Map::delete_tree(CS225::Map::Node*) const (map.cpp) 428
+LOG leaving void CS225::Map::delete_tree(CS225::Map::Node*) const (map.cpp) 520748
+LOG enter void CS225::Map::delete_tree(CS225::Map::Node*) const (map.cpp +84)
+LOG enter void CS225::Map::delete_tree(CS225::Map::Node*) const (map.cpp +84)
+LOG leaving void CS225::Map::delete_tree(CS225::Map::Node*) const (map.cpp) 428
+LOG enter void CS225::Map::delete_tree(CS225::Map::Node*) const (map.cpp +84)
+LOG leaving void CS225::Map::delete_tree(CS225::Map::Node*) const (map.cpp) 496
+LOG leaving void CS225::Map::delete_tree(CS225::Map::Node*) const (map.cpp) 502756
+LOG leaving void CS225::Map::delete_tree(CS225::Map::Node*) const (map.cpp) 1.53208e+06
+LOG leaving virtual CS225::Map::~Map() (map.cpp) 1.79879e+06
+LOG Statistics for void CS225::Map::delete_tree(CS225::Map::Node*) const   (map.cpp +84)
+LOG      called 7 times
+LOG      average time 365350
+LOG Statistics for virtual CS225::Map::~Map()   (map.cpp +93)
+LOG      called 1 times
+LOG      average time 1.79879e+06
+LOG Statistics for CS225::Map::Node* CS225::Map::Node::decrement()   (map.cpp +374)
+LOG      called 9 times
+LOG      average time 63788.4
+LOG Statistics for char CS225::Map::getedgesymbol(const CS225::Map::Node*) const   (map.cpp +413)
+LOG      called 9 times
+LOG      average time 509.778
+LOG Statistics for int CS225::Map::getdepth(const CS225::Map::Node*) const   (map.cpp +400)
+LOG      called 9 times
+LOG      average time 603.111
+LOG Statistics for CS225::Map::Node* CS225::Map::Node::last()   (map.cpp +342)
+LOG      called 6 times
+LOG      average time 654.667
+LOG Statistics for void CS225::Map::print(std::ostream&) const   (map.cpp +430)
+LOG      called 4 times
+LOG      average time 2.23501e+06
+LOG Statistics for std::ostream& CS225::operator<<(std::ostream&, const CS225::Map&)   (map.cpp +424)
+LOG      called 4 times
+LOG      average time 2.50434e+06
+LOG Statistics for CS225::Map::Node::Node(int, int, CS225::Map::Node*, CS225::Map::Node*, CS225::Map::Node*)   (map.cpp +18)
+LOG      called 3 times
+LOG      average time 462.667
+LOG Statistics for CS225::Map::Node* CS225::Map::insert_node(int, int)   (map.cpp +124)
+LOG      called 3 times
+LOG      average time 266632
+LOG Statistics for CS225::Map::Node* CS225::Map::find_node(int) const   (map.cpp +110)
+LOG      called 3 times
+LOG      average time 580
+LOG Statistics for int& CS225::Map::operator[](int)   (map.cpp +98)
+LOG      called 3 times
+LOG      average time 836421
+LOG Statistics for CS225::Map::Map_iterator_const::Map_iterator_const(CS225::Map::Node*)   (map.cpp +250)
+LOG      called 1 times
+LOG      average time 556
+LOG Statistics for CS225::Map::Map_iterator::Map_iterator(CS225::Map::Node*)   (map.cpp +181)
+LOG      called 1 times
+LOG      average time 780

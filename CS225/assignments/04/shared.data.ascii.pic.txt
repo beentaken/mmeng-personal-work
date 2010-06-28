@@ -1,0 +1,218 @@
+Shallow copy and assigment produce something like this:
+
+     +-------+
+obj1 | data* | 
+     +-------+
+         |   
+         |   
+         +-----------> +------+ 
+                       | data | 
+         +-----------> +------+ 
+         |   
+         |   
+     +-------+
+obj2 | data* | 
+     +-------+
+
+which will cause one of the 2 problems:
+1) memory leak - noone deletes "data"
+or
+2) double delete - both objects delete the same data - 
+   the second delete will crash.
+
+Therefore by DEFAULT classes with dynamically allocated data
+should implement deep copy ctor and assignment, also they should
+implement default ctor that allocates data and dtor that deletes it.
+
+=====================================================================
+
+There is way to SAFELY work with shallow copies. To avoid the above problems
+you need to implement reference counting. Basically this is a feature 
+that will allow object to know whether it's the only one that uses "data"
+or the "data" is shared among several objects.
+
+To achieve that
+1) add an extra data member to the class "int*"
+2) pair each "data" with a dynamically allocated counter
+3) make sure that each objects points to a pair - data and counter.
+
+     +------------+
+obj1 | data* int* | 
+     +------------+
+         |   |
+         |   +-------------------------V
+         +-----------> +------+ +-----------+
+                       | data | | counter=2 |   
+         +-----------> +------+ +-----------+
+         |   +-------------------------^
+         |   |
+     +------------+
+obj2 | data* int* | 
+     +------------+
+
+                       +------+ +-----------+
+                       | data | | counter=1 |   
+         +-----------> +------+ +-----------+
+         |   +-------------------------^
+         |   |
+     +------------+
+obj3 | data* int* | 
+     +------------+
+
+
+Update your class
+1) make copy and assignment "shallow", but they should increment the counter
+2) make dtor to check if the deleted object is the only owner, if true - 
+   delete the data (and counter) otherwise just decrement the counter.
+3) ALL methods of the class which may MODIFY the data should first create
+   their own DEEP copy. This is why this method is called COW - copy-on-write.
+   Make sure that counter of the original data is updated.
+
+Example:
+first object is created 
+C obj1;
+                       +------+ +-----------+
+                       | data | | counter=1 |   
+         +-----------> +------+ +-----------+
+         |   +-------------------------^
+         |   |
+     +------------+
+obj1 | data* int* | 
+     +------------+
+
+Second object is copy constructed:
+C obj2(obj1);
+
+     +------------+
+obj1 | data* int* | 
+     +------------+
+         |   |
+         |   +-------------------------V
+         +-----------> +------+ +-----------+
+                       | data | | counter=2 |   
+         +-----------> +------+ +-----------+
+         |   +-------------------------^
+         |   |
+     +------------+
+obj2 | data* int* | 
+     +------------+
+
+
+First object is modified
+obj1.modify();
+
+                       +------+ +-----------+
+                       | data | | counter=1 |   
+         +-----------> +------+ +-----------+
+         |   +-------------------------^
+         |   |
+     +------------+
+obj1 | data* int* | 
+     +------------+
+
+                       +------+ +-----------+
+                       | data | | counter=1 |   
+         +-----------> +------+ +-----------+
+         |   +-------------------------^
+         |   |
+     +------------+
+obj2 | data* int* | 
+     +------------+
+
+Another example:
+returning by value from a subrouting:
+
+C foo() { C obj; ....., return obj; } // "....." added to shut down RVO
+
+
+C obj;
+
+                 +------+ +-----------+
+                 | data | | counter=1 |   
+   +-----------> +------+ +-----------+
+   |   +-------------------------^
+   |   |
++--|---|----+
+| +------+  | 
+| | obj  |  |  
+| +------+  |
++-----------+
+ foo stack
+
+
+return obj;
+as you rememeber there will be a temporary, but in our case
+it will be a shallow copy of obj in foo stack
+                 +------+ +-----------+
+                 | data | | counter=2 |   
+   +-----------> +------+ +-----------+
+   |   +------------^------------^
+   |   |            |            |
++--|---|----+       |            |
+| +------+  |       |            |
+| | obj  |  |       |            |
+| +------+  |       |            |
++-----------+       |            |
+ foo stack          |            |
+                    |            |
++------+------------+            |
+| temp |-------------------------+
++------+
+
+
+then foo stack (and foo's obj) is deleted:
+                 +------+ +-----------+
+                 | data | | counter=1 |   
+                 +------+ +-----------+
+                    ^            ^
+                    |            |
+                    |            |
+                    |            |
+                    |            |
+                    |            |
+                    |            |
+                    |            |
+                    |            |
++------+------------+            |
+| temp |-------------------------+
++------+
+
+BUT the temporary is using the same data that was allocated by obj.
+
+in main:   C obj=foo();
+Temporary is assigned to a local variable inside "main"
+                 +------+ +-----------+
+                 | data | | counter=2 |   
+   +-----------> +------+ +-----------+
+   |   +------------^------------^
+   |   |            |            |
++--|---|----+       |            |
+| +------+  |       |            |
+| | obj  |  |       |            |
+| +------+  |       |            |
++-----------+       |            |
+ main stack         |            |
+                    |            |
++------+------------+            |
+| temp |-------------------------+
++------+
+
+temporary is deleted:
+                 +------+ +-----------+
+                 | data | | counter=1 |   
+   +-----------> +------+ +-----------+
+   |   +-------------------------^
+   |   |      
++--|---|----+ 
+| +------+  | 
+| | obj  |  | 
+| +------+  | 
++-----------+ 
+ main stack   
+
+
+still using the same data that was allocated a long time ago!!!!!
+Which means that a class with referencing counting implements RVO (almost - most of the data
+is not copied, but a couple of pointer will be)
+
+

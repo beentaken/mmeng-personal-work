@@ -1,0 +1,427 @@
+<pre>
+
+#<B><FONT COLOR="#5F9EA0">include</FONT></B> <B><FONT COLOR="#BC8F8F">&quot;array.h&quot;</FONT></B>
+#<B><FONT COLOR="#5F9EA0">include</FONT></B> <B><FONT COLOR="#BC8F8F">&quot;element-factory.h&quot;</FONT></B>
+
+#<B><FONT COLOR="#5F9EA0">include</FONT></B> <B><FONT COLOR="#BC8F8F">&lt;stdlib.h&gt;</FONT></B> <I><FONT COLOR="#B22222">/* atoi   */</FONT></I>
+
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test0</FONT></B>() { <I><FONT COLOR="#B22222">//basic test
+</FONT></I>	<I><FONT COLOR="#B22222">//client creates a factory to create elements
+</FONT></I>	<I><FONT COLOR="#B22222">//this way Array doesn't need to know about Element1 and Element2
+</FONT></I>	<I><FONT COLOR="#B22222">//this is yet another &quot;programming to interfaces&quot; example
+</FONT></I>	<I><FONT COLOR="#B22222">//or &quot;old code calls new code&quot;
+</FONT></I>	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::ElementFactory el_fact;
+
+	<B><FONT COLOR="#228B22">int</FONT></B> array[] = {1,2,3,4,5,6};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray1(array,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;modify myArray1\n&quot;</FONT></B>;
+	myArray1.Set(2,3,33);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;live  nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::live()  &lt;&lt; std::endl; 
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;total nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::total() &lt;&lt; std::endl; 
+}
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test1</FONT></B>() { <I><FONT COLOR="#B22222">//copy
+</FONT></I>	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::ElementFactory el_fact;
+	<B><FONT COLOR="#228B22">int</FONT></B> array[] = {1,2,3,4,5,6,7,8};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray1(array,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;make a copy of first array\n&quot;</FONT></B>;
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray2 (myArray1); <I><FONT COLOR="#B22222">//copy construct
+</FONT></I>	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;live  nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::live()  &lt;&lt; std::endl; 
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;total nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::total() &lt;&lt; std::endl; 
+}
+
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test2</FONT></B>() { <I><FONT COLOR="#B22222">//copy 
+</FONT></I>	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::ElementFactory el_fact;
+	<B><FONT COLOR="#228B22">int</FONT></B> array[] = {1,2,3,4,5,6};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray1(array,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;modify myArray1\n&quot;</FONT></B>;
+	myArray1.Set(2,3,33);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Create copy myArray2(myArray1);\n&quot;</FONT></B>;
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray2 (myArray1);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;live  nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::live()  &lt;&lt; std::endl; 
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;total nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::total() &lt;&lt; std::endl; 
+}
+
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test3</FONT></B>() { <I><FONT COLOR="#B22222">//assignment
+</FONT></I>	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::ElementFactory el_fact;
+	<B><FONT COLOR="#228B22">int</FONT></B> array[] = {1,2,3,4,5,6};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray1(array,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#228B22">int</FONT></B> array2[] = {1,2,3,4,5,6,7,8,9};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray2(array2,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array2)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array2[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Assign myArray2 = myArray1;\n&quot;</FONT></B>;
+	myArray2 = myArray1;
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;live  nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::live()  &lt;&lt; std::endl; 
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;total nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::total() &lt;&lt; std::endl; 
+}
+
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test4</FONT></B>() { <I><FONT COLOR="#B22222">//assignment 
+</FONT></I>	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::ElementFactory el_fact;
+	<B><FONT COLOR="#228B22">int</FONT></B> array[] = {1,2,3,4,5,6};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray1(array,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Set myArray1.Set(2,3,33);\n&quot;</FONT></B>;
+	myArray1.Set(2,3,33);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#228B22">int</FONT></B> array2[] = {1,2,3,4,5,6,7,8,9};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray2(array2,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array2)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array2[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Assign myArray2 = myArray1;\n&quot;</FONT></B>;
+	myArray2 = myArray1;
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;live  nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::live()  &lt;&lt; std::endl; 
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;total nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::total() &lt;&lt; std::endl; 
+}
+
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test5</FONT></B>() { <I><FONT COLOR="#B22222">//copy using Element, then modify the copy
+</FONT></I>	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::ElementFactory el_fact;
+	<B><FONT COLOR="#228B22">int</FONT></B> array[] = {1,2,3,4,5,6};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray1(array,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Create copy myArray2(myArray1);\n&quot;</FONT></B>;
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray2(myArray1);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;assign myArray2 = myArray1;\n&quot;</FONT></B>;
+	myArray2 = myArray1;
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Set myArray1.Set(2,3,33);\n&quot;</FONT></B>;
+	myArray2.Set(2,3,33);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;live  nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::live()  &lt;&lt; std::endl; 
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;total nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::total() &lt;&lt; std::endl; 
+}
+
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test6</FONT></B>() { <I><FONT COLOR="#B22222">//copy using Element, then modify the original
+</FONT></I>	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::ElementFactory el_fact;
+	<B><FONT COLOR="#228B22">int</FONT></B> array[] = {1,2,3,4,5,6};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray1(array,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray2(myArray1);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Create copy myArray2(myArray1);\n&quot;</FONT></B>;
+	myArray2 = myArray1;
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Modify myArray1\n&quot;</FONT></B>;
+	myArray1.Set(2,3,33);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;live  nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::live()  &lt;&lt; std::endl; 
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;total nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::total() &lt;&lt; std::endl; 
+}
+
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test7</FONT></B>() { <I><FONT COLOR="#B22222">//assignment using Element2 then modify the copy
+</FONT></I>	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::ElementFactory el_fact;
+	<B><FONT COLOR="#228B22">int</FONT></B> array[] = {1,2,3,4,5,6};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray1(array,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#228B22">int</FONT></B> array2[] = {1,2,3,4,5,6,7,8,9};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray2(array2,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array2)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array2[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Assign myArray2 = myArray1;\n&quot;</FONT></B>;
+	myArray2 = myArray1;
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Modify myArray2\n&quot;</FONT></B>;
+	myArray2.Set(2,3,33);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;live  nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::live()  &lt;&lt; std::endl; 
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;total nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::total() &lt;&lt; std::endl; 
+}
+
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test8</FONT></B>() { <I><FONT COLOR="#B22222">//assignment using Element2 then modify the original
+</FONT></I>	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::ElementFactory el_fact;
+	<B><FONT COLOR="#228B22">int</FONT></B> array[] = {1,2,3,4,5,6};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray1(array,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#228B22">int</FONT></B> array2[] = {1,2,3,4,5,6,7,8,9};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray2(array2,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array2)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array2[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Assign myArray2 = myArray1;\n&quot;</FONT></B>;
+	myArray2 = myArray1;
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Modify myArray1\n&quot;</FONT></B>;
+	myArray1.Set(2,3,33);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;live  nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::live()  &lt;&lt; std::endl; 
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;total nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::total() &lt;&lt; std::endl; 
+}
+
+<I><FONT COLOR="#B22222">//function accepts by value
+</FONT></I><B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">foo</FONT></B>(CS225::Array a) {
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;in foo a = &quot;</FONT></B>;
+	a.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; std::endl;
+}
+
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test9</FONT></B>() { <I><FONT COLOR="#B22222">//calling function that accepts by value
+</FONT></I>	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::ElementFactory el_fact;
+	<B><FONT COLOR="#228B22">int</FONT></B> array[] = {1,2,3,4,5,6};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray1(array,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	foo(myArray1);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;live  nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::live()  &lt;&lt; std::endl; 
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;total nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::total() &lt;&lt; std::endl; 
+}
+
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test10</FONT></B> () { <I><FONT COLOR="#B22222">//copy then delete the original
+</FONT></I>	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::ElementFactory el_fact;
+	<B><FONT COLOR="#228B22">int</FONT></B> array[] = {1,2,3,4,5,6};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array* p_myArray1 = <B><FONT COLOR="#A020F0">new</FONT></B> CS225::Array(array,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;p_myArray1-Print();   &quot;</FONT></B>;
+	p_myArray1-&gt;Print();
+
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray2 = *p_myArray1;
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;p_myArray1-Print();   &quot;</FONT></B>;
+	p_myArray1-&gt;Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;delete p_myArray1;\n&quot;</FONT></B>;
+	<B><FONT COLOR="#A020F0">delete</FONT></B> p_myArray1;
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;live  nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::live()  &lt;&lt; std::endl;
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;total nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::total() &lt;&lt; std::endl;
+}
+
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test11</FONT></B> () { <I><FONT COLOR="#B22222">//assign then delete the copy
+</FONT></I>	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::ElementFactory el_fact;
+	<B><FONT COLOR="#228B22">int</FONT></B> array[] = {1,2,3,4,5,6};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray1(array,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+
+	{ <I><FONT COLOR="#B22222">//block
+</FONT></I>		<B><FONT COLOR="#228B22">int</FONT></B> array2[] = {1,2,3,4,5,6,7,8,9};
+		<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray2(array2,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array2)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array2[0]),&amp;el_fact);
+		<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+		myArray2.Print();
+
+		myArray2 = myArray1;
+		<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+		myArray1.Print();
+		<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+		myArray2.Print();
+	} <I><FONT COLOR="#B22222">//myArray2 is deleted
+</FONT></I>
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;live  nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::live()  &lt;&lt; std::endl;
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;total nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::total() &lt;&lt; std::endl;
+}
+
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test12</FONT></B> () { <I><FONT COLOR="#B22222">//chaining
+</FONT></I>	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::ElementFactory el_fact;
+	<B><FONT COLOR="#228B22">int</FONT></B> array[] = {1,2,3,4,5,6,7,8,9};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array * pArray1 = <B><FONT COLOR="#A020F0">new</FONT></B> CS225::Array(array,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;pArray1-Print();   &quot;</FONT></B>;
+	pArray1-&gt;Print();
+
+	<B><FONT COLOR="#228B22">int</FONT></B> a[] = {1};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array * pArray2=<B><FONT COLOR="#A020F0">new</FONT></B> CS225::Array(a,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(a)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(a[0]),&amp;el_fact);
+	*pArray2=*pArray1;
+	<B><FONT COLOR="#A020F0">delete</FONT></B> pArray1;
+
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array * pArray3=<B><FONT COLOR="#A020F0">new</FONT></B> CS225::Array(a,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(a)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(a[0]),&amp;el_fact);
+	*pArray3=*pArray2;
+	<B><FONT COLOR="#A020F0">delete</FONT></B> pArray2;
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;pArray3-Print();   &quot;</FONT></B>;
+	pArray3-&gt;Print();
+	<B><FONT COLOR="#A020F0">delete</FONT></B> pArray3;
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;live  nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::live()  &lt;&lt; std::endl;
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;total nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::total() &lt;&lt; std::endl;
+}
+
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test13</FONT></B>() {
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::ElementFactory el_fact;
+	<B><FONT COLOR="#228B22">int</FONT></B> array[] = {1,2,3,4,5,};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array  myArray1(array,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array[0]),&amp;el_fact);
+
+	<B><FONT COLOR="#228B22">int</FONT></B> array2[] = {1,2,3,4,5,6,7,8,9,10,11,12,13};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array  myArray2(array2,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array2)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array2[0]),&amp;el_fact);
+
+	<B><FONT COLOR="#228B22">int</FONT></B> array3[] = {1,2,3,4,5,6,7,8,9,10};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array  myArray3(array3,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array3)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array3[0]),&amp;el_fact);
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray3.Print();   &quot;</FONT></B>;
+	myArray3.Print();
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Assign myArray3=myArray1;\n&quot;</FONT></B>;
+	myArray3=myArray1;
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray3.Print();   &quot;</FONT></B>;
+	myArray3.Print();
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Assign myArray3=myArray2;\n&quot;</FONT></B>;
+	myArray3=myArray2;
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray3.Print();   &quot;</FONT></B>;
+	myArray3.Print();
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;live  nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::live()  &lt;&lt; std::endl;
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;total nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::total() &lt;&lt; std::endl;
+}
+
+<I><FONT COLOR="#B22222">//function returns by value
+</FONT></I>CS225::Array give_my_array(<B><FONT COLOR="#228B22">int</FONT></B> * p, <B><FONT COLOR="#228B22">unsigned</FONT></B> <B><FONT COLOR="#228B22">int</FONT></B> size) {
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::ElementFactory el_fact;
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array result(p,size,&amp;el_fact);
+	<B><FONT COLOR="#A020F0">for</FONT></B> (<B><FONT COLOR="#228B22">unsigned</FONT></B> <B><FONT COLOR="#228B22">int</FONT></B> i=0;i&lt;size;++i) {
+		result.Set(2,i,2*result.Get(i)); <I><FONT COLOR="#B22222">//double them all and change type
+</FONT></I>	}
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;int give_my_array(...) result.Print();   &quot;</FONT></B>;
+	result.Print();
+	<B><FONT COLOR="#A020F0">return</FONT></B> result;
+}
+
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test14</FONT></B>() {
+	<B><FONT COLOR="#228B22">int</FONT></B> array[] = {1,2,3,4,5,6,7,8,9};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array  myArray1 = give_my_array(array,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array[0]));
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;in test result from give_my_array     &quot;</FONT></B>;
+	myArray1.Print();
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;live  nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::live()  &lt;&lt; std::endl;
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;total nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::total() &lt;&lt; std::endl;
+}
+
+<I><FONT COLOR="#B22222">/////////////////////////////////////////////////////////////////
+</FONT></I><I><FONT COLOR="#B22222">///////////////////////////////////////////////////////////////////
+</FONT></I><I><FONT COLOR="#B22222">////test virtual constructor
+</FONT></I><I><FONT COLOR="#B22222">///////////////////////////////////////////////////////////////////
+</FONT></I><I><FONT COLOR="#B22222">///////////////////////////////////////////////////////////////////
+</FONT></I><B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test15</FONT></B>() { <I><FONT COLOR="#B22222">//copy using Element, then modify the copy
+</FONT></I>	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::ElementFactory el_fact;
+	<B><FONT COLOR="#228B22">int</FONT></B> array[] = {1,2,3,4,5,6};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray1(array,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array[0]),&amp;el_fact);
+	myArray1.Set(2,3,44);
+	myArray1.Set(2,4,55);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Create copy myArray2(myArray1);\n&quot;</FONT></B>;
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray2(myArray1);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Modify myArray2\n&quot;</FONT></B>;
+	myArray2.Set(2,1,22);
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;live  nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::live()  &lt;&lt; std::endl; 
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;total nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::total() &lt;&lt; std::endl; 
+}
+
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test16</FONT></B>() { <I><FONT COLOR="#B22222">//copy using Element, then modify the original
+</FONT></I>	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::ElementFactory el_fact;
+	<B><FONT COLOR="#228B22">int</FONT></B> array[] = {1,2,3,4,5,6};
+	<B><FONT COLOR="#228B22">int</FONT></B> array2[] = {1,2,3};
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray1(array,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array[0]),&amp;el_fact);
+	myArray1.Set(2,3,44);
+	myArray1.Set(2,4,55);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+
+	<B><FONT COLOR="#5F9EA0">CS225</FONT></B>::Array myArray2(array2,<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array2)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(array2[0]),&amp;el_fact);
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Assign myArray2 = myArray1;\n&quot;</FONT></B>;
+	myArray2 = myArray1;
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Modify myArray2\n&quot;</FONT></B>;
+	myArray2.Set(2,1,22);
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray1.Print();   &quot;</FONT></B>;
+	myArray1.Print();
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;myArray2.Print();   &quot;</FONT></B>;
+	myArray2.Print();
+
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;live  nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::live()  &lt;&lt; std::endl;
+	<B><FONT COLOR="#5F9EA0">std</FONT></B>::cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;total nodes  &quot;</FONT></B> &lt;&lt; CS225::AbstractElement::total() &lt;&lt; std::endl;
+}
+
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test17</FONT></B>();
+
+<B><FONT COLOR="#0000FF">void</FONT></B> (*pTests[])() = { test0,test1,test2,test3,test4,test5,test6,test7,
+	test8,test9,test10,test11,test12,test13,test14,test15,test16
+	,test17
+}; 
+
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">test17</FONT></B>() {
+	<B><FONT COLOR="#A020F0">for</FONT></B> (size_t i = 0; i&lt;<B><FONT COLOR="#A020F0">sizeof</FONT></B>(pTests)/<B><FONT COLOR="#A020F0">sizeof</FONT></B>(pTests[0])-1; ++i) 
+		pTests[i]();
+}
+
+<B><FONT COLOR="#228B22">int</FONT></B> <B><FONT COLOR="#0000FF">main</FONT></B> (<B><FONT COLOR="#228B22">int</FONT></B> argc, <B><FONT COLOR="#228B22">char</FONT></B> ** argv) {
+	<B><FONT COLOR="#A020F0">if</FONT></B> (argc &gt;1) {
+		pTests[atoi( argv[1] )]();
+	}
+	<B><FONT COLOR="#A020F0">return</FONT></B> 0;
+}
+
+</pre>

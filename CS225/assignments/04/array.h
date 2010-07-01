@@ -10,7 +10,8 @@ namespace CS225 {
  * Class Array implements a simple array-like data structure.
  * Objects inside the Array have to be derived from AbstractElement.
  */
-	class Array {
+	class Array
+	{
 		public:
 			Array(int * array, unsigned int _size, 
 					const ElementFactory* _pElementFactory
@@ -27,3 +28,4 @@ namespace CS225 {
 	};
 }
 #endif
+

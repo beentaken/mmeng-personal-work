@@ -6,16 +6,19 @@
  * A concrete class implementing AbstractElement interface
  * Trivial.
  */
-namespace CS225 {
+namespace CS225
+{
 
-  class Element1 : public AbstractElement {
-    public:
-      Element1(int _val);
-      virtual int Get() const;
-      virtual void Set(int new_val);
-      virtual void Print() const;
-    private:
-      int val;
-  };
+	class Element1 : public AbstractElement
+	{
+		public:
+			Element1(int _val);
+			virtual int Get() const;
+			virtual void Set(int new_val);
+			virtual void Print() const;
+		private:
+			int val;
+	};
 }
 #endif
+

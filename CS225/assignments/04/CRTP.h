@@ -17,20 +17,32 @@
  * from the other class.
  */
 template <typename T> 
-class ObjectCounter {
+class ObjectCounter
+{
 	protected:  
-		ObjectCounter() {
+		ObjectCounter()
+		{
 			++ObjectCounter<T>::count;
 			++ObjectCounter<T>::count_all;
 		} 
-		ObjectCounter (ObjectCounter<T> const&) {
+		ObjectCounter (ObjectCounter<T> const&)
+		{
 			++ObjectCounter<T>::count;
 			++ObjectCounter<T>::count_all;
 		} 
-		~ObjectCounter() { --ObjectCounter<T>::count; }
+		~ObjectCounter()
+		{
+			--ObjectCounter<T>::count;
+		}
 	public:
-		static size_t live() { return ObjectCounter<T>::count; } 
-		static size_t total() { return ObjectCounter<T>::count_all; } 
+		static size_t live()
+		{
+			return ObjectCounter<T>::count;
+		} 
+		static size_t total()
+		{
+			return ObjectCounter<T>::count_all;
+		} 
 	private: 
 		static int count; 
 		static int count_all; 
@@ -40,3 +52,4 @@ int ObjectCounter<T>::count =0;
 template <typename T> 
 int ObjectCounter<T>::count_all =0; 
 #endif
+

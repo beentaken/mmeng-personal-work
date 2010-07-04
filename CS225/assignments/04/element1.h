@@ -1,3 +1,16 @@
+/*****************************************************************************/
+/*!
+\file   element1.h
+\author Marcus Meng
+\par    email: marcus.meng\@digipen.edu
+\par    DigiPen login: marcus.meng
+\par    Course: CS225
+\par    Assignment 4
+\date   4 July, 2010
+\brief
+	This file contains the prototypes for a basic integer storage element.
+*/
+/*****************************************************************************/
 #ifndef ELEMENT1_H
 #define ELEMENT1_H
 #include <iostream>

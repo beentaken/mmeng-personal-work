@@ -1,3 +1,16 @@
+/*****************************************************************************/
+/*!
+\file   array.h
+\author Marcus Meng
+\par    email: marcus.meng\@digipen.edu
+\par    DigiPen login: marcus.meng
+\par    Course: CS225
+\par    Assignment 4
+\date   4 July, 2010
+\brief
+	This file contains the definitions for a basic array object.
+*/
+/*****************************************************************************/
 #ifndef ARRAY_H
 #define ARRAY_H
 #include "abstract-element.h"

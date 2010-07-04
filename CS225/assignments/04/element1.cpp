@@ -1,3 +1,17 @@
+/*****************************************************************************/
+/*!
+\file   element1.cpp
+\author Marcus Meng
+\par    email: marcus.meng\@digipen.edu
+\par    DigiPen login: marcus.meng
+\par    Course: CS225
+\par    Assignment 4
+\date   4 July, 2010
+\brief
+	This file contains the implementation of a simple integer storage
+	element.
+*/
+/*****************************************************************************/
 #include "element1.h"
 
 /* \brief Constructor.

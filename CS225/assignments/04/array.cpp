@@ -1,3 +1,17 @@
+/*****************************************************************************/
+/*!
+\file   array.cpp
+\author Marcus Meng
+\par    email: marcus.meng\@digipen.edu
+\par    DigiPen login: marcus.meng
+\par    Course: CS225
+\par    Assignment 4
+\date   4 July, 2010
+\brief
+	Implements the functions needed to use the Array object.
+*/
+/*****************************************************************************/
+
 #include "array.h"
 
 /* \brief Constructor.

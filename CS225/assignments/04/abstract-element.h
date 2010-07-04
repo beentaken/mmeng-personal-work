@@ -12,9 +12,11 @@ namespace CS225
 	class AbstractElement : public ObjectCounter<AbstractElement>
 	{
 		public:
-			int Get() const = 0;
-			void Set(int new_val) = 0;
-			void Print() const = 0;
+			virtual ~AbstractElement() {};
+			virtual int Get() const = 0;
+			virtual void Set(int new_val) = 0;
+			virtual void Print() const = 0;
+			virtual AbstractElement * clone() const = 0;
 	};
 }
 #endif

@@ -16,6 +16,7 @@ namespace CS225
 			virtual int Get() const;
 			virtual void Set(int new_val);
 			virtual void Print() const;
+			virtual Element1 * clone() const;
 		private:
 			int val;
 	};

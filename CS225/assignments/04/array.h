@@ -17,6 +17,11 @@ namespace CS225 {
 					const ElementFactory* _pElementFactory
 					);
 
+			Array(const Array& rhs);
+			~Array(void);
+
+			Array& operator=(const Array& rhs);
+
 			int Get(unsigned int pos) const;
 			void Set(int id, int pos, int value);
 
@@ -25,6 +30,10 @@ namespace CS225 {
 			AbstractElement** data;
 			unsigned int size;
 			const ElementFactory* pElementFactory;
+			unsigned int * reference_counter;
+
+			void removeReference(void);
+			void deepCopy(void);
 	};
 }
 #endif

@@ -30,7 +30,7 @@ class ObjectCounter
 			++ObjectCounter<T>::count;
 			++ObjectCounter<T>::count_all;
 		} 
-		~ObjectCounter()
+		virtual ~ObjectCounter()
 		{
 			--ObjectCounter<T>::count;
 		}

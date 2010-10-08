@@ -1,0 +1,120 @@
+\documentclass{article}
+
+\usepackage{cite}
+\usepackage{times}
+\usepackage{url}
+%\usepackage{datatool}
+
+\title{PHY200L Lab 04 -- Relative Velocity}
+
+\author{Marcus Meng}
+
+\date{October 7, 2010}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+In this experiment, we attempted to determine the effects of an angled track on the velocity of two moving carts.
+
+\section{Procedure}
+
+Our procedure differed from the provided procedure on the original lab sheet due to the lack of working motion sensors at the time of the experiment.
+
+\subsection{Horizontal Track}
+
+We set up the track and leveled it by seeing whether a cart would roll if left in place on it.
+Sheets of paper were stacked under one end of the track to get the structure level.
+
+One end of the track was placed against a wall, so that the wall could serve as a structurally sound starting board for the plunger cart to push off of.
+A reading was taken at the front of the cart, with the plunger fully compressed, before the cart was released, to serve as a mark for the starting point of the cart's movement.
+A barrier (in this case, a ruler) was placed exactly one meter from the starting point of the cart, to act as a stop position.
+
+In each reading taken, the cart was launched using the plunger at the same time a stopwatch was activated.
+The cart would move along the track, and when it collided with the ruler at the one-meter mark on the track, the stopwatch was stopped and the time taken.
+
+\subsection{Angled Track}
+
+For the second part of the experiment, we raised one end of the track, so that the track would be angled down towards the wall.
+The elevation of the higher end of the track was recorded.
+
+A second cart was placed near the top of the track, and its starting position marked.
+The plunger cart was, once again, placed near the wall.
+
+In each reading taken, the upper cart was released to allow it to roll down the track with no additional acceleration outside of gravity provided.
+At the same time, the plunger cart was launched and the stopwatch started.
+
+The point where both carts collided, as well as the time they collided at, was recorded.
+
+\section{Results and Discussion}
+
+%\DTLloaddb{horizontal}{horizontal.csv}
+
+%\begin{table}[htbp]
+%	\caption{Horizontal Track Data}
+%	\centering
+%	\DTLdisplaydb{horizontal}
+%\end{table}
+
+\subsection{Questions}
+
+\begin{itemize}
+
+\item What is the average intial velocity of cart A? Include the standard deviation in your result.
+
+The average initial velocity was about 72.2 cm/s, with a standard deviation of 11.2 cm/s.
+The initial velocity should be near the average velocity, since there is little friction on the horizontal track tests.
+
+\item What is the velocity of cart A relative to the track?
+
+Roughly 72.2 cm/s.
+
+\item What is the relative velocity of cart A to cart B?
+
+In the first test, cart B is stationary, so cart A is moving at roughly 72.2 cm/s with regards to cart B.
+
+In the angled track tests, however, the relative velocities of both carts should be near the average velocity of both carts summed up.
+Thus, the average relative velocities should be roughly 78.0 cm/s.
+
+\item What would you change if you angled the track the other way?
+
+Presumably, the normal (non-plunger) cart would cease to move at all, being at the bottom of the track and pressed against the wall already.
+The plunger cart would have an even higher average velocity, seeing as it will be accelerating down the track due to gravity the entire way.
+
+\end{itemize}
+
+\subsection{Errors}
+
+Unlike previous labs, most of the measurements were done by hand, potentially leading to large sources of error stemming from deficiencies in human reaction time or measuring ability.
+The measurement most subject to this would be the time, since it was taken by hand based on when we heard the carts striking either the ruler or each other.
+Mean human reaction times for audible stimuli are around the 160 millisecond mark, and visual stimuli appear to hit a roughly 190 millisecond turnaround\cite{kosinski2010}.
+
+We did not have an accessible means to compensate for this --- there was no practice or additional utilities involved in the timing, and the delay due to reaction time may have been introduced twice:
+once when the timer was started, and once when it was stopped.
+As such, given some uncertainty, we can assume that the measurements are no more accurate than within half a second of the actual values.
+
+Additionally, we had no means of making sure the horizontal track was actually level.
+Our approximation of it seemed to work reasonably, but a bubble level or similar tool would have been useful.
+The cart would occasionally move on its own when placed on different parts of the track --- either the track was not level, or perhaps the track was slightly warped.
+
+\section{Conclusion}
+
+The original experiment was intended to be an analysis of how relative velocity of the two carts affected measurements.
+This goal was not directly doable using the equipment at hand, however, an analytical derivation of the results is still obtainable.
+
+Since we measured the cart's velocity relative to the track, and at least, on the horizontal track part of the experiment, the second cart was motionless relative to the track,
+we could infer that the first cart's velocity relative to the second cart was the same as its velocity relative to the track.
+
+This is more difficult to set up for the second part of the experiment without basically stating what was known ahead of time with regards to the experiment,
+but the relative velocity between the carts turns out to be based on the difference between the individual velocities of the carts,
+assuming that they are placed along the same coordinate scale.
+
+% Also, IT sucks.
+
+\bibliographystyle{plain}
+\bibliography{lab04}
+
+\end{document}
+

@@ -1,0 +1,12 @@
+import os
+env = Environment(ENV=os.environ)
+
+outputFile = "lab04.pdf"
+
+sourceTexFiles = Split("lab04.tex")
+sourceBibFiles = Split("lab04.bib")
+
+pdfOutput = env.PDF(target=outputFile,source=sourceTexFiles)
+
+Depends(pdfOutput,sourceTexFiles+sourceBibFiles)
+

@@ -1,0 +1,1661 @@
+New job 1 at time 0
+Job assigned to printer 1001 at time 0
+New job 101 at time 0
+Job assigned to printer 2001 at time 0
+New job 405 at time 0
+Job assigned to printer 2008 at time 0
+New job 102 at time 0.33
+No available printers - put in print queue
+Printer 2001 finished job 101 at time 0.333333
+Printer 2001 assigned new job 102 at time 0.333333
+New job 103 at time 0.66
+No available printers - put in print queue
+Printer 2001 finished job 102 at time 0.666667
+Printer 2001 assigned new job 103 at time 0.666667
+New job 104 at time 0.99
+No available printers - put in print queue
+Printer 1001 finished job 1 at time 1
+Printer 1001 assigned new job 104 at time 1
+Printer 2001 finished job 103 at time 1
+New job 2 at time 1.01
+Job assigned to printer 2001 at time 1.01
+New job 105 at time 1.32
+No available printers - put in print queue
+Printer 1001 finished job 104 at time 1.5
+Printer 1001 assigned new job 105 at time 1.5
+New job 106 at time 1.65
+No available printers - put in print queue
+Printer 2001 finished job 2 at time 1.67667
+Printer 2001 assigned new job 106 at time 1.67667
+New job 107 at time 1.98
+No available printers - put in print queue
+Printer 1001 finished job 105 at time 2
+Printer 1001 assigned new job 107 at time 2
+Printer 2001 finished job 106 at time 2.01
+New job 3 at time 2.02
+Job assigned to printer 2001 at time 2.02
+New job 108 at time 2.31
+No available printers - put in print queue
+Printer 2008 finished job 405 at time 2.5
+Printer 2008 assigned new job 108 at time 2.5
+Printer 1001 finished job 107 at time 2.5
+New job 109 at time 2.64
+Job assigned to printer 1001 at time 2.64
+Printer 2001 finished job 3 at time 2.68667
+New job 110 at time 2.97
+Job assigned to printer 2001 at time 2.97
+New job 4 at time 3.03
+No available printers - put in print queue
+Printer 1001 finished job 109 at time 3.14
+Printer 1001 assigned new job 4 at time 3.14
+New job 111 at time 3.3
+No available printers - put in print queue
+Printer 2001 finished job 110 at time 3.30333
+Printer 2001 assigned new job 111 at time 3.30333
+New job 406 at time 3.33
+No available printers - put in print queue
+Printer 2008 finished job 108 at time 3.5
+Printer 2008 assigned new job 406 at time 3.5
+New job 112 at time 3.63
+No available printers - put in print queue
+Printer 2001 finished job 111 at time 3.63667
+Printer 2001 assigned new job 112 at time 3.63667
+New job 113 at time 3.96
+No available printers - put in print queue
+Printer 2001 finished job 112 at time 3.97
+Printer 2001 assigned new job 113 at time 3.97
+New job 5 at time 4.04
+No available printers - put in print queue
+Printer 1001 finished job 4 at time 4.14
+Printer 1001 assigned new job 5 at time 4.14
+New job 114 at time 4.29
+No available printers - put in print queue
+Printer 2001 finished job 113 at time 4.30333
+Printer 2001 assigned new job 114 at time 4.30333
+New job 115 at time 4.62
+No available printers - put in print queue
+Printer 2001 finished job 114 at time 4.63667
+Printer 2001 assigned new job 115 at time 4.63667
+New job 116 at time 4.95
+No available printers - put in print queue
+Printer 2001 finished job 115 at time 4.97
+Printer 2001 assigned new job 116 at time 4.97
+New job 6 at time 5.05
+No available printers - put in print queue
+Printer 1001 finished job 5 at time 5.14
+Printer 1001 assigned new job 6 at time 5.14
+New job 117 at time 5.28
+No available printers - put in print queue
+Printer 2001 finished job 116 at time 5.30333
+Printer 2001 assigned new job 117 at time 5.30333
+New job 118 at time 5.61
+No available printers - put in print queue
+Printer 2001 finished job 117 at time 5.63667
+Printer 2001 assigned new job 118 at time 5.63667
+New job 119 at time 5.94
+No available printers - put in print queue
+Printer 2001 finished job 118 at time 5.97
+Printer 2001 assigned new job 119 at time 5.97
+Printer 2008 finished job 406 at time 6
+New job 7 at time 6.06
+Job assigned to printer 2008 at time 6.06
+Printer 1001 finished job 6 at time 6.14
+New job 120 at time 6.27
+Job assigned to printer 1001 at time 6.27
+Printer 2001 finished job 119 at time 6.30333
+New job 121 at time 6.6
+Job assigned to printer 2001 at time 6.6
+New job 407 at time 6.66
+No available printers - put in print queue
+Printer 1001 finished job 120 at time 6.77
+Printer 1001 assigned new job 407 at time 6.77
+New job 122 at time 6.93
+No available printers - put in print queue
+Printer 2001 finished job 121 at time 6.93333
+Printer 2001 assigned new job 122 at time 6.93333
+New job 8 at time 7.07
+No available printers - put in print queue
+New job 123 at time 7.26
+No available printers - put in print queue
+Printer 2001 finished job 122 at time 7.26667
+Printer 2001 assigned new job 123 at time 7.26667
+New job 124 at time 7.59
+No available printers - put in print queue
+Printer 2001 finished job 123 at time 7.6
+Printer 2001 assigned new job 124 at time 7.6
+New job 125 at time 7.92
+No available printers - put in print queue
+Printer 2001 finished job 124 at time 7.93333
+Printer 2001 assigned new job 125 at time 7.93333
+Printer 1001 finished job 407 at time 8.02
+Printer 1001 assigned new job 8 at time 8.02
+Printer 2008 finished job 7 at time 8.06
+New job 9 at time 8.08
+Job assigned to printer 2008 at time 8.08
+New job 126 at time 8.25
+No available printers - put in print queue
+Printer 2001 finished job 125 at time 8.26667
+Printer 2001 assigned new job 126 at time 8.26667
+New job 127 at time 8.58
+No available printers - put in print queue
+Printer 2001 finished job 126 at time 8.6
+Printer 2001 assigned new job 127 at time 8.6
+New job 128 at time 8.91
+No available printers - put in print queue
+Printer 2001 finished job 127 at time 8.93333
+Printer 2001 assigned new job 128 at time 8.93333
+Printer 1001 finished job 8 at time 9.02
+New job 10 at time 9.09
+Job assigned to printer 1001 at time 9.09
+New job 129 at time 9.24
+No available printers - put in print queue
+Printer 2001 finished job 128 at time 9.26667
+Printer 2001 assigned new job 129 at time 9.26667
+New job 130 at time 9.57
+No available printers - put in print queue
+Printer 2001 finished job 129 at time 9.6
+Printer 2001 assigned new job 130 at time 9.6
+New job 131 at time 9.9
+No available printers - put in print queue
+Printer 2001 finished job 130 at time 9.93333
+Printer 2001 assigned new job 131 at time 9.93333
+New job 408 at time 9.99
+No available printers - put in print queue
+Printer 2008 finished job 9 at time 10.08
+Printer 2008 assigned new job 408 at time 10.08
+Printer 1001 finished job 10 at time 10.09
+New job 11 at time 10.1
+Job assigned to printer 1001 at time 10.1
+New job 132 at time 10.23
+No available printers - put in print queue
+Printer 2001 finished job 131 at time 10.2667
+Printer 2001 assigned new job 132 at time 10.2667
+New job 133 at time 10.56
+No available printers - put in print queue
+Printer 2001 finished job 132 at time 10.6
+Printer 2001 assigned new job 133 at time 10.6
+New job 134 at time 10.89
+No available printers - put in print queue
+Printer 2001 finished job 133 at time 10.9333
+Printer 2001 assigned new job 134 at time 10.9333
+Printer 1001 finished job 11 at time 11.1
+New job 12 at time 11.11
+Job assigned to printer 1001 at time 11.11
+New job 135 at time 11.22
+No available printers - put in print queue
+Printer 2001 finished job 134 at time 11.2667
+Printer 2001 assigned new job 135 at time 11.2667
+New job 136 at time 11.55
+No available printers - put in print queue
+Printer 2001 finished job 135 at time 11.6
+Printer 2001 assigned new job 136 at time 11.6
+New job 137 at time 11.88
+No available printers - put in print queue
+Printer 2001 finished job 136 at time 11.9333
+Printer 2001 assigned new job 137 at time 11.9333
+Printer 1001 finished job 12 at time 12.11
+New job 13 at time 12.12
+Job assigned to printer 1001 at time 12.12
+New job 138 at time 12.21
+No available printers - put in print queue
+Printer 2001 finished job 137 at time 12.2667
+Printer 2001 assigned new job 138 at time 12.2667
+New job 139 at time 12.54
+No available printers - put in print queue
+Printer 2008 finished job 408 at time 12.58
+Printer 2008 assigned new job 139 at time 12.58
+Printer 2001 finished job 138 at time 12.6
+New job 140 at time 12.87
+Job assigned to printer 2001 at time 12.87
+Printer 1001 finished job 13 at time 13.12
+New job 14 at time 13.13
+Job assigned to printer 1001 at time 13.13
+New job 141 at time 13.2
+No available printers - put in print queue
+Printer 2001 finished job 140 at time 13.2033
+Printer 2001 assigned new job 141 at time 13.2033
+New job 409 at time 13.32
+No available printers - put in print queue
+New job 142 at time 13.53
+No available printers - put in print queue
+Printer 2001 finished job 141 at time 13.5367
+Printer 2001 assigned new job 409 at time 13.5367
+Printer 2008 finished job 139 at time 13.58
+Printer 2008 assigned new job 142 at time 13.58
+New job 143 at time 13.86
+No available printers - put in print queue
+Printer 1001 finished job 14 at time 14.13
+Printer 1001 assigned new job 143 at time 14.13
+New job 15 at time 14.14
+No available printers - put in print queue
+New job 144 at time 14.19
+No available printers - put in print queue
+Printer 2001 finished job 409 at time 14.37
+Printer 2001 assigned new job 144 at time 14.37
+New job 145 at time 14.52
+No available printers - put in print queue
+Printer 2008 finished job 142 at time 14.58
+Printer 2008 assigned new job 145 at time 14.58
+Printer 1001 finished job 143 at time 14.63
+Printer 1001 assigned new job 15 at time 14.63
+Printer 2001 finished job 144 at time 14.7033
+New job 146 at time 14.85
+Job assigned to printer 2001 at time 14.85
+New job 16 at time 15.15
+No available printers - put in print queue
+New job 147 at time 15.18
+No available printers - put in print queue
+Printer 2001 finished job 146 at time 15.1833
+Printer 2001 assigned new job 147 at time 15.1833
+New job 148 at time 15.51
+No available printers - put in print queue
+Printer 2001 finished job 147 at time 15.5167
+Printer 2001 assigned new job 148 at time 15.5167
+Printer 2008 finished job 145 at time 15.58
+Printer 2008 assigned new job 16 at time 15.58
+Printer 1001 finished job 15 at time 15.63
+New job 149 at time 15.84
+Job assigned to printer 1001 at time 15.84
+Printer 2001 finished job 148 at time 15.85
+New job 17 at time 16.16
+Job assigned to printer 2001 at time 16.16
+New job 150 at time 16.17
+No available printers - put in print queue
+Printer 1001 finished job 149 at time 16.34
+Printer 1001 assigned new job 150 at time 16.34
+New job 151 at time 16.5
+No available printers - put in print queue
+New job 410 at time 16.65
+No available printers - put in print queue
+Printer 2001 finished job 17 at time 16.8267
+Printer 2001 assigned new job 410 at time 16.8267
+New job 152 at time 16.83
+No available printers - put in print queue
+Printer 1001 finished job 150 at time 16.84
+Printer 1001 assigned new job 151 at time 16.84
+New job 153 at time 17.16
+No available printers - put in print queue
+New job 18 at time 17.17
+No available printers - put in print queue
+Printer 1001 finished job 151 at time 17.34
+Printer 1001 assigned new job 152 at time 17.34
+New job 154 at time 17.49
+No available printers - put in print queue
+Printer 2008 finished job 16 at time 17.58
+Printer 2008 assigned new job 153 at time 17.58
+Printer 2001 finished job 410 at time 17.66
+Printer 2001 assigned new job 154 at time 17.66
+New job 155 at time 17.82
+No available printers - put in print queue
+Printer 1001 finished job 152 at time 17.84
+Printer 1001 assigned new job 155 at time 17.84
+Printer 2001 finished job 154 at time 17.9933
+Printer 2001 assigned new job 18 at time 17.9933
+New job 156 at time 18.15
+No available printers - put in print queue
+New job 19 at time 18.18
+No available printers - put in print queue
+Printer 1001 finished job 155 at time 18.34
+Printer 1001 assigned new job 156 at time 18.34
+New job 157 at time 18.48
+No available printers - put in print queue
+Printer 2008 finished job 153 at time 18.58
+Printer 2008 assigned new job 157 at time 18.58
+Printer 2001 finished job 18 at time 18.66
+Printer 2001 assigned new job 19 at time 18.66
+New job 158 at time 18.81
+No available printers - put in print queue
+Printer 1001 finished job 156 at time 18.84
+Printer 1001 assigned new job 158 at time 18.84
+New job 159 at time 19.14
+No available printers - put in print queue
+New job 20 at time 19.19
+No available printers - put in print queue
+Printer 2001 finished job 19 at time 19.3267
+Printer 2001 assigned new job 159 at time 19.3267
+Printer 1001 finished job 158 at time 19.34
+Printer 1001 assigned new job 20 at time 19.34
+New job 160 at time 19.47
+No available printers - put in print queue
+Printer 2008 finished job 157 at time 19.58
+Printer 2008 assigned new job 160 at time 19.58
+Printer 2001 finished job 159 at time 19.66
+New job 161 at time 19.8
+Job assigned to printer 2001 at time 19.8
+New job 411 at time 19.98
+No available printers - put in print queue
+New job 162 at time 20.13
+No available printers - put in print queue
+Printer 2001 finished job 161 at time 20.1333
+Printer 2001 assigned new job 411 at time 20.1333
+New job 21 at time 20.2
+No available printers - put in print queue
+Printer 1001 finished job 20 at time 20.34
+Printer 1001 assigned new job 162 at time 20.34
+New job 163 at time 20.46
+No available printers - put in print queue
+Printer 2008 finished job 160 at time 20.58
+Printer 2008 assigned new job 163 at time 20.58
+New job 164 at time 20.79
+No available printers - put in print queue
+Printer 1001 finished job 162 at time 20.84
+Printer 1001 assigned new job 164 at time 20.84
+Printer 2001 finished job 411 at time 20.9667
+Printer 2001 assigned new job 21 at time 20.9667
+New job 165 at time 21.12
+No available printers - put in print queue
+New job 22 at time 21.21
+No available printers - put in print queue
+Printer 1001 finished job 164 at time 21.34
+Printer 1001 assigned new job 165 at time 21.34
+New job 166 at time 21.45
+No available printers - put in print queue
+Printer 2008 finished job 163 at time 21.58
+Printer 2008 assigned new job 166 at time 21.58
+Printer 2001 finished job 21 at time 21.6333
+Printer 2001 assigned new job 22 at time 21.6333
+New job 167 at time 21.78
+No available printers - put in print queue
+Printer 1001 finished job 165 at time 21.84
+Printer 1001 assigned new job 167 at time 21.84
+New job 168 at time 22.11
+No available printers - put in print queue
+New job 23 at time 22.22
+No available printers - put in print queue
+Printer 2001 finished job 22 at time 22.3
+Printer 2001 assigned new job 168 at time 22.3
+Printer 1001 finished job 167 at time 22.34
+Printer 1001 assigned new job 23 at time 22.34
+New job 169 at time 22.44
+No available printers - put in print queue
+Printer 2008 finished job 166 at time 22.58
+Printer 2008 assigned new job 169 at time 22.58
+Printer 2001 finished job 168 at time 22.6333
+New job 170 at time 22.77
+Job assigned to printer 2001 at time 22.77
+New job 171 at time 23.1
+No available printers - put in print queue
+Printer 2001 finished job 170 at time 23.1033
+Printer 2001 assigned new job 171 at time 23.1033
+New job 24 at time 23.23
+No available printers - put in print queue
+New job 412 at time 23.31
+No available printers - put in print queue
+Printer 1001 finished job 23 at time 23.34
+Printer 1001 assigned new job 412 at time 23.34
+New job 172 at time 23.43
+No available printers - put in print queue
+Printer 2001 finished job 171 at time 23.4367
+Printer 2001 assigned new job 172 at time 23.4367
+Printer 2008 finished job 169 at time 23.58
+Printer 2008 assigned new job 24 at time 23.58
+New job 173 at time 23.76
+No available printers - put in print queue
+Printer 2001 finished job 172 at time 23.77
+Printer 2001 assigned new job 173 at time 23.77
+New job 174 at time 24.09
+No available printers - put in print queue
+Printer 2001 finished job 173 at time 24.1033
+Printer 2001 assigned new job 174 at time 24.1033
+New job 25 at time 24.24
+No available printers - put in print queue
+New job 175 at time 24.42
+No available printers - put in print queue
+Printer 2001 finished job 174 at time 24.4367
+Printer 2001 assigned new job 175 at time 24.4367
+Printer 1001 finished job 412 at time 24.59
+Printer 1001 assigned new job 25 at time 24.59
+New job 176 at time 24.75
+No available printers - put in print queue
+Printer 2001 finished job 175 at time 24.77
+Printer 2001 assigned new job 176 at time 24.77
+New job 177 at time 25.08
+No available printers - put in print queue
+Printer 2001 finished job 176 at time 25.1033
+Printer 2001 assigned new job 177 at time 25.1033
+New job 26 at time 25.25
+No available printers - put in print queue
+New job 178 at time 25.41
+No available printers - put in print queue
+Printer 2001 finished job 177 at time 25.4367
+Printer 2001 assigned new job 178 at time 25.4367
+Printer 2008 finished job 24 at time 25.58
+Printer 2008 assigned new job 26 at time 25.58
+Printer 1001 finished job 25 at time 25.59
+New job 179 at time 25.74
+Job assigned to printer 1001 at time 25.74
+Printer 2001 finished job 178 at time 25.77
+New job 180 at time 26.07
+Job assigned to printer 2001 at time 26.07
+Printer 1001 finished job 179 at time 26.24
+New job 27 at time 26.26
+Job assigned to printer 1001 at time 26.26
+New job 181 at time 26.4
+No available printers - put in print queue
+Printer 2001 finished job 180 at time 26.4033
+Printer 2001 assigned new job 181 at time 26.4033
+New job 413 at time 26.64
+No available printers - put in print queue
+New job 182 at time 26.73
+No available printers - put in print queue
+Printer 2001 finished job 181 at time 26.7367
+Printer 2001 assigned new job 413 at time 26.7367
+New job 183 at time 27.06
+No available printers - put in print queue
+Printer 1001 finished job 27 at time 27.26
+Printer 1001 assigned new job 182 at time 27.26
+New job 28 at time 27.27
+No available printers - put in print queue
+New job 184 at time 27.39
+No available printers - put in print queue
+Printer 2001 finished job 413 at time 27.57
+Printer 2001 assigned new job 183 at time 27.57
+Printer 2008 finished job 26 at time 27.58
+Printer 2008 assigned new job 184 at time 27.58
+New job 185 at time 27.72
+No available printers - put in print queue
+Printer 1001 finished job 182 at time 27.76
+Printer 1001 assigned new job 185 at time 27.76
+Printer 2001 finished job 183 at time 27.9033
+Printer 2001 assigned new job 28 at time 27.9033
+New job 186 at time 28.05
+No available printers - put in print queue
+Printer 1001 finished job 185 at time 28.26
+Printer 1001 assigned new job 186 at time 28.26
+New job 29 at time 28.28
+No available printers - put in print queue
+New job 187 at time 28.38
+No available printers - put in print queue
+Printer 2001 finished job 28 at time 28.57
+Printer 2001 assigned new job 187 at time 28.57
+Printer 2008 finished job 184 at time 28.58
+Printer 2008 assigned new job 29 at time 28.58
+New job 188 at time 28.71
+No available printers - put in print queue
+Printer 1001 finished job 186 at time 28.76
+Printer 1001 assigned new job 188 at time 28.76
+Printer 2001 finished job 187 at time 28.9033
+New job 189 at time 29.04
+Job assigned to printer 2001 at time 29.04
+Printer 1001 finished job 188 at time 29.26
+New job 30 at time 29.29
+Job assigned to printer 1001 at time 29.29
+New job 190 at time 29.37
+No available printers - put in print queue
+Printer 2001 finished job 189 at time 29.3733
+Printer 2001 assigned new job 190 at time 29.3733
+New job 191 at time 29.7
+No available printers - put in print queue
+Printer 2001 finished job 190 at time 29.7067
+Printer 2001 assigned new job 191 at time 29.7067
+New job 414 at time 29.97
+No available printers - put in print queue
+New job 192 at time 30.03
+No available printers - put in print queue
+Printer 2001 finished job 191 at time 30.04
+Printer 2001 assigned new job 414 at time 30.04
+Printer 1001 finished job 30 at time 30.29
+Printer 1001 assigned new job 192 at time 30.29
+New job 31 at time 30.3
+No available printers - put in print queue
+New job 193 at time 30.36
+No available printers - put in print queue
+Printer 2008 finished job 29 at time 30.58
+Printer 2008 assigned new job 193 at time 30.58
+New job 194 at time 30.69
+No available printers - put in print queue
+Printer 1001 finished job 192 at time 30.79
+Printer 1001 assigned new job 194 at time 30.79
+Printer 2001 finished job 414 at time 30.8733
+Printer 2001 assigned new job 31 at time 30.8733
+New job 195 at time 31.02
+No available printers - put in print queue
+Printer 1001 finished job 194 at time 31.29
+Printer 1001 assigned new job 195 at time 31.29
+New job 32 at time 31.31
+No available printers - put in print queue
+New job 196 at time 31.35
+No available printers - put in print queue
+Printer 2001 finished job 31 at time 31.54
+Printer 2001 assigned new job 196 at time 31.54
+Printer 2008 finished job 193 at time 31.58
+Printer 2008 assigned new job 32 at time 31.58
+New job 197 at time 31.68
+No available printers - put in print queue
+Printer 1001 finished job 195 at time 31.79
+Printer 1001 assigned new job 197 at time 31.79
+Printer 2001 finished job 196 at time 31.8733
+New job 198 at time 32.01
+Job assigned to printer 2001 at time 32.01
+Printer 1001 finished job 197 at time 32.29
+New job 33 at time 32.32
+Job assigned to printer 1001 at time 32.32
+New job 199 at time 32.34
+No available printers - put in print queue
+Printer 2001 finished job 198 at time 32.3433
+Printer 2001 assigned new job 199 at time 32.3433
+New job 200 at time 32.67
+No available printers - put in print queue
+Printer 2001 finished job 199 at time 32.6767
+Printer 2001 assigned new job 200 at time 32.6767
+New job 201 at time 33
+No available printers - put in print queue
+Printer 2001 finished job 200 at time 33.01
+Printer 2001 assigned new job 201 at time 33.01
+New job 415 at time 33.3
+No available printers - put in print queue
+Printer 1001 finished job 33 at time 33.32
+Printer 1001 assigned new job 415 at time 33.32
+New job 202 at time 33.33
+No available printers - put in print queue
+New job 34 at time 33.33
+No available printers - put in print queue
+Printer 2001 finished job 201 at time 33.3433
+Printer 2001 assigned new job 202 at time 33.3433
+Printer 2008 finished job 32 at time 33.58
+Printer 2008 assigned new job 34 at time 33.58
+New job 203 at time 33.66
+No available printers - put in print queue
+Printer 2001 finished job 202 at time 33.6767
+Printer 2001 assigned new job 203 at time 33.6767
+New job 204 at time 33.99
+No available printers - put in print queue
+Printer 2001 finished job 203 at time 34.01
+Printer 2001 assigned new job 204 at time 34.01
+New job 205 at time 34.32
+No available printers - put in print queue
+New job 35 at time 34.34
+No available printers - put in print queue
+Printer 2001 finished job 204 at time 34.3433
+Printer 2001 assigned new job 205 at time 34.3433
+Printer 1001 finished job 415 at time 34.57
+Printer 1001 assigned new job 35 at time 34.57
+New job 206 at time 34.65
+No available printers - put in print queue
+Printer 2001 finished job 205 at time 34.6767
+Printer 2001 assigned new job 206 at time 34.6767
+New job 207 at time 34.98
+No available printers - put in print queue
+Printer 2001 finished job 206 at time 35.01
+Printer 2001 assigned new job 207 at time 35.01
+New job 208 at time 35.31
+No available printers - put in print queue
+Printer 2001 finished job 207 at time 35.3433
+Printer 2001 assigned new job 208 at time 35.3433
+New job 36 at time 35.35
+No available printers - put in print queue
+Printer 1001 finished job 35 at time 35.57
+Printer 1001 assigned new job 36 at time 35.57
+Printer 2008 finished job 34 at time 35.58
+New job 209 at time 35.64
+Job assigned to printer 2008 at time 35.64
+Printer 2001 finished job 208 at time 35.6767
+New job 210 at time 35.97
+Job assigned to printer 2001 at time 35.97
+New job 211 at time 36.3
+No available printers - put in print queue
+Printer 2001 finished job 210 at time 36.3033
+Printer 2001 assigned new job 211 at time 36.3033
+New job 37 at time 36.36
+No available printers - put in print queue
+Printer 1001 finished job 36 at time 36.57
+Printer 1001 assigned new job 37 at time 36.57
+New job 212 at time 36.63
+No available printers - put in print queue
+New job 416 at time 36.63
+No available printers - put in print queue
+Printer 2001 finished job 211 at time 36.6367
+Printer 2001 assigned new job 416 at time 36.6367
+Printer 2008 finished job 209 at time 36.64
+Printer 2008 assigned new job 212 at time 36.64
+New job 213 at time 36.96
+No available printers - put in print queue
+New job 214 at time 37.29
+No available printers - put in print queue
+New job 38 at time 37.37
+No available printers - put in print queue
+Printer 2001 finished job 416 at time 37.47
+Printer 2001 assigned new job 213 at time 37.47
+Printer 1001 finished job 37 at time 37.57
+Printer 1001 assigned new job 214 at time 37.57
+New job 215 at time 37.62
+No available printers - put in print queue
+Printer 2008 finished job 212 at time 37.64
+Printer 2008 assigned new job 215 at time 37.64
+Printer 2001 finished job 213 at time 37.8033
+Printer 2001 assigned new job 38 at time 37.8033
+New job 216 at time 37.95
+No available printers - put in print queue
+Printer 1001 finished job 214 at time 38.07
+Printer 1001 assigned new job 216 at time 38.07
+New job 217 at time 38.28
+No available printers - put in print queue
+New job 39 at time 38.38
+No available printers - put in print queue
+Printer 2001 finished job 38 at time 38.47
+Printer 2001 assigned new job 217 at time 38.47
+Printer 1001 finished job 216 at time 38.57
+Printer 1001 assigned new job 39 at time 38.57
+New job 218 at time 38.61
+No available printers - put in print queue
+Printer 2008 finished job 215 at time 38.64
+Printer 2008 assigned new job 218 at time 38.64
+Printer 2001 finished job 217 at time 38.8033
+New job 219 at time 38.94
+Job assigned to printer 2001 at time 38.94
+New job 220 at time 39.27
+No available printers - put in print queue
+Printer 2001 finished job 219 at time 39.2733
+Printer 2001 assigned new job 220 at time 39.2733
+New job 40 at time 39.39
+No available printers - put in print queue
+Printer 1001 finished job 39 at time 39.57
+Printer 1001 assigned new job 40 at time 39.57
+New job 221 at time 39.6
+No available printers - put in print queue
+Printer 2001 finished job 220 at time 39.6067
+Printer 2001 assigned new job 221 at time 39.6067
+Printer 2008 finished job 218 at time 39.64
+New job 222 at time 39.93
+Job assigned to printer 2008 at time 39.93
+Printer 2001 finished job 221 at time 39.94
+New job 417 at time 39.96
+Job assigned to printer 2001 at time 39.96
+New job 223 at time 40.26
+No available printers - put in print queue
+New job 41 at time 40.4
+No available printers - put in print queue
+Printer 1001 finished job 40 at time 40.57
+Printer 1001 assigned new job 223 at time 40.57
+New job 224 at time 40.59
+No available printers - put in print queue
+Printer 2001 finished job 417 at time 40.7933
+Printer 2001 assigned new job 224 at time 40.7933
+New job 225 at time 40.92
+No available printers - put in print queue
+Printer 2008 finished job 222 at time 40.93
+Printer 2008 assigned new job 225 at time 40.93
+Printer 1001 finished job 223 at time 41.07
+Printer 1001 assigned new job 41 at time 41.07
+Printer 2001 finished job 224 at time 41.1267
+New job 226 at time 41.25
+Job assigned to printer 2001 at time 41.25
+New job 42 at time 41.41
+No available printers - put in print queue
+New job 227 at time 41.58
+No available printers - put in print queue
+Printer 2001 finished job 226 at time 41.5833
+Printer 2001 assigned new job 227 at time 41.5833
+New job 228 at time 41.91
+No available printers - put in print queue
+Printer 2001 finished job 227 at time 41.9167
+Printer 2001 assigned new job 228 at time 41.9167
+Printer 2008 finished job 225 at time 41.93
+Printer 2008 assigned new job 42 at time 41.93
+Printer 1001 finished job 41 at time 42.07
+New job 229 at time 42.24
+Job assigned to printer 1001 at time 42.24
+Printer 2001 finished job 228 at time 42.25
+New job 43 at time 42.42
+Job assigned to printer 2001 at time 42.42
+New job 230 at time 42.57
+No available printers - put in print queue
+Printer 1001 finished job 229 at time 42.74
+Printer 1001 assigned new job 230 at time 42.74
+New job 231 at time 42.9
+No available printers - put in print queue
+Printer 2001 finished job 43 at time 43.0867
+Printer 2001 assigned new job 231 at time 43.0867
+New job 232 at time 43.23
+No available printers - put in print queue
+Printer 1001 finished job 230 at time 43.24
+Printer 1001 assigned new job 232 at time 43.24
+New job 418 at time 43.29
+No available printers - put in print queue
+Printer 2001 finished job 231 at time 43.42
+Printer 2001 assigned new job 418 at time 43.42
+New job 44 at time 43.43
+No available printers - put in print queue
+New job 233 at time 43.56
+No available printers - put in print queue
+Printer 1001 finished job 232 at time 43.74
+Printer 1001 assigned new job 233 at time 43.74
+New job 234 at time 43.89
+No available printers - put in print queue
+Printer 2008 finished job 42 at time 43.93
+Printer 2008 assigned new job 234 at time 43.93
+New job 235 at time 44.22
+No available printers - put in print queue
+Printer 1001 finished job 233 at time 44.24
+Printer 1001 assigned new job 235 at time 44.24
+Printer 2001 finished job 418 at time 44.2533
+Printer 2001 assigned new job 44 at time 44.2533
+New job 45 at time 44.44
+No available printers - put in print queue
+New job 236 at time 44.55
+No available printers - put in print queue
+Printer 1001 finished job 235 at time 44.74
+Printer 1001 assigned new job 236 at time 44.74
+New job 237 at time 44.88
+No available printers - put in print queue
+Printer 2001 finished job 44 at time 44.92
+Printer 2001 assigned new job 237 at time 44.92
+Printer 2008 finished job 234 at time 44.93
+Printer 2008 assigned new job 45 at time 44.93
+New job 238 at time 45.21
+No available printers - put in print queue
+Printer 1001 finished job 236 at time 45.24
+Printer 1001 assigned new job 238 at time 45.24
+Printer 2001 finished job 237 at time 45.2533
+New job 46 at time 45.45
+Job assigned to printer 2001 at time 45.45
+New job 239 at time 45.54
+No available printers - put in print queue
+Printer 1001 finished job 238 at time 45.74
+Printer 1001 assigned new job 239 at time 45.74
+New job 240 at time 45.87
+No available printers - put in print queue
+Printer 2001 finished job 46 at time 46.1167
+Printer 2001 assigned new job 240 at time 46.1167
+New job 241 at time 46.2
+No available printers - put in print queue
+Printer 1001 finished job 239 at time 46.24
+Printer 1001 assigned new job 241 at time 46.24
+Printer 2001 finished job 240 at time 46.45
+New job 47 at time 46.46
+Job assigned to printer 2001 at time 46.46
+New job 242 at time 46.53
+No available printers - put in print queue
+New job 419 at time 46.62
+No available printers - put in print queue
+Printer 1001 finished job 241 at time 46.74
+Printer 1001 assigned new job 419 at time 46.74
+New job 243 at time 46.86
+No available printers - put in print queue
+Printer 2008 finished job 45 at time 46.93
+Printer 2008 assigned new job 242 at time 46.93
+Printer 2001 finished job 47 at time 47.1267
+Printer 2001 assigned new job 243 at time 47.1267
+New job 244 at time 47.19
+No available printers - put in print queue
+Printer 2001 finished job 243 at time 47.46
+Printer 2001 assigned new job 244 at time 47.46
+New job 48 at time 47.47
+No available printers - put in print queue
+New job 245 at time 47.52
+No available printers - put in print queue
+Printer 2001 finished job 244 at time 47.7933
+Printer 2001 assigned new job 245 at time 47.7933
+New job 246 at time 47.85
+No available printers - put in print queue
+Printer 2008 finished job 242 at time 47.93
+Printer 2008 assigned new job 246 at time 47.93
+Printer 1001 finished job 419 at time 47.99
+Printer 1001 assigned new job 48 at time 47.99
+Printer 2001 finished job 245 at time 48.1267
+New job 247 at time 48.18
+Job assigned to printer 2001 at time 48.18
+New job 49 at time 48.48
+No available printers - put in print queue
+New job 248 at time 48.51
+No available printers - put in print queue
+Printer 2001 finished job 247 at time 48.5133
+Printer 2001 assigned new job 248 at time 48.5133
+New job 249 at time 48.84
+No available printers - put in print queue
+Printer 2001 finished job 248 at time 48.8467
+Printer 2001 assigned new job 249 at time 48.8467
+Printer 2008 finished job 246 at time 48.93
+Printer 2008 assigned new job 49 at time 48.93
+Printer 1001 finished job 48 at time 48.99
+New job 250 at time 49.17
+Job assigned to printer 1001 at time 49.17
+Printer 2001 finished job 249 at time 49.18
+New job 50 at time 49.49
+Job assigned to printer 2001 at time 49.49
+New job 251 at time 49.5
+No available printers - put in print queue
+Printer 1001 finished job 250 at time 49.67
+Printer 1001 assigned new job 251 at time 49.67
+New job 252 at time 49.83
+No available printers - put in print queue
+New job 420 at time 49.95
+No available printers - put in print queue
+Printer 2001 finished job 50 at time 50.1567
+Printer 2001 assigned new job 420 at time 50.1567
+New job 253 at time 50.16
+No available printers - put in print queue
+Printer 1001 finished job 251 at time 50.17
+Printer 1001 assigned new job 252 at time 50.17
+New job 254 at time 50.49
+No available printers - put in print queue
+New job 51 at time 50.5
+No available printers - put in print queue
+Printer 1001 finished job 252 at time 50.67
+Printer 1001 assigned new job 253 at time 50.67
+New job 255 at time 50.82
+No available printers - put in print queue
+Printer 2008 finished job 49 at time 50.93
+Printer 2008 assigned new job 254 at time 50.93
+Printer 2001 finished job 420 at time 50.99
+Printer 2001 assigned new job 255 at time 50.99
+New job 256 at time 51.15
+No available printers - put in print queue
+Printer 1001 finished job 253 at time 51.17
+Printer 1001 assigned new job 256 at time 51.17
+Printer 2001 finished job 255 at time 51.3233
+Printer 2001 assigned new job 51 at time 51.3233
+New job 257 at time 51.48
+No available printers - put in print queue
+New job 52 at time 51.51
+No available printers - put in print queue
+Printer 1001 finished job 256 at time 51.67
+Printer 1001 assigned new job 257 at time 51.67
+New job 258 at time 51.81
+No available printers - put in print queue
+Printer 2008 finished job 254 at time 51.93
+Printer 2008 assigned new job 258 at time 51.93
+Printer 2001 finished job 51 at time 51.99
+Printer 2001 assigned new job 52 at time 51.99
+New job 259 at time 52.14
+No available printers - put in print queue
+Printer 1001 finished job 257 at time 52.17
+Printer 1001 assigned new job 259 at time 52.17
+New job 260 at time 52.47
+No available printers - put in print queue
+New job 53 at time 52.52
+No available printers - put in print queue
+Printer 2001 finished job 52 at time 52.6567
+Printer 2001 assigned new job 260 at time 52.6567
+Printer 1001 finished job 259 at time 52.67
+Printer 1001 assigned new job 53 at time 52.67
+New job 261 at time 52.8
+No available printers - put in print queue
+Printer 2008 finished job 258 at time 52.93
+Printer 2008 assigned new job 261 at time 52.93
+Printer 2001 finished job 260 at time 52.99
+New job 262 at time 53.13
+Job assigned to printer 2001 at time 53.13
+New job 421 at time 53.28
+No available printers - put in print queue
+New job 263 at time 53.46
+No available printers - put in print queue
+Printer 2001 finished job 262 at time 53.4633
+Printer 2001 assigned new job 421 at time 53.4633
+New job 54 at time 53.53
+No available printers - put in print queue
+Printer 1001 finished job 53 at time 53.67
+Printer 1001 assigned new job 263 at time 53.67
+New job 264 at time 53.79
+No available printers - put in print queue
+Printer 2008 finished job 261 at time 53.93
+Printer 2008 assigned new job 264 at time 53.93
+New job 265 at time 54.12
+No available printers - put in print queue
+Printer 1001 finished job 263 at time 54.17
+Printer 1001 assigned new job 265 at time 54.17
+Printer 2001 finished job 421 at time 54.2967
+Printer 2001 assigned new job 54 at time 54.2967
+New job 266 at time 54.45
+No available printers - put in print queue
+New job 55 at time 54.54
+No available printers - put in print queue
+Printer 1001 finished job 265 at time 54.67
+Printer 1001 assigned new job 266 at time 54.67
+New job 267 at time 54.78
+No available printers - put in print queue
+Printer 2008 finished job 264 at time 54.93
+Printer 2008 assigned new job 267 at time 54.93
+Printer 2001 finished job 54 at time 54.9633
+Printer 2001 assigned new job 55 at time 54.9633
+New job 268 at time 55.11
+No available printers - put in print queue
+Printer 1001 finished job 266 at time 55.17
+Printer 1001 assigned new job 268 at time 55.17
+New job 269 at time 55.44
+No available printers - put in print queue
+New job 56 at time 55.55
+No available printers - put in print queue
+Printer 2001 finished job 55 at time 55.63
+Printer 2001 assigned new job 269 at time 55.63
+Printer 1001 finished job 268 at time 55.67
+Printer 1001 assigned new job 56 at time 55.67
+New job 270 at time 55.77
+No available printers - put in print queue
+Printer 2008 finished job 267 at time 55.93
+Printer 2008 assigned new job 270 at time 55.93
+Printer 2001 finished job 269 at time 55.9633
+New job 271 at time 56.1
+Job assigned to printer 2001 at time 56.1
+New job 272 at time 56.43
+No available printers - put in print queue
+Printer 2001 finished job 271 at time 56.4333
+Printer 2001 assigned new job 272 at time 56.4333
+New job 57 at time 56.56
+No available printers - put in print queue
+New job 422 at time 56.61
+No available printers - put in print queue
+Printer 1001 finished job 56 at time 56.67
+Printer 1001 assigned new job 422 at time 56.67
+New job 273 at time 56.76
+No available printers - put in print queue
+Printer 2001 finished job 272 at time 56.7667
+Printer 2001 assigned new job 273 at time 56.7667
+Printer 2008 finished job 270 at time 56.93
+Printer 2008 assigned new job 57 at time 56.93
+New job 274 at time 57.09
+No available printers - put in print queue
+Printer 2001 finished job 273 at time 57.1
+Printer 2001 assigned new job 274 at time 57.1
+New job 275 at time 57.42
+No available printers - put in print queue
+Printer 2001 finished job 274 at time 57.4333
+Printer 2001 assigned new job 275 at time 57.4333
+New job 58 at time 57.57
+No available printers - put in print queue
+New job 276 at time 57.75
+No available printers - put in print queue
+Printer 2001 finished job 275 at time 57.7667
+Printer 2001 assigned new job 276 at time 57.7667
+Printer 1001 finished job 422 at time 57.92
+Printer 1001 assigned new job 58 at time 57.92
+New job 277 at time 58.08
+No available printers - put in print queue
+Printer 2001 finished job 276 at time 58.1
+Printer 2001 assigned new job 277 at time 58.1
+New job 278 at time 58.41
+No available printers - put in print queue
+Printer 2001 finished job 277 at time 58.4333
+Printer 2001 assigned new job 278 at time 58.4333
+New job 59 at time 58.58
+No available printers - put in print queue
+New job 279 at time 58.74
+No available printers - put in print queue
+Printer 2001 finished job 278 at time 58.7667
+Printer 2001 assigned new job 279 at time 58.7667
+Printer 1001 finished job 58 at time 58.92
+Printer 1001 assigned new job 59 at time 58.92
+Printer 2008 finished job 57 at time 58.93
+New job 280 at time 59.07
+Job assigned to printer 2008 at time 59.07
+Printer 2001 finished job 279 at time 59.1
+New job 281 at time 59.4
+Job assigned to printer 2001 at time 59.4
+New job 60 at time 59.59
+No available printers - put in print queue
+New job 282 at time 59.73
+No available printers - put in print queue
+Printer 2001 finished job 281 at time 59.7333
+Printer 2001 assigned new job 282 at time 59.7333
+Printer 1001 finished job 59 at time 59.92
+Printer 1001 assigned new job 60 at time 59.92
+New job 423 at time 59.94
+No available printers - put in print queue
+New job 283 at time 60.06
+No available printers - put in print queue
+Printer 2001 finished job 282 at time 60.0667
+Printer 2001 assigned new job 423 at time 60.0667
+Printer 2008 finished job 280 at time 60.07
+Printer 2008 assigned new job 283 at time 60.07
+New job 284 at time 60.39
+No available printers - put in print queue
+New job 61 at time 60.6
+No available printers - put in print queue
+New job 285 at time 60.72
+No available printers - put in print queue
+Printer 2001 finished job 423 at time 60.9
+Printer 2001 assigned new job 284 at time 60.9
+Printer 1001 finished job 60 at time 60.92
+Printer 1001 assigned new job 285 at time 60.92
+New job 286 at time 61.05
+No available printers - put in print queue
+Printer 2008 finished job 283 at time 61.07
+Printer 2008 assigned new job 286 at time 61.07
+Printer 2001 finished job 284 at time 61.2333
+Printer 2001 assigned new job 61 at time 61.2333
+New job 287 at time 61.38
+No available printers - put in print queue
+Printer 1001 finished job 285 at time 61.42
+Printer 1001 assigned new job 287 at time 61.42
+New job 62 at time 61.61
+No available printers - put in print queue
+New job 288 at time 61.71
+No available printers - put in print queue
+Printer 2001 finished job 61 at time 61.9
+Printer 2001 assigned new job 288 at time 61.9
+Printer 1001 finished job 287 at time 61.92
+Printer 1001 assigned new job 62 at time 61.92
+New job 289 at time 62.04
+No available printers - put in print queue
+Printer 2008 finished job 286 at time 62.07
+Printer 2008 assigned new job 289 at time 62.07
+Printer 2001 finished job 288 at time 62.2333
+New job 290 at time 62.37
+Job assigned to printer 2001 at time 62.37
+New job 63 at time 62.62
+No available printers - put in print queue
+New job 291 at time 62.7
+No available printers - put in print queue
+Printer 2001 finished job 290 at time 62.7033
+Printer 2001 assigned new job 291 at time 62.7033
+Printer 1001 finished job 62 at time 62.92
+Printer 1001 assigned new job 63 at time 62.92
+New job 292 at time 63.03
+No available printers - put in print queue
+Printer 2001 finished job 291 at time 63.0367
+Printer 2001 assigned new job 292 at time 63.0367
+Printer 2008 finished job 289 at time 63.07
+New job 424 at time 63.27
+Job assigned to printer 2008 at time 63.27
+New job 293 at time 63.36
+No available printers - put in print queue
+Printer 2001 finished job 292 at time 63.37
+Printer 2001 assigned new job 293 at time 63.37
+New job 64 at time 63.63
+No available printers - put in print queue
+New job 294 at time 63.69
+No available printers - put in print queue
+Printer 2001 finished job 293 at time 63.7033
+Printer 2001 assigned new job 294 at time 63.7033
+Printer 1001 finished job 63 at time 63.92
+Printer 1001 assigned new job 64 at time 63.92
+New job 295 at time 64.02
+No available printers - put in print queue
+Printer 2001 finished job 294 at time 64.0367
+Printer 2001 assigned new job 295 at time 64.0367
+New job 296 at time 64.35
+No available printers - put in print queue
+Printer 2001 finished job 295 at time 64.37
+Printer 2001 assigned new job 296 at time 64.37
+New job 65 at time 64.64
+No available printers - put in print queue
+New job 297 at time 64.68
+No available printers - put in print queue
+Printer 2001 finished job 296 at time 64.7033
+Printer 2001 assigned new job 297 at time 64.7033
+Printer 1001 finished job 64 at time 64.92
+Printer 1001 assigned new job 65 at time 64.92
+New job 298 at time 65.01
+No available printers - put in print queue
+Printer 2001 finished job 297 at time 65.0367
+Printer 2001 assigned new job 298 at time 65.0367
+New job 299 at time 65.34
+No available printers - put in print queue
+Printer 2001 finished job 298 at time 65.37
+Printer 2001 assigned new job 299 at time 65.37
+New job 66 at time 65.65
+No available printers - put in print queue
+New job 300 at time 65.67
+No available printers - put in print queue
+Printer 2001 finished job 299 at time 65.7033
+Printer 2001 assigned new job 300 at time 65.7033
+Printer 2008 finished job 424 at time 65.77
+Printer 2008 assigned new job 66 at time 65.77
+Printer 1001 finished job 65 at time 65.92
+New job 301 at time 66
+Job assigned to printer 1001 at time 66
+Printer 2001 finished job 300 at time 66.0367
+New job 302 at time 66.33
+Job assigned to printer 2001 at time 66.33
+Printer 1001 finished job 301 at time 66.5
+New job 425 at time 66.6
+Job assigned to printer 1001 at time 66.6
+New job 303 at time 66.66
+No available printers - put in print queue
+New job 67 at time 66.66
+No available printers - put in print queue
+Printer 2001 finished job 302 at time 66.6633
+Printer 2001 assigned new job 303 at time 66.6633
+New job 304 at time 66.99
+No available printers - put in print queue
+Printer 2001 finished job 303 at time 66.9967
+Printer 2001 assigned new job 304 at time 66.9967
+New job 305 at time 67.32
+No available printers - put in print queue
+Printer 2001 finished job 304 at time 67.33
+Printer 2001 assigned new job 305 at time 67.33
+New job 306 at time 67.65
+No available printers - put in print queue
+Printer 2001 finished job 305 at time 67.6633
+Printer 2001 assigned new job 306 at time 67.6633
+New job 68 at time 67.67
+No available printers - put in print queue
+Printer 2008 finished job 66 at time 67.77
+Printer 2008 assigned new job 67 at time 67.77
+Printer 1001 finished job 425 at time 67.85
+Printer 1001 assigned new job 68 at time 67.85
+New job 307 at time 67.98
+No available printers - put in print queue
+Printer 2001 finished job 306 at time 67.9967
+Printer 2001 assigned new job 307 at time 67.9967
+New job 308 at time 68.31
+No available printers - put in print queue
+Printer 2001 finished job 307 at time 68.33
+Printer 2001 assigned new job 308 at time 68.33
+New job 309 at time 68.64
+No available printers - put in print queue
+Printer 2001 finished job 308 at time 68.6633
+Printer 2001 assigned new job 309 at time 68.6633
+New job 69 at time 68.68
+No available printers - put in print queue
+Printer 1001 finished job 68 at time 68.85
+Printer 1001 assigned new job 69 at time 68.85
+New job 310 at time 68.97
+No available printers - put in print queue
+Printer 2001 finished job 309 at time 68.9967
+Printer 2001 assigned new job 310 at time 68.9967
+New job 311 at time 69.3
+No available printers - put in print queue
+Printer 2001 finished job 310 at time 69.33
+Printer 2001 assigned new job 311 at time 69.33
+New job 312 at time 69.63
+No available printers - put in print queue
+Printer 2001 finished job 311 at time 69.6633
+Printer 2001 assigned new job 312 at time 69.6633
+New job 70 at time 69.69
+No available printers - put in print queue
+Printer 2008 finished job 67 at time 69.77
+Printer 2008 assigned new job 70 at time 69.77
+Printer 1001 finished job 69 at time 69.85
+New job 426 at time 69.93
+Job assigned to printer 1001 at time 69.93
+New job 313 at time 69.96
+No available printers - put in print queue
+Printer 2001 finished job 312 at time 69.9967
+Printer 2001 assigned new job 313 at time 69.9967
+New job 314 at time 70.29
+No available printers - put in print queue
+Printer 2001 finished job 313 at time 70.33
+Printer 2001 assigned new job 314 at time 70.33
+New job 315 at time 70.62
+No available printers - put in print queue
+Printer 2001 finished job 314 at time 70.6633
+Printer 2001 assigned new job 315 at time 70.6633
+New job 71 at time 70.7
+No available printers - put in print queue
+New job 316 at time 70.95
+No available printers - put in print queue
+Printer 2001 finished job 315 at time 70.9967
+Printer 2001 assigned new job 316 at time 70.9967
+Printer 1001 finished job 426 at time 71.18
+Printer 1001 assigned new job 71 at time 71.18
+New job 317 at time 71.28
+No available printers - put in print queue
+Printer 2001 finished job 316 at time 71.33
+Printer 2001 assigned new job 317 at time 71.33
+New job 318 at time 71.61
+No available printers - put in print queue
+Printer 2001 finished job 317 at time 71.6633
+Printer 2001 assigned new job 318 at time 71.6633
+New job 72 at time 71.71
+No available printers - put in print queue
+Printer 2008 finished job 70 at time 71.77
+Printer 2008 assigned new job 72 at time 71.77
+New job 319 at time 71.94
+No available printers - put in print queue
+Printer 2001 finished job 318 at time 71.9967
+Printer 2001 assigned new job 319 at time 71.9967
+Printer 1001 finished job 71 at time 72.18
+New job 320 at time 72.27
+Job assigned to printer 1001 at time 72.27
+Printer 2001 finished job 319 at time 72.33
+New job 321 at time 72.6
+Job assigned to printer 2001 at time 72.6
+New job 73 at time 72.72
+No available printers - put in print queue
+Printer 1001 finished job 320 at time 72.77
+Printer 1001 assigned new job 73 at time 72.77
+New job 322 at time 72.93
+No available printers - put in print queue
+Printer 2001 finished job 321 at time 72.9333
+Printer 2001 assigned new job 322 at time 72.9333
+New job 323 at time 73.26
+No available printers - put in print queue
+New job 427 at time 73.26
+No available printers - put in print queue
+Printer 2001 finished job 322 at time 73.2667
+Printer 2001 assigned new job 427 at time 73.2667
+New job 324 at time 73.59
+No available printers - put in print queue
+New job 74 at time 73.73
+No available printers - put in print queue
+Printer 1001 finished job 73 at time 73.77
+Printer 1001 assigned new job 323 at time 73.77
+Printer 2008 finished job 72 at time 73.77
+Printer 2008 assigned new job 324 at time 73.77
+New job 325 at time 73.92
+No available printers - put in print queue
+Printer 2001 finished job 427 at time 74.1
+Printer 2001 assigned new job 325 at time 74.1
+New job 326 at time 74.25
+No available printers - put in print queue
+Printer 1001 finished job 323 at time 74.27
+Printer 1001 assigned new job 326 at time 74.27
+Printer 2001 finished job 325 at time 74.4333
+Printer 2001 assigned new job 74 at time 74.4333
+New job 327 at time 74.58
+No available printers - put in print queue
+New job 75 at time 74.74
+No available printers - put in print queue
+Printer 1001 finished job 326 at time 74.77
+Printer 1001 assigned new job 327 at time 74.77
+Printer 2008 finished job 324 at time 74.77
+Printer 2008 assigned new job 75 at time 74.77
+New job 328 at time 74.91
+No available printers - put in print queue
+Printer 2001 finished job 74 at time 75.1
+Printer 2001 assigned new job 328 at time 75.1
+New job 329 at time 75.24
+No available printers - put in print queue
+Printer 1001 finished job 327 at time 75.27
+Printer 1001 assigned new job 329 at time 75.27
+Printer 2001 finished job 328 at time 75.4333
+New job 330 at time 75.57
+Job assigned to printer 2001 at time 75.57
+New job 76 at time 75.75
+No available printers - put in print queue
+Printer 1001 finished job 329 at time 75.77
+Printer 1001 assigned new job 76 at time 75.77
+New job 331 at time 75.9
+No available printers - put in print queue
+Printer 2001 finished job 330 at time 75.9033
+Printer 2001 assigned new job 331 at time 75.9033
+New job 332 at time 76.23
+No available printers - put in print queue
+Printer 2001 finished job 331 at time 76.2367
+Printer 2001 assigned new job 332 at time 76.2367
+New job 333 at time 76.56
+No available printers - put in print queue
+Printer 2001 finished job 332 at time 76.57
+Printer 2001 assigned new job 333 at time 76.57
+New job 428 at time 76.59
+No available printers - put in print queue
+New job 77 at time 76.76
+No available printers - put in print queue
+Printer 1001 finished job 76 at time 76.77
+Printer 1001 assigned new job 428 at time 76.77
+Printer 2008 finished job 75 at time 76.77
+Printer 2008 assigned new job 77 at time 76.77
+New job 334 at time 76.89
+No available printers - put in print queue
+Printer 2001 finished job 333 at time 76.9033
+Printer 2001 assigned new job 334 at time 76.9033
+New job 335 at time 77.22
+No available printers - put in print queue
+Printer 2001 finished job 334 at time 77.2367
+Printer 2001 assigned new job 335 at time 77.2367
+New job 336 at time 77.55
+No available printers - put in print queue
+Printer 2001 finished job 335 at time 77.57
+Printer 2001 assigned new job 336 at time 77.57
+New job 78 at time 77.77
+No available printers - put in print queue
+New job 337 at time 77.88
+No available printers - put in print queue
+Printer 2001 finished job 336 at time 77.9033
+Printer 2001 assigned new job 337 at time 77.9033
+Printer 1001 finished job 428 at time 78.02
+Printer 1001 assigned new job 78 at time 78.02
+New job 338 at time 78.21
+No available printers - put in print queue
+Printer 2001 finished job 337 at time 78.2367
+Printer 2001 assigned new job 338 at time 78.2367
+New job 339 at time 78.54
+No available printers - put in print queue
+Printer 2001 finished job 338 at time 78.57
+Printer 2001 assigned new job 339 at time 78.57
+Printer 2008 finished job 77 at time 78.77
+New job 79 at time 78.78
+Job assigned to printer 2008 at time 78.78
+New job 340 at time 78.87
+No available printers - put in print queue
+Printer 2001 finished job 339 at time 78.9033
+Printer 2001 assigned new job 340 at time 78.9033
+Printer 1001 finished job 78 at time 79.02
+New job 341 at time 79.2
+Job assigned to printer 1001 at time 79.2
+Printer 2001 finished job 340 at time 79.2367
+New job 342 at time 79.53
+Job assigned to printer 2001 at time 79.53
+Printer 1001 finished job 341 at time 79.7
+New job 80 at time 79.79
+Job assigned to printer 1001 at time 79.79
+New job 343 at time 79.86
+No available printers - put in print queue
+Printer 2001 finished job 342 at time 79.8633
+Printer 2001 assigned new job 343 at time 79.8633
+New job 429 at time 79.92
+No available printers - put in print queue
+New job 344 at time 80.19
+No available printers - put in print queue
+Printer 2001 finished job 343 at time 80.1967
+Printer 2001 assigned new job 429 at time 80.1967
+New job 345 at time 80.52
+No available printers - put in print queue
+Printer 2008 finished job 79 at time 80.78
+Printer 2008 assigned new job 344 at time 80.78
+Printer 1001 finished job 80 at time 80.79
+Printer 1001 assigned new job 345 at time 80.79
+New job 81 at time 80.8
+No available printers - put in print queue
+New job 346 at time 80.85
+No available printers - put in print queue
+Printer 2001 finished job 429 at time 81.03
+Printer 2001 assigned new job 346 at time 81.03
+New job 347 at time 81.18
+No available printers - put in print queue
+Printer 1001 finished job 345 at time 81.29
+Printer 1001 assigned new job 347 at time 81.29
+Printer 2001 finished job 346 at time 81.3633
+Printer 2001 assigned new job 81 at time 81.3633
+New job 348 at time 81.51
+No available printers - put in print queue
+Printer 2008 finished job 344 at time 81.78
+Printer 2008 assigned new job 348 at time 81.78
+Printer 1001 finished job 347 at time 81.79
+New job 82 at time 81.81
+Job assigned to printer 1001 at time 81.81
+New job 349 at time 81.84
+No available printers - put in print queue
+Printer 2001 finished job 81 at time 82.03
+Printer 2001 assigned new job 349 at time 82.03
+New job 350 at time 82.17
+No available printers - put in print queue
+Printer 2001 finished job 349 at time 82.3633
+Printer 2001 assigned new job 350 at time 82.3633
+New job 351 at time 82.5
+No available printers - put in print queue
+Printer 2001 finished job 350 at time 82.6967
+Printer 2001 assigned new job 351 at time 82.6967
+Printer 2008 finished job 348 at time 82.78
+Printer 1001 finished job 82 at time 82.81
+New job 83 at time 82.82
+Job assigned to printer 1001 at time 82.82
+New job 352 at time 82.83
+Job assigned to printer 2008 at time 82.83
+Printer 2001 finished job 351 at time 83.03
+New job 353 at time 83.16
+Job assigned to printer 2001 at time 83.16
+New job 430 at time 83.25
+No available printers - put in print queue
+New job 354 at time 83.49
+No available printers - put in print queue
+Printer 2001 finished job 353 at time 83.4933
+Printer 2001 assigned new job 430 at time 83.4933
+New job 355 at time 83.82
+No available printers - put in print queue
+Printer 1001 finished job 83 at time 83.82
+Printer 1001 assigned new job 354 at time 83.82
+Printer 2008 finished job 352 at time 83.83
+Printer 2008 assigned new job 355 at time 83.83
+New job 84 at time 83.83
+No available printers - put in print queue
+New job 356 at time 84.15
+No available printers - put in print queue
+Printer 1001 finished job 354 at time 84.32
+Printer 1001 assigned new job 356 at time 84.32
+Printer 2001 finished job 430 at time 84.3267
+Printer 2001 assigned new job 84 at time 84.3267
+New job 357 at time 84.48
+No available printers - put in print queue
+New job 358 at time 84.81
+No available printers - put in print queue
+Printer 1001 finished job 356 at time 84.82
+Printer 1001 assigned new job 357 at time 84.82
+Printer 2008 finished job 355 at time 84.83
+Printer 2008 assigned new job 358 at time 84.83
+New job 85 at time 84.84
+No available printers - put in print queue
+Printer 2001 finished job 84 at time 84.9933
+Printer 2001 assigned new job 85 at time 84.9933
+New job 359 at time 85.14
+No available printers - put in print queue
+Printer 1001 finished job 357 at time 85.32
+Printer 1001 assigned new job 359 at time 85.32
+New job 360 at time 85.47
+No available printers - put in print queue
+Printer 2001 finished job 85 at time 85.66
+Printer 2001 assigned new job 360 at time 85.66
+New job 361 at time 85.8
+No available printers - put in print queue
+Printer 1001 finished job 359 at time 85.82
+Printer 1001 assigned new job 361 at time 85.82
+Printer 2008 finished job 358 at time 85.83
+New job 86 at time 85.85
+Job assigned to printer 2008 at time 85.85
+Printer 2001 finished job 360 at time 85.9933
+New job 362 at time 86.13
+Job assigned to printer 2001 at time 86.13
+Printer 1001 finished job 361 at time 86.32
+New job 363 at time 86.46
+Job assigned to printer 1001 at time 86.46
+Printer 2001 finished job 362 at time 86.4633
+New job 431 at time 86.58
+Job assigned to printer 2001 at time 86.58
+New job 364 at time 86.79
+No available printers - put in print queue
+New job 87 at time 86.86
+No available printers - put in print queue
+Printer 1001 finished job 363 at time 86.96
+Printer 1001 assigned new job 364 at time 86.96
+New job 365 at time 87.12
+No available printers - put in print queue
+Printer 2001 finished job 431 at time 87.4133
+Printer 2001 assigned new job 365 at time 87.4133
+New job 366 at time 87.45
+No available printers - put in print queue
+Printer 1001 finished job 364 at time 87.46
+Printer 1001 assigned new job 366 at time 87.46
+Printer 2001 finished job 365 at time 87.7467
+Printer 2001 assigned new job 87 at time 87.7467
+New job 367 at time 87.78
+No available printers - put in print queue
+Printer 2008 finished job 86 at time 87.85
+Printer 2008 assigned new job 367 at time 87.85
+New job 88 at time 87.87
+No available printers - put in print queue
+Printer 1001 finished job 366 at time 87.96
+Printer 1001 assigned new job 88 at time 87.96
+New job 368 at time 88.11
+No available printers - put in print queue
+Printer 2001 finished job 87 at time 88.4133
+Printer 2001 assigned new job 368 at time 88.4133
+New job 369 at time 88.44
+No available printers - put in print queue
+Printer 2001 finished job 368 at time 88.7467
+Printer 2001 assigned new job 369 at time 88.7467
+New job 370 at time 88.77
+No available printers - put in print queue
+Printer 2008 finished job 367 at time 88.85
+Printer 2008 assigned new job 370 at time 88.85
+New job 89 at time 88.88
+No available printers - put in print queue
+Printer 1001 finished job 88 at time 88.96
+Printer 1001 assigned new job 89 at time 88.96
+Printer 2001 finished job 369 at time 89.08
+New job 371 at time 89.1
+Job assigned to printer 2001 at time 89.1
+New job 372 at time 89.43
+No available printers - put in print queue
+Printer 2001 finished job 371 at time 89.4333
+Printer 2001 assigned new job 372 at time 89.4333
+New job 373 at time 89.76
+No available printers - put in print queue
+Printer 2001 finished job 372 at time 89.7667
+Printer 2001 assigned new job 373 at time 89.7667
+Printer 2008 finished job 370 at time 89.85
+New job 90 at time 89.89
+Job assigned to printer 2008 at time 89.89
+New job 432 at time 89.91
+No available printers - put in print queue
+Printer 1001 finished job 89 at time 89.96
+Printer 1001 assigned new job 432 at time 89.96
+New job 374 at time 90.09
+No available printers - put in print queue
+Printer 2001 finished job 373 at time 90.1
+Printer 2001 assigned new job 374 at time 90.1
+New job 375 at time 90.42
+No available printers - put in print queue
+Printer 2001 finished job 374 at time 90.4333
+Printer 2001 assigned new job 375 at time 90.4333
+New job 376 at time 90.75
+No available printers - put in print queue
+Printer 2001 finished job 375 at time 90.7667
+Printer 2001 assigned new job 376 at time 90.7667
+New job 91 at time 90.9
+No available printers - put in print queue
+New job 377 at time 91.08
+No available printers - put in print queue
+Printer 2001 finished job 376 at time 91.1
+Printer 2001 assigned new job 377 at time 91.1
+Printer 1001 finished job 432 at time 91.21
+Printer 1001 assigned new job 91 at time 91.21
+New job 378 at time 91.41
+No available printers - put in print queue
+Printer 2001 finished job 377 at time 91.4333
+Printer 2001 assigned new job 378 at time 91.4333
+New job 379 at time 91.74
+No available printers - put in print queue
+Printer 2001 finished job 378 at time 91.7667
+Printer 2001 assigned new job 379 at time 91.7667
+Printer 2008 finished job 90 at time 91.89
+New job 92 at time 91.91
+Job assigned to printer 2008 at time 91.91
+New job 380 at time 92.07
+No available printers - put in print queue
+Printer 2001 finished job 379 at time 92.1
+Printer 2001 assigned new job 380 at time 92.1
+Printer 1001 finished job 91 at time 92.21
+New job 381 at time 92.4
+Job assigned to printer 1001 at time 92.4
+Printer 2001 finished job 380 at time 92.4333
+New job 382 at time 92.73
+Job assigned to printer 2001 at time 92.73
+Printer 1001 finished job 381 at time 92.9
+New job 93 at time 92.92
+Job assigned to printer 1001 at time 92.92
+New job 383 at time 93.06
+No available printers - put in print queue
+Printer 2001 finished job 382 at time 93.0633
+Printer 2001 assigned new job 383 at time 93.0633
+New job 433 at time 93.24
+No available printers - put in print queue
+New job 384 at time 93.39
+No available printers - put in print queue
+Printer 2001 finished job 383 at time 93.3967
+Printer 2001 assigned new job 433 at time 93.3967
+New job 385 at time 93.72
+No available printers - put in print queue
+Printer 2008 finished job 92 at time 93.91
+Printer 2008 assigned new job 384 at time 93.91
+Printer 1001 finished job 93 at time 93.92
+Printer 1001 assigned new job 385 at time 93.92
+New job 94 at time 93.93
+No available printers - put in print queue
+New job 386 at time 94.05
+No available printers - put in print queue
+Printer 2001 finished job 433 at time 94.23
+Printer 2001 assigned new job 386 at time 94.23
+New job 387 at time 94.38
+No available printers - put in print queue
+Printer 1001 finished job 385 at time 94.42
+Printer 1001 assigned new job 387 at time 94.42
+Printer 2001 finished job 386 at time 94.5633
+Printer 2001 assigned new job 94 at time 94.5633
+New job 388 at time 94.71
+No available printers - put in print queue
+Printer 2008 finished job 384 at time 94.91
+Printer 2008 assigned new job 388 at time 94.91
+Printer 1001 finished job 387 at time 94.92
+New job 95 at time 94.94
+Job assigned to printer 1001 at time 94.94
+New job 389 at time 95.04
+No available printers - put in print queue
+Printer 2001 finished job 94 at time 95.23
+Printer 2001 assigned new job 389 at time 95.23
+New job 390 at time 95.37
+No available printers - put in print queue
+Printer 2001 finished job 389 at time 95.5633
+Printer 2001 assigned new job 390 at time 95.5633
+New job 391 at time 95.7
+No available printers - put in print queue
+Printer 2001 finished job 390 at time 95.8967
+Printer 2001 assigned new job 391 at time 95.8967
+Printer 2008 finished job 388 at time 95.91
+Printer 1001 finished job 95 at time 95.94
+New job 96 at time 95.95
+Job assigned to printer 1001 at time 95.95
+New job 392 at time 96.03
+Job assigned to printer 2008 at time 96.03
+Printer 2001 finished job 391 at time 96.23
+New job 393 at time 96.36
+Job assigned to printer 2001 at time 96.36
+New job 434 at time 96.57
+No available printers - put in print queue
+New job 394 at time 96.69
+No available printers - put in print queue
+Printer 2001 finished job 393 at time 96.6933
+Printer 2001 assigned new job 434 at time 96.6933
+Printer 1001 finished job 96 at time 96.95
+Printer 1001 assigned new job 394 at time 96.95
+New job 97 at time 96.96
+No available printers - put in print queue
+New job 395 at time 97.02
+No available printers - put in print queue
+Printer 2008 finished job 392 at time 97.03
+Printer 2008 assigned new job 395 at time 97.03
+New job 396 at time 97.35
+No available printers - put in print queue
+Printer 1001 finished job 394 at time 97.45
+Printer 1001 assigned new job 396 at time 97.45
+Printer 2001 finished job 434 at time 97.5267
+Printer 2001 assigned new job 97 at time 97.5267
+New job 397 at time 97.68
+No available printers - put in print queue
+Printer 1001 finished job 396 at time 97.95
+Printer 1001 assigned new job 397 at time 97.95
+New job 98 at time 97.97
+No available printers - put in print queue
+New job 398 at time 98.01
+No available printers - put in print queue
+Printer 2008 finished job 395 at time 98.03
+Printer 2008 assigned new job 398 at time 98.03
+Printer 2001 finished job 97 at time 98.1933
+Printer 2001 assigned new job 98 at time 98.1933
+New job 399 at time 98.34
+No available printers - put in print queue
+Printer 1001 finished job 397 at time 98.45
+Printer 1001 assigned new job 399 at time 98.45
+New job 400 at time 98.67
+No available printers - put in print queue
+Printer 2001 finished job 98 at time 98.86
+Printer 2001 assigned new job 400 at time 98.86
+Printer 1001 finished job 399 at time 98.95
+New job 99 at time 98.98
+Job assigned to printer 1001 at time 98.98
+New job 401 at time 99
+No available printers - put in print queue
+Printer 2008 finished job 398 at time 99.03
+Printer 2008 assigned new job 401 at time 99.03
+Printer 2001 finished job 400 at time 99.1933
+New job 402 at time 99.33
+Job assigned to printer 2001 at time 99.33
+New job 403 at time 99.66
+No available printers - put in print queue
+Printer 2001 finished job 402 at time 99.6633
+Printer 2001 assigned new job 403 at time 99.6633
+New job 435 at time 99.9
+No available printers - put in print queue
+Printer 1001 finished job 99 at time 99.98
+Printer 1001 assigned new job 435 at time 99.98
+New job 404 at time 99.99
+No available printers - put in print queue
+New job 100 at time 99.99
+No available printers - put in print queue
+Printer 2001 finished job 403 at time 99.9967
+Printer 2001 assigned new job 404 at time 99.9967
+Printer 2008 finished job 401 at time 100.03
+Printer 2008 assigned new job 100 at time 100.03
+Printer 2001 finished job 404 at time 100.33
+Printer 1001 finished job 435 at time 101.23
+Printer 2008 finished job 100 at time 102.03

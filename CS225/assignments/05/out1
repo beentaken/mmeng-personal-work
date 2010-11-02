@@ -1,0 +1,7 @@
+New job 2 at time 0
+Job assigned to printer 1001 at time 0
+New job 1 at time 3
+No available printers - put in print queue
+Printer 1001 finished job 2 at time 15
+Printer 1001 assigned new job 1 at time 15
+Printer 1001 finished job 1 at time 25

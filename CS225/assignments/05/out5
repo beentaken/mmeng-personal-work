@@ -1,0 +1,43 @@
+New job 1 at time 0
+Job assigned to printer 1 at time 0
+New job 2 at time 0.8
+Job assigned to printer 2 at time 0.8
+Printer 1 finished job 1 at time 1
+New job 3 at time 1.6
+Job assigned to printer 1 at time 1.6
+New job 4 at time 2.4
+No available printers - put in print queue
+Printer 1 finished job 3 at time 2.6
+Printer 1 assigned new job 4 at time 2.6
+Printer 2 finished job 2 at time 2.8
+New job 5 at time 3.2
+Job assigned to printer 2 at time 3.2
+Printer 1 finished job 4 at time 3.6
+New job 6 at time 4
+Job assigned to printer 1 at time 4
+New job 7 at time 4.8
+No available printers - put in print queue
+Printer 1 finished job 6 at time 5
+Printer 1 assigned new job 7 at time 5
+Printer 2 finished job 5 at time 5.2
+New job 8 at time 5.6
+Job assigned to printer 2 at time 5.6
+Printer 1 finished job 7 at time 6
+New job 9 at time 6.4
+Job assigned to printer 1 at time 6.4
+New job 10 at time 7.2
+No available printers - put in print queue
+Printer 1 finished job 9 at time 7.4
+Printer 1 assigned new job 10 at time 7.4
+Printer 2 finished job 8 at time 7.6
+New job 11 at time 8
+Job assigned to printer 2 at time 8
+Printer 1 finished job 10 at time 8.4
+New job 12 at time 8.8
+Job assigned to printer 1 at time 8.8
+New job 13 at time 9.6
+No available printers - put in print queue
+Printer 1 finished job 12 at time 9.8
+Printer 1 assigned new job 13 at time 9.8
+Printer 2 finished job 11 at time 10
+Printer 1 finished job 13 at time 10.8

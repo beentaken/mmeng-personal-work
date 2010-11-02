@@ -1,0 +1,15 @@
+New job 1 at time 0
+Job assigned to printer 1 at time 0
+Printer 1 finished job 1 at time 1
+New job 2 at time 2
+Job assigned to printer 1 at time 2
+Printer 1 finished job 2 at time 3
+New job 3 at time 4
+Job assigned to printer 1 at time 4
+Printer 1 finished job 3 at time 5
+New job 4 at time 6
+Job assigned to printer 1 at time 6
+Printer 1 finished job 4 at time 7
+New job 5 at time 8
+Job assigned to printer 1 at time 8
+Printer 1 finished job 5 at time 9

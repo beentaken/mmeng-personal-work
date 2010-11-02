@@ -1,0 +1,19 @@
+New job 1 at time 0
+Job assigned to printer 1001 at time 0
+New job 2 at time 0
+No available printers - put in print queue
+New job 3 at time 0
+No available printers - put in print queue
+New job 4 at time 0
+No available printers - put in print queue
+New job 5 at time 1
+No available printers - put in print queue
+Printer 1001 finished job 1 at time 10
+Printer 1001 assigned new job 4 at time 10
+Printer 1001 finished job 4 at time 25
+Printer 1001 assigned new job 3 at time 25
+Printer 1001 finished job 3 at time 55
+Printer 1001 assigned new job 2 at time 55
+Printer 1001 finished job 2 at time 65
+Printer 1001 assigned new job 5 at time 65
+Printer 1001 finished job 5 at time 75

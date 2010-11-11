@@ -11,7 +11,11 @@
 #include <ctime>
 #include <cstdlib>
 
+#ifndef NDEBUG
 #include <iostream>
+#endif
+
+#include <sstream>
 
 #include "DotWindow.h"
 #include "Compute.h"
@@ -40,7 +44,10 @@ class ThreadInfo
 
 void run_thread(ThreadInfo* data)
 {
-	DotWindow window("Dot Window");
+	std::stringstream converter;
+	converter << GetCurrentThreadId();
+
+	DotWindow window(converter.str().c_str());
 	while (!window.IsClosed())
 	{
 		#ifndef NDEBUG

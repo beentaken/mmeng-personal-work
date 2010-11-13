@@ -1,0 +1,3 @@
+AddOption("--build_dir", default="build")
+SConscript("paper.scons", variant_dir=GetOption("build_dir"), duplicate=0)
+

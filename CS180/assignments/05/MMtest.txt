@@ -1,0 +1,86 @@
+start address: 324460
+  byte count: 1000
+  allocated: false
+********
+start address: 324460
+  byte count: 28
+  allocated: true
+start address: 324488
+  byte count: fd8
+  allocated: false
+********
+start address: 324460
+  byte count: 28
+  allocated: true
+start address: 324488
+  byte count: 50
+  allocated: true
+start address: 3244d8
+  byte count: f88
+  allocated: false
+********
+start address: 324460
+  byte count: 28
+  allocated: false
+start address: 324488
+  byte count: 50
+  allocated: true
+start address: 3244d8
+  byte count: f88
+  allocated: false
+********
+start address: 324460
+  byte count: f
+  allocated: true
+start address: 32446f
+  byte count: 19
+  allocated: false
+start address: 324488
+  byte count: 50
+  allocated: true
+start address: 3244d8
+  byte count: f88
+  allocated: false
+********
+start address: 324460
+  byte count: f
+  allocated: true
+start address: 32446f
+  byte count: 19
+  allocated: false
+start address: 324488
+  byte count: 50
+  allocated: true
+start address: 3244d8
+  byte count: 28
+  allocated: true
+start address: 324500
+  byte count: f60
+  allocated: false
+********
+start address: 324460
+  byte count: 28
+  allocated: false
+start address: 324488
+  byte count: 50
+  allocated: true
+start address: 3244d8
+  byte count: 28
+  allocated: true
+start address: 324500
+  byte count: f60
+  allocated: false
+********
+start address: 324460
+  byte count: 78
+  allocated: false
+start address: 3244d8
+  byte count: 28
+  allocated: true
+start address: 324500
+  byte count: f60
+  allocated: false
+********
+start address: 324460
+  byte count: 1000
+  allocated: false

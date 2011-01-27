@@ -1,3 +1,28 @@
+/******************************************************************************/
+/*!
+\file   ObjectAllocator.h
+\author Marcus Meng
+\par    email: marcus.meng\@digipen.edu
+\par    DigiPen login: marcus.meng
+\par    Course: CS280
+\par    Assignment #1
+\date   2010-01-27
+\brief  
+  This is the header file for a fixed-blocksize allocator class.
+  
+*/
+/******************************************************************************/
+
+
+/******************************************************************************/
+/*!
+  \class ObjectAllocator
+  \brief  
+    This class implements an interface to handle an allocator that can deal
+    with fixed-sized memory allocations quickly.
+*/
+/******************************************************************************/
+
 //---------------------------------------------------------------------------
 #ifndef OBJECTALLOCATORH
 #define OBJECTALLOCATORH
@@ -149,13 +174,42 @@ class ObjectAllocator
 
   private:
     OAConfig Config_;            // configuration parameters
-    OAStats OAStats_;            // accumulating statistics
+    OAStats Stats_;            // accumulating statistics
 
       // Make private to prevent copy construction and assignment
     ObjectAllocator(const ObjectAllocator &oa);
     ObjectAllocator &operator=(const ObjectAllocator &oa);
     
     // Other private fields and methods...
+
+    char* page_list_;
+    GenericObject* free_list_;
+
+    // Navigation, sizes, and miscellaneous utilities.
+    unsigned myGetPageSize() const;
+    void* myAllocatePage() throw(OAException);
+    unsigned myFindBlockOffset(unsigned index) const;
+    unsigned myGetInitialChunkSize() const;
+    unsigned myGetDataChunkSize() const;
+
+    void myDestructor(GenericObject* page_to_destroy);
+    
+    // Verification stuff.
+    // These functions throw exceptions if they hit an error, so there's no real need to return from most of them.
+    void* myFindPage(void* Object, GenericObject* current_page) const throw(OAException);
+    void myCheckAddressBoundary(void* Object) const throw(OAException);
+    void myCheckDoubleFree(void* Object, GenericObject* current_node) const throw(OAException);
+
+    void myFillBytes(char* range_start, char* range_end, char fill);
+    void mySetPadBytes(char* address);
+    void mySetUnallocated(char* page);
+    void mySetAllocated(char* address);
+    void mySetFreed(char* address);
+    void mySetAlign(char* address);
+    void mySetHeaderBlockOff(char* address);
+    void mySetHeaderBlockOn(char* address);
+
+    void myCheckPadBytes(char* address) const throw(OAException);
 };
 
 #endif

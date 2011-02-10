@@ -1,0 +1,259 @@
+
+********** Test0 **********
+std:: push_back 10 integers
+70  73  30  47  43  88  92  55  30  26  (size=10)
+list sorted
+26  30  30  43  47  55  70  73  88  92  (size=10)
+***** Copy *****
+***** Assign *****
+***** Copy *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Copy *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Copy *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Copy *****
+***** Assign *****
+***** Copy *****
+***** Assign *****
+***** Copy *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Copy *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Copy *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+***** Assign *****
+vector sorted
+26  30  30  43  47  55  70  73  88  92  (size=10)
+
+********** Test1 **********
+push back 9 integers:
+1  2  3  4  5  6  7  8  9  (size=9)
+copy b(a)
+1  2  3  4  5  6  7  8  9  (size=9)
+1  2  3  4  5  6  7  8  9  (size=9)
+copy c = b
+1  2  3  4  5  6  7  8  9  (size=9)
+1  2  3  4  5  6  7  8  9  (size=9)
+1  2  3  4  5  6  7  8  9  (size=9)
+
+********** Test2 **********
+push back 9 integers:
+1  2  3  4  5  6  7  8  9  (size=9)
+copy b(a)
+1  2  3  4  5  6  7  8  9  (size=9)
+1  2  3  4  5  6  7  8  9  (size=9)
+copy c = b
+1  2  3  4  5  6  7  8  9  (size=9)
+1  2  3  4  5  6  7  8  9  (size=9)
+1  2  3  4  5  6  7  8  9  (size=9)
+
+********** Test4a **********
+push back 9 integers:
+1  2  3  4  5  6  7  8  9  1  2  3  4  5  6  7  8  9  (size=18)
+10  11  12  (size=3)
+assign b = a
+1  2  3  4  5  6  7  8  9  1  2  3  4  5  6  7  8  9  (size=18)
+1  2  3  4  5  6  7  8  9  1  2  3  4  5  6  7  8  9  (size=18)
+
+********** Test5 **********
+insert 6 integers:
+(size=0)
+(size=0)
+1  (size=1)
+1  (size=1)
+1  2  (size=2)
+2  1  (size=2)
+1  2  3  (size=3)
+3  2  1  (size=3)
+1  2  3  4  (size=4)
+4  3  2  1  (size=4)
+1  2  3  4  5  (size=5)
+5  4  3  2  1  (size=5)
+1  2  3  4  5  6  (size=6)
+6  5  4  3  2  1  (size=6)
+
+********** Test6 **********
+insert 13 integers:
+2  (size=1)
+2  (size=1)
+2  4  (size=2)
+4  2  (size=2)
+2  4  6  (size=3)
+6  4  2  (size=3)
+2  4  6  6  (size=4)
+6  6  4  2  (size=4)
+2  4  6  6  8  (size=5)
+8  6  6  4  2  (size=5)
+2  4  6  6  8  10  (size=6)
+10  8  6  6  4  2  (size=6)
+2  4  6  6  6  8  10  (size=7)
+10  8  6  6  6  4  2  (size=7)
+2  4  6  6  6  8  10  12  (size=8)
+12  10  8  6  6  6  4  2  (size=8)
+-6  2  4  6  6  6  8  10  12  (size=9)
+12  10  8  6  6  6  4  2  -6  (size=9)
+-6  2  4  6  6  6  8  10  12  14  (size=10)
+14  12  10  8  6  6  6  4  2  -6  (size=10)
+-6  2  4  6  6  6  8  10  12  14  16  (size=11)
+16  14  12  10  8  6  6  6  4  2  -6  (size=11)
+-6  2  4  6  6  6  6  8  10  12  14  16  (size=12)
+16  14  12  10  8  6  6  6  6  4  2  -6  (size=12)
+-6  2  4  6  6  6  6  6  8  10  12  14  16  (size=13)
+16  14  12  10  8  6  6  6  6  6  4  2  -6  (size=13)
+
+********** Test7 **********
+insert 13 integers:
+16  14  12  10  8  6  6  6  6  6  4  2  -6  (size=13)
+
+********** Test7 **********
+insert 13 integers:
+-6  2  4  6  6  6  6  6  8  10  12  14  16  (size=13)
+
+********** Test8 **********
+push_back 10000 integers using unsorted SortedList and new/delete
+Sum is: 5740
+
+********** Test8 **********
+push_back 10000 integers using unsorted SortedList and ObjectAllocator
+Sum is: 5740
+
+********** Test8 **********
+push_back 10000 integers using std::list (unsorted)
+Sum is: 5740
+
+********** Test9 **********
+insert 1000 integers using sorted SortedList and new/delete
+Sum is: 2407
+
+********** Test9 **********
+insert 1000 integers using sorted SortedList and ObjectAllocator
+Sum is: 2407
+
+********** Test10 selection sort **********
+26  74  -65  81  32  62  75  53  79  -81  -48  37  69  -6  2  -24  -85  36  -26  73  
+push_back 20 Foos...
+26  74  -65  81  32  62  75  53  79  -81  -48  37  69  -6  2  -24  -85  36  -26  73  (size=20)
+selection sorting...
+81  79  75  74  73  69  62  53  37  36  32  26  2  -6  -24  -26  -48  -65  -81  -85  (size=20)
+List is sorted
+List is sorted in rev
+Sum is: 364
+
+********** Test10 selection sort **********
+26  74  -65  81  32  62  75  53  79  -81  -48  37  69  -6  2  -24  -85  36  -26  73  
+push_back 20 Foos...
+26  74  -65  81  32  62  75  53  79  -81  -48  37  69  -6  2  -24  -85  36  -26  73  (size=20)
+selection sorting...
+-85  -81  -65  -48  -26  -24  -6  2  26  32  36  37  53  62  69  73  74  75  79  81  (size=20)
+List is sorted
+List is sorted in rev
+Sum is: 364
+
+********** Test10 selection sort **********
+push_back 1000 Foos...
+selection sorting...
+List is sorted
+List is sorted in rev
+Sum is: 2407
+
+********** Test10 selection sort **********
+push_back 2000 Foos...
+selection sorting...
+List is sorted
+List is sorted in rev
+Sum is: 1835
+
+********** Test10 selection sort **********
+push_back 4000 Foos...
+selection sorting...
+List is sorted
+List is sorted in rev
+Sum is: 7292
+
+********** Test10 selection sort **********
+push_back 8000 Foos...
+selection sorting...
+List is sorted
+List is sorted in rev
+Sum is: 6231
+
+********** Test10 selection sort **********
+push_back 20000 Foos...
+selection sorting...
+List is sorted
+List is sorted in rev
+Sum is: 11164
+
+********** Test11 mergesort **********
+26  74  -65  81  32  62  75  53  79  -81  
+push_back 10 Foos...
+26  74  -65  81  32  62  75  53  79  -81  (size=10)
+merge sorting...
+-81  -65  26  32  53  62  74  75  79  81  (size=10)
+List is sorted
+List is sorted in rev
+Sum is: 336
+
+********** Test11 mergesort **********
+26  74  -65  81  32  62  75  53  79  -81  
+push_back 10 Foos...
+26  74  -65  81  32  62  75  53  79  -81  (size=10)
+merge sorting...
+81  79  75  74  62  53  32  26  -65  -81  (size=10)
+List is sorted
+List is sorted in rev
+Sum is: 336
+
+********** Test11 mergesort **********
+26  74  -65  81  32  62  75  53  79  -81  -48  37  69  -6  2  -24  -85  36  -26  73  -67  -100  -68  65  -58  68  -52  84  -2  90  
+push_back 30 Foos...
+26  74  -65  81  32  62  75  53  79  -81  -48  37  69  -6  2  -24  -85  36  -26  73  -67  -100  -68  65  -58  68  -52  84  -2  90  (size=30)
+merge sorting...
+-100  -85  -81  -68  -67  -65  -58  -52  -48  -26  -24  -6  -2  2  26  32  36  37  53  62  65  68  69  73  74  75  79  81  84  90  (size=30)
+List is sorted
+List is sorted in rev
+Sum is: 324
+
+********** Test11 mergesort **********
+26  74  -65  81  32  62  75  53  79  -81  -48  37  69  -6  2  -24  -85  36  -26  73  -67  -100  -68  65  -58  68  -52  84  -2  90  
+push_back 30 Foos...
+26  74  -65  81  32  62  75  53  79  -81  -48  37  69  -6  2  -24  -85  36  -26  73  -67  -100  -68  65  -58  68  -52  84  -2  90  (size=30)
+merge sorting...
+90  84  81  79  75  74  73  69  68  65  62  53  37  36  32  26  2  -2  -6  -24  -26  -48  -52  -58  -65  -67  -68  -81  -85  -100  (size=30)
+List is sorted
+List is sorted in rev
+Sum is: 324
+
+********** Test11 mergesort **********
+push_back 1600000 Foos...
+merge sorting...
+List is sorted
+List is sorted in rev
+Sum is: 14585

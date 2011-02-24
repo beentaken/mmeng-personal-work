@@ -12,7 +12,7 @@
 namespace
 {
   bool SHOW_BOARDS = false;
-  bool SHOW_MESSAGES = false;
+  bool SHOW_MESSAGES = true;
   bool PAUSE = false;
   bool SHOW_TIMINGS = true;
   bool SHOW_SOLUTION = false;
@@ -308,7 +308,7 @@ void TestHeuristics(unsigned rows, unsigned cols, unsigned row, unsigned col)
 int main(void)
 {
   //TestBoards(1, 8, GameBoard::tpSTATIC); 
-  TestBoards(1, 8, GameBoard::tpHEURISTICS);
+  TestBoards(30, 30, GameBoard::tpHEURISTICS);
   //TestBoards(8, 8, GameBoard::tpSTATIC);
   //TestBoards(5, 5, GameBoard::tpSTATIC);
   //TestBoards(1, 20, GameBoard::tpHEURISTICS);

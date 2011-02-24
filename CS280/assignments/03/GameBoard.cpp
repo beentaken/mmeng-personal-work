@@ -90,7 +90,7 @@ bool GameBoard::KnightsTour(unsigned row, unsigned column, GameBoard::TourPolicy
 	{
 		// We have failed!
 		updateFlatBoard();
-		callback_(*this, NULL, MSG_FINISHED_FAIL, total_moves_, board_.getRows(), board_.getColumns(), row, column);
+		bindMessage(MSG_FINISHED_FAIL, row, column);
 		return(false);
 	}
 }
@@ -482,7 +482,7 @@ bool GameBoard::myPlaceKnight(const unsigned row, const unsigned column)
 	// Early out if the board is, in fact, complete.
 	if ((board_.getRows() * board_.getColumns()) == move_)
 	{
-		callback_(*this, GetBoard(), MSG_FINISHED_OK, total_moves_, board_.getRows(), board_.getColumns(), row, column);
+		bindMessage(MSG_FINISHED_OK, row, column);
 		return(true);
 	}
 
@@ -529,7 +529,7 @@ bool GameBoard::bindMessage(BoardMessage message, const unsigned row, const unsi
 	if (callback_ != NULL)
 	{
 		updateFlatBoard();
-		return(callback_(*this, GetBoard(), message, move_, board_.getRows(), board_.getColumns(), row, col));
+		return(callback_(*this, GetBoard(), message, total_moves_, board_.getRows(), board_.getColumns(), row, col));
 	}
 	else
 	{
@@ -556,10 +556,10 @@ bool GameBoard::preSweep(const unsigned row, const unsigned column)
 	std::cerr << "Entered preSweep function." << std::endl;
 #endif
 	++move_;
+	++total_moves_;
 	// Place a knight.
 	board_(row, column).setFilled(true);
 	board_(row, column).setWalkedValue(move_);
-	++total_moves_;
 
 	// Send placing message.
 	bindMessage(MSG_PLACING, row, column);
@@ -660,7 +660,7 @@ bool GameBoard::heuristicSweepNeighbors(const unsigned row, const unsigned colum
 	}
 
 	// We has a valid list of moves now.
-	std::sort(new_coords.begin(), new_coords.end(), HeuristicSorter(board_));
+	std::stable_sort(new_coords.begin(), new_coords.end(), HeuristicSorter(board_));
 
 	// And now, chug through everything.
 	std::vector<std::pair<unsigned, unsigned> >::iterator iter;

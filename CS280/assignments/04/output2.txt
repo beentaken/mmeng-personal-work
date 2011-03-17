@@ -1,0 +1,201 @@
+****************************************
+Expression: 5 * 9
+
+    *   
+
+5       9   
+
+Simplified: 
+45  
+
+
+****************************************
+Expression: 5*9+8 * 4 *6    + 7
+
+                                      +   
+
+              +                           7   
+
+      *                       *   
+
+  5       9           *           6   
+
+                  8       4   
+
+Simplified: 
+244 
+
+
+****************************************
+Expression: 5 * (((9 + 8) * (4 * 6)) + 7)
+
+      *   
+
+  5                                   +   
+
+                      *                   7   
+
+              +               *   
+
+          9       8       4       6   
+
+Simplified: 
+2075
+
+
+****************************************
+Expression: A * B - 0 + 3 * (C - (C + (3 - 3)))
+
+                      +   
+
+              -               *   
+
+      *           0       3           -   
+
+  A       B                       C           +   
+
+                                          C           -   
+
+                                                  3       3   
+
+Simplified: 
+    *   
+
+A       B   
+
+
+****************************************
+Expression: A * B * 0
+
+             *   
+
+     *           0   
+
+ A       B   
+
+Simplified: 
+0   
+
+
+****************************************
+Expression: A / A
+
+    /   
+
+A       A   
+
+Simplified: 
+1   
+
+
+****************************************
+Expression: A - A
+
+    -   
+
+A       A   
+
+Simplified: 
+0   
+
+
+****************************************
+Expression: (A + 7) / (A + 7)
+
+             /   
+
+     +               +   
+
+ A       7       A       7   
+
+Simplified: 
+             /   
+
+     +               +   
+
+ A       7       A       7   
+
+
+****************************************
+Expression: A / (4 - 1 - 3)
+
+     /   
+
+ A                   -   
+
+             -           3   
+
+         4       1   
+
+***** Exception: (E_DIVIDE_BY_ZERO) Divide by zero
+
+****************************************
+Expression: A / +
+
+***** Exception: (E_BAD_TOKEN) MakeExprFactor: Expected IDENTIFIER or LITERAL
+
+****************************************
+Expression: A + B * C * (D - E * (F + G - H) / J) + K
+
+                                                                        +   
+
+        +                                                                   K   
+
+    A                   *   
+
+                *               -   
+
+            B       C       D                                   /   
+
+                                        *                           J   
+
+                                    E                   -   
+
+                                                +           H   
+
+                                            F       G   
+
+Simplified: 
+                                                                        +   
+
+        +                                                                   K   
+
+    A                   *   
+
+                *               -   
+
+            B       C       D                                   /   
+
+                                        *                           J   
+
+                                    E                   -   
+
+                                                +           H   
+
+                                            F       G   
+
+
+****************************************
+Expression: B / 0
+
+    /   
+
+B       0   
+
+***** Exception: (E_DIVIDE_BY_ZERO) Divide by zero
+
+****************************************
+Expression: 0 / 0
+
+    /   
+
+0       0   
+
+***** Exception: (E_DIVIDE_BY_ZERO) Divide by zero
+
+****************************************
+Expression: 4 + $
+
+***** Exception: (E_BAD_TOKEN) MakeExprFactor: Expected IDENTIFIER or LITERAL
+
+Number of nodes allocated but not freed: 0

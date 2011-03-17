@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <iostream>
 #include <cstring>
+#include <cstdio>
 
 #include "Expression.h"
 
@@ -183,7 +184,7 @@ int main(void)
   //int b = 5;
   //int c = (b * 2 - 3) / (3 * 2 - 6);
 
-  DisplayFn fn; // = PrintExprTree;
+  DisplayFn fn = PrintExprTree;
   //fn = PrintFlatTree;
 
   SimplifyExpr("5 * 9", fn);

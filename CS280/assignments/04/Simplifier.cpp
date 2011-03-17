@@ -287,13 +287,10 @@ void Simplifier::PromoteLeftOp(ExprNode* &current)
 {
 	assert(NULL != current);
 
-	ExprNode* temp = current;
-
-	current = current->left;
-
-	temp->left = NULL;
-
-	FreeExprTree(temp);
+	FreeExprTree(current->right);
+	ExprNode* temp = current->left;
+	*current = *(current->left);
+	FreeNode(temp);
 }
 
 /*!\brief Replaces the node with its right child.
@@ -305,12 +302,9 @@ void Simplifier::PromoteRightOp(ExprNode* &current)
 {
 	assert(NULL != current);
 
-	ExprNode* temp = current;
-
-	current = current->right;
-
-	temp->right = NULL;
-
-	FreeExprTree(temp);
+	FreeExprTree(current->left);
+	ExprNode* temp = current->right;
+	*current = *(current->right);
+	FreeNode(temp);
 }
 

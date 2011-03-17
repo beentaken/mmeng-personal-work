@@ -12,10 +12,11 @@
   specifically-formed equation into an expression tree.
 */
 /******************************************************************************/
-#include "Parser.h"
 #include <string>
 #include <cctype>
 #include <cstdlib>
+
+#include "Parser.h"
 
 namespace
 {

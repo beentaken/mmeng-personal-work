@@ -136,9 +136,13 @@ class OAHashTable
     // Other private fields and methods...
     OAHTConfig myConfig;
     OAHTSlot* myTable;
-    OAHTStats myStats;
+    mutable OAHTStats myStats;
 
-    void myRemoveAtIndex(int index) throw(OAHashTableException);
+    void myRemove(OAHTSlot &to_remove) throw(OAHashTableException);
+    int myIndex(const unsigned &hash, const unsigned &stride, const unsigned& index) const;
+
+    unsigned mySecondaryHash(const char* key) const;
+    unsigned myPrimaryHash(const char* key) const;
 };
 
 #include "OAHashTable.cpp"

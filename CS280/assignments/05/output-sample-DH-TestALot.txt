@@ -1,0 +1,224 @@
+
+==================== TestALot ====================
+
+Creating table:
+Primary hash function: PJW Hash
+Secondary hash function: RS Hash
+Initial size: 13
+Max load factor: 0.85
+Growth factor: 1.5
+
+Slot:   0, Key: *** Empty ***
+Slot:   1, Key: *** Empty ***
+Slot:   2, Key: *** Empty ***
+Slot:   3, Key: *** Empty ***
+Slot:   4, Key: *** Empty ***
+Slot:   5, Key: *** Empty ***
+Slot:   6, Key: *** Empty ***
+Slot:   7, Key: *** Empty ***
+Slot:   8, Key: *** Empty ***
+Slot:   9, Key: *** Empty ***
+Slot:  10, Key: *** Empty ***
+Slot:  11, Key: *** Empty ***
+Slot:  12, Key: *** Empty ***
+Number of probes: 0
+Number of expansions: 0
+Items: 0, TableSize: 13
+Load factor: 0
+
+Slot:   0, Key: 103001 (0:6)
+Slot:   1, Key: 104001 (1:1)
+Slot:   2, Key: 105001 (2:8)
+Slot:   3, Key: 106001 (3:3)
+Slot:   4, Key: 107001 (4:10)
+Slot:   5, Key: 108001 (5:5)
+Slot:   6, Key: 109001 (6:12)
+Slot:   7, Key: *** Empty ***
+Slot:   8, Key: *** Empty ***
+Slot:   9, Key: *** Empty ***
+Slot:  10, Key: 110001 (0:10)
+Slot:  11, Key: 101001 (11:4)
+Slot:  12, Key: 102001 (12:11)
+Number of probes: 11
+Number of expansions: 0
+Items: 10, TableSize: 13
+Load factor: 0.769
+
+Finding key: 101001 (11)
+Key:   101001, Name:        Faith,          Ian    Salary:  80000, Years: 10
+Number of probes: 12
+Number of expansions: 0
+Items: 10, TableSize: 13
+Load factor: 0.769
+
+Finding key: 103001 (0)
+Key:   103001, Name:       Savage,          Viv    Salary:  50000, Years:  4
+Number of probes: 13
+Number of expansions: 0
+Items: 10, TableSize: 13
+Load factor: 0.769
+
+Finding key: 110001 (0)
+Key:   110001, Name:        Upham,        Denny    Salary:  60000, Years:  5
+Number of probes: 15
+Number of expansions: 0
+Items: 10, TableSize: 13
+Load factor: 0.769
+
+Finding key: 123456 (10)
+Key 123456 not found. errno: 0, Item not found in table.
+Number of probes: 19
+Number of expansions: 0
+Items: 10, TableSize: 13
+Load factor: 0.769
+
+Adding a person ...
+Slot:   0, Key: 103001 (0:6)
+Slot:   1, Key: 104001 (1:1)
+Slot:   2, Key: 105001 (2:8)
+Slot:   3, Key: 106001 (3:3)
+Slot:   4, Key: 107001 (4:10)
+Slot:   5, Key: 108001 (5:5)
+Slot:   6, Key: 109001 (6:12)
+Slot:   7, Key: *** Empty ***
+Slot:   8, Key: 111001 (1:5)
+Slot:   9, Key: *** Empty ***
+Slot:  10, Key: 110001 (0:10)
+Slot:  11, Key: 101001 (11:4)
+Slot:  12, Key: 102001 (12:11)
+Number of probes: 24
+Number of expansions: 0
+Items: 11, TableSize: 13
+Load factor: 0.846
+
+Adding a person ...
+Slot:   0, Key: 111001 (0:7)
+Slot:   1, Key: 106001 (1:11)
+Slot:   2, Key: 112001 (2:14)
+Slot:   3, Key: 107001 (3:18)
+Slot:   4, Key: *** Empty ***
+Slot:   5, Key: 108001 (5:3)
+Slot:   6, Key: *** Empty ***
+Slot:   7, Key: 109001 (7:10)
+Slot:   8, Key: *** Empty ***
+Slot:   9, Key: *** Empty ***
+Slot:  10, Key: *** Empty ***
+Slot:  11, Key: *** Empty ***
+Slot:  12, Key: *** Empty ***
+Slot:  13, Key: *** Empty ***
+Slot:  14, Key: 101001 (14:20)
+Slot:  15, Key: *** Empty ***
+Slot:  16, Key: 102001 (16:5)
+Slot:  17, Key: *** Empty ***
+Slot:  18, Key: 103001 (18:12)
+Slot:  19, Key: *** Empty ***
+Slot:  20, Key: 104001 (20:19)
+Slot:  21, Key: 110001 (21:22)
+Slot:  22, Key: 105001 (22:4)
+Number of probes: 36
+Number of expansions: 1
+Items: 12, TableSize: 23
+Load factor: 0.522
+
+Adding a person ...
+Slot:   0, Key: 111001 (0:7)
+Slot:   1, Key: 106001 (1:11)
+Slot:   2, Key: 112001 (2:14)
+Slot:   3, Key: 107001 (3:18)
+Slot:   4, Key: 113001 (4:21)
+Slot:   5, Key: 108001 (5:3)
+Slot:   6, Key: *** Empty ***
+Slot:   7, Key: 109001 (7:10)
+Slot:   8, Key: *** Empty ***
+Slot:   9, Key: *** Empty ***
+Slot:  10, Key: *** Empty ***
+Slot:  11, Key: *** Empty ***
+Slot:  12, Key: *** Empty ***
+Slot:  13, Key: *** Empty ***
+Slot:  14, Key: 101001 (14:20)
+Slot:  15, Key: *** Empty ***
+Slot:  16, Key: 102001 (16:5)
+Slot:  17, Key: *** Empty ***
+Slot:  18, Key: 103001 (18:12)
+Slot:  19, Key: *** Empty ***
+Slot:  20, Key: 104001 (20:19)
+Slot:  21, Key: 110001 (21:22)
+Slot:  22, Key: 105001 (22:4)
+Number of probes: 37
+Number of expansions: 1
+Items: 13, TableSize: 23
+Load factor: 0.565
+
+Deleting key: 111001
+Slot:   0, Key: -- Deleted --
+Slot:   1, Key: 106001 (1:11)
+Slot:   2, Key: 112001 (2:14)
+Slot:   3, Key: 107001 (3:18)
+Slot:   4, Key: 113001 (4:21)
+Slot:   5, Key: 108001 (5:3)
+Slot:   6, Key: *** Empty ***
+Slot:   7, Key: 109001 (7:10)
+Slot:   8, Key: *** Empty ***
+Slot:   9, Key: *** Empty ***
+Slot:  10, Key: *** Empty ***
+Slot:  11, Key: *** Empty ***
+Slot:  12, Key: *** Empty ***
+Slot:  13, Key: *** Empty ***
+Slot:  14, Key: 101001 (14:20)
+Slot:  15, Key: *** Empty ***
+Slot:  16, Key: 102001 (16:5)
+Slot:  17, Key: *** Empty ***
+Slot:  18, Key: 103001 (18:12)
+Slot:  19, Key: *** Empty ***
+Slot:  20, Key: 104001 (20:19)
+Slot:  21, Key: 110001 (21:22)
+Slot:  22, Key: 105001 (22:4)
+Number of probes: 38
+Number of expansions: 1
+Items: 12, TableSize: 23
+Load factor: 0.522
+
+Deleting key: 123456
+
+errno: 0, Key not in table.
+
+Number of probes: 40
+Number of expansions: 1
+Items: 12, TableSize: 23
+Load factor: 0.522
+
+Deleting key: 123457
+
+errno: 0, Key not in table.
+
+Number of probes: 41
+Number of expansions: 1
+Items: 12, TableSize: 23
+Load factor: 0.522
+Slot:   0, Key: *** Empty ***
+Slot:   1, Key: *** Empty ***
+Slot:   2, Key: *** Empty ***
+Slot:   3, Key: *** Empty ***
+Slot:   4, Key: *** Empty ***
+Slot:   5, Key: *** Empty ***
+Slot:   6, Key: *** Empty ***
+Slot:   7, Key: *** Empty ***
+Slot:   8, Key: *** Empty ***
+Slot:   9, Key: *** Empty ***
+Slot:  10, Key: *** Empty ***
+Slot:  11, Key: *** Empty ***
+Slot:  12, Key: *** Empty ***
+Slot:  13, Key: *** Empty ***
+Slot:  14, Key: *** Empty ***
+Slot:  15, Key: *** Empty ***
+Slot:  16, Key: *** Empty ***
+Slot:  17, Key: *** Empty ***
+Slot:  18, Key: *** Empty ***
+Slot:  19, Key: *** Empty ***
+Slot:  20, Key: *** Empty ***
+Slot:  21, Key: *** Empty ***
+Slot:  22, Key: *** Empty ***
+Number of probes: 41
+Number of expansions: 1
+Items: 0, TableSize: 23
+Load factor: 0

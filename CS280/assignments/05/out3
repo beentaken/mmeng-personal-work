@@ -1,0 +1,401 @@
+
+==================== Test1 ====================
+
+Creating table:
+Primary hash function: Simple Hash
+Secondary hash function: None (Linear probing)
+Initial size: 17
+Max load factor: 0.95
+Growth factor: 2
+Deletion policy: PACK
+
+Slot:   0, Key: *** Empty ***
+Slot:   1, Key: *** Empty ***
+Slot:   2, Key: 101001 (2)
+Slot:   3, Key: 102001 (3)
+Slot:   4, Key: 103001 (4)
+Slot:   5, Key: 104001 (5)
+Slot:   6, Key: 105001 (6)
+Slot:   7, Key: 106001 (7)
+Slot:   8, Key: 107001 (8)
+Slot:   9, Key: 108001 (9)
+Slot:  10, Key: 109001 (10)
+Slot:  11, Key: 110001 (2)
+Slot:  12, Key: 111001 (3)
+Slot:  13, Key: 112001 (4)
+Slot:  14, Key: 113001 (5)
+Slot:  15, Key: 114001 (6)
+Slot:  16, Key: 115001 (7)
+Number of probes: 69
+Number of expansions: 0
+Items: 15, TableSize: 17
+Load factor: 0.882
+
+
+==================== Test2 ====================
+
+Creating table:
+Primary hash function: Simple Hash
+Secondary hash function: None (Linear probing)
+Initial size: 5
+Max load factor: 0.95
+Growth factor: 2
+Deletion policy: PACK
+
+Slot:   0, Key: 109001 (0)
+Slot:   1, Key: 106001 (20)
+Slot:   2, Key: 111001 (16)
+Slot:   3, Key: 112001 (17)
+Slot:   4, Key: 113001 (18)
+Slot:   5, Key: 114001 (19)
+Slot:   6, Key: 115001 (20)
+Slot:   7, Key: 116001 (21)
+Slot:   8, Key: 117001 (22)
+Slot:   9, Key: 118001 (0)
+Slot:  10, Key: 119001 (1)
+Slot:  11, Key: 120001 (16)
+Slot:  12, Key: 121001 (17)
+Slot:  13, Key: *** Empty ***
+Slot:  14, Key: *** Empty ***
+Slot:  15, Key: 110001 (15)
+Slot:  16, Key: 101001 (15)
+Slot:  17, Key: 102001 (16)
+Slot:  18, Key: 103001 (17)
+Slot:  19, Key: 104001 (18)
+Slot:  20, Key: 105001 (19)
+Slot:  21, Key: 107001 (21)
+Slot:  22, Key: 108001 (22)
+Number of probes: 170
+Number of expansions: 2
+Items: 21, TableSize: 23
+Load factor: 0.913
+
+
+==================== Test3 ====================
+
+Creating table:
+Primary hash function: Simple Hash
+Secondary hash function: None (Linear probing)
+Initial size: 17
+Max load factor: 0.95
+Growth factor: 2
+Deletion policy: PACK
+
+Slot:   0, Key: *** Empty ***
+Slot:   1, Key: *** Empty ***
+Slot:   2, Key: 101001 (2)
+Slot:   3, Key: 102001 (3)
+Slot:   4, Key: 103001 (4)
+Slot:   5, Key: 104001 (5)
+Slot:   6, Key: 105001 (6)
+Slot:   7, Key: 106001 (7)
+Slot:   8, Key: 107001 (8)
+Slot:   9, Key: 108001 (9)
+Slot:  10, Key: 109001 (10)
+Slot:  11, Key: 110001 (2)
+Slot:  12, Key: 111001 (3)
+Slot:  13, Key: 112001 (4)
+Slot:  14, Key: 113001 (5)
+Slot:  15, Key: 114001 (6)
+Slot:  16, Key: 115001 (7)
+Number of probes: 69
+Number of expansions: 0
+Items: 15, TableSize: 17
+Load factor: 0.882
+
+Slot:   0, Key: *** Empty ***
+Slot:   1, Key: *** Empty ***
+Slot:   2, Key: *** Empty ***
+Slot:   3, Key: *** Empty ***
+Slot:   4, Key: 103001 (4)
+Slot:   5, Key: 104001 (5)
+Slot:   6, Key: 105001 (6)
+Slot:   7, Key: 106001 (7)
+Slot:   8, Key: 107001 (8)
+Slot:   9, Key: 108001 (9)
+Slot:  10, Key: 109001 (10)
+Slot:  11, Key: 112001 (4)
+Slot:  12, Key: 113001 (5)
+Slot:  13, Key: 114001 (6)
+Slot:  14, Key: 115001 (7)
+Slot:  15, Key: *** Empty ***
+Slot:  16, Key: *** Empty ***
+Number of probes: 259
+Number of expansions: 0
+Items: 11, TableSize: 17
+Load factor: 0.647
+
+
+==================== Test4 ====================
+
+Creating table:
+Primary hash function: Simple Hash
+Secondary hash function: None (Linear probing)
+Initial size: 17
+Max load factor: 0.95
+Growth factor: 2
+Deletion policy: MARK
+
+Slot:   0, Key: *** Empty ***
+Slot:   1, Key: *** Empty ***
+Slot:   2, Key: 101001 (2)
+Slot:   3, Key: 102001 (3)
+Slot:   4, Key: 103001 (4)
+Slot:   5, Key: 104001 (5)
+Slot:   6, Key: 105001 (6)
+Slot:   7, Key: 106001 (7)
+Slot:   8, Key: 107001 (8)
+Slot:   9, Key: 108001 (9)
+Slot:  10, Key: 109001 (10)
+Slot:  11, Key: 110001 (2)
+Slot:  12, Key: 111001 (3)
+Slot:  13, Key: 112001 (4)
+Slot:  14, Key: 113001 (5)
+Slot:  15, Key: 114001 (6)
+Slot:  16, Key: 115001 (7)
+Number of probes: 69
+Number of expansions: 0
+Items: 15, TableSize: 17
+Load factor: 0.882
+
+Slot:   0, Key: *** Empty ***
+Slot:   1, Key: *** Empty ***
+Slot:   2, Key: -- Deleted --
+Slot:   3, Key: -- Deleted --
+Slot:   4, Key: 103001 (4)
+Slot:   5, Key: 104001 (5)
+Slot:   6, Key: 105001 (6)
+Slot:   7, Key: 106001 (7)
+Slot:   8, Key: 107001 (8)
+Slot:   9, Key: 108001 (9)
+Slot:  10, Key: 109001 (10)
+Slot:  11, Key: -- Deleted --
+Slot:  12, Key: -- Deleted --
+Slot:  13, Key: 112001 (4)
+Slot:  14, Key: 113001 (5)
+Slot:  15, Key: 114001 (6)
+Slot:  16, Key: 115001 (7)
+Number of probes: 91
+Number of expansions: 0
+Items: 11, TableSize: 17
+Load factor: 0.647
+
+Slot:   0, Key: *** Empty ***
+Slot:   1, Key: *** Empty ***
+Slot:   2, Key: -- Deleted --
+Slot:   3, Key: -- Deleted --
+Slot:   4, Key: 103001 (4)
+Slot:   5, Key: 104001 (5)
+Slot:   6, Key: 105001 (6)
+Slot:   7, Key: 106001 (7)
+Slot:   8, Key: 107001 (8)
+Slot:   9, Key: 108001 (9)
+Slot:  10, Key: 109001 (10)
+Slot:  11, Key: 122001 (5)
+Slot:  12, Key: -- Deleted --
+Slot:  13, Key: 112001 (4)
+Slot:  14, Key: 113001 (5)
+Slot:  15, Key: 114001 (6)
+Slot:  16, Key: 115001 (7)
+Number of probes: 104
+Number of expansions: 0
+Items: 12, TableSize: 17
+Load factor: 0.706
+
+
+==================== Test5 ====================
+
+Creating table:
+Primary hash function: Simple Hash
+Secondary hash function: None (Linear probing)
+Initial size: 11
+Max load factor: 0.95
+Growth factor: 2
+Deletion policy: PACK
+
+Slot:   0, Key: 107001 (0)
+Slot:   1, Key: 108001 (1)
+Slot:   2, Key: 109001 (2)
+Slot:   3, Key: *** Empty ***
+Slot:   4, Key: *** Empty ***
+Slot:   5, Key: 101001 (5)
+Slot:   6, Key: 102001 (6)
+Slot:   7, Key: 103001 (7)
+Slot:   8, Key: 104001 (8)
+Slot:   9, Key: 105001 (9)
+Slot:  10, Key: 106001 (10)
+Number of probes: 9
+Number of expansions: 0
+Items: 9, TableSize: 11
+Load factor: 0.818
+
+Key:   106001, Name:       Smalls,        Derek 
+Salary:  80000, Years: 10
+Number of probes: 10
+Number of expansions: 0
+Items: 9, TableSize: 11
+Load factor: 0.818
+
+Caught OAHashTableException in Test5: E_ITEM_NOT_FOUND
+
+==================== Test6 ====================
+
+Creating table:
+Primary hash function: Simple Hash
+Secondary hash function: None (Linear probing)
+Initial size: 7
+Max load factor: 0.95
+Growth factor: 2
+Deletion policy: PACK
+
+Slot:   0, Key: 104001 (0)
+Slot:   1, Key: 105001 (1)
+Slot:   2, Key: *** Empty ***
+Slot:   3, Key: *** Empty ***
+Slot:   4, Key: 101001 (4)
+Slot:   5, Key: 102001 (5)
+Slot:   6, Key: 103001 (6)
+Number of probes: 5
+Number of expansions: 0
+Items: 5, TableSize: 7
+Load factor: 0.714
+
+Caught OAHashTableException in Test6: E_DUPLICATE
+
+==================== Test7 ====================
+
+Creating table:
+Primary hash function: Simple Hash
+Secondary hash function: None (Linear probing)
+Initial size: 7
+Max load factor: 0.95
+Growth factor: 2
+Deletion policy: PACK
+
+Slot:   0, Key: 104001 (0)
+Slot:   1, Key: 105001 (1)
+Slot:   2, Key: *** Empty ***
+Slot:   3, Key: *** Empty ***
+Slot:   4, Key: 101001 (4)
+Slot:   5, Key: 102001 (5)
+Slot:   6, Key: 103001 (6)
+Number of probes: 5
+Number of expansions: 0
+Items: 5, TableSize: 7
+Load factor: 0.714
+
+Slot:   0, Key: *** Empty ***
+Slot:   1, Key: *** Empty ***
+Slot:   2, Key: *** Empty ***
+Slot:   3, Key: *** Empty ***
+Slot:   4, Key: *** Empty ***
+Slot:   5, Key: *** Empty ***
+Slot:   6, Key: *** Empty ***
+Number of probes: 5
+Number of expansions: 0
+Items: 0, TableSize: 7
+Load factor: 0
+
+
+==================== Test9 ====================
+
+Creating table:
+Primary hash function: Universal Hash
+Secondary hash function: RS Hash
+Initial size: 17
+Max load factor: 0.95
+Growth factor: 2
+Deletion policy: MARK
+
+Slot:   0, Key: 105001 (0:12)
+Slot:   1, Key: 108001 (1:9)
+Slot:   2, Key: 111001 (1:1)
+Slot:   3, Key: *** Empty ***
+Slot:   4, Key: 112001 (7:16)
+Slot:   5, Key: 103001 (5:14)
+Slot:   6, Key: 106001 (6:11)
+Slot:   7, Key: 109001 (7:8)
+Slot:   8, Key: 115001 (8:13)
+Slot:   9, Key: *** Empty ***
+Slot:  10, Key: 101001 (10:16)
+Slot:  11, Key: 104001 (11:13)
+Slot:  12, Key: 107001 (12:10)
+Slot:  13, Key: 113001 (13:15)
+Slot:  14, Key: 110001 (12:2)
+Slot:  15, Key: 114001 (2:14)
+Slot:  16, Key: 102001 (16:15)
+Number of probes: 27
+Number of expansions: 0
+Items: 15, TableSize: 17
+Load factor: 0.882
+
+
+==================== Test10 ====================
+
+Creating table:
+Primary hash function: Universal Hash
+Secondary hash function: RS Hash
+Initial size: 13
+Max load factor: 0.95
+Growth factor: 2
+Deletion policy: MARK
+
+Slot:   0, Key: 105001 (0:8)
+Slot:   1, Key: 108001 (1:5)
+Slot:   2, Key: 110001 (8:10)
+Slot:   3, Key: 101001 (3:4)
+Slot:   4, Key: 104001 (4:1)
+Slot:   5, Key: 107001 (5:10)
+Slot:   6, Key: 111001 (4:5)
+Slot:   7, Key: *** Empty ***
+Slot:   8, Key: 103001 (8:6)
+Slot:   9, Key: 106001 (9:3)
+Slot:  10, Key: 109001 (10:12)
+Slot:  11, Key: *** Empty ***
+Slot:  12, Key: 102001 (12:11)
+Number of probes: 16
+Number of expansions: 0
+Items: 11, TableSize: 13
+Load factor: 0.846
+
+Slot:   0, Key: 105001 (0:8)
+Slot:   1, Key: 108001 (1:5)
+Slot:   2, Key: -- Deleted --
+Slot:   3, Key: 101001 (3:4)
+Slot:   4, Key: 104001 (4:1)
+Slot:   5, Key: 107001 (5:10)
+Slot:   6, Key: -- Deleted --
+Slot:   7, Key: *** Empty ***
+Slot:   8, Key: 103001 (8:6)
+Slot:   9, Key: 106001 (9:3)
+Slot:  10, Key: 109001 (10:12)
+Slot:  11, Key: *** Empty ***
+Slot:  12, Key: 102001 (12:11)
+Number of probes: 23
+Number of expansions: 0
+Items: 9, TableSize: 13
+Load factor: 0.692
+
+
+==================== StressTest ====================
+
+Creating table:
+Primary hash function: Universal Hash
+Secondary hash function: None (Linear probing)
+Initial size: 5
+Max load factor: 0.9
+Growth factor: 1.5
+Deletion policy: PACK
+
+Inserting 100000 items...
+Number of probes: 7437669
+Number of expansions: 23
+Items: 100000, TableSize: 112997
+Load factor: 0.885
+
+Deleting 100000 items...
+Number of probes: 51335227
+Number of expansions: 23
+Items: 0, TableSize: 112997
+Load factor: 0
+

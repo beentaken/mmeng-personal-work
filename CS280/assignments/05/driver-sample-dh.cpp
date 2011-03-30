@@ -933,26 +933,26 @@ int main(void)
 
   // ***************** Linear probing and PACK tests ************************
 
-  TestALot(&HashingFuncs[SIMPLE], &HashingFuncs[NONE]);
+  //TestALot(&HashingFuncs[SIMPLE], &HashingFuncs[NONE]);
 
-  TestSimpleGrow1();         
-  TestSimpleDeletePresent(); 
-  TestSimpleDeleteMissing(); 
-  TestSimpleDispose();       
-  TestInsertConstant();      
+  //TestSimpleGrow1();         
+  //TestSimpleDeletePresent(); 
+  //TestSimpleDeleteMissing(); 
+  //TestSimpleDispose();       
+  //TestInsertConstant();      
 
 
   // ****************** Double hashing and MARK tests ***********************
 
-  //TestALot(&HashingFuncs[PJW], &HashingFuncs[RS]);
+  TestALot(&HashingFuncs[PJW], &HashingFuncs[RS]);
 
-  //TestSimpleInsert1();       
-  //TestSimpleInsert2();       
-  //TestSimpleGrow2();         
+  TestSimpleInsert1();       
+  TestSimpleInsert2();       
+  TestSimpleGrow2();         
 
-  //TestSimpleMarkPack(&HashingFuncs[SIMPLE], &HashingFuncs[NONE], MARK);
-  //TestSimpleMarkPack(&HashingFuncs[SIMPLE], &HashingFuncs[PJW], MARK);
-  //TestDoubleHashing(&HashingFuncs[PJW], &HashingFuncs[SIMPLE]);
+  TestSimpleMarkPack(&HashingFuncs[SIMPLE], &HashingFuncs[NONE], MARK);
+  TestSimpleMarkPack(&HashingFuncs[SIMPLE], &HashingFuncs[PJW], MARK);
+  TestDoubleHashing(&HashingFuncs[PJW], &HashingFuncs[SIMPLE]);
   
   FreePersonRecs();  
 }

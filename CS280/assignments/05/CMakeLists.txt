@@ -22,20 +22,21 @@ elseif(BORLAND)
 endif(CMAKE_COMPILER_IS_GNUCXX)
 
 #file(GLOB SOURCES *.cpp)
-set(SOURCES OAHashTable.cpp Support.cpp)
+set(SOURCES Support.cpp)
 
 add_executable(${EXEC_NAME}1 driver-sample.cpp ${SOURCES})
-add_executable(${EXEC_NAME}2 driver-sample2.cpp ${SOURCES})
+add_executable(${EXEC_NAME}2 driver-sample-dh.cpp ${SOURCES})
+add_executable(${EXEC_NAME}3 driver-sample2.cpp ${SOURCES})
 
-#enable_testing()
+enable_testing()
 
 set(DIFFTEST ${PROJECT_SOURCE_DIR}/difftest.sh)
 set(MEMTEST ${PROJECT_SOURCE_DIR}/memtest.sh)
 
-add_test(TEST_0 ${DIFFEST} ./${EXEC_NAME} ${CURRENT_TEST} ${PROJECT_SOURCE_DIR}/out${CURRENT_TEST})
-
-#foreach(CURRENT_TEST RANGE 0 7)
-#	add_test(TEST_${CURRENT_TEST} ${DIFFEST} ./${EXEC_NAME} ${CURRENT_TEST} ${PROJECT_SOURCE_DIR}/out${CURRENT_TEST})
-#	add_test(MEM_${CURRENT_TEST} ${MEMTEST} ./${EXEC_NAME} ${CURRENT_TEST})
-#endforeach(CURRENT_TEST)
+foreach(CURRENT_TEST RANGE 1 3)
+	add_test(TEST_${CURRENT_TEST} ${DIFFEST} ./${EXEC_NAME}${CURRENT_TEST} ${PROJECT_SOURCE_DIR}/out${CURRENT_TEST})
+	if(UNIX)
+		add_test(MEM_${CURRENT_TEST} ${MEMTEST} ./${EXEC_NAME}${CURRENT_TEST})
+	endif(UNIX)
+endforeach(CURRENT_TEST)
 

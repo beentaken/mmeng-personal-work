@@ -46,10 +46,7 @@ OAHashTable<T>::OAHashTable(const typename OAHashTable<T>::OAHTConfig& Config)
 	:myConfig(Config), myTable(NULL)
 {
 	// Puts stats struct in a useful state.
-	myStats.Count_ = 0;
 	myStats.TableSize_ = myConfig.InitialTableSize_;
-	myStats.Probes_ = 0;
-	myStats.Expansions_ = 0;
 	myStats.PrimaryHashFunc_ = myConfig.PrimaryHashFunc_;
 	myStats.SecondaryHashFunc_ = myConfig.SecondaryHashFunc_;
 

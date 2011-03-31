@@ -1,3 +1,19 @@
+/******************************************************************************/
+/*!
+\file   OAHashTable.h
+\author Marcus Meng
+\par    email: marcus.meng\@digipen.edu
+\par    DigiPen login: marcus.meng
+\par    Course: CS280
+\par    Assignment #5
+\date   2010-03-31
+\brief
+  This is the header and prototypes for a simple hash table.
+
+  The table supports user-passed hash functions that take a key and tablesize,
+  and can use linear probing or double hasing to resolve collisions.
+*/
+/******************************************************************************/
 //---------------------------------------------------------------------------
 #ifndef OAHASHTABLE_H
 #define OAHASHTABLE_H

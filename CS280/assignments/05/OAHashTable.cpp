@@ -1,3 +1,22 @@
+/******************************************************************************/
+/*!
+\file   OAHashTable.cpp
+\author Marcus Meng
+\par    email: marcus.meng\@digipen.edu
+\par    DigiPen login: marcus.meng
+\par    Course: CS280
+\par    Assignment #5
+\date   2010-03-31
+\brief
+  This is the implementation for a simple hash table supporting arbitrary
+  hash functions and linear probing or double hashing collision resolution
+  methods.
+
+Hours Spent: 4
+
+  Getting things to come out exactly like the output is surprisingly tricky.
+*/
+/******************************************************************************/
 #include <cmath> /* ceil */
 #include <cstring> /* strcmp */
 
@@ -12,6 +31,15 @@
 
 /*****************************************************************************
  * Public function interface definitions.
+ */
+
+/*!\brief A constructor.
+ *
+ * \param Config
+ * 	A configuration struct to pass into the hash table. This struct will
+ * 	control various aspects of how the hash table works, such as whether
+ * 	to use double hashes or linear probing to resolve collisions, and
+ * 	whether data in the table needs to be finalized on removal.
  */
 template<typename T>
 OAHashTable<T>::OAHashTable(const OAHashTable<T>::OAHTConfig& Config)
@@ -28,6 +56,11 @@ OAHashTable<T>::OAHashTable(const OAHashTable<T>::OAHTConfig& Config)
 	InitTable();
 }
 
+/*!\brief Destructor.
+ *
+ * Ensures that data is freed appropriately and the hash table itself is
+ * properly deallocated.
+ */
 template<typename T>
 OAHashTable<T>::~OAHashTable()
 {
@@ -35,6 +68,16 @@ OAHashTable<T>::~OAHashTable()
 	delete[] myTable;
 }
 
+/*!\brief Inserts the given data in to the table with the given key.
+ *
+ * Will return an exception if the key already exists in the table.
+ *
+ * \param key
+ * 	The key to use to set and retrieve the data.
+ *
+ * \param data
+ * 	The data to store at the location the key provides.
+ */
 template<typename T>
 void OAHashTable<T>::insert(const char *key, const T& data)
 	throw(OAHashTableException)
@@ -57,7 +100,7 @@ void OAHashTable<T>::insert(const char *key, const T& data)
 			<< ", probe count is " << myStats.Probes_ << std::endl;
 #endif
 		if (static_cast<double>(myStats.Count_ + 1) / myStats.TableSize_
-					>= myConfig.MaxLoadFactor_)
+					> myConfig.MaxLoadFactor_)
 		{
 #ifdef MARCUS_DEBUG
 			std::cerr << "Growth factor too large, growing table..." << std::endl;
@@ -108,6 +151,16 @@ void OAHashTable<T>::insert(const char *key, const T& data)
 	}
 }
 
+/*!\brief Removes data with the given key from the hash table.
+ *
+ * Will return an exception if the key does not actually exist.
+ *
+ * It may rearrange parts of the table if the table is told to repack on
+ * removal of data.
+ *
+ * \param Key
+ * 	They key referring to the data to be removed.
+ */
 template<typename T>
 void OAHashTable<T>::remove(const char *Key)
 	throw(OAHashTableException)
@@ -144,6 +197,15 @@ void OAHashTable<T>::remove(const char *Key)
 	}
 }
 
+/*!\brief Locates data with the given key and provides it to the user.
+ *
+ * Returns an exception if the key does not actually exist in the table.
+ *
+ * \param Key
+ * 	The key to search for.
+ *
+ * \return A constant reference to the data pointed to by the key.
+ */
 template<typename T>
 const T& OAHashTable<T>::find(const char *Key) const
 	throw(OAHashTableException)
@@ -163,6 +225,14 @@ const T& OAHashTable<T>::find(const char *Key) const
 	}
 }
 
+/*!\brief Clears all data in the table.
+ *
+ * Works in O(n) time.
+ *
+ * Will call finalizers on data before removal.
+ *
+ * All slots in the table should be set to UNOCCUPIED when finished.
+ */
 template<typename T>
 void OAHashTable<T>::clear()
 {
@@ -179,12 +249,20 @@ void OAHashTable<T>::clear()
 	}
 }
 
+/*!\brief Obtains various runtime statistics about the hash table.
+ */
 template<typename T>
 OAHTStats OAHashTable<T>::GetStats() const
 {
 	return(myStats);
 }
 
+/*!\brief Debug function. Returns a pointer to the hash table itself.
+ *
+ * Do not call outside of debug systems.
+ *
+ * \return A pointer to the hash table.
+ */
 template<typename T>
 const typename OAHashTable<T>::OAHTSlot *OAHashTable<T>::GetTable() const
 {
@@ -195,6 +273,12 @@ const typename OAHashTable<T>::OAHTSlot *OAHashTable<T>::GetTable() const
  * Private function implementations.
  */
 
+/*!\brief Allocates and initializes a table to a sane state.
+ *
+ * Will reset the Count statistic back to 0.
+ *
+ * Does NOT check to see whether myTable is already initialized.
+ */
 template<typename T>
 void OAHashTable<T>::InitTable()
 {
@@ -217,6 +301,8 @@ void OAHashTable<T>::InitTable()
 	myStats.Count_ = 0;
 }
 
+/*!\brief Grows the table based on the provided growth factor.
+ */
 template<typename T>
 void OAHashTable<T>::GrowTable() throw(OAHashTableException)
 {
@@ -243,6 +329,16 @@ void OAHashTable<T>::GrowTable() throw(OAHashTableException)
 	++myStats.Expansions_;
 }
 
+/*!\brief Locates the index of a given key using an appropriate probe method.
+ *
+ * \param Key
+ * 	The key to look for.
+ *
+ * \param Slot
+ * 	Set to the slot that holds the key being looked for.
+ *
+ * \return The index of the key, or -1 if the key was not found.
+ */
 template<typename T>
 int OAHashTable<T>::IndexOf(const char *Key, OAHTSlot* &Slot) const
 {
@@ -278,6 +374,14 @@ int OAHashTable<T>::IndexOf(const char *Key, OAHTSlot* &Slot) const
 	return(-1);
 }
 
+/*!\brief Helper fucntion to remove data from a slot.
+ *
+ * Calls appropriate finalizers on the data before setting the state to
+ * a value appropriate for the current deletion policy.
+ *
+ * \param to_remove
+ * 	The slot to clear out.
+ */
 template<typename T>
 void OAHashTable<T>::myRemove(OAHTSlot &to_remove) throw(OAHashTableException)
 {
@@ -286,11 +390,27 @@ void OAHashTable<T>::myRemove(OAHTSlot &to_remove) throw(OAHashTableException)
 		(*myConfig.FreeProc_)(to_remove.Data);
 	}
 
-	to_remove.State = (myConfig.DeletionPolicy_ == MARK) ? OAHTSlot::DELETED : OAHTSlot::UNOCCUPIED;
+	to_remove.State = myConfig.DeletionPolicy_ == MARK ? OAHTSlot::DELETED: OAHTSlot::UNOCCUPIED;
 
 	--myStats.Count_;
 }
 
+/*!\brief Helper function to help calculate an appropriate index.
+ *
+ * Takes into account the current hash value, the current stride, and the
+ * table size.
+ *
+ * \param hash
+ * 	The hash of the key in question.
+ *
+ * \param stride
+ * 	The current stride value.
+ *
+ * \param index
+ * 	The number of jumps past the first occurance of the hash.
+ *
+ * \return The index in myTable of the calculated item.
+ */
 template<typename T>
 inline
 int OAHashTable<T>::myIndex(const unsigned &hash, const unsigned &stride, const unsigned& index) const
@@ -298,6 +418,13 @@ int OAHashTable<T>::myIndex(const unsigned &hash, const unsigned &stride, const 
 	return((hash + index * stride) % myStats.TableSize_);
 }
 
+/*!\brief Helper function to call a primary hash on a key.
+ *
+ * \param key
+ * 	The key to hash.
+ *
+ * \return The hashed value of the key.
+ */
 template<typename T>
 inline
 unsigned OAHashTable<T>::myPrimaryHash(const char* key) const
@@ -305,6 +432,15 @@ unsigned OAHashTable<T>::myPrimaryHash(const char* key) const
 	return((*myStats.PrimaryHashFunc_)(key, myStats.TableSize_));
 }
 
+/*!\brief Helper function to call a secondary hash on a key.
+ *
+ * Ensures that the secondary hash falls within a valid range.
+ *
+ * \param key
+ * 	The key to hash.
+ *
+ * \return The hashed value of the key.
+ */
 template<typename T>
 inline
 unsigned OAHashTable<T>::mySecondaryHash(const char* key) const

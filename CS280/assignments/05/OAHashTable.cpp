@@ -176,6 +176,7 @@ void OAHashTable<T>::remove(const char *Key)
 		{
 			// Re-insert everything after the removed item.
 			for (int i = 0;
+				static_cast<unsigned>(i) < myStats.TableSize_ - 1 &&
 				myTable[myIndex(index + 1, 1, i)].State == OAHTSlot::OCCUPIED;
 				++i)
 			{

@@ -18,7 +18,7 @@ Hours Spent: 4
 */
 /******************************************************************************/
 #include <cmath> /* ceil */
-#include <cstring> /* strcmp */
+#include <cstring> /* strcmp, strcpy */
 
 #include "Support.h"
 #include "OAHashTable.h"
@@ -42,8 +42,8 @@ Hours Spent: 4
  * 	whether data in the table needs to be finalized on removal.
  */
 template<typename T>
-OAHashTable<T>::OAHashTable(const typename OAHashTable<T>::OAHTConfig& Config)
-	:myConfig(Config), myTable(NULL)
+OAHashTable<T>::OAHashTable(const OAHTConfig& Config)
+	:myConfig(Config), myTable(NULL), myStats()
 {
 	// Puts stats struct in a useful state.
 	myStats.TableSize_ = myConfig.InitialTableSize_;

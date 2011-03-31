@@ -42,7 +42,7 @@ Hours Spent: 4
  * 	whether data in the table needs to be finalized on removal.
  */
 template<typename T>
-OAHashTable<T>::OAHashTable(const OAHashTable<T>::OAHTConfig& Config)
+OAHashTable<T>::OAHashTable(const typename OAHashTable<T>::OAHTConfig& Config)
 	:myConfig(Config), myTable(NULL)
 {
 	// Puts stats struct in a useful state.

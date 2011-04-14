@@ -1,3 +1,17 @@
+/******************************************************************************/
+/*!
+\file   ALGraph.h
+\author Marcus Meng
+\par    email: marcus.meng\@digipen.edu
+\par    DigiPen login: marcus.meng
+\par    Course: CS280
+\par    Assignment #6
+\date   2010-04-14
+\brief
+  This is the header and prototypes for an adjacency-list based graph class
+  with internal support for Dijkstra's algorithm for calculating shortest paths.
+*/
+/******************************************************************************/
 //---------------------------------------------------------------------------
 #ifndef ALGRAPH_H
 #define ALGRAPH_H
@@ -6,6 +20,7 @@
 #include <list> /* To maintain our edge lists. */
 #include <queue> /* For our priority queue. */
 #include <algorithm> // sort
+#include <climits> // UINT_MAX
 
 struct DijkstraInfo
 {
@@ -69,17 +84,16 @@ class ALGraph
     struct AdjInfo
     {
       unsigned node;
-      unsigned weight;
       unsigned cost;
       AdjInfo();
       bool operator<(const AdjInfo& rhs) const;
-      bool operator>(const AdjInfo& rhs) const;
     };
 
     typedef std::vector<GNode> NodeList;
 
     NodeList myNodes;
-    
+
+    AdjInfo myMakeAdjInfo(unsigned source, unsigned current_cost) const;
 };
 
 #endif

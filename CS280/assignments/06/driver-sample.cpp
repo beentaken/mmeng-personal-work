@@ -777,11 +777,11 @@ void TestBig(unsigned nodes, unsigned percentage)
 int main(void)
 {
   // ********** Adjaceny list tests ********** 
-  RunDijkstra = false;
+  //RunDijkstra = true;
   //TestAllLists();
 
   //// ********** Dijkstra tests ********** 
-  //RunDijkstra = true;
+  RunDijkstra = true;
   //TestDijkstra0(1);
   //TestDijkstra1(1);
   //TestDijkstra4(1);

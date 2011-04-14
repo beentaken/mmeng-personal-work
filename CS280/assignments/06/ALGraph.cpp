@@ -1,3 +1,22 @@
+/******************************************************************************/
+/*!
+\file   ALGraph.cpp
+\author Marcus Meng
+\par    email: marcus.meng\@digipen.edu
+\par    DigiPen login: marcus.meng
+\par    Course: CS280
+\par    Assignment #6
+\date   2010-04-14
+\brief
+  This is the implementation for an adjacency-list based graph class with
+  internal support for Dijkstra's algorithm for calculating shortest paths.
+
+Hours Spent: 4
+
+  Made a stupid mistake and spent an hour finding out I flipped an operator.
+*/
+/******************************************************************************/
+
 #include "ALGraph.h"
 
 namespace
@@ -88,7 +107,7 @@ ALGraph::~ALGraph()
 void ALGraph::AddDEdge(unsigned source, unsigned destination, unsigned weight)
 {
     // Indices start at 0, of course, but the Node IDs seem to start at 1.
-    myNodes[source - 1].addEdge(destination, weight);
+    myNodes[source - 1].addEdge(destination - 1, weight);
 }
 
 /*!\brief Adds an undirected edge to the graph.
@@ -141,30 +160,23 @@ std::vector<unsigned> ALGraph::SearchFrom(unsigned,
  */
 std::vector<DijkstraInfo> ALGraph::Dijkstra(unsigned start_node) const
 {
+    --start_node; // Bah, indices.
     std::priority_queue<AdjInfo> to_check;
     std::vector<bool> evaluated(myNodes.size(), false);
-    std::vector<DijkstraInfo> info(myNodes.size());
-    
-    // Mark start node as evaluated.
-    evaluated[start_node] = true;
-    info[start_node].cost = 0;
+    std::vector<DijkstraInfo> info(myNodes.size()); 
 
-    // Add initial neighbors to queue for processing.
-    for (EdgeList::const_iterator iter = myNodes[start_node].GetEdgeList().begin();
-            iter != myNodes[start_node].GetEdgeList().end();
+    // Let's get our "infinite" values in.
+    for (std::vector<DijkstraInfo>::iterator iter = info.begin();
+            iter != info.end();
             ++iter)
     {
-        AdjInfo to_add;
-        to_add.node = (*iter).GetDestination();
-        to_add.weight = (*iter).GetWeight();
-        to_add.cost = (*iter).GetWeight();
-        
-        to_check.push(to_add);
-
-        // Update our tracking.
-        info[(*iter).GetDestination()].cost = (*iter).GetWeight();
-        info[(*iter).GetDestination()].path.push_back(start_node);
+        (*iter).cost = UINT_MAX;
     }
+    
+    // Mark start node as evaluated.
+    info[start_node].cost = 0u;
+    info[start_node].path.push_back(start_node + 1); // Actual node number.
+    to_check.push(myMakeAdjInfo(start_node, 0u));
 
     // We are ready to begin.
     while (!to_check.empty())
@@ -183,24 +195,17 @@ std::vector<DijkstraInfo> ALGraph::Dijkstra(unsigned start_node) const
                     ++iter)
             {
                 // Chillax.
-                unsigned cost = info[(*iter).GetDestination()].cost;
-                if (cost != 0 &&
-                    info[current.node].cost + (*iter).GetWeight() < cost)
+                if (current.cost + (*iter).GetWeight() < info[(*iter).GetDestination()].cost)
                 {
                     // If new cost to reach neighbor is lower...
-                    // Set the new cost.
-                    info[(*iter).GetDestination()].cost = info[current.node].cost + (*iter).GetWeight();
+                    info[(*iter).GetDestination()].cost = current.cost + (*iter).GetWeight();
                     // Update the path list.
                     info[(*iter).GetDestination()].path = info[current.node].path;
-                    info[(*iter).GetDestination()].path.push_back((*iter).GetDestination());
-
-                    // Queue it up for re-checking.
-                    AdjInfo to_add;
-                    to_add.node = (*iter).GetDestination();
-                    to_add.weight = (*iter).GetWeight();
-                    to_add.cost = info[(*iter).GetDestination()].cost;
-                    to_check.push(to_add);
+                    info[(*iter).GetDestination()].path.push_back((*iter).GetDestination() + 1);
                 }
+                    
+                // Queue it up for checking.
+                to_check.push(myMakeAdjInfo((*iter).GetDestination(), info[(*iter).GetDestination()].cost));
             }
         }
     }
@@ -226,7 +231,7 @@ ALIST ALGraph::GetAList() const
                 currentEdge != (*currentNode).GetEdgeList().end();
                 ++currentEdge)
         {
-            (*alistNode).push_back(createAdjInfo((*currentEdge).GetDestination(), (*currentEdge).GetWeight()));
+            (*alistNode).push_back(createAdjInfo((*currentEdge).GetDestination() + 1, (*currentEdge).GetWeight()));
         }
 
         std::sort((*alistNode).begin(), (*alistNode).end(), ALISTcomparer);
@@ -352,40 +357,44 @@ const ALGraph::EdgeList& ALGraph::GNode::GetEdgeList() const
 /*!\brief Constructor.
  */
 ALGraph::AdjInfo::AdjInfo()
-    :node(0u), weight(0u), cost(0u)
+    :node(0u), cost(0u)
 {
 }
 
 /*!\brief Checks if the current AdjInfo should come before another.
  *
- * Checks by the total cost of the current path, if the cost is equal,
- * chooses the path with the lower weight on the most recent node.
- *
  * \return true if the current node comes before the rhs.
  */
 bool ALGraph::AdjInfo::operator<(const AdjInfo& rhs) const
 {
-    if (cost < rhs.cost)
+    if (cost > rhs.cost)
     {
         return(true);
     }
     else
     {
-        if (cost == rhs.cost && weight < rhs.weight)
-        {
-            return(true);
-        }
-
         return(false);
     }
 }
 
-/*!\brief Checks if the current node should come after the rhs.
+/*!\brief Helper function to create an internal AdjInfo for use with the
+ * priority queue.
  *
- * \return true if the current node comes after the rhs.
+ * \param source
+ *  The GNode to create the AdjInfo from.
+ *
+ * \param current_cost
+ *  The currently running cost of the path.
+ *
+ * \return A new AdjInfo with the appropriate values set.
  */
-bool ALGraph::AdjInfo::operator>(const AdjInfo& rhs) const
+ALGraph::AdjInfo ALGraph::myMakeAdjInfo(unsigned source, unsigned current_cost) const
 {
-    return(!(*this < rhs));
+    AdjInfo to_return;
+
+    to_return.node = source;
+    to_return.cost = current_cost;
+
+    return(to_return);
 }
 

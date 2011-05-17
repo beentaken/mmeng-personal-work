@@ -1,8 +1,14 @@
 #include "Utilities.h"
 #include "line.hpp"
 #include "matrix.hpp"
+#include <iostream>
 
 int winID;
+
+// If we're not on windows and thus don't have windows.h...
+#ifndef WIN32
+#define VK_ESCAPE 27
+#endif
 
 void keyboard(unsigned char key, int x, int y)
 {

@@ -88,7 +88,7 @@ Matrix<rows, cols, T>& Matrix<rows, cols, T>::operator*=(const Matrix<rows, cols
 template<int rows, int cols, typename T>
 Matrix<rows, cols, T> Matrix<rows, cols, T>::operator*(const Matrix<rows, cols, T> &rhs) const
 {
-    Matrix<rows, cols> to_return;
+    Matrix<rows, cols, T> to_return;
 
     for (int i = 0; i < rows; ++i)
     {

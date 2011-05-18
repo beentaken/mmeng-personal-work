@@ -31,7 +31,7 @@ elseif(BORLAND)
 endif(CMAKE_COMPILER_IS_GNUCXX)
 
 #file(GLOB SOURCES *.cpp)
-set(SOURCES Utilities.cpp line.cpp)
+set(SOURCES Utilities.cpp line.cpp assignment01.cpp)
 
 add_executable(${EXEC_NAME} main.cpp ${SOURCES})
 target_link_libraries(${EXEC_NAME} ${LIBS})

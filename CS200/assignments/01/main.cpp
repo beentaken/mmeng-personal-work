@@ -1,13 +1,15 @@
 #include "Utilities.h"
 #include "line.hpp"
 #include "matrix.hpp"
-#include <iostream>
+#include "assignment01.hpp"
 
 int winID;
 
+Assignment01 current_assignment;
+
 // If we're not on windows and thus don't have windows.h...
 #ifndef WIN32
-#define VK_ESCAPE 27
+#define VK_ESCAPE 0x1b
 #endif
 
 void keyboard(unsigned char key, int x, int y)
@@ -42,17 +44,7 @@ void render(void)
 	FrameBuffer::Clear(255, 255, 255);
 
 	//Put your rendering code here
-	Mat3 first_point, second_point;
-	
-	first_point(0, 0) = 200;
-	first_point(1, 1) = 400;
-	
-	second_point(0, 0) = 20;
-	second_point(1, 1) = 50;
-	
-	Line myLine(first_point, second_point);
-	
-	myLine.draw();
+    current_assignment.drawScene();
 
 	glDrawPixels(WIDTH, HEIGHT, GL_RGB, GL_UNSIGNED_BYTE, FrameBuffer::buffer);
 	glutSwapBuffers();

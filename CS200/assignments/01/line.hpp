@@ -11,7 +11,7 @@ class Line
 		Line(const Mat3 &first, const Mat3 &second);
 		~Line();
 		
-		void draw();
+		void draw(const Matrix<3, 3, float>& toViewport);
 
 	private:
 		Mat3 myStart;
@@ -19,3 +19,4 @@ class Line
 };
 
 #endif // LINE_H
+

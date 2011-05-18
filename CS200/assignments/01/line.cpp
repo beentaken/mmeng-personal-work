@@ -2,6 +2,7 @@
 
 #include <cmath>
 #include <algorithm>
+#include <iostream>
 
 namespace
 {
@@ -48,20 +49,26 @@ Line::Line()
 Line::Line(const Mat3& first, const Mat3& second)
 :myStart(first), myEnd(second)
 {
+//    std::cerr << "Constructing line: " << myStart(0, 0) << ' ' << myStart(1, 1) << ' ' << myEnd(0, 0) << ' ' << myEnd(1, 1) << std::endl;
 }
 
 Line::~Line()
 {
 }
 
-void Line::draw()
+void Line::draw(const Matrix<3, 3, float>& toViewport)
 {
-	int start_x = myStart(0, 0);
-	int start_y = myStart(1, 1);
+    // Doing viewport conversion manually for now.
+    // TODO: Make the matrix multiplication right.
+//    std::cerr << this << ": ";
+	int start_x = static_cast<float>(myStart(0, 0)) * toViewport(0, 0) - toViewport(0, 2);
+	int start_y = static_cast<float>(myStart(1, 1)) * toViewport(1, 1) - toViewport(1, 2);
 	
-	int end_x = myEnd(0, 0);
-	int end_y = myEnd(1, 1);
+	int end_x = static_cast<float>(myEnd(0, 0)) * toViewport(0, 0) - toViewport(0, 2);
+	int end_y = static_cast<float>(myEnd(1, 1)) * toViewport(1, 1) - toViewport(1, 2);
 	bool more_horizontal = abs(end_x - start_x) > abs(end_y - start_y);
+
+//    std::cerr << start_x << ' ' << start_y << ' ' << end_x << ' ' << end_y << ' ' << std::endl;
 	
 	// Make sure the start point is always "lower" on the iterating factor than the end.
 	if (more_horizontal)

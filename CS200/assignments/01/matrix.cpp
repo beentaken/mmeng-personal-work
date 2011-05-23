@@ -1,3 +1,17 @@
+/* Start Header -------------------------------------------------------
+Copyright (C) 2011 DigiPen Institute of Technology.
+Reproduction or disclosure of this file or its contents without the prior written consent of
+DigiPen Institute of Technology is prohibited.
+
+File Name: matrix.cpp
+Purpose: Implementation of an arbitrary-sized numerical matrix class.
+Language: C++ (MSVC, G++)
+Platform: Windows, Linux
+Project: marcus.meng_cs200_1
+Author: Marcus Meng (marcus.meng) 80002709
+Creation date: 2011-05-18
+- End Header --------------------------------------------------------*/
+
 #include "matrix.hpp"
 
 #include <numeric>
@@ -94,7 +108,7 @@ Matrix<rows, cols, T> Matrix<rows, cols, T>::operator*(const Matrix<rows, cols, 
     {
         for (int j = 0; j < cols; ++j)
         {
-            to_return(i, j) = std::inner_product(row_begin(i), row_end(i), rhs.col_begin(j), 0);
+            to_return(i, j) = std::inner_product(row_begin(i), row_end(i), rhs.col_begin(j), T(0));
         }
     }
 

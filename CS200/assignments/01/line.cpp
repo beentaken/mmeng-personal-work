@@ -1,7 +1,24 @@
+/* Start Header -------------------------------------------------------
+Copyright (C) 2011 DigiPen Institute of Technology.
+Reproduction or disclosure of this file or its contents without the prior written consent of
+DigiPen Institute of Technology is prohibited.
+
+File Name: line.cpp
+Purpose: Implementation of functions needed to draw arbitrary lines in a viewport.
+Language: C++ (MSVC, G++)
+Platform: Windows, Linux
+Project: marcus.meng_cs200_1
+Author: Marcus Meng (marcus.meng) 80002709
+Creation date: 2011-05-18
+- End Header --------------------------------------------------------*/
+
 #include "line.hpp"
+
+#include "Utilities.h"
 
 #include <cmath>
 #include <algorithm>
+#include <numeric>
 #include <iostream>
 
 namespace
@@ -17,8 +34,8 @@ namespace
 	template<>
 	void DrawLine<true>(const int& start_x, const int& start_y, const int& end_x, const int& end_y)
 	{
-		float slope = static_cast<float>((end_y - start_y)) / (end_x - start_x);
-		float current_y = start_y;
+		float slope = static_cast<float>((end_y - start_y)) / static_cast<float>((end_x - start_x));
+		float current_y = static_cast<float>(start_y);
 		
 		for (int current_x = start_x; current_x <= end_x; ++current_x)
 		{
@@ -30,8 +47,8 @@ namespace
 	template<>
 	void DrawLine<false>(const int& start_x, const int& start_y, const int& end_x, const int& end_y)
 	{
-		float inv_slope = static_cast<float>((end_x - start_x)) / (end_y - start_y);
-		float current_x = start_x;
+		float inv_slope = static_cast<float>((end_x - start_x)) / static_cast<float>((end_y - start_y));
+		float current_x = static_cast<float>(start_x);
 		
 		for (int current_y = start_y; current_y <= end_y; ++current_y)
 		{
@@ -46,10 +63,9 @@ Line::Line()
 {
 }
 
-Line::Line(const Mat3& first, const Mat3& second)
+Line::Line(const Matrix<3, 3, float>& first, const Matrix<3, 3, float>& second)
 :myStart(first), myEnd(second)
 {
-//    std::cerr << "Constructing line: " << myStart(0, 0) << ' ' << myStart(1, 1) << ' ' << myEnd(0, 0) << ' ' << myEnd(1, 1) << std::endl;
 }
 
 Line::~Line()
@@ -58,18 +74,19 @@ Line::~Line()
 
 void Line::draw(const Matrix<3, 3, float>& toViewport)
 {
-    // Doing viewport conversion manually for now.
-    // TODO: Make the matrix multiplication right.
-//    std::cerr << this << ": ";
-	int start_x = static_cast<float>(myStart(0, 0)) * toViewport(0, 0) - toViewport(0, 2);
-	int start_y = static_cast<float>(myStart(1, 1)) * toViewport(1, 1) - toViewport(1, 2);
-	
-	int end_x = static_cast<float>(myEnd(0, 0)) * toViewport(0, 0) - toViewport(0, 2);
-	int end_y = static_cast<float>(myEnd(1, 1)) * toViewport(1, 1) - toViewport(1, 2);
+    Matrix<3, 3, float> start(toViewport * myStart), end(toViewport * myEnd);
+
+    // Accumulating because our points are only stored in matrices right now, not
+    // vectors. TODO: generalize matrix library to handle one-dimensional matrices
+    // as well.
+    int start_x = Round(std::accumulate(start.row_begin(0), start.row_end(0), 0.0f));
+    int start_y = Round(std::accumulate(start.row_begin(1), start.row_end(1), 0.0f));
+
+    int end_x = Round(std::accumulate(end.row_begin(0), end.row_end(0), 0.0f));
+    int end_y = Round(std::accumulate(end.row_begin(1), end.row_end(1), 0.0f));
+
 	bool more_horizontal = abs(end_x - start_x) > abs(end_y - start_y);
 
-//    std::cerr << start_x << ' ' << start_y << ' ' << end_x << ' ' << end_y << ' ' << std::endl;
-	
 	// Make sure the start point is always "lower" on the iterating factor than the end.
 	if (more_horizontal)
 	{		

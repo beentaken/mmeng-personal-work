@@ -1,3 +1,17 @@
+/* Start Header -------------------------------------------------------
+Copyright (C) 2011 DigiPen Institute of Technology.
+Reproduction or disclosure of this file or its contents without the prior written consent of
+DigiPen Institute of Technology is prohibited.
+
+File Name: matrix.hpp
+Purpose: Prototypes for an arbitrary-sized numerical matrix class.
+Language: C++ (MSVC, G++)
+Platform: Windows, Linux
+Project: marcus.meng_cs200_1
+Author: Marcus Meng (marcus.meng) 80002709
+Creation date: 2011-05-18
+- End Header --------------------------------------------------------*/
+
 /*
  * The matrix is laid out as a flat single-dimensional array in memory.
  *
@@ -8,12 +22,13 @@
 
 #include <stdexcept>
 #include <iostream>
+#include <iterator>
 
 template <int rows = 3, int cols = 3, typename T=int>
 class Matrix
 {
     public:
-        class iterator
+        class iterator : public std::iterator<std::forward_iterator_tag, T>
         {
             T* myArray;
             int myStride;
@@ -28,7 +43,7 @@ class Matrix
                 bool operator!=(const iterator &rhs) const;
         };
 
-        class const_iterator
+        class const_iterator : public std::iterator<std::forward_iterator_tag, T>
         {
             const T* myArray;
             int myStride;

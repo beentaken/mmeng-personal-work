@@ -1,3 +1,18 @@
+/* Start Header -------------------------------------------------------
+Copyright (C) 2011 DigiPen Institute of Technology.
+Reproduction or disclosure of this file or its contents without the prior written consent of
+DigiPen Institute of Technology is prohibited.
+
+File Name: main.cpp
+Purpose: Provided driver file for CS200 assignments.
+Language: C++ (MSVC, G++)
+Platform: Windows, Linux
+Project: marcus.meng_cs200_1
+Author: Marcus Meng (marcus.meng) 80002709
+Creation date: 2011-05-18
+- End Header --------------------------------------------------------*/
+
+#include <cstdlib>
 #include "Utilities.h"
 #include "line.hpp"
 #include "matrix.hpp"

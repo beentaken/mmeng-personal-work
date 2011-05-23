@@ -1,14 +1,27 @@
+/* Start Header -------------------------------------------------------
+Copyright (C) 2011 DigiPen Institute of Technology.
+Reproduction or disclosure of this file or its contents without the prior written consent of
+DigiPen Institute of Technology is prohibited.
+
+File Name: assignment01.cpp
+Purpose: Implementation for wrapper for first assignment.
+Language: C++ (MSVC, G++)
+Platform: Windows, Linux
+Project: marcus.meng_cs200_1
+Author: Marcus Meng (marcus.meng) 80002709
+Creation date: 2011-05-18
+- End Header --------------------------------------------------------*/
+
 #include "assignment01.hpp"
+#include "Utilities.h"
 
 Assignment01::Assignment01()
-    :num_points(9), points(num_points), num_lines(9), lines(num_lines)
+    :num_points(9), points(num_points), num_lines(9), lines(num_lines), camera_width(800), camera_height(600)
 {
     myCreatePoints();
     myCreateLines();
 
     myCalculateCameraToViewport();
-
-//    test();
 }
 
 void Assignment01::drawScene()
@@ -27,20 +40,19 @@ void Assignment01::myCreatePoints()
 
     for (int i = 0; i < num_points; ++i)
     {
-        Mat3 new_point;
+        Matrix<3, 3, float> new_point;
 
-        new_point(0,0) = x_list[i];
-        new_point(1,1) = y_list[i];
+        new_point(0,0) = static_cast<float>(x_list[i]);
+        new_point(1,1) = static_cast<float>(y_list[i]);
+        new_point(2,2) = 1.0f;
 
         points[i] = new_point ;
-//        std::cerr << "New point added: " << points[i](0, 0) << ' ' << points[i](1, 1) << std::endl;
     }
 }
 
 // To make the point indices match up with the assignment ones.
-const Mat3& Assignment01::myGetPoint(int point)
+const Matrix<3, 3, float>& Assignment01::myGetPoint(int point)
 {
-//    std::cerr << "Getting point: " << points[point - 1](0, 0) << ' ' << points[point - 1](1, 1) << std::endl;
     return(points[point - 1]);
 }
 
@@ -51,7 +63,6 @@ void Assignment01::myCreateLines()
     
     for (int i = 0; i < num_lines; ++i)
     {
-//        std::cerr << "Assigning point: " << myGetPoint(starts[i])(0, 0) << ' ' << myGetPoint(starts[i])(1, 1) << std::endl;
         lines[i] = Line(points[starts[i]-1], points[ends[i] - 1]);
     }
 }
@@ -61,29 +72,19 @@ void Assignment01::myCalculateCameraToViewport()
     // Normalize manually while I write a float/int combo matrix system.
     Matrix<3, 3, float> current, temp;
 
-    current(0, 0) = 640.0f / 800;
-    current(1, 1) = -480.0f / 600; // Flipped axis.
+    current(0, 0) = static_cast<float>(WIDTH) / static_cast<float>(camera_width);
+    current(1, 1) = -static_cast<float>(HEIGHT) / static_cast<float>(camera_height); // Flipped axis.
     current(2, 2) = 1.0f;
 
-//    std::cerr << "Current: " << current(0, 0) << ' ' << current(1, 1) << std::endl;
-/*
+    // Build a translation matrix to relocate the origin.
     temp(0, 0) = 1.0f;
     temp(1, 1) = 1.0f;
     temp(2, 2) = 1.0f;
 
-    temp(0, 2) = -800.0f / 2;
-    temp(0, 2) = 600.0f / 2;
+    temp(0, 2) = static_cast<float>(WIDTH)/ 2;
+    temp(1, 2) = static_cast<float>(HEIGHT)/ 2;
 
-    myCameraToViewport = current * temp;
-*/
-    // For now, just stuff the displacement into the matrix, will do it properly
-    // later.
-    current(0, 2) = -640.0f / 2;
-    current(1, 2) = -480.0f / 2;
-    myCameraToViewport = current;
-//    std::cerr << "Final: " << myCameraToViewport(0, 0) << ' '
-//        << myCameraToViewport(1, 1) << ' '
-//        << myCameraToViewport(2, 2) << std::endl;
+    myCameraToViewport = temp * current;
 }
 
 void Assignment01::test() const

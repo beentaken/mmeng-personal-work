@@ -1,0 +1,26 @@
+/* Start Header -------------------------------------------------------
+Copyright (C) 2011 DigiPen Institute of Technology.
+Reproduction or disclosure of this file or its contents without the prior written consent
+of DigiPen Institute of Technology is prohibited.
+
+File Name: README
+Purpose: Description of the project.
+Language: N/A
+Platform: N/A
+Project: cs230_marcus.meng_1
+Author: Marcus Meng (marcus.meng) 80002709
+Creation date: 2011-05-30
+- End Header --------------------------------------------------------*/
+
+This is the first part of the CS230 first assignment.
+
+It reads values out of three files: Level1_Counter.txt, Level2_counter.txt,
+and Level2_Lives.txt.
+
+It will simulate the game states running for a fixed amount of time, checking
+input and changing states, with the appropriate support functions, as needed.
+
+This does not otherwise take any input from the user.
+
+All output will show up in Output.txt.
+

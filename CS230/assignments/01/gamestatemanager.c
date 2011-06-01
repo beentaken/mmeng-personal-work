@@ -18,12 +18,14 @@ Creation date: 2011-05-30
 #include <stdlib.h> /* NULL */
 
 static State current_state;
+static States force_signal;
 
 void GSM_Initialize(State initial)
 {
     log_message("GSM:Initialize\n");
 
     current_state = NULL;
+	force_signal = OK;
     
     GSM_Update(initial);
 }
@@ -58,6 +60,9 @@ States GSM_RunFrame(void)
     States result;
     result = (*current_state->update)(current_state);
     (*current_state->draw)(current_state);
+	
+	if (force_signal != OK)
+		return(force_signal);
 
     return(result);
 }
@@ -68,3 +73,7 @@ void GSM_Exit(void)
     (*current_state->unload)(current_state);
 }
 
+void GSM_Signal(States signal)
+{
+	force_signal = signal;
+}

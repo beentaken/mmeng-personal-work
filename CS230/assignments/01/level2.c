@@ -135,9 +135,9 @@ static States level2_unload(void* this_ptr)
 
 Level2 create_level2(void)
 {
-    Level2 new_level2 = malloc(sizeof(struct level2_t));
+    Level2 new_level2 = (Level2)malloc(sizeof(struct level2_t));
 
-    new_level2->myState.name = malloc(10*sizeof(char));
+    new_level2->myState.name = (char*)malloc(10*sizeof(char));
     strcpy(new_level2->myState.name, "Level2");
     new_level2->myState.load = &level2_load;
     new_level2->myState.initialize = &level2_init;

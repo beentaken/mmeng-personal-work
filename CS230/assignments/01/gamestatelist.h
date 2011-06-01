@@ -17,7 +17,7 @@ Creation date: 2011-05-30
 
 enum states_t
 {
-    OK = 0,
+    OK,
     ERROR,
     END,
     RUNNING,

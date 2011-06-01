@@ -24,5 +24,7 @@ void GSM_Restart(void);
 States GSM_RunFrame(void);
 void GSM_Exit(void);
 
+void GSM_Signal(States signal);
+
 #endif /* GAMESTATE_MANAGER_H */
 

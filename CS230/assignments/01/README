@@ -12,7 +12,7 @@ Author: Marcus Meng (marcus.meng) 80002709
 Creation date: 2011-05-30
 - End Header --------------------------------------------------------*/
 
-This is the first part of the CS230 first assignment.
+This is the second part of the CS230 first assignment.
 
 It reads values out of three files: Level1_Counter.txt, Level2_counter.txt,
 and Level2_Lives.txt.
@@ -20,7 +20,8 @@ and Level2_Lives.txt.
 It will simulate the game states running for a fixed amount of time, checking
 input and changing states, with the appropriate support functions, as needed.
 
-This does not otherwise take any input from the user.
+The only input this takes from the user is the ability to quit --- pressing
+escape will cause the program to exit.
 
 All output will show up in Output.txt.
 

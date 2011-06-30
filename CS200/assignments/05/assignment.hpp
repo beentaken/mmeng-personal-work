@@ -18,7 +18,6 @@ Creation date: 2011-05-30
 #include "matrix.hpp" // Mat3
 #include <vector>
 #include <deque>
-#include "line.hpp"
 #include "camera.hpp"
 #include "drawable.hpp"
 

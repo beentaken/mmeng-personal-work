@@ -120,8 +120,8 @@ class Matrix
     private:
 };
 
-template<int rows, int cols, typename T>
-Matrix<rows, cols, T> operator*(int scalar, const Matrix<rows, cols, T>& matrix);
+template<typename number_type, int rows, int cols, typename T>
+Matrix<rows, cols, T> operator*(number_type scalar, const Matrix<rows, cols, T>& matrix);
 
 #include "matrix.cpp"
 

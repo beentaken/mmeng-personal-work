@@ -21,11 +21,13 @@ Creation date: 2011-06-28
 class Circle : public Drawable
 {
     public:
+		Circle(Vec3 newcenter, int newradius, Color newcolor);
         virtual void draw(const Matrix<3, 3, float>& toViewport);
 
     private:
         Vec3 center;
-        Vec3 radius;
+        int radius;
+		Color color;
 };
 
 #endif // CIRCLE_H

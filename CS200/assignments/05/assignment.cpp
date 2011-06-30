@@ -15,6 +15,9 @@ Creation date: 2011-05-30
 #include "assignment.hpp"
 #include "Utilities.h"
 #include <cmath>
+#include "circle.hpp"
+#include "ellipse.hpp"
+#include "line.hpp"
 
 #include "matrix_transform.hpp"
 
@@ -62,27 +65,44 @@ void Assignment::handleInput(int key, int x, int y)
             break;
     }
 
+	Color black = {0, 0, 0};
+
     switch (current_mode)
     {
         case LINE:
-            if (points.size() == 2)
+            if (points.size() >= 2)
             {
-                Color black = {0, 0, 0};
                 lines.push_back(new Line(points.front(), points.back(), black));
                 points.clear();
             }
             break;
         case CIRCLE:
-            if (points.size() == 2)
+            if (points.size() >= 2)
             {
-                // TODO: Add a new circle.
+				Vec3 distance = points.front() + -1.0f * points.back();
+				lines.push_back(new Circle(points.front(), std::sqrt(distance(1,0) * distance(1, 0) + distance(0, 0) * distance(0, 0)), black));
                 points.clear();
             }
             break;
         case ELLIPSE:
-            if (points.size() == 3)
+            if (points.size() >= 3)
             {
-                // TODO: Add a new ellipse.
+                // First click is center, second is x-radius, third is y-radius.
+				Vec3 first, second, third;
+
+				first = points.front();
+				points.pop_front();
+				second = points.front();
+				points.pop_front();
+				third = points.front();
+				points.pop_front();
+
+				Vec3 radius_a, radius_b;
+				radius_a = second + -1.0f * first;
+				radius_b = third + -1.0f * first;
+
+				lines.push_back(new Ellipse(first, std::sqrt(radius_a(0, 0) * radius_a (0, 0) + radius_a(1, 0) * radius_a(1,0)),
+					std::sqrt(radius_b(0, 0) * radius_b (0, 0) + radius_b(1, 0) * radius_b(1,0)), black));
                 points.clear();
             }
             break;

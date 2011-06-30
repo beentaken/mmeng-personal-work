@@ -120,8 +120,8 @@ Matrix<rows, rhs_cols, T> Matrix<rows, cols, T>::operator*(const Matrix<rhs_rows
     return(to_return);
 }
 
-template<int rows, int cols, typename T>
-Matrix<rows, cols, T> operator*(int scalar, const Matrix<rows, cols, T>& matrix)
+template<typename number_type, int rows, int cols, typename T>
+Matrix<rows, cols, T> operator*(number_type scalar, const Matrix<rows, cols, T>& matrix)
 {
     Matrix<rows, cols, T> to_return = matrix;
     for (int i = 0; i < rows; ++i)

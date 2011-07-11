@@ -194,16 +194,16 @@ namespace
         if (mid_left)
         {
             slope_left = (low(0, 0) - mid(0, 0))/(low(1, 0) - mid(1, 0));
-            dc_left.r = static_cast<float>(c2.r - c0.r) / (low(1, 0) - mid(1, 0));
-            dc_left.g = static_cast<float>(c2.g - c0.g) / (low(1, 0) - mid(1, 0));
-            dc_left.b = static_cast<float>(c2.b - c0.b) / (low(1, 0) - mid(1, 0));
+            dc_left.r = static_cast<float>(c2.r - c1.r) / (low(1, 0) - mid(1, 0));
+            dc_left.g = static_cast<float>(c2.g - c1.g) / (low(1, 0) - mid(1, 0));
+            dc_left.b = static_cast<float>(c2.b - c1.b) / (low(1, 0) - mid(1, 0));
         }
         else
         {
             slope_right = (low(0, 0) - mid(0, 0))/(low(1, 0) - mid(1, 0));
-            dc_right.r = static_cast<float>(c2.r - c0.r) / (low(1, 0) - mid(1, 0));
-            dc_right.g = static_cast<float>(c2.g - c0.g) / (low(1, 0) - mid(1, 0));
-            dc_right.b = static_cast<float>(c2.b - c0.b) / (low(1, 0) - mid(1, 0));
+            dc_right.r = static_cast<float>(c2.r - c1.r) / (low(1, 0) - mid(1, 0));
+            dc_right.g = static_cast<float>(c2.g - c1.g) / (low(1, 0) - mid(1, 0));
+            dc_right.b = static_cast<float>(c2.b - c1.b) / (low(1, 0) - mid(1, 0));
         }
 
         while (current_y < low(1, 0))

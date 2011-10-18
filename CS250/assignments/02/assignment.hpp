@@ -19,6 +19,7 @@ Creation date: 2011-05-30
 #include <deque>
 #include "Matrix4.h"
 #include "Vector4.h"
+#include "box.hpp"
 
 class Assignment
 {
@@ -30,6 +31,7 @@ class Assignment
         void handleInput(int key, int x = 0, int y = 0);
 
     private:
+		std::shared_ptr<BoxGeometryComponent> box;
 };
 
 #endif // CS250_ASSIGNMENT_H

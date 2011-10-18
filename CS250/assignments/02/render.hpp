@@ -17,7 +17,7 @@ enum TextureMode
 class RenderWorld
 {
     public:
-        void addDrawable(const Triangle& new_triangle);
+        void addDrawable(Triangle new_triangle);
         void think();
 
     private:

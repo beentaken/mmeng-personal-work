@@ -14,6 +14,10 @@ class BoxGeometryComponent : public GeometryComponent
 
         void draw(Matrix4 transformation);
 
+		void addRotation(float angle);
+		void addTranslation(float x, float y, float z);
+		void addScale(float x, float y, float z);
+
     private:
         std::vector<Triangle> myTriangles;
 

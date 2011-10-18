@@ -7,11 +7,11 @@ find_package(GLUT REQUIRED)
 
 if (WIN32)
 if (NOT GLUT_INCLUDE_DIRS)
-	set(GLUT_INCLUDE_DIRS ${PROJECT_SOURCE_DIR})
+	set(GLUT_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/dependancies/glut/include)
 endif(NOT GLUT_INCLUDE_DIRS)
 
 if (NOT GLUT_LIBRARIES)
-    set(GLUT_LIBRARIES ${PROJECT_SOURCE_DIR}/glut32.lib)
+    set(GLUT_LIBRARIES ${PROJECT_SOURCE_DIR}/dependancies/glut/lib/glut32.lib)
 endif(NOT GLUT_LIBRARIES)
 endif(WIN32)
 
@@ -41,7 +41,7 @@ endif(MSVC)
 
 #file(GLOB SOURCES *.cpp)
 set(SOURCES Utilities.cpp assignment.cpp geometry.cpp Vector4.cpp Matrix4.cpp
-    Point4.cpp render.cpp)
+    Point4.cpp render.cpp box.cpp)
 
 add_executable(${EXEC_NAME} main.cpp ${SOURCES})
 target_link_libraries(${EXEC_NAME} ${LIBS})

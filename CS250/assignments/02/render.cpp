@@ -1,8 +1,15 @@
+// test
+
 #include "render.hpp"
 
 #include <algorithm>
 
 RenderWorld Renderer;
+
+#ifdef WIN32
+#undef min
+#undef max
+#endif // WIN32
 
 namespace
 {
@@ -14,6 +21,16 @@ namespace
 	float Clamp(float to_clamp, float lower, float upper)
 	{
 		return(std::min(upper, std::max(lower, to_clamp)));
+	}
+
+	Point4 RenormalizeW(Point4 point)
+	{
+		point.x /= point.w;
+		point.y /= point.w;
+		point.z /= point.w;
+		point.w /= point.w;
+
+		return(point);
 	}
 }
 
@@ -309,7 +326,8 @@ void RenderTriangle(const Triangle& to_draw, const std::vector<unsigned char> &t
             for (int i = std::ceil(x_left); i <= std::ceil(x_right)-1; ++i)
             {
                 //FrameBuffer::SetPixel(i, current_y, temp.r, temp.g, temp.b);
-				Vector4 to_set = {255, 255, 255};
+				Vector4 to_set;
+				to_set.r = to_set.g = to_set.b = 255;
 				int u = Clamp(Round(temp_uv.x * tex_width-1), 0, tex_width-1);
 				int v = Clamp(Round(temp_uv.y * tex_height-1), 0, tex_height-1);
 				switch (mode)
@@ -364,8 +382,11 @@ void RenderTriangle(const Triangle& to_draw, const std::vector<unsigned char> &t
     }
 }
 
-void RenderWorld::addDrawable(const Triangle& new_triangle)
+void RenderWorld::addDrawable(Triangle new_triangle)
 {
+	new_triangle.p0 = RenormalizeW(new_triangle.p0);
+	new_triangle.p1 = RenormalizeW(new_triangle.p1);
+	new_triangle.p2 = RenormalizeW(new_triangle.p2);
     myDrawList.push_back(new_triangle);
 }
 

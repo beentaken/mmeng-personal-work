@@ -5,7 +5,7 @@
 #include <memory> // shared_ptr
 #include <vector>
 
-class Matrix4;
+struct Matrix4;
 
 class GeometryComponent
 {

@@ -14,13 +14,13 @@ class BoxGeometryComponent
     public:
         BoxGeometryComponent(std::vector<Triangle> &triangles);
 
-        void attachComponent(std::shared_ptr<BoxGeometryComponent> component);
+        BoxGeometryComponent& attachComponent(std::shared_ptr<BoxGeometryComponent> component);
 
         void draw(Matrix4 transformation);
 
-		void addRotation(float angle);
-		void addTranslation(float x, float y, float z);
-		void addScale(float x, float y, float z);
+		BoxGeometryComponent& addRotation(float angle);
+		BoxGeometryComponent& addTranslation(float x, float y, float z);
+		BoxGeometryComponent& addScale(float x, float y, float z);
 
     private:
         std::vector<std::shared_ptr<BoxGeometryComponent>> myComponents;

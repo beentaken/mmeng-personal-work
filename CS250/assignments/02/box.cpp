@@ -90,7 +90,7 @@ namespace
 }
 
 BoxGeometryComponent::BoxGeometryComponent(std::vector<Triangle> &triangles)
-    :myComponents(), myTriangles(triangles), myScale(30, 25, 80), myRotation(), myTranslation(10, 10, -100)
+    :myComponents(), myTriangles(triangles), myScale(), myRotation(), myTranslation()
 {
 }
 
@@ -101,27 +101,34 @@ void BoxGeometryComponent::draw(Matrix4 transformation)
     std::for_each(myComponents.begin(), myComponents.end(), [&myRotation, &myTranslation, &transformation](std::shared_ptr<BoxGeometryComponent> x){ x->draw(rotate(myRotation) * translate(myTranslation) * transformation); });
 }
 
-void BoxGeometryComponent::addRotation(float angle)
+BoxGeometryComponent& BoxGeometryComponent::addRotation(float angle)
 {
 	myRotation.x += angle;
+    return(*this);
 }
 
-void BoxGeometryComponent::addTranslation(float x, float y, float z)
+BoxGeometryComponent& BoxGeometryComponent::addTranslation(float x, float y, float z)
 {
 	myTranslation.x += x;
 	myTranslation.y += y;
 	myTranslation.z += z;
+
+    return(*this);
 }
 
-void BoxGeometryComponent::addScale(float x, float y, float z)
+BoxGeometryComponent& BoxGeometryComponent::addScale(float x, float y, float z)
 {
 	myScale.x += x;
 	myScale.y += y;
 	myScale.z += z;
+
+    return(*this);
 }
 
-void BoxGeometryComponent::attachComponent(std::shared_ptr<BoxGeometryComponent> component)
+BoxGeometryComponent& BoxGeometryComponent::attachComponent(std::shared_ptr<BoxGeometryComponent> component)
 {
     myComponents.push_back(component);
+
+    return(*this);
 }
 

@@ -2,6 +2,8 @@
 
 #include <algorithm>
 
+RenderWorld Renderer;
+
 namespace
 {
     int Round(float to_round)
@@ -359,6 +361,22 @@ void RenderTriangle(const Triangle& to_draw, const std::vector<unsigned char> &t
             x_left += slope_left;
             x_right += slope_right;
         ++current_y;
+    }
+}
+
+void RenderWorld::addDrawable(const Triangle& new_triangle)
+{
+    myDrawList.push_back(new_triangle);
+}
+
+void RenderWorld::think()
+{
+    std::vector<unsigned char> empty_texture;
+    while(!myDrawList.empty())
+    {
+        RenderTriangle(myDrawList.front(), empty_texture, 0, 0, 0);
+
+        myDrawList.pop_front();
     }
 }
 

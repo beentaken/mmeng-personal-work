@@ -12,8 +12,8 @@ Author: Marcus Meng (marcus.meng) 80002709
 Creation date: 2011-05-30
 - End Header --------------------------------------------------------*/
 
-#ifndef CS200_ASSIGNMENT_H
-#define CS200_ASSIGNMENT_H
+#ifndef CS250_ASSIGNMENT_H
+#define CS250_ASSIGNMENT_H
 
 #include <vector>
 #include <deque>
@@ -30,8 +30,7 @@ class Assignment
         void handleInput(int key, int x = 0, int y = 0);
 
     private:
-
 };
 
-#endif // CS200_ASSIGNMENT_H
+#endif // CS250_ASSIGNMENT_H
 

@@ -47,8 +47,7 @@ void Assignment::drawScene()
     blah.c1.g = 255;
     blah.c1.b = 0;
 
-    std::vector<unsigned char> empty_texture;
-    RenderTriangle(blah, empty_texture, 0, 0, 0);
+    Renderer.addDrawable(blah);
 }
 
 

@@ -102,13 +102,13 @@ Assignment::Assignment()
     myTank["wheel2"] = std::make_shared<BoxGeometryComponent>(triangles);
     myTank["wheel3"] = std::make_shared<BoxGeometryComponent>(triangles);
 
-    myTank["body"]->addScale(30, 25, 80).addTranslation(0, 0, -50);
-    myTank["turret"]->addScale(25, 15, 25).addTranslation(0, 20, 0);
-    myTank["gun"]->addScale(5, 5, 40).addTranslation(0, 0, 12.5);
-    myTank["wheel0"]->addScale(5, 20, 20).addTranslation(17.5, -12.5, -25);
-    myTank["wheel1"]->addScale(5, 20, 20).addTranslation(-17.5, -12.5, -25);
-    myTank["wheel2"]->addScale(5, 20, 20).addTranslation(17.5, -12.5, 25);
-    myTank["wheel3"]->addScale(5, 20, 20).addTranslation(-17.5, -12.5, 25);
+    myTank["body"]->  addScale(30, 25, 80).addTranslation(    0,     0,  -50);
+    myTank["turret"]->addScale(25, 15, 25).addTranslation(    0,    20,    0);
+    myTank["gun"]->   addScale( 5,  5, 40).addTranslation(    0,     0, 12.5);
+    myTank["wheel0"]->addScale( 5, 20, 20).addTranslation( 17.5, -12.5,  -25);
+    myTank["wheel1"]->addScale( 5, 20, 20).addTranslation(-17.5, -12.5,  -25);
+    myTank["wheel2"]->addScale( 5, 20, 20).addTranslation( 17.5, -12.5,   25);
+    myTank["wheel3"]->addScale( 5, 20, 20).addTranslation(-17.5, -12.5,   25);
 
     myTank["body"]->attachComponent(myTank["turret"])
                    .attachComponent(myTank["wheel0"])

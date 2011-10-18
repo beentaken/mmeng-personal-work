@@ -2,15 +2,19 @@
 #ifndef BOX_H
 #define BOX_H
 
-#include "geometry.hpp"
+#include <memory>
+#include <vector>
 #include "triangle.hpp"
 
 #include "Vector4.h"
+#include "Matrix4.h"
 
-class BoxGeometryComponent : public GeometryComponent
+class BoxGeometryComponent
 {
     public:
         BoxGeometryComponent(std::vector<Triangle> &triangles);
+
+        void attachComponent(std::shared_ptr<BoxGeometryComponent> component);
 
         void draw(Matrix4 transformation);
 
@@ -19,6 +23,7 @@ class BoxGeometryComponent : public GeometryComponent
 		void addScale(float x, float y, float z);
 
     private:
+        std::vector<std::shared_ptr<BoxGeometryComponent>> myComponents;
         std::vector<Triangle> myTriangles;
 
         Vector4 myScale;

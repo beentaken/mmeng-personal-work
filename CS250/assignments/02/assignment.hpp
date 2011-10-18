@@ -20,6 +20,9 @@ Creation date: 2011-05-30
 #include "Matrix4.h"
 #include "Vector4.h"
 #include "box.hpp"
+#include <unordered_map>
+#include <string>
+#include <memory>
 
 class Assignment
 {
@@ -31,7 +34,7 @@ class Assignment
         void handleInput(int key, int x = 0, int y = 0);
 
     private:
-		std::shared_ptr<BoxGeometryComponent> box;
+        std::unordered_map<std::string, std::shared_ptr<BoxGeometryComponent>> myTank;
 };
 
 #endif // CS250_ASSIGNMENT_H

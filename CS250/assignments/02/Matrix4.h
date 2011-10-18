@@ -13,7 +13,7 @@ struct Matrix4
 {
   union
   {
-    struct  
+    struct
     {
       f32 m00, m01, m02, m03,
           m10, m11, m12, m13,

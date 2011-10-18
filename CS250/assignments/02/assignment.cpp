@@ -55,6 +55,7 @@ namespace
 }
 
 Assignment::Assignment()
+    :myTank()
 {
 	std::vector<Point4> vertices;
 	vertices.push_back(Point4(-0.5, -0.5,  0.5, 1.0));
@@ -93,14 +94,20 @@ Assignment::Assignment()
 	SetTriangleColor(triangles[10], 255, 255, 0);
 	SetTriangleColor(triangles[11], 255, 255, 0);
 
-	box = std::make_shared<BoxGeometryComponent>(triangles);
+	myTank["body"] = std::make_shared<BoxGeometryComponent>(triangles);
+    myTank["turret"] = std::make_shared<BoxGeometryComponent>(triangles);
+    myTank["gun"] = std::make_shared<BoxGeometryComponent>(triangles);
+    myTank["wheel0"] = std::make_shared<BoxGeometryComponent>(triangles);
+    myTank["wheel1"] = std::make_shared<BoxGeometryComponent>(triangles);
+    myTank["wheel2"] = std::make_shared<BoxGeometryComponent>(triangles);
+    myTank["wheel3"] = std::make_shared<BoxGeometryComponent>(triangles);
 }
 
 void Assignment::drawScene()
 {
 	Matrix4 mvp = projection(24);
 
-	box->draw(mvp);
+	myTank.at("body")->draw(mvp);
 
 	Renderer.think();
 }
@@ -110,10 +117,10 @@ void Assignment::handleInput(int key, int /* x */, int /* y */ )
     switch (key)
     {
 		case 'w':
-			box->addTranslation(0, 0, -1.0f);
+			myTank.at("body")->addTranslation(0, 0, -1.0f);
 			break;
 		case 'a':
-			box->addRotation(0.2f);
+			myTank.at("body")->addRotation(0.2f);
 			break;
         default:
             std::cout << key << " was pressed." << std::endl;

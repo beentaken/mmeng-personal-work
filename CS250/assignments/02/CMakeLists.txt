@@ -33,14 +33,13 @@ elseif(BORLAND)
 	set(CMAKE_CXX_FLAGS_DEBUG "-v -vG -w -w-8026 -w-8091")
 else(MSVC)
     # g++, clang++, etc
-	set(CMAKE_CXX_FLAGS "-Wextra -Wall -std=c++0x -pedantic")
-    #set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-Wextra -Wall -Wconversion -ansi -pedantic -O2 -g")
+    set(CMAKE_CXX_FLAGS "-Wextra -Wall -std=c++0x -pedantic")
 	set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 	set(CMAKE_CXX_FLAGS_DEBUG "-g")
 endif(MSVC)
 
 #file(GLOB SOURCES *.cpp)
-set(SOURCES Utilities.cpp assignment.cpp geometry.cpp Vector4.cpp Matrix4.cpp
+set(SOURCES Utilities.cpp assignment.cpp Vector4.cpp Matrix4.cpp
     Point4.cpp render.cpp box.cpp)
 
 add_executable(${EXEC_NAME} main.cpp ${SOURCES})

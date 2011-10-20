@@ -27,6 +27,7 @@ void Point4::Print(void) const
 Point4::Point4()
 {
     Zero();
+	w = 1.0f;
 }
 
 Point4::Point4(const Point4& rhs)

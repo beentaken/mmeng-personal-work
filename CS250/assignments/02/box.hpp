@@ -18,9 +18,10 @@ class BoxGeometryComponent
 
         void draw(Matrix4 transformation);
 
-		BoxGeometryComponent& addRotation(float angle);
+		BoxGeometryComponent& addRotation(float angle_x, float angle_y, float angle_z);
 		BoxGeometryComponent& addTranslation(float x, float y, float z);
 		BoxGeometryComponent& addScale(float x, float y, float z);
+        BoxGeometryComponent& move(float x, float y, float z);
 
     private:
         std::vector<std::shared_ptr<BoxGeometryComponent>> myComponents;
@@ -29,6 +30,7 @@ class BoxGeometryComponent
         Vector4 myScale;
         Vector4 myRotation;
         Vector4 myTranslation;
+        Vector4 myMove;
 };
 
 #endif // BOX_H

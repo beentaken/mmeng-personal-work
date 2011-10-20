@@ -55,7 +55,7 @@ void FrameBuffer::SetPixel(const int &x, const int &y, const unsigned char &r, c
 {
 	int _y = height - y;
 
-	if (x < 0 || x > width || _y < 0 || _y > height)
+	if (x < 0 || x >= width || _y < 0 || _y >= height)
 		return;
 
 	buffer[x * 3 + _y * width * 3] = r;

@@ -22,6 +22,7 @@ class BoxGeometryComponent
 		BoxGeometryComponent& addTranslation(float x, float y, float z);
 		BoxGeometryComponent& addScale(float x, float y, float z);
         BoxGeometryComponent& move(float x, float y, float z);
+        BoxGeometryComponent& turn(float x, float y, float z);
 
     private:
         std::vector<std::shared_ptr<BoxGeometryComponent>> myComponents;
@@ -31,6 +32,7 @@ class BoxGeometryComponent
         Vector4 myRotation;
         Vector4 myTranslation;
         Vector4 myMove;
+        Vector4 myTurn;
 };
 
 #endif // BOX_H

@@ -49,6 +49,89 @@ namespace
 
         return(a / b);
     }
+
+    // TODO: LERP the colors, but not important right now.
+    template<bool MoreHorizontal>
+        void DrawLine(Point4 p0, Point4 p1, Vector4 c0, Vector4 c1);
+
+    template<>
+    void DrawLine<true>(Point4 p0, Point4 p1, Vector4 c0, Vector4 /* c1 */)
+	{
+        int y_step = (p1.y < p0.y) ? -1 : 1;
+
+        int current_x = p0.x;
+        int current_y = p0.y;
+
+        if (y_step == 1)
+            std::swap(p0.y, p1.y);
+
+		int a = p1.y - p0.y;
+        int b = p1.x - p0.x;
+        // int c = end_x * start_y - end_y * start_x;
+
+        int dp = 2 * a + b;
+
+        int steps = p1.x - p0.x; // Number of iterations.
+
+        // Draw initial pixel.
+        FrameBuffer::SetPixel(current_x, current_y, c0.r, c0.g, c0.b);
+
+        while (steps--)
+        {
+            if (dp < 0)
+            {
+                current_y += y_step;
+
+                dp += a + b;
+            }
+            else
+            {
+                dp += a;
+            }
+
+            ++current_x;
+            FrameBuffer::SetPixel(current_x, current_y, c0.r, c0.g, c0.b);
+        }
+	}
+	template<>
+	void DrawLine<false>(Point4 p0, Point4 p1, Vector4 c0, Vector4 /* c1 */)
+	{
+		int x_step = (p1.x < p0.x) ? -1 : 1;
+
+        int current_x = p0.x;
+        int current_y = p0.y;
+
+        if (x_step == 1)
+            std::swap(p0.x, p1.x);
+
+		int a = p1.x - p0.x;
+        int b = p1.y - p0.y;
+        // int c = end_y * start_x - end_x * start_y;
+
+        int dp = 2 * a + b;
+
+        int steps = p1.y - p0.y; // Number of iterations.
+
+        // Draw initial pixel.
+        FrameBuffer::SetPixel(current_x, current_y, c0.r, c0.g, c0.b);
+
+        while (steps--)
+        {
+            if (dp < 0)
+            {
+                current_x += x_step;
+
+                dp += a + b;
+            }
+            else
+            {
+                dp += a;
+            }
+
+            ++current_y;
+            FrameBuffer::SetPixel(current_x, current_y, c0.r, c0.g, c0.b);
+        }
+    }
 }
 #if 0
 bool ArrangeTriangle(Triangle& arranged, const Triangle& to_draw)
@@ -174,9 +257,9 @@ bool ArrangeTriangle(Triangle& arranged, const Triangle& to_draw)
 {
     bool mid_left;
 
-    if (to_draw.p0.y <= to_draw.p1.y) // 4, 5, 6
+    if (to_draw.p0.y < to_draw.p1.y) // 4, 5, 6
     {
-        std::cout << "4, 5, 6" << std::endl;
+        //std::cout << "4, 5, 6" << std::endl;
         if (to_draw.p2.y <= to_draw.p0.y) // 4
         {
             arranged.p0 = to_draw.p2;
@@ -191,18 +274,18 @@ bool ArrangeTriangle(Triangle& arranged, const Triangle& to_draw)
 		    arranged.t1 = to_draw.t0;
 			arranged.t2 = to_draw.t1;
 
-            mid_left = false;
+            mid_left = true;
         }
         else // 5, 6
         {
-            std::cout << "5, 6" << std::endl;
+            //std::cout << "5, 6" << std::endl;
             arranged.p0 = to_draw.p0;
             arranged.c0 = to_draw.c0;
 		    arranged.t0 = to_draw.t0;
 
-            if (to_draw.p1.y <= to_draw.p2.y) // 5
+            if (to_draw.p1.y < to_draw.p2.y) // 5
             {
-                std::cout << "5" << std::endl;
+                //std::cout << "5" << std::endl;
                 arranged.p1 = to_draw.p1;
                 arranged.p2 = to_draw.p2;
 
@@ -212,7 +295,7 @@ bool ArrangeTriangle(Triangle& arranged, const Triangle& to_draw)
 			    arranged.t1 = to_draw.t1;
 				arranged.t2 = to_draw.t2;
 
-                mid_left = false;
+                mid_left = true;
             }
             else // 6
             {
@@ -225,16 +308,16 @@ bool ArrangeTriangle(Triangle& arranged, const Triangle& to_draw)
 			    arranged.t1 = to_draw.t2;
 				arranged.t2 = to_draw.t1;
 
-                mid_left = true;
+                mid_left = false;
             }
         }
     }
     else // 1, 2, 3
     {
-        std::cout << "1, 2, 3" << std::endl;
-        if (to_draw.p2.y <= to_draw.p1.y) // 2
+        //std::cout << "1, 2, 3" << std::endl;
+        if (to_draw.p2.y < to_draw.p1.y) // 2
         {
-            std::cout << "2" << std::endl;
+            //std::cout << "2" << std::endl;
             arranged.p0 = to_draw.p2;
             arranged.p1 = to_draw.p1;
             arranged.p2 = to_draw.p0;
@@ -247,18 +330,18 @@ bool ArrangeTriangle(Triangle& arranged, const Triangle& to_draw)
 			arranged.t1 = to_draw.t1;
 			arranged.t2 = to_draw.t1;
 
-            mid_left = true;
+            mid_left = false;
         }
         else // 1, 3
         {
-            std::cout << "1, 3" << std::endl;
+            //std::cout << "1, 3" << std::endl;
             arranged.p0 = to_draw.p1;
             arranged.c0 = to_draw.c1;
 		    arranged.t0 = to_draw.t1;
 
-            if (to_draw.p0.y <= to_draw.p2.y) // 3
+            if (to_draw.p0.y < to_draw.p2.y) // 3
             {
-                std::cout << "3" << std::endl;
+                //std::cout << "3" << std::endl;
                 arranged.p1 = to_draw.p0;
                 arranged.p2 = to_draw.p2;
 
@@ -268,7 +351,7 @@ bool ArrangeTriangle(Triangle& arranged, const Triangle& to_draw)
 				arranged.t1 = to_draw.t0;
 				arranged.t2 = to_draw.t2;
 
-                mid_left = true;
+                mid_left = false;
             }
             else // 1
             {
@@ -281,15 +364,15 @@ bool ArrangeTriangle(Triangle& arranged, const Triangle& to_draw)
 				arranged.t1 = to_draw.t2;
 				arranged.t2 = to_draw.t0;
 
-                mid_left = false;
+                mid_left = true;
             }
         }
     }
 
-    std::cout << "Top: " << arranged.p0.x << ' ' << arranged.p0.y << std::endl;
-    std::cout << "Mid: " << arranged.p1.x << ' ' << arranged.p1.y << std::endl;
-    std::cout << "Low: " << arranged.p2.x << ' ' << arranged.p2.y << std::endl;
-    std::cout << "Mid left? " << mid_left << std::endl;
+    //std::cout << "Top: " << arranged.p0.x << ' ' << arranged.p0.y << std::endl;
+    //std::cout << "Mid: " << arranged.p1.x << ' ' << arranged.p1.y << std::endl;
+    //std::cout << "Low: " << arranged.p2.x << ' ' << arranged.p2.y << std::endl;
+    //std::cout << "Mid left? " << mid_left << std::endl;
 
     return(mid_left);
 }
@@ -298,9 +381,18 @@ bool ArrangeTriangle(Triangle& arranged, const Triangle& to_draw)
 void RenderTriangle(const Triangle& to_draw, const std::vector<unsigned char> &texture, int tex_height, int tex_width, int bpp, TextureMode mode)
 {
 	//std::cout << "Triangle renderer entered." << std::endl;
+    //std::cout << "p0: " << to_draw.p0 << std::endl;
+    //std::cout << "p1: " << to_draw.p1 << std::endl;
+    //std::cout << "p2: " << to_draw.p2 << std::endl;
     Triangle arranged;
     
     bool mid_left = ArrangeTriangle(arranged, to_draw);
+
+    //std::cout << "Arranged points: " << std::endl;
+    //std::cout << "top: " << arranged.p0 << std::endl;
+    //std::cout << "mid: " << arranged.p1 << std::endl;
+    //std::cout << "low: " << arranged.p2 << std::endl;
+    //std::cout << "Mid left: " << mid_left << std::endl;
 
     Vector4 top;
     Vector4 mid;
@@ -371,8 +463,8 @@ void RenderTriangle(const Triangle& to_draw, const std::vector<unsigned char> &t
 			slope_left = safe_divide(low.x - top.x, low.y - top.y);
 			slope_right = safe_divide(mid.x - top.x, mid.y - top.y);
 
-            std::cout << "slope_left is " << slope_left << std::endl;
-            std::cout << "slope_right is " << slope_right << std::endl;
+            //std::cout << "slope_left is " << slope_left << std::endl;
+            //std::cout << "slope_right is " << slope_right << std::endl;
 
 			//std::cout << "mx tx my ty " << mid.x << ' ' << top.x << ' ' << mid.y << ' ' << top.y << std::endl;
 			//std::cout << "1.1 slope_right is " << slope_right << std::endl;
@@ -397,7 +489,7 @@ void RenderTriangle(const Triangle& to_draw, const std::vector<unsigned char> &t
 
 		while (current_y < std::ceil(mid.y))
         {
-            std::cout << "Entering upper loop." << std::endl;
+            //std::cout << "Entering upper loop." << std::endl;
             Vector4 temp = color_left;
 			float dr = static_cast<float>(color_right.r - color_left.r) / (x_right - x_left);
             float dg = static_cast<float>(color_right.g - color_left.g) / (x_right - x_left);
@@ -475,21 +567,23 @@ void RenderTriangle(const Triangle& to_draw, const std::vector<unsigned char> &t
             dc_left.b = static_cast<float>(c2.b - c1.b) / (low.y - mid.y);
 
 			duv_left = 1.0f / (low.y - mid.y) * (uv2 + -1 * uv1);
+            x_left = mid.x;
         }
         else
         {
             slope_right = safe_divide(low.x - mid.x, low.y - mid.y);
-            std::cout << "New slope_right is " << slope_right << std::endl;
+            //std::cout << "New slope_right is " << slope_right << std::endl;
             dc_right.r = static_cast<float>(c2.r - c1.r) / (low.y - mid.y);
             dc_right.g = static_cast<float>(c2.g - c1.g) / (low.y - mid.y);
             dc_right.b = static_cast<float>(c2.b - c1.b) / (low.y - mid.y);
 
 			duv_right = 1.0f / (low.y - mid.y) * (uv2 + -1 * uv1);
+            x_right = mid.x;
         }
 
 		//std::cout << current_y << " out of " << std::ceil(low.y) << std::endl;
 		//std::cout << "x_right is " << x_right << std::endl;
-        std::cout << "Entering lower loop." << std::endl;
+        //std::cout << "Entering lower loop." << std::endl;
 		while (current_y < std::ceil(low.y))
         {
             Vector4 temp = color_left;
@@ -500,6 +594,7 @@ void RenderTriangle(const Triangle& to_draw, const std::vector<unsigned char> &t
 			Vector4 temp_uv = uv_left;
 			Vector4 temp_duv = 1.0f / (x_right - x_left) * (uv_right + -1 * uv_left);
 
+            //std::cout << std::ceil(x_left) << '/' << std::ceil(x_right) - 1 << std::endl;
             for (int i = std::ceil(x_left); i <= std::ceil(x_right)-1; ++i)
             {
 				//std::cout << "Lower inner loop entered " << i << "/" << std::ceil(x_right) - 1 << std::endl;
@@ -562,16 +657,47 @@ void RenderTriangle(const Triangle& to_draw, const std::vector<unsigned char> &t
 		//std::cout << "Triangle rasterizer pass complete." <<  std::endl;
 }
 
+void RenderLine(Point4 p0, Point4 p1, Vector4 c0, Vector4 c1)
+{
+	bool more_horizontal = abs(p1.x - p0.x) > abs(p1.y - p0.y);
+
+	// Make sure the start point is always "lower" on the iterating factor than the end.
+	if (more_horizontal)
+	{		
+		if (p1.x < p0.x) // Bah, wrong order, swap!
+		{
+			std::swap(p0, p1);
+            std::swap(c0, c1);
+		}
+		
+		DrawLine<true>(p0, p1, c0, c1);
+	}
+	else
+	{		
+		if (p1.y < p0.y) // Bah, wrong order, swap!
+		{
+			std::swap(p0, p1);
+			std::swap(c0, c1);
+		}
+		
+		DrawLine<false>(p0, p1, c0, c1);
+	}
+
+}
+
+void RenderWireframeTriangle(const Triangle& to_draw)
+{
+    RenderLine(to_draw.p0, to_draw.p1, to_draw.c0, to_draw.c1);
+    RenderLine(to_draw.p1, to_draw.p2, to_draw.c1, to_draw.c2);
+    RenderLine(to_draw.p0, to_draw.p2, to_draw.c0, to_draw.c2);
+}
+
 void RenderWorld::addDrawable(Triangle new_triangle)
 {
-	//std::cout << "Prenormalized p0 w " << new_triangle.p0.w << std::endl;
-	//std::cout << "Prenormalized p0 y " << new_triangle.p0.y << std::endl;
 	new_triangle.p0 = RenormalizeW(new_triangle.p0);
 	new_triangle.p1 = RenormalizeW(new_triangle.p1);
 	new_triangle.p2 = RenormalizeW(new_triangle.p2);
 
-	//std::cout << "Renormalized p0 y " << new_triangle.p0.y << std::endl;
-	//std::cout << "Renormalized p0 w " << new_triangle.p0.w << std::endl;
     myDrawList.push_back(new_triangle);
 }
 
@@ -580,9 +706,21 @@ void RenderWorld::think()
     std::vector<unsigned char> empty_texture;
     while(!myDrawList.empty())
     {
-        RenderTriangle(myDrawList.front(), empty_texture, 0, 0, 0);
+        if (myWireframeMode)
+        {
+            RenderWireframeTriangle(myDrawList.front());
+        }
+        else
+        {
+            RenderTriangle(myDrawList.front(), empty_texture, 0, 0, 0);
+        }
 
         myDrawList.pop_front();
     }
+}
+
+void RenderWorld::setWireframeMode(bool mode)
+{
+    myWireframeMode = mode;
 }
 

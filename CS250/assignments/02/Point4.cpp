@@ -109,3 +109,9 @@ void Point4::Zero()
     v[3] = 1;
 }
 
+std::ostream& operator<<(std::ostream& os, const Point4& rhs)
+{
+    os << '[' << rhs.x << ' ' << rhs.y << ' ' << rhs.z << ' ' << rhs.w << ']';
+    return(os);
+}
+

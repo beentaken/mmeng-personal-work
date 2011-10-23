@@ -6,6 +6,7 @@
 // DO NOT MODIFY THIS FILE FOR ASSIGNMENT 1
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <ostream>
 
 struct Vector4;
 
@@ -75,3 +76,6 @@ struct Point4
     // Already implemented, simple print function
   void Print(void) const;
 };
+
+std::ostream& operator<<(std::ostream& os, const Point4& rhs);
+

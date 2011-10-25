@@ -1,0 +1,20 @@
+import os
+env = Environment(ENV=os.environ)
+
+outputFile = "paper.pdf"
+
+mainSourceTexFile = Split("paper.tex")
+sourceTexFiles = Split("""content/introduction.tex
+			content/procedure.tex
+			content/results.tex
+			content/conclusion.tex
+			content/title.tex""")
+
+sourceBibFiles = Split("")
+
+otherFiles = Split("""mystyle.sty""")
+
+pdfOutput = env.PDF(target=outputFile,source=mainSourceTexFile)
+
+Depends(pdfOutput, mainSourceTexFile+sourceTexFiles+sourceBibFiles+otherFiles)
+

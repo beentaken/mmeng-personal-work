@@ -23,6 +23,8 @@ Creation date: 2011-05-30
 
 #include "transformations.hpp"
 
+#include "parser.hpp"
+
 namespace
 {
 	Triangle MakeTriangle(Point4 p0, Point4 p1, Point4 p2)
@@ -74,42 +76,9 @@ namespace
 Assignment::Assignment()
     :myTank()
 {
-	std::vector<Point4> vertices;
-	vertices.push_back(Point4(-0.5, -0.5,  0.5, 1.0));
-	vertices.push_back(Point4( 0.5, -0.5,  0.5, 1.0));
-	vertices.push_back(Point4( 0.5,  0.5,  0.5, 1.0));
-	vertices.push_back(Point4(-0.5,  0.5,  0.5, 1.0));
-	vertices.push_back(Point4(-0.5, -0.5, -0.5, 1.0));
-	vertices.push_back(Point4( 0.5, -0.5, -0.5, 1.0));
-	vertices.push_back(Point4( 0.5,  0.5, -0.5, 1.0));
-	vertices.push_back(Point4(-0.5,  0.5, -0.5, 1.0));
+    InputParser config("input.txt");
 
-	std::vector<Triangle> triangles;
-	triangles.push_back(MakeTriangle(vertices[0], vertices[1], vertices[2]));
-	triangles.push_back(MakeTriangle(vertices[0], vertices[2], vertices[3]));
-	triangles.push_back(MakeTriangle(vertices[1], vertices[5], vertices[6]));
-	triangles.push_back(MakeTriangle(vertices[1], vertices[6], vertices[2]));
-	triangles.push_back(MakeTriangle(vertices[5], vertices[4], vertices[7]));
-	triangles.push_back(MakeTriangle(vertices[5], vertices[7], vertices[6]));
-	triangles.push_back(MakeTriangle(vertices[4], vertices[0], vertices[3]));
-	triangles.push_back(MakeTriangle(vertices[4], vertices[3], vertices[7]));
-	triangles.push_back(MakeTriangle(vertices[3], vertices[2], vertices[6]));
-	triangles.push_back(MakeTriangle(vertices[3], vertices[6], vertices[7]));
-	triangles.push_back(MakeTriangle(vertices[4], vertices[5], vertices[1]));
-	triangles.push_back(MakeTriangle(vertices[4], vertices[1], vertices[0]));
-
-	SetTriangleColor(triangles[0], 0, 0, 0);
-	SetTriangleColor(triangles[1], 0, 0, 0);
-	SetTriangleColor(triangles[2], 0, 0, 255);
-	SetTriangleColor(triangles[3], 0, 0, 255);
-	SetTriangleColor(triangles[4], 255, 0, 0);
-	SetTriangleColor(triangles[5], 255, 0, 0);
-	SetTriangleColor(triangles[6], 0, 255, 0);
-	SetTriangleColor(triangles[7], 0, 255, 0);
-	SetTriangleColor(triangles[8], 100, 100, 100);
-	SetTriangleColor(triangles[9], 100, 100, 100);
-	SetTriangleColor(triangles[10], 255, 255, 0);
-	SetTriangleColor(triangles[11], 255, 255, 0);
+    const std::vector<Triangle>& triangles = config.getTriangles();
 
 	myTank["body"] = std::make_shared<BoxGeometryComponent>(triangles);
     myTank["turret"] = std::make_shared<BoxGeometryComponent>(triangles);

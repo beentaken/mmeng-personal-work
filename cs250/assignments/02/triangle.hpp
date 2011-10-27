@@ -18,9 +18,18 @@ Creation date: 2011-06-28
 #include "Point4.h"
 #include "Vector4.h"
 
-struct Triangle
+class Triangle
 {
     public:
+
+        Triangle()
+        {
+        }
+
+        Triangle(Point4 v0, Point4 v1, Point4 v2)
+            :p0(v0), p1(v1), p2(v2)
+        {
+        }
 
         // Vertex positions.
         Point4 p0;

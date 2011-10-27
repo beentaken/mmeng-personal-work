@@ -30,7 +30,7 @@ namespace
     }
 }
 
-BoxGeometryComponent::BoxGeometryComponent(std::vector<Triangle> &triangles)
+BoxGeometryComponent::BoxGeometryComponent(const std::vector<Triangle> &triangles)
     :myComponents(), myTriangles(triangles), myScale(), myRotation(), myTranslation(), myTurn()
 {
 }

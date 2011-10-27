@@ -12,7 +12,7 @@
 class BoxGeometryComponent
 {
     public:
-        BoxGeometryComponent(std::vector<Triangle> &triangles);
+        BoxGeometryComponent(const std::vector<Triangle> &triangles);
 
         BoxGeometryComponent& attachComponent(std::shared_ptr<BoxGeometryComponent> component);
 

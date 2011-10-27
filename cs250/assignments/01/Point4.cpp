@@ -104,6 +104,7 @@ bool Point4::operator!=(const Point4& rhs) const
 
 void Point4::Zero()
 {
-    std::fill(v, v+VECTORSIZE, 0);
+    std::fill(v, v+VECTORSIZE - 1, 0);
+    v[3] = 1;
 }
 

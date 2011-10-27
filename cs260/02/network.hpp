@@ -4,6 +4,7 @@
 
 #include <string>
 #include <list>
+#include <unordered_map>
 #include <functional>
 
 #if defined(_WIN32)
@@ -31,7 +32,7 @@ class NetworkStack
         void registerReceiveListener(ReceiveListenerFun fun);
         void registerDisconnectListener(DisconnectListenerFun fun);
 
-        void sendString(int connection, const std::string& message);
+        void sendString(int connection, std::string message);
 
         void disconnect(int connection);
 
@@ -44,6 +45,8 @@ class NetworkStack
         std::list<ConnectListenerFun> myConnectListeners;
         std::list<ReceiveListenerFun> myReceiveListeners;
         std::list<DisconnectListenerFun> myDisconnectListeners;
+
+        std::unordered_map<int, std::string> mySendBuffers;
 
         void myDisconnectSocket(int socket);
 };

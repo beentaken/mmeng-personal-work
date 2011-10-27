@@ -1,47 +1,24 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 
 #include "network.hpp"
-
-class MessageEchoer
-{
-    NetworkStack& myStack;
-    public:
-        MessageEchoer(NetworkStack& ns)
-            :myStack(ns)
-        {
-        }
-
-        void operator()(int connection, const std::string& message)
-        {
-            std::cout << "Echo message from " << connection << ": " << message << std::endl;
-
-            if (message == "/quit")
-            {
-                std::cout << "Disconnecting connection " << connection << std::endl;
-                myStack.disconnect(connection);
-                return;
-            }
-
-            // Echo it back.
-            myStack.sendString(connection, message);
-        }
-};
-
-void PrintMessage(int connection, const std::string& message)
-{
-    std::cout << "Receive message from " << connection << ": " << message << std::endl;
-}
+#include "chess.hpp"
 
 int main()
 {
     std::cout << "Starting..." << std::endl;
+    std::string address, port;
+    std::fstream config_file("config.txt");
+    std::getline(config_file, address);
+    std::getline(config_file, port);
     NetworkStack netcode;
 
-    //netcode.registerReceiveListener(&PrintMessage);
-    netcode.registerReceiveListener(MessageEchoer(netcode));
+    Chess::Server chess_server(netcode);
+    netcode.registerAcceptListener(Chess::ServerAcceptAdapter(chess_server));
+    netcode.registerReceiveListener(Chess::ServerReceiveAdapter(chess_server));
 
-    netcode.listen("9034");
+    netcode.listen(port);
 
     // think of this as a game loop.
     while(true)

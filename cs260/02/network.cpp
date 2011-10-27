@@ -10,11 +10,12 @@
 #include <fcntl.h>
 
 #elif defined(_WIN32)
+// Windows XP
+#define NTDDI_VERSION 0x501
 #include <winsock2.h>
 #include <WS2tcpip.h>
 
 #pragma comment (lib, "ws2_32.lib")
-
 #define close(x) (closesocket(x))
 #endif
 
@@ -23,8 +24,13 @@
 #include <iostream>
 #include <algorithm> // for_each
 
+#include "network_exception.hpp"
+
+//#define WE_WANT_NONBLOCKING
+
 namespace
 {
+    const unsigned BUFFER_SIZE = 1024;
     // get sockaddr, IPv4 or IPv6:
     void *get_in_addr(struct sockaddr *sa)
     {
@@ -36,11 +42,13 @@ namespace
 	    return &(((struct sockaddr_in6*)sa)->sin6_addr);
     }
 
-#if defined(_WIN32) && (_WIN32_WINNT < 0x600)
+
+}
+#if 0
 	// FUUUUUUU- inet_ntop is only available on Vista or higher.
-	const char *inet_ntop(int af, const void *src, char *dst, socklen_t size)
+	PCSTR inet_ntop(INT af, PVOID src, PSTR dst, size_t size)
 	{
-		int rv = WSAAddressToString(*src, af, NULL, dst, (LPDWORD)size);
+		int rv = WSAAddressToString((LPSOCKADDR)src, sizeof(LPSOCKADDR), NULL, dst, (LPDWORD)size);
 
 		if (rv == SOCKET_ERROR)
 		{
@@ -48,11 +56,11 @@ namespace
 		}
 	}
 #endif
-}
 
 NetworkStack::NetworkStack()
     :myCurrentConnections(), listener(-1), myAcceptListeners(),
-    myConnectListeners(), myReceiveListeners(), myDisconnectListeners()
+    myConnectListeners(), myReceiveListeners(), myDisconnectListeners(),
+    mySendBuffers()
 {
 #if defined(_WIN32)
 	WSADATA wsaData;
@@ -79,7 +87,11 @@ NetworkStack::~NetworkStack()
     for (int i = 0; i < myCurrentConnections; ++i)
     {
         if (FD_ISSET(i, &myConnections))
+        {
+            // We don't *really* care about errors at this point.
+            shutdown(i, 2);
             close(i);
+        }
     }
 #endif
 
@@ -129,16 +141,20 @@ void NetworkStack::listen(const std::string& port)
 	// if we got here, it means we didn't get bound
 	if (p == NULL)
     {
-        throw(std::runtime_error("Failed to bind socket."));
+        throw(BindException("Failed to bind socket."));
 	}
 
 	freeaddrinfo(ai); // all done with this
 
+#ifdef WE_WANT_NONBLOCKING
+    // Set non-blocking.
+    fcntl(listener, F_SETFL, O_NONBLOCK);
+#endif
     // listen
     if (::listen(listener, 10) == -1)
     {
         perror("listen");
-        throw(std::runtime_error("Listening error."));
+        throw(ListenException("Listening error."));
     }
 
     // add the listener to the myConnections set
@@ -151,18 +167,27 @@ void NetworkStack::listen(const std::string& port)
 void NetworkStack::think()
 {
     fd_set read_fds;  // temp file descriptor list for select()
+    fd_set write_fds;
     FD_ZERO(&read_fds);
+    FD_ZERO(&write_fds);
 
-    char buf[256];    // buffer for client data
+    char buf[BUFFER_SIZE];    // buffer for client data
     int nbytes;
 
     // main loop
     read_fds = myConnections; // copy it
+    write_fds = myConnections;
     // Last argument to select is timeout.
     // Setting the time values to 0 means poll instantly,
     // setting it to NULL basically blocks until at least one
     // descriptor frees up.
+#ifdef SELECT_POLL
+    timeval tv = {0, 0};
+    if (select(myCurrentConnections+1, &read_fds, &write_fds, NULL, &tv) == -1)
+#else
+    //if (select(myCurrentConnections+1, &read_fds, &write_fds, NULL, NULL) == -1)
     if (select(myCurrentConnections+1, &read_fds, NULL, NULL, NULL) == -1)
+#endif
     {
         perror("select");
         throw(std::runtime_error("Select error."));
@@ -178,8 +203,10 @@ void NetworkStack::think()
                 int newfd;
                 // NOTE: This is commented out because we're not using
                 // nonblocking modes. This would be useful otherwise.
-                //do // Do until no more new connections.
-                //{
+#ifdef WE_WANT_NONBLOCKING
+                do // Do until no more new connections.
+                {
+#endif
                     // Listener has data, new connection.
                     sockaddr_storage remoteaddr; // New client address.
                     // handle new connections
@@ -191,7 +218,9 @@ void NetworkStack::think()
 
 				    if (newfd == -1)
                     {
-                        //if (errno != EWOULDBLOCK)
+#ifdef WE_WANT_NONBLOCKING
+                        if (errno != EWOULDBLOCK)
+#endif
                             perror("accept");
                         // Don't throw, it's just a single invalid handle.
                     }
@@ -202,72 +231,113 @@ void NetworkStack::think()
                         {    // keep track of the max
                             myCurrentConnections = newfd;
                         }
-                        
+#ifndef _WIN32
 	                    char remoteIP[INET6_ADDRSTRLEN];
                         std::cout << "New connection from "
                             << inet_ntop(remoteaddr.ss_family,
                                 get_in_addr(reinterpret_cast<sockaddr*>(&remoteaddr)),
                                 remoteIP, INET6_ADDRSTRLEN) << " on socket "
                             << newfd << std::endl;
+#endif
                         
                         // Run all my accept listeners!
                         std::for_each(myAcceptListeners.begin(), myAcceptListeners.end(),
                                 [&newfd](AcceptListenerFun x){ x(newfd); });
                     }
-                //} while(newfd != -1);
+#ifdef WE_WANT_NONBLOCKING
+                } while(newfd != -1);
+#endif
             }
             else
             {
-                // handle dhttp://hardware.slashdot.org/story/11/10/25/1923233/robot-walks-like-a-human-requires-no-powerata from a client
-                if ((nbytes = recv(i, buf, sizeof(buf), 0)) <= 0)
+#ifdef WE_WANT_NONBLOCKING
+                do
                 {
-                    // got error or connection closed by client
-                    if (nbytes == 0)
+#endif
+                    if ((nbytes = recv(i, buf, sizeof(buf), 0)) <= 0)
                     {
-                        // connection closed
-                        std::cout << "Socket " << i << " hung up." << std::endl;
+                        // got error or connection closed by client
+                        if (nbytes == 0)
+                        {
+                            // connection closed
+                            std::cout << "Socket " << i << " hung up." << std::endl;
+                        }
+                        else
+                        {
+#ifdef WE_WANT_NONBLOCKING
+                            if (errno == EWOULDBLOCK)
+                            {
+                                continue;
+                            }
+#endif
+                            perror("recv");
+                        }
+                        myDisconnectSocket(i);
+                        // Run appropriate disconnect events.
+                        std::for_each(myDisconnectListeners.begin(),
+                            myDisconnectListeners.end(),
+                            [&i](DisconnectListenerFun x){ x(i); });
                     }
                     else
                     {
-                        perror("recv");
-                    }
-                    myDisconnectSocket(i);
-                    // Run appropriate disconnect events.
-                    std::for_each(myDisconnectListeners.begin(),
-                        myDisconnectListeners.end(),
-                        [&i](DisconnectListenerFun x){ x(i); });
-                }
-                else
-                {
-                    // we got some data from a client
-                    std::string temp;
-                    temp.assign(buf, nbytes);
+                        // we got some data from a client
+                        std::string temp;
+                        temp.assign(buf, nbytes);
 
-                    // Do stuff to the data!
-                    std::for_each(myReceiveListeners.begin(), myReceiveListeners.end(),
+                        // Do stuff to the data!
+                        std::for_each(myReceiveListeners.begin(), myReceiveListeners.end(),
                             [&i, &temp](ReceiveListenerFun x){ x(i, temp); });
-                }
+                    }
+#ifdef WE_WANT_NONBLOCKING
+                } while (nbytes != -1);
+#endif
             } // END handle data from client
         } // END got new incoming connection
+#ifdef SEND_DURING_THINK
+        // Now to send all the stuff we have in our buffers.
+        if (FD_ISSET(i, &write_fds))
+        {
+                // Don't bother if there's nothing to send.
+            if (mySendBuffers[i].empty())
+                continue;
+
+            // Technically, send doesn't have to send everything in one
+            // call. Which really sucks. But we'll pretend it's all fine.
+            int rv = send(i, mySendBuffers[i].c_str(),
+                mySendBuffers[i].size(), 0);
+            mySendBuffers[i].clear(); // All sent, clear buffer.
+
+            if (rv == -1)
+            {
+                throw(SendException("Failed to send message!"));
+            }
+        }
+#endif
     } // END looping through file descriptors
 }
 
 void NetworkStack::myDisconnectSocket(int socket)
 {
-    close(socket);
+    std::cout << "Closing socket " << socket << std::endl;
     FD_CLR(socket, &myConnections);
+    mySendBuffers.erase(socket);
+    if (shutdown(socket, 2) == -1)
+    {
+        perror("shutdown");
+        throw(ShutdownException("Error shutting down socket."));
+    }
+
+    if (close(socket) == -1)
+    {
+        perror("close");
+        throw(CloseException("Error closing socket."));
+    }
 
     if (socket == myCurrentConnections)
     {
         while(FD_ISSET(myCurrentConnections, &myConnections) == false)
             --myCurrentConnections;
     }
-    /*
-    if (shutdown(socket, 2) == -1) // 2 = no further sends or recieves. Redundant after close.
-    {
-        perror("shutdown");
-        throw(std::runtime_error("Error shutting down socket."));
-    } */
 }
 
 void NetworkStack::disconnect(int connection)
@@ -295,21 +365,27 @@ void NetworkStack::registerDisconnectListener(DisconnectListenerFun fun)
     myDisconnectListeners.push_back(fun);
 }
 
-void NetworkStack::sendString(int connection, const std::string& message)
+// Doesn't actually send stuff. Just queues up for a send on the next think pass.
+void NetworkStack::sendString(int connection, std::string message)
 {
     if (FD_ISSET(connection, &myConnections) == false)
     {
         // Not in our connection list, uh oh.
-        throw(std::runtime_error("Invalid connection."));
+        throw(NetworkException("Invalid connection."));
     }
-    // Technically, send doesn't have to send everything in one
-    // call. Which really sucks. But we'll pretend it's all fine.
-    int rv = send(connection, message.c_str(), message.size(), 0);
+#ifdef SEND_DURING_THINK
+    mySendBuffers[connection] += message;
+#else
+    if (message.size() > BUFFER_SIZE)
+        message.resize(BUFFER_SIZE);
+     int rv = send(connection, message.c_str(),
+                message.size(), 0);
 
-    if (rv == -1)
-    {
-        throw(std::runtime_error("Failed to send message!"));
-    }
+            if (rv == -1)
+            {
+                throw(SendException("Failed to send message!"));
+            }
+#endif
 }
 
 void NetworkStack::connect(const std::string& address, const std::string& port)
@@ -351,12 +427,13 @@ void NetworkStack::connect(const std::string& address, const std::string& port)
 
 	if (p == NULL)
     {
-        throw(std::runtime_error("Could not connect."));
+        throw(ConnectException("Could not connect."));
 	}
-
+#ifndef _WIN32
 	inet_ntop(p->ai_family, get_in_addr((struct sockaddr *)p->ai_addr), s, sizeof s);
-    std::cout << "client: connecting to " <<  s << std::endl;
 
+	std::cout << "client: connecting to " <<  s << std::endl;
+#endif
 	freeaddrinfo(servinfo); // all done with this structure
 
     FD_SET(sockfd, &myConnections);

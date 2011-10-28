@@ -10,13 +10,15 @@ if (NOT GLUT_INCLUDE_DIRS)
 	set(GLUT_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/dependancies/glut/include)
 endif(NOT GLUT_INCLUDE_DIRS)
 
-if (NOT GLUT_LIBRARIES)
+#if (NOT GLUT_LIBRARIES)
     set(GLUT_LIBRARIES ${PROJECT_SOURCE_DIR}/dependancies/glut/lib/glut32.lib)
-endif(NOT GLUT_LIBRARIES)
+	message("GLUT_LIBRARIES set to ${GLUT_LIBRARIES}")
+#endif(NOT GLUT_LIBRARIES)
 endif(WIN32)
 
 include_directories(${GLUT_INCLUDE_DIRS})
-set(LIBS ${LIBS} ${GLUT_LIBRARIES})
+#set(LIBS ${LIBS} ${GLUT_LIBRARIES} ${GLUT_glut_LIBRARY})
+set(LIBS ${LIBS} ${GLUT_glut_LIBRARY})
 
 # Set a default build type for single-configuration
 # CMake generators if no build type is set.
@@ -27,7 +29,7 @@ endif(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
 if(MSVC)
     #	set(CMAKE_CXX_FLAGS_DEBUG "/EHa /W4 /Za /WX /D_CRT_SECURE_NO_DEPRECATE")
     #set(CMAKE_CXX_FLAGS_RELEASE "/O2 /MT /EHa /W4 /Za /WX /D_CRT_SECURE_NO_DEPRECATE")
-    set(CMAKE_CXX_FLAGS "/EHa /W4 /Za")
+    #set(CMAKE_CXX_FLAGS "/EHa /W4 /Za")
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
     add_definitions(-D_SCL_SECURE_NO_WARNINGS)
 elseif(BORLAND)

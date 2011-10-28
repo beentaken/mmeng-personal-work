@@ -6,11 +6,11 @@
 #include "windows.h"
 #endif
 
-#include "GL/glut.h"
+#include <cstdlib>
+#include <GL/glut.h>
 #include <cmath>
 #include <cstring>
 #include <cstdio>
-#include <cstdlib>
 
 #define WIDTH 640
 #define HEIGHT 480

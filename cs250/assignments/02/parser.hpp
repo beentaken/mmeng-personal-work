@@ -39,6 +39,11 @@ class InputParser
             return(myTexCoords);
         }
 
+		const std::unordered_map<std::string, std::string>& getCameraData() const
+		{
+			return(camera_data);
+		}
+
 	private:
 
 		std::string myFilename;

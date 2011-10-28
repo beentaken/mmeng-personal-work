@@ -23,6 +23,7 @@ Creation date: 2011-05-30
 #include <unordered_map>
 #include <string>
 #include <memory>
+#include "parser.hpp"
 
 class Assignment
 {
@@ -34,6 +35,7 @@ class Assignment
         void handleInput(int key, int x = 0, int y = 0);
 
     private:
+		InputParser config;
         std::unordered_map<std::string, std::shared_ptr<BoxGeometryComponent>> myTank;
 };
 

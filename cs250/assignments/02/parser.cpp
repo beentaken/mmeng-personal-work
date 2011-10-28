@@ -33,7 +33,7 @@ namespace
 
         void operator()(Vector4 vertices)
         {
-            myTriangles.push_back(Triangle(myVertices[vertices.x], myVertices[vertices.y], myVertices[vertices.z]));
+            myTriangles.push_back(Triangle(myVertices[static_cast<unsigned>(vertices.x)], myVertices[static_cast<unsigned>(vertices.y)], myVertices[static_cast<unsigned>(vertices.z)]));
         }
     };
 
@@ -59,7 +59,7 @@ namespace
         }
     }
 
-    template<typename Contained, unsigned components = 4>
+    template<typename Contained, unsigned components>
     void ParseVector(std::vector<Contained>& output, const std::vector<std::string>& input)
     {
         static_assert(components >=2 && components <= 4, "Parser only deals with "
@@ -74,17 +74,27 @@ namespace
                 std::stringstream string_to_floater(token);
                 float x, y, z, w;
                 string_to_floater >> x;
+				std::cout << "Parsed x: " << x;
 
+				ss >> y;
                 std::getline(ss, token, ',');
-                string_to_floater.str(token);
-                string_to_floater >> y;
 
-                if (components >= 3)
+				std::cout << ", y: " << y;
+
+                if (components == 3)
                 {
-                    std::getline(ss, token, ',');
-                    string_to_floater.str(token);
-                    string_to_floater >> z;
+					ss >> z;
+                    std::getline(ss, token);
+
+					std::cout << ", z: " << z;
                 }
+				else if (components == 4)
+				{
+					ss >> z;
+					std::getline(ss, token, ',');
+
+					std::cout << ", z: " << z;
+				}
                 else
                 {
                     z = 0.0f;
@@ -92,14 +102,16 @@ namespace
 
                 if (components == 4)
                 {
+					ss >> w;
                     std::getline(ss, token, ',');
-                    string_to_floater.str(token);
-                    string_to_floater >> w;
+
+					std::cout << ", w: " << w;
                 }
                 else
                 {
                     w = 0.0f;
                 }
+				std::cout << std::endl;
 
                 output.push_back(Contained(x, y, z, w));
             }
@@ -234,7 +246,7 @@ void InputParser::parse()
 		}
 	}
 
-    ParseVector<Vector4, 2>(myTexCoords, texture_coordinates);
+    //ParseVector<Vector4, 2>(myTexCoords, texture_coordinates);
 
     // All right, now to create triangles.
 

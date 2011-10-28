@@ -22,6 +22,7 @@ Creation date: 2011-05-30
 #include <functional>
 
 #include "transformations.hpp"
+#include <sstream>
 
 #include "parser.hpp"
 
@@ -74,9 +75,9 @@ namespace
 }
 
 Assignment::Assignment()
-    :myTank()
+    :config("input.txt"), myTank()
 {
-    InputParser config("input.txt");
+	config.parse();
 
     const std::vector<Triangle>& triangles = config.getTriangles();
 
@@ -107,7 +108,10 @@ Assignment::Assignment()
 
 void Assignment::drawScene()
 {
-	Matrix4 mvp = perspective(100.0f);
+	std::stringstream atofer(config.getCameraData().at("focal"));
+	float focal;
+	atofer >> focal;
+	Matrix4 mvp = perspective(focal);
     //Matrix4 mvp;
     //mvp.Identity();
 

@@ -26,6 +26,8 @@ namespace
         to_draw.p0 = transformation * to_draw.p0;
         to_draw.p1 = transformation * to_draw.p1;
         to_draw.p2 = transformation * to_draw.p2;
+
+		//std::cout << "New p0: " << to_draw.p0 << " p1: " << to_draw.p1 << " p2: " << to_draw.p2 << std::endl;
         Renderer.addDrawable(to_draw);
     }
 }

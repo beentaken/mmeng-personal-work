@@ -698,6 +698,8 @@ void RenderWorld::addDrawable(Triangle new_triangle)
 	new_triangle.p1 = RenormalizeW(new_triangle.p1);
 	new_triangle.p2 = RenormalizeW(new_triangle.p2);
 
+	//std::cout << "Normalized p0: " << new_triangle.p0 << " p1: " << new_triangle.p1 << " p2: " << new_triangle.p2 << std::endl;
+
     myDrawList.push_back(new_triangle);
 }
 

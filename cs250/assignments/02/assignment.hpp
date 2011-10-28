@@ -37,6 +37,7 @@ class Assignment
     private:
 		InputParser config;
         std::unordered_map<std::string, std::shared_ptr<BoxGeometryComponent>> myTank;
+		std::vector<std::shared_ptr<BoxGeometryComponent>> boxes;
 };
 
 #endif // CS250_ASSIGNMENT_H

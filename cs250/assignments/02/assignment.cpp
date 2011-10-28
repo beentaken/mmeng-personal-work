@@ -60,6 +60,21 @@ namespace
 		return(to_return);
 	}
 
+	Matrix4 perspective(float left, float right, float bottom, float top, float near, float far)
+	{
+		Matrix4 to_return;
+		to_return.Zero();
+
+		to_return.m[0][0] = 2.0f*near/(right - left);
+		to_return.m[1][1] = 2.0f*near/(top - bottom);
+		to_return.m[0][2] = (right + left) / (right - left);
+		to_return.m[1][2] = (top + bottom) / (top - bottom);
+		to_return.m[2][2] = -(far + near) / (far - near);
+		to_return.m[3][2] = -1.0f;
+		to_return.m[2][3] = -2.0f*far*near / (far - near);
+		return(to_return);
+	}
+
     Matrix4 ortho(float focus)
     {
         Matrix4 to_return;
@@ -80,6 +95,21 @@ Assignment::Assignment()
 	config.parse();
 
     const std::vector<Triangle>& triangles = config.getTriangles();
+
+	// Scatter some boxes.
+	boxes.push_back(std::make_shared<BoxGeometryComponent>(triangles));
+	boxes.push_back(std::make_shared<BoxGeometryComponent>(triangles));
+	boxes.push_back(std::make_shared<BoxGeometryComponent>(triangles));
+	boxes.push_back(std::make_shared<BoxGeometryComponent>(triangles));
+	boxes.push_back(std::make_shared<BoxGeometryComponent>(triangles));
+	boxes.push_back(std::make_shared<BoxGeometryComponent>(triangles));
+
+	boxes[0]->addScale(5, 5, 5).addTranslation(0, 0, -50);
+	boxes[1]->addScale(5, 5, 5).addTranslation(10, 0, -50);
+	boxes[2]->addScale(5, 5, 5).addTranslation(0, 0, -50);
+	boxes[3]->addScale(5, 5, 5).addTranslation(10, 0, -50);
+	boxes[4]->addScale(5, 5, 5).addTranslation(20, 0, -50);
+	boxes[5]->addScale(5, 5, 5).addTranslation(0, 0, -50);
 
 	myTank["body"] = std::make_shared<BoxGeometryComponent>(triangles);
     myTank["turret"] = std::make_shared<BoxGeometryComponent>(triangles);
@@ -112,6 +142,7 @@ void Assignment::drawScene()
 	float focal;
 	atofer >> focal;
 	Matrix4 mvp = perspective(focal);
+	//Matrix4 mvp = perspective(0, WIDTH, 0, HEIGHT, 1.0f, 100.0f);
     //Matrix4 mvp;
     //mvp.Identity();
 
@@ -119,6 +150,7 @@ void Assignment::drawScene()
     mvp = mat4::translate(Vector4(static_cast<float>(WIDTH)/2, static_cast<float>(HEIGHT)/2, 0.0f)) * mvp;
 #if 1
 	myTank.at("body")->draw(mvp);
+	std::for_each(boxes.begin(), boxes.end(), [&mvp](std::shared_ptr<BoxGeometryComponent> x) { x->draw(mvp); });
 #else
     const float size = 200.0f;
     Point4 p0(-size, -size, size, 1.0f);
@@ -174,7 +206,11 @@ void Assignment::handleInput(int key, int /* x */, int /* y */ )
             myTank.at("gun")->addRotation(0.2f, 0.0f, 0.0f);
             break;
         case ' ' :
-            myTank.at("body")->move(0.0f, 0.0f, 20.0f);
+            myTank.at("body")->move(0.0f, 0.0f, 2.5f);
+			myTank.at("wheel0")->addRotation(0.2f, 0.0f, 0.0f);
+			myTank.at("wheel1")->addRotation(0.2f, 0.0f, 0.0f);
+			myTank.at("wheel2")->addRotation(0.2f, 0.0f, 0.0f);
+			myTank.at("wheel3")->addRotation(0.2f, 0.0f, 0.0f);
             break;
         case '1':
             Renderer.setWireframeMode(true);

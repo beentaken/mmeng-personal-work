@@ -45,7 +45,7 @@ endif(MSVC)
 
 #file(GLOB SOURCES *.cpp)
 set(SOURCES Utilities.cpp assignment.cpp Vector4.cpp Matrix4.cpp
-    Point4.cpp render.cpp box.cpp transformations.cpp parser.cpp)
+    Point4.cpp render.cpp box.cpp transformations.cpp parser.cpp camera.cpp)
 
 add_executable(${EXEC_NAME} main.cpp ${SOURCES})
 target_link_libraries(${EXEC_NAME} ${LIBS})

@@ -12,6 +12,7 @@ Author: Marcus Meng (marcus.meng) 80002709
 Creation date: 2011-05-30
 - End Header --------------------------------------------------------*/
 
+#pragma once
 #ifndef CS250_ASSIGNMENT_H
 #define CS250_ASSIGNMENT_H
 
@@ -36,6 +37,7 @@ class Assignment
 
     private:
 		InputParser config;
+        Matrix4 mvp;
         std::unordered_map<std::string, std::shared_ptr<BoxGeometryComponent>> myTank;
 		std::vector<std::shared_ptr<BoxGeometryComponent>> boxes;
 };

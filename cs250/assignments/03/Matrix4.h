@@ -2,6 +2,8 @@
 
 #include "Utilities.h"
 
+#include <ostream>
+
 ////////////////////////////////////////////////////////////////////////////////
 // DO NOT MODIFY THIS FILE FOR ASSIGNMENT 1
 ////////////////////////////////////////////////////////////////////////////////
@@ -88,3 +90,6 @@ struct Matrix4
     // Already implemented, simple print function
   void Print(void) const;
 };
+
+std::ostream& operator<<(std::ostream& os, const Matrix4& rhs);
+

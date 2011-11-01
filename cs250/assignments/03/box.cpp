@@ -99,3 +99,8 @@ BoxGeometryComponent& BoxGeometryComponent::turn(float x, float y, float z)
     return(*this);
 }
 
+Vector4 BoxGeometryComponent::getPosition() const
+{
+    return(myTranslation);
+}
+

@@ -208,3 +208,29 @@ void Matrix4::Identity()
     m[0][0] = m[1][1] = m[2][2] = m[3][3] = 1;
 }
 
+std::ostream& operator<<(std::ostream& os, const Matrix4& rhs)
+{
+    os << '[';
+
+    for (int i = 0; i < 4; ++i)
+    {
+        if (i != 0)
+            os << ' ';
+        os << '[';
+
+        for (int j = 0; j < 4; ++j)
+        {
+            os << rhs.m[i][j] << ' ';
+        }
+
+        os << ']';
+        
+        if (i != 3)
+            os<< std::endl;
+    }
+
+    os << ']';
+
+    return(os);
+}
+

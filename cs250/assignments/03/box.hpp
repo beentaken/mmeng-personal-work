@@ -24,6 +24,8 @@ class BoxGeometryComponent
         BoxGeometryComponent& move(float x, float y, float z);
         BoxGeometryComponent& turn(float x, float y, float z);
 
+        Vector4 getPosition() const;
+
     private:
         std::vector<std::shared_ptr<BoxGeometryComponent>> myComponents;
         std::vector<Triangle> myTriangles;

@@ -380,10 +380,12 @@ bool ArrangeTriangle(Triangle& arranged, const Triangle& to_draw)
 
 void RenderTriangle(const Triangle& to_draw, const std::vector<unsigned char> &texture, int tex_height, int tex_width, int bpp, TextureMode mode)
 {
-	//std::cout << "Triangle renderer entered." << std::endl;
-    //std::cout << "p0: " << to_draw.p0 << std::endl;
-    //std::cout << "p1: " << to_draw.p1 << std::endl;
-    //std::cout << "p2: " << to_draw.p2 << std::endl;
+#ifdef SHOW_RENDERER_INFO
+	std::cout << "Triangle renderer entered." << std::endl;
+    std::cout << "p0: " << to_draw.p0 << std::endl;
+    std::cout << "p1: " << to_draw.p1 << std::endl;
+    std::cout << "p2: " << to_draw.p2 << std::endl;
+#endif
     Triangle arranged;
     
     bool mid_left = ArrangeTriangle(arranged, to_draw);

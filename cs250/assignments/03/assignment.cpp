@@ -26,64 +26,16 @@ Creation date: 2011-05-30
 
 #include "parser.hpp"
 
+#include "camera.hpp"
+
 namespace
 {
-	Triangle MakeTriangle(Point4 p0, Point4 p1, Point4 p2)
-	{
-		Triangle to_return;
-		to_return.p0 = p0;
-		to_return.p1 = p1;
-		to_return.p2 = p2;
-
-		return(to_return);
-	}
-
-	void SetTriangleColor(Triangle& tri, float r, float g, float b)
-	{
-		tri.c0.r = tri.c1.r = tri.c2.r = r;
-		tri.c0.g = tri.c1.g = tri.c2.g = g;
-		tri.c0.b = tri.c1.b = tri.c2.b = b;
-        tri.c0.a = tri.c1.a = tri.c2.a = 255;
-	}
-
-	Matrix4 perspective(float focus)
-	{
-		Matrix4 to_return;
-		to_return.Zero();
-
-		to_return.m[0][0] = focus;
-		to_return.m[1][1] = -focus;
-		to_return.m[2][2] = focus;
-
-		to_return.m[3][2] = -1.0f;
-
-		return(to_return);
-	}
-
-	Matrix4 perspective(float left, float right, float bottom, float top, float near, float far)
-	{
-		Matrix4 to_return;
-		to_return.Zero();
-
-		to_return.m[0][0] = 2.0f*near/(right - left);
-		to_return.m[1][1] = 2.0f*near/(top - bottom);
-		to_return.m[0][2] = (right + left) / (right - left);
-		to_return.m[1][2] = (top + bottom) / (top - bottom);
-		to_return.m[2][2] = -(far + near) / (far - near);
-		to_return.m[3][2] = -1.0f;
-		to_return.m[2][3] = -2.0f*far*near / (far - near);
-		return(to_return);
-	}
-
-    Matrix4 ortho(float focus)
+    float atof(const std::string& input)
     {
-        Matrix4 to_return;
-        to_return.Zero();
+        std::stringstream ss(input);
 
-        to_return.m[0][0] = focus;
-        to_return.m[1][1] = -focus;
-        to_return.m[3][3] = 1.0f;
-        to_return.m[3][2] = -1.0f;
+        float to_return;
+        ss >> to_return;
 
         return(to_return);
     }
@@ -134,46 +86,54 @@ Assignment::Assignment()
                    .attachComponent(myTank["wheel3"]);
 
     myTank["turret"]->attachComponent(myTank["gun"]);
-}
 
-void Assignment::drawScene()
-{
 	std::stringstream atofer(config.getCameraData().at("focal"));
-	float focal;
-	atofer >> focal;
-	Matrix4 mvp = perspective(focal);
-	//Matrix4 mvp = perspective(0, WIDTH, 0, HEIGHT, 1.0f, 100.0f);
+	float focal = atof(config.getCameraData().at("focal"));
+    std::cout << "Converted focal: " << focal << std::endl;
+    
+    float left = atof(config.getCameraData().at("left"));
+    std::cout << "Converted left: " << left << std::endl;
+
+    float right = atof(config.getCameraData().at("right"));
+    std::cout << "Converted right: " << right << std::endl;
+
+    float top = atof(config.getCameraData().at("top"));
+    std::cout << "Converted top: " << top << std::endl;
+
+    float bottom = atof(config.getCameraData().at("bottom"));
+    std::cout << "Converted bottom: " << bottom << std::endl;
+
+    float near = atof(config.getCameraData().at("near"));
+    std::cout << "Converted near: " << near << std::endl;
+
+    float far = atof(config.getCameraData().at("far"));
+    std::cout << "Converted far: " << far << std::endl;
+
+	//mvp = mat4::perspective(focal);
+	mvp = mat4::perspective(left, right, bottom, top, near, far);
     //Matrix4 mvp;
     //mvp.Identity();
 
     // Let's get the camera to the center, maybe?
-    mvp = mat4::translate(Vector4(static_cast<float>(WIDTH)/2, static_cast<float>(HEIGHT)/2, 0.0f)) * mvp;
-#if 1
-	myTank.at("body")->draw(mvp);
-	std::for_each(boxes.begin(), boxes.end(), [&mvp](std::shared_ptr<BoxGeometryComponent> x) { x->draw(mvp); });
-#else
-    const float size = 200.0f;
-    Point4 p0(-size, -size, size, 1.0f);
-    Point4 p1(size, -size, size, 1.0f);
-    Point4 p2(size, size, size, 1.0f);
-    Point4 p3(-size, size, size, 1.0f);
-    Triangle test1 = MakeTriangle(p0, p1, p2);
-    Triangle test2 = MakeTriangle(p0, p2, p3);
+    mvp = mat4::translate(Vector4(static_cast<float>(WIDTH)/2, static_cast<float>(HEIGHT)/2, 0.0f)) // Move to center of screen.
+        * mat4::scale(Vector4(WIDTH, HEIGHT, 1.0f, 1.0f)) // Resize to screen.
+        * mvp;
 
-    SetTriangleColor(test1, 255, 0, 0);
-    SetTriangleColor(test2, 0, 255, 0);
+    std::cout << "mvp Matrix:" << std::endl << mvp << std::endl;
+}
 
-    test1.p0 = mvp * test1.p0;
-    test1.p1 = mvp * test1.p1;
-    test1.p2 = mvp * test1.p2;
+void Assignment::drawScene()
+{
+    Camera myCamera;
+    Vector4 pos = myTank.at("body")->getPosition();
+    myCamera.lookAt(pos.x, pos.y, pos.z);
 
-    test2.p0 = mvp * test2.p0;
-    test2.p1 = mvp * test2.p1;
-    test2.p2 = mvp * test2.p2;
+    Matrix4 camera_transform = myCamera.getTransformation();
+    std::cout << "Camera:" << std::endl;
+    std::cout << camera_transform << std::endl;
 
-    Renderer.addDrawable(test1);
-    Renderer.addDrawable(test2);
-#endif
+	myTank.at("body")->draw(mvp * camera_transform);
+	std::for_each(boxes.begin(), boxes.end(), [&mvp, &camera_transform](std::shared_ptr<BoxGeometryComponent> x) { x->draw(mvp * camera_transform); });
 	Renderer.think();
 }
 

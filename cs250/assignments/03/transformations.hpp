@@ -16,6 +16,11 @@ namespace mat4
 	Matrix4 rotate(Vector4 angles);
 
 	Matrix4 translate(Vector4 displacements);
+
+    Matrix4 rotate(float angle, Vector4 axis);
+
+    Matrix4 perspective(float focus);
+    Matrix4 perspective(float left, float right, float bottom, float top, float near, float far);
 }
 
 #endif // TRANSFORMATIONS_H

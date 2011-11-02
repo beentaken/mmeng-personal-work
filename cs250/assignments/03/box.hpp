@@ -25,6 +25,7 @@ class BoxGeometryComponent
         BoxGeometryComponent& turn(float x, float y, float z);
 
         Vector4 getPosition() const;
+		Vector4 getRotation() const;
 
     private:
         std::vector<std::shared_ptr<BoxGeometryComponent>> myComponents;

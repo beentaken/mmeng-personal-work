@@ -21,9 +21,9 @@ int winID;
 Assignment current_assignment;
 
 // If we're not on windows and thus don't have windows.h...
-#ifndef WIN32
+//#ifndef WIN32
 #define VK_ESCAPE 0x1b
-#endif
+//#endif
 
 void keyboard(unsigned char key, int x, int y)
 {

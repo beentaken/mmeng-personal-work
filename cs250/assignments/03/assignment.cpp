@@ -42,7 +42,7 @@ namespace
 }
 
 Assignment::Assignment()
-    :config("input.txt"), myTank()
+    :config("input.txt"), myTank(), offset_size(80.0f), offset_height(40.0f)
 {
 	config.parse();
 
@@ -126,14 +126,20 @@ void Assignment::drawScene()
 {
     Camera myCamera;
     Vector4 pos = myTank.at("body")->getPosition();
+	Vector4 rot = myTank.at("body")->getRotation();
+
+	Vector4 offset = mat4::rotate(rot) * Vector4(0, 0, -offset_size); // Move camera to behind tank direction.
+	myCamera.setPosition(pos.x + (offset.x), pos.y + (offset.y) + offset_height, pos.z + (offset.z));
     myCamera.lookAt(pos.x, pos.y, pos.z);
 
     Matrix4 camera_transform = myCamera.getTransformation();
     std::cout << "Camera:" << std::endl;
     std::cout << camera_transform << std::endl;
 
-	myTank.at("body")->draw(mvp * camera_transform);
-	std::for_each(boxes.begin(), boxes.end(), [&mvp, &camera_transform](std::shared_ptr<BoxGeometryComponent> x) { x->draw(mvp * camera_transform); });
+	Matrix4 my_mvp = mvp; // Stupid MSVC2010 can't capture closures properly.
+
+	myTank.at("body")->draw(my_mvp * camera_transform);
+	std::for_each(boxes.begin(), boxes.end(), [&my_mvp, &camera_transform](std::shared_ptr<BoxGeometryComponent> x) { x->draw(my_mvp * camera_transform ); });
 	Renderer.think();
 }
 
@@ -142,10 +148,10 @@ void Assignment::handleInput(int key, int /* x */, int /* y */ )
     switch (key)
     {
 		case 'w':
-			myTank.at("body")->addTranslation(0, -20.0f, 0);
+			//myTank.at("body")->addTranslation(0, -20.0f, 0);
 			break;
 		case 's':
-			myTank.at("body")->addTranslation(0, 20.0f, 0);
+			//myTank.at("body")->addTranslation(0, 20.0f, 0);
 			break;
 		case 'a':
 			myTank.at("body")->addRotation(0.0f, 0.2f, 0.0f);
@@ -172,6 +178,18 @@ void Assignment::handleInput(int key, int /* x */, int /* y */ )
 			myTank.at("wheel2")->addRotation(0.2f, 0.0f, 0.0f);
 			myTank.at("wheel3")->addRotation(0.2f, 0.0f, 0.0f);
             break;
+		case 'z':
+			offset_size -= 5;
+			break;
+		case 'x':
+			offset_size += 5;
+			break;
+		case 'h':
+			offset_height -= 5;
+			break;
+		case 'y':
+			offset_height += 5;
+			break;
         case '1':
             Renderer.setWireframeMode(true);
             break;

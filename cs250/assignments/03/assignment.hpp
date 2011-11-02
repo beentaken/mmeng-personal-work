@@ -40,6 +40,9 @@ class Assignment
         Matrix4 mvp;
         std::unordered_map<std::string, std::shared_ptr<BoxGeometryComponent>> myTank;
 		std::vector<std::shared_ptr<BoxGeometryComponent>> boxes;
+
+		float offset_size;
+		float offset_height;
 };
 
 #endif // CS250_ASSIGNMENT_H

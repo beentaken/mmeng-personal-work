@@ -122,7 +122,7 @@ namespace mat4
 #else
 		to_return.m[0][2] = (right + left) / (right - left);
 		to_return.m[1][2] = (top + bottom) / (top - bottom);
-        to_return.m[3][2] = 1.0f;
+        to_return.m[3][2] = -1.0f;
         to_return.m[2][3] = -(2.0f * far * near) / (far - near);
 #endif
 		return(to_return);

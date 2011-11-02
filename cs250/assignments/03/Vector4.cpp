@@ -134,10 +134,13 @@ Vector4 Vector4::Cross(const Vector4& rhs) const
 {
     Vector4 to_return(rhs);
 
-    // TODO
-    //
+    // i * 11 * 22 - 12 * 21 
+	// - 10 * 22 - 12 * 20
+	// + 10 * 12 - 11 * 20
+	to_return.x = y * rhs.z - z * rhs.y; // BAAAAH
+	to_return.y = -(x * rhs.z - z * rhs.x);
+	to_return.z = x * rhs.y - y * rhs.x;
 
-    to_return.x = 0; // BAAAAH
     return(to_return);
 }
 
@@ -148,7 +151,8 @@ f32 Vector4::Length() const
 
 f32 Vector4::LengthSq() const
 {
-    return(std::inner_product(v, v+VECTORSIZE, v, 0));
+    //return(std::inner_product(v, v+VECTORSIZE, v, 0));
+	return(x * x + y * y + z * z + w * w);
 }
 
 void Vector4::Normalize()

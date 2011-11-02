@@ -39,9 +39,10 @@ BoxGeometryComponent::BoxGeometryComponent(const std::vector<Triangle> &triangle
 
 void BoxGeometryComponent::draw(Matrix4 transformation)
 {
-    //Matrix4 rotated_move = translate(rotate(myRotation) * myMove);
-	Matrix4 total_transform = transformation * translate(myTranslation) * rotate(myRotation) * translate(myMove) * scale(myScale);
-	Matrix4 transform_noscale = transformation * translate(myTranslation) * rotate(myRotation) * translate(myMove);
+    Point4 rotated_move = rotate(myRotation) * Point4(myMove.x, myMove.y, myMove.z);
+	//Matrix4 total_transform = transformation * translate(Vector4(rotated_move.x, rotated_move.y, rotated_move.z)) * rotate(myRotation) * scale(myScale);
+	Matrix4 total_transform = transformation * translate(myTranslation) * rotate(myRotation) * scale(myScale);
+	Matrix4 transform_noscale = transformation * translate(myTranslation) * rotate(myRotation);
     std::for_each(myTriangles.begin(), myTriangles.end(), std::bind2nd(std::ptr_fun(TransformAndDraw), total_transform));
 
 	// Draw all subcomponents.
@@ -83,9 +84,9 @@ BoxGeometryComponent& BoxGeometryComponent::attachComponent(std::shared_ptr<BoxG
 
 BoxGeometryComponent& BoxGeometryComponent::move(float x, float y, float z)
 {
-    myMove.x += x;
-    myMove.y += y;
-    myMove.z += z;
+	static const Vector4 move_amount(0.0f, 0.0f, 20.0f);
+
+	myTranslation += rotate(myRotation) * move_amount;
 
     return(*this);
 }
@@ -104,3 +105,7 @@ Vector4 BoxGeometryComponent::getPosition() const
     return(myTranslation);
 }
 
+Vector4 BoxGeometryComponent::getRotation() const
+{
+    return(myRotation);
+}

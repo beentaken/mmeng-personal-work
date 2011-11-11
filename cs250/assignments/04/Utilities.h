@@ -27,11 +27,12 @@ class FrameBuffer
 		static void Clear(const unsigned char &r, const unsigned char &g, const unsigned char &b);
 
 		static void Init(const unsigned int &w, const unsigned int &h);
-		static void SetPixel(const int &x, const int &y, const unsigned char &r, const unsigned char &g, const unsigned char &b);
+		static void SetPixel(const int &x, const int &y, float z, const unsigned char &r, const unsigned char &g, const unsigned char &b);
 		static void GetPixel(const int &x, const int &y, unsigned char &r, unsigned char &g, unsigned char &b);
 
 	public:
 		static unsigned char *buffer;
+		static float* depth_buffer;
 		static int width;
 		static int height;
 };

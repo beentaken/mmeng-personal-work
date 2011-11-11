@@ -26,6 +26,7 @@ class BoxGeometryComponent
 
         Vector4 getPosition() const;
 		Vector4 getRotation() const;
+		Vector4 getUpVector() const;
 
     private:
         std::vector<std::shared_ptr<BoxGeometryComponent>> myComponents;

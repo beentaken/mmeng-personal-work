@@ -13,6 +13,7 @@ Creation date: 2011-05-18
 - End Header --------------------------------------------------------*/
 
 #include "Utilities.h"
+#include <iostream>
 
 namespace
 {
@@ -22,6 +23,8 @@ namespace
 unsigned char *FrameBuffer::buffer = NULL;
 int FrameBuffer::width = 0;
 int FrameBuffer::height = 0;
+
+float* FrameBuffer::depth_buffer = NULL;
 
 FrameBuffer::FrameBuffer()
 {
@@ -41,6 +44,8 @@ void FrameBuffer::Clear(const unsigned char &r, const unsigned char &g, const un
 			buffer[i * bpp + j * width * bpp] = r;
 			buffer[i * bpp + j * width * bpp + 1] = g;
 			buffer[i * bpp + j * width * bpp + 2] = b;
+
+			depth_buffer[i + j * width] = 1.0f;
 		}
 	}
 }
@@ -51,18 +56,27 @@ void FrameBuffer::Init(const unsigned int &w, const unsigned int &h)
 	width = w;
 	height = h;
 	buffer = new unsigned char [width * height * bpp];
+	depth_buffer = new float[width * height];
 
 	Clear(255, 255, 255);
 }
 
 //Set the pixel's color at (x,y)
-void FrameBuffer::SetPixel(const int &x, const int &y, const unsigned char &r, const unsigned char &g, const unsigned char &b)
+void FrameBuffer::SetPixel(const int &x, const int &y, float z, const unsigned char &r, const unsigned char &g, const unsigned char &b)
 {
 	int _y = height - y;
-
+	//if (z < 0.0f || z > 1.0f ) std::cout << "Depth value: " << z << std::endl;
 	if (x < 0 || x >= width || _y < 0 || _y >= height)
 		return;
+	// Between 0 and 1, and smaller than current value in buffer.
+#if 1
+	if (z >= 0.0f && z > depth_buffer[x + y * width])
+	{
+		return;
+	}
+#endif
 
+	depth_buffer[x + y * width] = z;
 	buffer[x * bpp + _y * width * bpp] = r;
 	buffer[x * bpp + _y * width * bpp + 1] = g;
 	buffer[x * bpp + _y * width * bpp + 2] = b;

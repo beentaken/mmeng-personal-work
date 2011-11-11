@@ -42,7 +42,7 @@ namespace
 }
 
 Assignment::Assignment()
-    :config("input.txt"), myTank(), offset_size(80.0f), offset_height(40.0f)
+    :config("input.txt"), myTank(), offset_size(60.0f), offset_height(30.0f)
 {
 	config.parse();
 
@@ -56,23 +56,24 @@ Assignment::Assignment()
 	boxes.push_back(std::make_shared<BoxGeometryComponent>(triangles));
 	boxes.push_back(std::make_shared<BoxGeometryComponent>(triangles));
 
-	boxes[0]->addScale(5, 5, 5).addTranslation(0, 0, -50);
-	boxes[1]->addScale(5, 5, 5).addTranslation(10, 0, -50);
-	boxes[2]->addScale(5, 5, 5).addTranslation(0, 0, -50);
-	boxes[3]->addScale(5, 5, 5).addTranslation(10, 0, -50);
-	boxes[4]->addScale(5, 5, 5).addTranslation(20, 0, -50);
-	boxes[5]->addScale(5, 5, 5).addTranslation(0, 0, -50);
+	boxes[0]->addScale(10, 10, 10).addTranslation(25, 0, -125);
+	boxes[1]->addScale(10, 10, 10).addTranslation(25, 0, -100);
+	boxes[2]->addScale(10, 10, 10).addTranslation(0, 0, -75);
+	boxes[3]->addScale(10, 10, 10).addTranslation(25, 0, -100);
+	boxes[4]->addScale(10, 10, 10).addTranslation(0, 0, -125);
+	boxes[5]->addScale(10, 10, 10).addTranslation(25, 0, -75);
 
 	myTank["body"] = std::make_shared<BoxGeometryComponent>(triangles);
-    myTank["turret"] = std::make_shared<BoxGeometryComponent>(triangles);
+    /*myTank["turret"] = std::make_shared<BoxGeometryComponent>(triangles);
     myTank["gun"] = std::make_shared<BoxGeometryComponent>(triangles);
     myTank["wheel0"] = std::make_shared<BoxGeometryComponent>(triangles);
     myTank["wheel1"] = std::make_shared<BoxGeometryComponent>(triangles);
     myTank["wheel2"] = std::make_shared<BoxGeometryComponent>(triangles);
-    myTank["wheel3"] = std::make_shared<BoxGeometryComponent>(triangles);
+    myTank["wheel3"] = std::make_shared<BoxGeometryComponent>(triangles);*/
 
     myTank["body"]->addScale(30, 25, 80).addTranslation(0, 0, -100);
-    myTank["turret"]->addScale(25, 15, 25).addTranslation(0, 20, 0);
+    /*
+	myTank["turret"]->addScale(25, 15, 25).addTranslation(0, 20, 0);
     myTank["gun"]->addScale(5, 5, 40).addTranslation(0, 0, 22.5);
     myTank["wheel0"]->addScale(5, 20, 20).addTranslation(17.5, -12.5, -25);
     myTank["wheel1"]->addScale(5, 20, 20).addTranslation(-17.5, -12.5, -25);
@@ -85,7 +86,7 @@ Assignment::Assignment()
                    .attachComponent(myTank["wheel2"])
                    .attachComponent(myTank["wheel3"]);
 
-    myTank["turret"]->attachComponent(myTank["gun"]);
+    myTank["turret"]->attachComponent(myTank["gun"]);*/
 
 	std::stringstream atofer(config.getCameraData().at("focal"));
 	float focal = atof(config.getCameraData().at("focal"));
@@ -113,17 +114,19 @@ Assignment::Assignment()
 	mvp = mat4::perspective(left, right, bottom, top, near, far);
     //Matrix4 mvp;
     //mvp.Identity();
-
+/*
     // Let's get the camera to the center, maybe?
     mvp = mat4::translate(Vector4(static_cast<float>(WIDTH)/2, static_cast<float>(HEIGHT)/2, 0.0f)) // Move to center of screen.
         * mat4::scale(Vector4(WIDTH, HEIGHT, 1.0f, 1.0f)) // Resize to screen.
         * mvp;
 
     std::cout << "mvp Matrix:" << std::endl << mvp << std::endl;
+	*/
 }
 
 void Assignment::drawScene()
 {
+#if 0
     Camera myCamera;
     Vector4 pos = myTank.at("body")->getPosition();
 	Vector4 rot = myTank.at("body")->getRotation();
@@ -137,9 +140,23 @@ void Assignment::drawScene()
     //std::cout << camera_transform << std::endl;
 
 	Matrix4 my_mvp = mvp; // Stupid MSVC2010 can't capture closures properly.
+#endif
+	Camera myCamera;
+    Vector4 pos = myTank.at("body")->getPosition();
+	//Vector4 up = myTank.at("body")->getUpVector();
+	Vector4 rot = myTank.at("body")->getRotation();
 
-	myTank.at("body")->draw(my_mvp * camera_transform);
-	std::for_each(boxes.begin(), boxes.end(), [&my_mvp, &camera_transform](std::shared_ptr<BoxGeometryComponent> x) { x->draw(my_mvp * camera_transform ); });
+	Vector4 offset = mat4::rotate(rot) * Vector4(0, 0, -offset_size); // Move camera to behind tank direction.
+	Vector4 up = mat4::rotate(rot) * Vector4(0, 1.0f, 0);
+	myCamera.setPosition(pos.x + (offset.x), pos.y + (offset.y), pos.z + (offset.z));
+    myCamera.lookAt(pos, up);
+	std::cout << "Up: " << up.x << ' ' << up.y << ' ' << up.z << std::endl;
+
+	Renderer.setCameraMatrix(myCamera.getTransformation());
+	Matrix4 mvp;
+	mvp.Identity();
+	myTank.at("body")->draw(/* my_mvp * camera_transform */ mvp);
+	std::for_each(boxes.begin(), boxes.end(), [/* &my_mvp, &camera_transform */ &mvp](std::shared_ptr<BoxGeometryComponent> x) { x->draw(/*my_mvp * camera_transform */ mvp); });
 	Renderer.think();
 }
 
@@ -148,22 +165,22 @@ void Assignment::handleInput(int key, int /* x */, int /* y */ )
     switch (key)
     {
 		case 'w':
-			//myTank.at("body")->addTranslation(0, -20.0f, 0);
+			myTank.at("body")->addRotation(-0.2f, 0.0f, 0.0f);
 			break;
 		case 's':
-			//myTank.at("body")->addTranslation(0, 20.0f, 0);
+			myTank.at("body")->addRotation(0.2f, 0.0f, 0.0f);
 			break;
 		case 'a':
-			myTank.at("body")->addRotation(0.0f, 0.2f, 0.0f);
+			myTank.at("body")->addRotation(0.0f, 0.0f, 0.2f);
 			break;
 		case 'd':
-			myTank.at("body")->addRotation(0.0f, -0.2f, 0.0f);
+			myTank.at("body")->addRotation(0.0f, 0.0f, -0.2f);
 			break;
         case 'q':
-            myTank.at("turret")->addRotation(0.0f, 0.2f, 0.0f);
+            myTank.at("body")->addRotation(0.0f, 0.2f, 0.0f);
             break;
         case 'e':
-            myTank.at("turret")->addRotation(0.0f, -0.2f, 0.0f);
+            myTank.at("body")->addRotation(0.0f, -0.2f, 0.0f);
             break;
         case 'r':
             myTank.at("gun")->addRotation(-0.2f, 0.0f, 0.0f);

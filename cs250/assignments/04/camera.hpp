@@ -12,7 +12,7 @@ class Camera
         Camera& setPosition(float x, float y, float z);
         Camera& setAngle(float x, float y, float z);
         
-        Camera& lookAt(float x, float y, float z);
+        Camera& lookAt(Vector4 target, Vector4 up);
 
         Matrix4 getTransformation() const;
 

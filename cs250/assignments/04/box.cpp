@@ -110,3 +110,13 @@ Vector4 BoxGeometryComponent::getRotation() const
     return(myRotation);
 }
 
+Vector4 BoxGeometryComponent::getUpVector() const
+{
+	std::cout << myRotation.x << ' ' << myRotation.y << ' ' << myRotation.z << std::endl;
+	Vector4 up(0.0f, 1.0f, 0.0f);
+	std::cout << mat4::rotate(myRotation) << std::endl;
+	Vector4 temp = mat4::rotate(myRotation) * up;
+	std::cout << "temp: " << temp.x << ' ' << temp.y << ' ' << temp.z << std::endl;
+	return(temp);
+}
+

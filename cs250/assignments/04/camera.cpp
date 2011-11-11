@@ -21,17 +21,17 @@ Camera& Camera::setAngle(float x, float y, float z)
     return(*this);
 }
 
-Camera& Camera::lookAt(float x, float y, float z)
+Camera& Camera::lookAt(Vector4 target, Vector4 up)
 {
 	// [View]
 	// [Up]
 	// [Left]
 	//std::cout << "My position: " << myPosition.x << ' ' << myPosition.y << ' ' << myPosition.z << std::endl;
-    Vector4 z_axis = Vector4(x, y, z) - myPosition;
+    Vector4 z_axis = target - myPosition;
 	//Vector4 z_axis = myPosition - Vector4(x, y, z);
     z_axis.Normalize();
 
-    Vector4 x_axis = Vector4(0, 1, 0).Cross(z_axis);
+    Vector4 x_axis = up.Cross(z_axis);
 	//Vector4 x_axis = z_axis.Cross(Vector4(0, 1, 0));
     x_axis.Normalize();
     

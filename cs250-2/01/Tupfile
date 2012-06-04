@@ -1,4 +1,4 @@
 include_rules
 : foreach *.cpp |> !cxx |>
-: *.o |> wineg++ -mwindows -m32 %f -o %o |> driver.exe | driver.exe.so
+: *.o |> !link |> driver.exe | driver.exe.so
 

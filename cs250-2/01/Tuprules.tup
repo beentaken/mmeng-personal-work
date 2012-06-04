@@ -1,0 +1,11 @@
+.gitignore
+
+CFLAGS += -Wall
+CFLAGS += -Wextra
+CFLAGS += -std=c++0x
+CFLAGS += -pedantic
+CFLAGS += -g
+CFLAGS += -m32
+
+!cxx = |> wineg++ $(CFLAGS) -c %f -o %o |> %B.o
+

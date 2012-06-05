@@ -1,4 +1,13 @@
 include_rules
+
+ifeq (@(TUP_PLATFORM),linux)
+    # Winelib makes an extra .so for some reason.
+    OUTPUT = driver.exe | driver.exe.so
+else
+# WIN32, so it should only need the .exe
+    OUTPUT = driver.exe
+endif
+
 : foreach *.cpp |> !cxx |>
-: *.o |> !link |> driver.exe | driver.exe.so
+: *.o |> !link |> $(OUTPUT)
 

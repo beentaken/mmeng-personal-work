@@ -1,0 +1,4 @@
+AddOption("--build_dir", default="build")
+SConscript("driver.scons", variant_dir=GetOption("build_dir"), duplicate=0)
+Clean('.', GetOption("build_dir"))
+

@@ -1,15 +1,38 @@
 .gitignore
 
-CFLAGS += -Wall
-CFLAGS += -Wextra
-CFLAGS += -std=c++0x
-CFLAGS += -pedantic
-CFLAGS += -g
-CFLAGS += -m32
+ifeq (@(TUP_PLATFORM),linux)
+    # Winelib options.
+    CXXFLAGS += -Wall
+    CXXFLAGS += -Wextra
+    CXXFLAGS += -std=c++0x
+    CXXFLAGS += -pedantic
+    CXXFLAGS += -m32
 
-LINKFLAGS += -m32
-LINKFLAGS += -mwindows
+    ifeq (@(DEBUG_BUILD),y)
+        CXXFLAGS += -g
+    else
+        CXXFLAGS += -O2
+    endif
 
-!cxx = |> wineg++ $(CFLAGS) -c %f -o %o |> %B.o
-!link = |> wineg++ $(LINKFLAGS) %f -o %o |>
+    LINKFLAGS += -m32
+    LINKFLAGS += -mwindows
+
+    CXX = wineg++
+    LINK = wineg++
+
+    OEXT = o
+else
+    CXXFLAGS += /W4
+
+    LINKFLAGS += gdi32.lib
+    LINKFLAGS += user32.lib
+
+    CXX = cl
+    LINK = link
+
+    OEXT = obj
+endif
+
+!cxx = |> $(CXX) $(CXXFLAGS) -c %f -o %o |> %B.$(OEXT)
+!link = |> $(LINK) $(LINKFLAGS) %f -o %o |>
 

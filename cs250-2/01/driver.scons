@@ -1,0 +1,26 @@
+import os
+env = Environment(ENV=os.environ)
+
+env['CXX'] = '/usr/bin/wineg++'
+env['LINK'] = '/usr/bin/wineg++'
+env['CXXFLAGS'] = '-mwindows -m32 -std=c++0x -Wextra -Wall -pedantic'
+env['LINKFLAGS'] = '-mwindows -m32'
+
+outputFile = "driver.exe"
+
+sourceFiles = Split("""
+            win_demo.cpp
+            cs250vector.cpp
+            """)
+
+headerFiles = Split("""
+            """)
+
+dependDirs = Split("""
+            .
+            """)
+
+mainOutput = env.Program(target=outputFile,source=sourceFiles, CPPPATH = dependDirs)
+
+Depends(mainOutput, sourceFiles + headerFiles)
+

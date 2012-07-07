@@ -16,6 +16,7 @@ ifeq (@(TUP_PLATFORM),linux)
 
     LINKFLAGS += -m32
     LINKFLAGS += -mwindows
+    LINKFLAGS += -lwinmm
 
     CXX = wineg++
     LINK = wineg++
@@ -26,6 +27,8 @@ else
 
     LINKFLAGS += gdi32.lib
     LINKFLAGS += user32.lib
+    LINKFLAGS += winmm.lib
+    LINKFLAGS += gdiplus.lib
 
     CXX = cl
     LINK = link

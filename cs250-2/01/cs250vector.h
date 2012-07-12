@@ -31,6 +31,7 @@ Vector operator-(const Vector&);
 Vector operator-(const Point&, const Point&);
 Vector operator-(const Vector&, const Vector&);
 Vector operator*(float, const Vector&);
+Point operator* (float, const Point&);
 float  operator*(const Vector&, const Vector&);
 float  abs(const Vector&);
 Vector operator^(const Vector&, const Vector&);

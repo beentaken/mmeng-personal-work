@@ -3,6 +3,7 @@
 #define ASSIGNMENT_H
 
 #include <vector>
+#include <tuple>
 
 #include <windows.h>
 #include <gdiplus.h>
@@ -28,9 +29,15 @@ class Demo {
     Demo(const Demo&);
     Demo& operator=(const Demo&);
     static LRESULT CALLBACK demo_proc(HWND, UINT, WPARAM, LPARAM);
-    int width;
 
-    std::vector<Point> myCubeVertices;
+    typedef std::tuple<unsigned, unsigned> Edge;
+    typedef std::vector<Point> VertexList;
+    typedef std::vector<Edge> EdgeList;
+
+    VertexList myCubeVertices;
+    EdgeList myCubeEdgeList;
+
+    void drawWireframe(Gdiplus::Graphics& buffer, const VertexList& vertices, const EdgeList& edges);
 };
 
 #endif // ASSIGNMENT_H

@@ -53,6 +53,19 @@ Demo::Demo(HINSTANCE hinst, int show)
     myCubeVertices[5] = Point(-0.5f,  0.5f, -0.5f);
     myCubeVertices[6] = Point(-0.5f, -0.5f,  0.5f);
     myCubeVertices[7] = Point(-0.5f, -0.5f, -0.5f);
+
+    myCubeEdgeList.push_back(Edge(0, 1));
+    myCubeEdgeList.push_back(Edge(0, 2));
+    myCubeEdgeList.push_back(Edge(0, 4));
+    myCubeEdgeList.push_back(Edge(1, 3));
+    myCubeEdgeList.push_back(Edge(1, 5));
+    myCubeEdgeList.push_back(Edge(2, 3));
+    myCubeEdgeList.push_back(Edge(2, 6));
+    myCubeEdgeList.push_back(Edge(3, 7));
+    myCubeEdgeList.push_back(Edge(4, 5));
+    myCubeEdgeList.push_back(Edge(4, 6));
+    myCubeEdgeList.push_back(Edge(5, 7));
+    myCubeEdgeList.push_back(Edge(6, 7));
 }
 	
 
@@ -108,6 +121,18 @@ void Demo::Draw(double dt)
     SolidBrush circle_brush(Color(100,100,255));
     backbuffer.FillEllipse(&circle_brush, x, y, 20, 20);
 
+    // Transform a cube!
+    VertexList to_draw;
+
+    //for (auto point : myCubeVertices)
+    for(auto it = myCubeVertices.begin(); it != myCubeVertices.end(); ++it)
+    {
+        auto point = *it;
+        to_draw.push_back(50 * point);
+    }
+    
+    drawWireframe(backbuffer, to_draw, myCubeEdgeList);
+
     graphics.DrawImage(&bb, 0, 0, width, height);
 
     ReleaseDC(window, wdc);
@@ -143,5 +168,20 @@ LRESULT CALLBACK Demo::demo_proc(HWND wnd, UINT msg, WPARAM wp, LPARAM lp) {
       return 0;
   }
   return DefWindowProc(wnd,msg,wp,lp);
+}
+
+void Demo::drawWireframe(Gdiplus::Graphics& buffer, const VertexList& vertices, const EdgeList& edges)
+{
+    using namespace Gdiplus;
+    Pen pen(Color(255, 0, 0, 0));
+    // Bah, MSVC still doesn't have proper C++11 support...
+    // for (auto edge : edges)
+    for (auto it = edges.begin(); it != edges.end(); ++it)
+    {
+        // Do this because of MSVC, otherwise comment out line if using ranged for.
+        auto edge = *it;
+        buffer.DrawLine(&pen, vertices[std::get<0>(edge)].x, vertices[std::get<0>(edge)].y,
+                vertices[std::get<1>(edge)].x, vertices[std::get<1>(edge)].y);
+    }
 }
 

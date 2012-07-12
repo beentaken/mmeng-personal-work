@@ -68,6 +68,13 @@ Vector operator*(float lhs, const Vector& rhs)
     return(Vector(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z));
 }
 
+Point operator*(float lhs, const Point& rhs)
+{
+    // No C++11 uniform constructor syntax in MSVC...
+    //return{lhs * rhs.x, lhs * rhs.y, lhs * rhs.z};
+    return(Point(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z));
+}
+
 // This is a really bad idea. Overloaded operators should work like int
 // operators. Duplicate this into an explicit function later!
 // *FIXME FIXME*

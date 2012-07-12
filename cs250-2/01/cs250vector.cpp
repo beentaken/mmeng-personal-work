@@ -106,6 +106,6 @@ Point OrthProj(const Point& p)
 
 Point PersProj(const Point& p)
 {
-    return(Point(p.x / (p.z + 1), p.y / (p.z + 1), 0));
+    return(Point(p.x / (1 - p.z), p.y / (1 - p.z), 0));
 }
 

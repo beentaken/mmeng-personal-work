@@ -9,6 +9,11 @@
 #include <iomanip>
 #endif
 
+namespace
+{
+    const float PI = 3.1415f;
+}
+
 const char *Demo::NAME = "GDI Renderer";
 
 HWND Demo::Window(void) const
@@ -18,7 +23,7 @@ HWND Demo::Window(void) const
 
 Demo::Demo(HINSTANCE hinst, int show)
     : instance(hinst), back_buffer(0), current_time(0), fps_time(0),
-      fps_count(0), circle_rate(0), circle_fill(true)
+      fps_count(0), circle_rate(0), circle_fill(true), project_perspective(true)
 {
     WNDCLASS wc;
     wc.style = 0;
@@ -113,22 +118,33 @@ void Demo::Draw(double dt)
     SolidBrush background_brush(Color(255, 255, 255, 255));
     backbuffer.FillRectangle(&background_brush, 0, 0, width, height);
 
-    Pen      pen(Color(255, 0, 0, 255));
-    double angle = circle_rate * current_time;
-    int x = int(width * (0.5 + 0.4 * std::cos(angle)));
-    int y = int(height * (0.5 + 0.4 * std::sin(angle)));
-
-    SolidBrush circle_brush(Color(100,100,255));
-    backbuffer.FillEllipse(&circle_brush, x, y, 20, 20);
-
     // Transform a cube!
     VertexList to_draw;
 
+    Vector position;
+    Vector alpha(10, 5, 3);
+    Vector beta(1, 5, 1);
+    float omega = current_time * 2 * PI / 5;
+    position.x = std::sin(alpha.x * omega + beta.x);
+    position.y = std::sin(alpha.y * omega + beta.y);
+    position.z = std::sin(alpha.z * omega + beta.z) - 1;
     //for (auto point : myCubeVertices)
     for(auto it = myCubeVertices.begin(); it != myCubeVertices.end(); ++it)
     {
         auto point = *it;
-        to_draw.push_back(50 * point);
+        if (project_perspective)
+            point = PersProj(point + position); // Relocate.
+        else
+            point = OrthProj(point + position);
+        
+        // Resize to make it more visible.
+        point = width/10 * point;
+
+        // Relocate to center of viewport.
+        point.x += width / 2;
+        point.y += height / 2;
+
+        to_draw.push_back(point);
     }
     
     drawWireframe(backbuffer, to_draw, myCubeEdgeList);
@@ -141,6 +157,11 @@ void Demo::Draw(double dt)
 
 void Demo::ToggleFillMode(void) {
   circle_fill = !circle_fill;
+}
+
+void Demo::ToggleProjectionMode(void)
+{
+    project_perspective = !project_perspective;
 }
 
 
@@ -162,6 +183,8 @@ LRESULT CALLBACK Demo::demo_proc(HWND wnd, UINT msg, WPARAM wp, LPARAM lp) {
     case WM_CHAR:
       if (wp == 'f' || wp == 'F')
         demo->ToggleFillMode();
+      if (wp == 'p' || wp == 'P')
+        demo->ToggleProjectionMode();
       return 0;
     case WM_DESTROY:
       PostQuitMessage(0);

@@ -17,6 +17,7 @@ class Demo {
     ~Demo(void);
     void Draw(double dtime);
     void ToggleFillMode(void);
+    void ToggleProjectionMode(void);
     HWND Window(void) const;
   private:
     HINSTANCE instance;
@@ -26,6 +27,7 @@ class Demo {
     int fps_count;
     float circle_rate;
     bool circle_fill;
+    bool project_perspective;
     Demo(const Demo&);
     Demo& operator=(const Demo&);
     static LRESULT CALLBACK demo_proc(HWND, UINT, WPARAM, LPARAM);

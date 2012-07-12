@@ -2,6 +2,8 @@
 
 #include <cmath>
 
+#define SHOW_FPS
+
 #ifdef SHOW_FPS
 #include <sstream>
 #include <iomanip>
@@ -18,29 +20,29 @@ Demo::Demo(HINSTANCE hinst, int show)
     : instance(hinst), back_buffer(0), current_time(0), fps_time(0),
       fps_count(0), circle_rate(0), circle_fill(true)
 {
-  WNDCLASS wc;
-  wc.style = 0;
-  wc.lpfnWndProc = demo_proc;
-  wc.cbClsExtra = 0;
-  wc.cbWndExtra = sizeof(Demo*);
-  wc.hInstance = instance;
-  wc.hIcon = LoadIcon(0,IDI_APPLICATION);
-  wc.hCursor = LoadCursor(0,IDC_ARROW);
-  wc.hbrBackground = 0;
-  wc.lpszMenuName = 0;
-  wc.lpszClassName = Demo::NAME;
-  RegisterClass(&wc);
+    WNDCLASS wc;
+    wc.style = 0;
+    wc.lpfnWndProc = demo_proc;
+    wc.cbClsExtra = 0;
+    wc.cbWndExtra = sizeof(Demo*);
+    wc.hInstance = instance;
+    wc.hIcon = LoadIcon(0,IDI_APPLICATION);
+    wc.hCursor = LoadCursor(0,IDC_ARROW);
+    wc.hbrBackground = 0;
+    wc.lpszMenuName = 0;
+    wc.lpszClassName = Demo::NAME;
+    RegisterClass(&wc);
 
-  int width = (3*GetSystemMetrics(SM_CYSCREEN))/4;
-  RECT rect = {0,0,width,width};
-  int style = WS_POPUP|WS_CAPTION|WS_SYSMENU|WS_MINIMIZEBOX;
-  AdjustWindowRect(&rect,style,FALSE);
-  window = CreateWindow(NAME,NAME,style,CW_USEDEFAULT,CW_USEDEFAULT,
+    int width = (3*GetSystemMetrics(SM_CYSCREEN))/4;
+    RECT rect = {0,0,width,width};
+    int style = WS_POPUP|WS_CAPTION|WS_SYSMENU|WS_MINIMIZEBOX;
+    AdjustWindowRect(&rect,style,FALSE);
+    window = CreateWindow(NAME,NAME,style,CW_USEDEFAULT,CW_USEDEFAULT,
              rect.right-rect.left,rect.bottom-rect.top,
              0,0,instance,this);
 
-  circle_rate = 1.0f;
-  ShowWindow(window,show);
+    circle_rate = 1.0f;
+    ShowWindow(window,show);
   
     myCubeVertices.resize(8);
     myCubeVertices[0] = Point( 0.5f,  0.5f,  0.5f);
@@ -56,16 +58,16 @@ Demo::Demo(HINSTANCE hinst, int show)
 
 Demo::~Demo(void)
 {
-  DeleteObject(back_buffer);
-  UnregisterClass(NAME,instance);
+    DeleteObject(back_buffer);
+    UnregisterClass(NAME,instance);
 }
 
 
 void Demo::Draw(double dt)
 {
 
-    // update fps display if more than 1/4 second has elapsed
 #ifdef SHOW_FPS
+    // update fps display if more than 1/4 second has elapsed
     if (fps_time < 0.25)
     {
         fps_time += dt;  fps_count++;
@@ -80,49 +82,35 @@ void Demo::Draw(double dt)
         fps_time -= 0.25;  fps_count = 0;
     }
 #endif
-  // update time elapsed since initialization
-  current_time += dt;
+    // update time elapsed since initialization
+    current_time += dt;
 
-  // get ready to draw to back buffer
-  HDC wdc = GetDC(window);
-  HDC bdc = CreateCompatibleDC(wdc);
-  RECT rect;
-  GetClientRect(window,&rect);
-  SelectObject(bdc,back_buffer);
-  int width = rect.right,
-      height = rect.bottom;
+    using namespace Gdiplus;
+    RECT window_space;
+    GetClientRect(window, &window_space);
 
-//////////////////////////////////////
-// *** drawing code starts here *** //
-//////////////////////////////////////
-  HPEN blue_pen = CreatePen(PS_SOLID,2,RGB(100,100,255));
-  double angle = circle_rate*current_time;
-  int x = int(width*(0.5 + 0.4*std::cos(angle))),
-      y = int(height*(0.5 + 0.4*std::sin(angle)));
+    int width = window_space.right;
+    int height = window_space.bottom;
 
-  // draw to back buffer
-  FillRect(bdc,&rect,HBRUSH(GetStockObject(WHITE_BRUSH))); // White background.
-  HGDIOBJ temp_pen = SelectObject(bdc,blue_pen);
-  if (circle_fill)
-  {
-    HBRUSH blue_brush=CreateSolidBrush(RGB(100,100,255));
-    HGDIOBJ temp_brush = SelectObject(bdc,blue_brush);
-    Ellipse(bdc,x-10,y-10,x+10,y+10);
-    SelectObject(bdc,temp_brush);
-    DeleteObject(blue_brush);
-  }
-  else
-    Ellipse(bdc,x-10,y-10,x+10,y+10);
-  SelectObject(bdc,temp_pen);
-//////////////////////////////////////
-//  *** drawing code ends here ***  //
-//////////////////////////////////////
+    HDC wdc = GetDC(window);
+    Graphics graphics(wdc);
+    Bitmap bb(width, height, &graphics);
+    Graphics backbuffer(&bb);
 
-  // blit and clean up
-  BitBlt(wdc,0,0,rect.right,rect.bottom,bdc,0,0,SRCCOPY);
-  DeleteObject(blue_pen);
-  DeleteDC(bdc);
-  ReleaseDC(window,wdc);
+    SolidBrush background_brush(Color(255, 255, 255, 255));
+    backbuffer.FillRectangle(&background_brush, 0, 0, width, height);
+
+    Pen      pen(Color(255, 0, 0, 255));
+    double angle = circle_rate * current_time;
+    int x = int(width * (0.5 + 0.4 * std::cos(angle)));
+    int y = int(height * (0.5 + 0.4 * std::sin(angle)));
+
+    SolidBrush circle_brush(Color(100,100,255));
+    backbuffer.FillEllipse(&circle_brush, x, y, 20, 20);
+
+    graphics.DrawImage(&bb, 0, 0, width, height);
+
+    ReleaseDC(window, wdc);
 }
 
 

@@ -5,6 +5,7 @@
 #include <vector>
 
 #include <windows.h>
+#include <gdiplus.h>
 
 #include "cs250vector.h"
 
@@ -27,6 +28,7 @@ class Demo {
     Demo(const Demo&);
     Demo& operator=(const Demo&);
     static LRESULT CALLBACK demo_proc(HWND, UINT, WPARAM, LPARAM);
+    int width;
 
     std::vector<Point> myCubeVertices;
 };

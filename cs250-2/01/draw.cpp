@@ -11,7 +11,7 @@ void DrawFun::drawEdges(const VertexList &vertex_list, const EdgeList& edge_list
 {
     using namespace Gdiplus;
 
-    Gdiplus::Pen pen(Color::Black);
+    Gdiplus::Pen pen(Color(255,255,255), 1.0f);
     Graphics graphics(myContext);
 
     for (auto it = edge_list.begin(); it != edge_list.end(); ++it)

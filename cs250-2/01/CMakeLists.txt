@@ -21,7 +21,7 @@ endif ()
 set(LIBRARIES gdiplus winmm)
 
 set(HEADERS cs250vector.h assignment.hpp)
-set(SOURCES win_demo.cpp cs250vector.cpp assignment.cpp)
+set(SOURCES driver.cpp cs250vector.cpp assignment.cpp)
 
 add_executable(driver WIN32 ${SOURCES} ${HEADERS})
 target_link_libraries(driver ${LIBRARIES})

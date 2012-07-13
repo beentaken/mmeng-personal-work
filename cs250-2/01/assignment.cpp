@@ -23,7 +23,7 @@ HWND Demo::Window(void) const
 
 Demo::Demo(HINSTANCE hinst, int show)
     : instance(hinst), back_buffer(0), current_time(0), fps_time(0),
-      fps_count(0), circle_rate(0), circle_fill(true), project_perspective(true)
+      fps_count(0), project_perspective(true)
 {
     WNDCLASS wc;
     wc.style = 0;
@@ -46,7 +46,6 @@ Demo::Demo(HINSTANCE hinst, int show)
              rect.right-rect.left,rect.bottom-rect.top,
              0,0,instance,this);
 
-    circle_rate = 1.0f;
     ShowWindow(window,show);
   
     myCubeVertices.resize(8);
@@ -154,11 +153,6 @@ void Demo::Draw(double dt)
     ReleaseDC(window, wdc);
 }
 
-
-void Demo::ToggleFillMode(void) {
-  circle_fill = !circle_fill;
-}
-
 void Demo::ToggleProjectionMode(void)
 {
     project_perspective = !project_perspective;
@@ -181,8 +175,6 @@ LRESULT CALLBACK Demo::demo_proc(HWND wnd, UINT msg, WPARAM wp, LPARAM lp) {
       ReleaseDC(wnd,dc);
       return 0; }
     case WM_CHAR:
-      if (wp == 'f' || wp == 'F')
-        demo->ToggleFillMode();
       if (wp == 'p' || wp == 'P')
         demo->ToggleProjectionMode();
       return 0;

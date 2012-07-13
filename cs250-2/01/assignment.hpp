@@ -16,7 +16,6 @@ class Demo {
     Demo(HINSTANCE, int);
     ~Demo(void);
     void Draw(double dtime);
-    void ToggleFillMode(void);
     void ToggleProjectionMode(void);
     HWND Window(void) const;
   private:
@@ -25,9 +24,8 @@ class Demo {
     HBITMAP back_buffer;
     double current_time, fps_time;
     int fps_count;
-    float circle_rate;
-    bool circle_fill;
     bool project_perspective;
+
     Demo(const Demo&);
     Demo& operator=(const Demo&);
     static LRESULT CALLBACK demo_proc(HWND, UINT, WPARAM, LPARAM);

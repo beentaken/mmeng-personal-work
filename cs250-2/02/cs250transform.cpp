@@ -4,6 +4,8 @@
 #include <functional> // plus
 #include <numeric> // inner_product
 #include <algorithm> // transform
+#include <iostream>
+#include <cassert>
 
 Transform::Transform(void)
 {
@@ -179,13 +181,15 @@ Transform Rot(Vector axis, float angle)
 {
     axis.Normalize();
 
+    std::cout << axis.x*axis.x + axis.y*axis.y + axis.z*axis.z << std::endl;
+
     float a = std::cos(angle);
     float b = std::sin(angle);
     float c = 1.0f - a;
 
-    Vector c1(c * axis.x*axis.x + a, c * axis.x*axis.y - b*axis.z, c*axis.x*axis.y + b*axis.y);
-    Vector c2(c * axis.x*axis.y + b*axis.z, c*axis.y*axis.y + a, c * axis.y*axis.z - b*axis.x);
-    Vector c3(c * axis.x*axis.z - b*axis.y, c*axis.y*axis.z + b * axis.x, c*axis.z*axis.z + a);
+    Vector c1(c*axis.x*axis.x + a,        c*axis.x*axis.y + b*axis.z, c*axis.x*axis.z - b*axis.y);
+    Vector c2(c*axis.x*axis.y - b*axis.z, c*axis.y*axis.y + a,        c*axis.y*axis.z + b*axis.x);
+    Vector c3(c*axis.x*axis.z + b*axis.y, c*axis.y*axis.z - b*axis.x, c*axis.z*axis.z + a);
 
     return(Transform(c1, c2, c3));
 }

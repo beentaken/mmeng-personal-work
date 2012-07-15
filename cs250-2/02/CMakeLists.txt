@@ -7,7 +7,7 @@ if (MSVC)
     add_definitions(-D_SCL_SECURE_NO_WARNINGS)
     
     set(CMAKE_CXX_FLAGS "/EHsc /W4")
-    set(CMAKE_CXX_FLAGS_DEBUG "/analyze")
+    set(CMAKE_CXX_FLAGS_DEBUG "/analyze /Zi")
 else ()
     message(STATUS "Using gcc settings.")
 

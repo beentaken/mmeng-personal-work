@@ -1,6 +1,7 @@
 #include "assignment.hpp"
 
 #include <cmath>
+#include <random>
 
 #define SHOW_FPS
 
@@ -72,6 +73,8 @@ Demo::Demo(HINSTANCE hinst, int show)
     myCubeEdgeList.push_back(Edge(4, 6));
     myCubeEdgeList.push_back(Edge(5, 7));
     myCubeEdgeList.push_back(Edge(6, 7));
+
+    AllocConsole();
 }
 	
 
@@ -126,11 +129,20 @@ void Demo::Draw(double dt)
     Vector alpha(10, 5, 3);
     Vector beta(1, 5, 1);
     float omega = current_time * 2 * PI / 5;
+
+#if 0
     position.x = std::sin(alpha.x * omega + beta.x);
     position.y = std::sin(alpha.y * omega + beta.y);
     position.z = std::sin(alpha.z * omega + beta.z) - 1;
+#else
+    position.z = -1;
+#endif
 
-    Transform rotation = RotX(omega) * RotY(omega) * RotZ(omega);
+    static std::default_random_engine gen(timeGetTime());
+    static std::uniform_real_distribution<float> dist(0.0f, 1.0f);
+
+    static Vector rot_axis(dist(gen), dist(gen), dist(gen));
+    Transform rotation = Rot(rot_axis, omega);
 
     //for (auto point : myCubeVertices)
     for(auto it = myCubeVertices.begin(); it != myCubeVertices.end(); ++it)

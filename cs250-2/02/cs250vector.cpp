@@ -30,10 +30,11 @@ bool Vector::Normalize()
         return(false);
     }
 
-    float intermediate = x*x + y*y + z*z + w*w;
+    float intermediate = std::sqrt(x*x + y*y + z*z + w*w);
     x /= intermediate;
     y /= intermediate;
     z /= intermediate;
+    w /= intermediate;
 
     return(true);
 }

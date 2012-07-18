@@ -9,6 +9,7 @@
 #include <gdiplus.h>
 
 #include "cs250vector.h"
+#include "framebuffer.hpp"
 
 class Demo {
   public:
@@ -36,8 +37,11 @@ class Demo {
 
     VertexList myCubeVertices;
     EdgeList myCubeEdgeList;
+	
+	FrameBuffer* myFramebuffer;
 
     void drawWireframe(Gdiplus::Graphics& buffer, const VertexList& vertices, const EdgeList& edges);
+	void drawWireframe(FrameBuffer* fb, const VertexList& vertices, const EdgeList& edges);
 };
 
 #endif // ASSIGNMENT_H

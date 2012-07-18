@@ -23,8 +23,8 @@ endif ()
 
 set(LIBRARIES gdiplus winmm)
 
-set(HEADERS cs250vector.h assignment.hpp cs250transform.h)
-set(SOURCES driver.cpp cs250vector.cpp assignment.cpp cs250transform.cpp)
+set(HEADERS cs250vector.h assignment.hpp cs250transform.h framebuffer.hpp line.hpp)
+set(SOURCES driver.cpp cs250vector.cpp assignment.cpp cs250transform.cpp framebuffer.cpp line.cpp)
 
 add_executable(driver WIN32 ${SOURCES} ${HEADERS})
 target_link_libraries(driver ${LIBRARIES})

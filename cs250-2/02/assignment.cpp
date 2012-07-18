@@ -12,6 +12,8 @@
 
 #include "cs250transform.h"
 
+#include "line.hpp"
+
 namespace
 {
     const float PI = 3.1415f;
@@ -74,12 +76,13 @@ Demo::Demo(HINSTANCE hinst, int show)
     myCubeEdgeList.push_back(Edge(5, 7));
     myCubeEdgeList.push_back(Edge(6, 7));
 
-    AllocConsole();
+    myFramebuffer = new FrameBuffer(width, width);
 }
 	
 
 Demo::~Demo(void)
 {
+	delete myFramebuffer;
     DeleteObject(back_buffer);
     UnregisterClass(NAME,instance);
 }
@@ -115,13 +118,15 @@ void Demo::Draw(double dt)
     int height = window_space.bottom;
 
     HDC wdc = GetDC(window);
+#if 0
     Graphics graphics(wdc);
     Bitmap bb(width, height, &graphics);
     Graphics backbuffer(&bb);
 
-    SolidBrush background_brush(Color(255, 255, 255, 255));
+    SolidBrush background_brush(GdiPlusColor(255, 255, 255, 255));
     backbuffer.FillRectangle(&background_brush, 0, 0, width, height);
-
+#endif
+	myFramebuffer->clear();
     // Transform a cube!
     VertexList to_draw;
 
@@ -164,9 +169,20 @@ void Demo::Draw(double dt)
         to_draw.push_back(point);
     }
     
-    drawWireframe(backbuffer, to_draw, myCubeEdgeList);
+    drawWireframe(myFramebuffer, to_draw, myCubeEdgeList);
 
-    graphics.DrawImage(&bb, 0, 0, width, height);
+    //graphics.DrawImage(&bb, 0, 0, width, height);
+#if 0
+	myFramebuffer->clear();
+	::Color prok = {0, 0, 0, 255};
+	for (int i = 0; i < width; ++i)
+	{
+		myFramebuffer->setPixel(i, 200, 0.0f, prok);
+	}
+	
+	RenderLine(myFramebuffer, ::Point(0, 0, 0), ::Point(100, 100, 0), prok, prok);
+#endif
+	myFramebuffer->present(wdc);
 
     ReleaseDC(window, wdc);
 }
@@ -206,7 +222,7 @@ LRESULT CALLBACK Demo::demo_proc(HWND wnd, UINT msg, WPARAM wp, LPARAM lp) {
 void Demo::drawWireframe(Gdiplus::Graphics& buffer, const VertexList& vertices, const EdgeList& edges)
 {
     using namespace Gdiplus;
-    Pen pen(Color(255, 0, 0, 0));
+    Pen pen(Gdiplus::Color(255, 0, 0, 0));
     // Bah, MSVC still doesn't have proper C++11 support...
     // for (auto edge : edges)
     for (auto it = edges.begin(); it != edges.end(); ++it)
@@ -218,3 +234,14 @@ void Demo::drawWireframe(Gdiplus::Graphics& buffer, const VertexList& vertices, 
     }
 }
 
+void Demo::drawWireframe(FrameBuffer* fb, const VertexList& vertices, const EdgeList& edges)
+{
+	Color black = {0, 0, 0, 255};
+	
+	for (auto it = edges.begin(); it != edges.end(); ++it)
+    {
+        // Do this because of MSVC, otherwise comment out line if using ranged for.
+        auto edge = *it;
+        RenderLine(fb, vertices[std::get<0>(edge)], vertices[std::get<1>(edge)], black, black);
+    }
+}
